@@ -1,0 +1,32 @@
+{
+  "name": "bali-core-components",
+  "version": "2.0.0",
+  "description": "This library provides a JavaScript based implementation for the compiler for the Bali Virtual Processor.",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/craterdog-bali/bali-core-components.git"
+  },
+  "keywords": [
+    "Bali Nebula",
+    "Compiler",
+    "Assembler",
+    "Virtual Processor"
+  ],
+  "author": "Derk Norton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/craterdog-bali/bali-core-components/issues"
+  },
+  "homepage": "https://github.com/craterdog-bali/bali-core-components#readme",
+  "devDependencies": {
+    "grunt": "^1.1.0",
+    "grunt-eslint": "^22.0.0",
+    "grunt-mocha-test": "^0.13.3",
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1"
+  },
+  "dependencies": {
+    "bali-component-framework": "^2.10.0",
+    "bali-type-compiler": "file:../js-bali-type-compiler"
+  }
+}
