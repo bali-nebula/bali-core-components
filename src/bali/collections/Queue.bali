@@ -1,6 +1,6 @@
 [
     $description: "
-        This class defines the procedures for the messages that queue components support.
+        This class defines the procedures for the messages that stack components support.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Collection/v1
     $parameters: [:]
@@ -9,10 +9,10 @@
     $procedures: [
         $addItem: [
             $description: "
-                This procedure attempts to add the specified item to this queue.  The
-                updated queue is returned.
+                This procedure attempts to add the specified item to this stack.  The
+                updated stack is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Queue/v1
+            $type: /bali/collections/Stack/v1
             $source: {
                 return addItem(target, item)
             }($item: /bali/abstractions/Component/v1)
@@ -41,7 +41,7 @@
         $addItems: [
             $description: "
                 This procedure attempts to add the specified sequence of items to this
-                queue.  The updated queue is returned.
+                stack.  The updated stack is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Collection/v1
             $source: {
@@ -71,7 +71,7 @@
         ]
         $containsAll: [
             $description: "
-                This procedure determines whether or not this queue contains all of the
+                This procedure determines whether or not this stack contains all of the
                 specified items.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
@@ -102,7 +102,7 @@
         ]
         $containsAny: [
             $description: "
-                This procedure determines whether or not this queue contains any of the
+                This procedure determines whether or not this stack contains any of the
                 specified items.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
@@ -133,7 +133,7 @@
         ]
         $containsItem: [
             $description: "
-                This procedure determines whether or not this queue contains the specified
+                This procedure determines whether or not this stack contains the specified
                 item.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
@@ -164,7 +164,7 @@
         ]
         $index: [
             $description: "
-                This procedure returns the index of the specified item from this queue,
+                This procedure returns the index of the specified item from this stack,
                 or 0 if it is not found.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: [0..∞])
@@ -195,7 +195,7 @@
         ]
         $isEmpty: [
             $description: "
-                This procedure determines whether or not this queue is empty.
+                This procedure determines whether or not this stack is empty.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $source: {
@@ -222,7 +222,7 @@
         ]
         $item: [
             $description: "
-                This procedure returns from this queue the item corresponding to the
+                This procedure returns from this stack the item corresponding to the
                 specified index.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Component/v1
@@ -253,10 +253,10 @@
         ]
         $items: [
             $description: "
-                This procedure returns from this queue the subset of items in the
+                This procedure returns from this stack the subset of items in the
                 specified range.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Queue/v1
+            $type: /bali/collections/Stack/v1
             $source: {
                 return items(target, range)
             }($range: /bali/collections/Range/v1)
@@ -285,7 +285,7 @@
         $iterator: [
             $description: "
                 This procedure returns an iterator that can be used to visit, in order, each
-                item in this queue.
+                item in this stack.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Iterator/v1
             $source: {
@@ -312,9 +312,9 @@
         ]
         $removeAll: [
             $description: "
-                This procedure removes all items from this queue.  The updated queue is returned.
+                This procedure removes all items from this stack.  The updated stack is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Queue/v1
+            $type: /bali/collections/Stack/v1
             $source: {
                 return removeAll(target)
             }
@@ -339,7 +339,7 @@
         ]
         $removeItem: [
             $description: "
-                This procedure removes from this queue the head item.
+                This procedure removes from this stack the top item.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Component/v1
             $source: {
@@ -366,7 +366,7 @@
         ]
         $size: [
             $description: "
-                This procedure returns the number of items contained in this queue.
+                This procedure returns the number of items contained in this stack.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: [0..∞])
             $source: {
@@ -391,9 +391,9 @@
             ]($type: /bali/collections/Set/v1)
             $messages: []($type: /bali/collections/Set/v1)
         ]
-        $head: [
+        $top: [
             $description: "
-                This procedure returns from this queue the head item.
+                This procedure returns from this stack the top item.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Component/v1
             $source: {
@@ -421,9 +421,9 @@
     ]
     $literals: []
 ](
-    $name: /bali/collections/Queue/v1
+    $name: /bali/collections/Stack/v1
     $type: /bali/types/Class/v1($existence: $concrete)
-    $tag: #BG4RWKXM4T2NB1SXB3J17DR406ZLH8LR
+    $tag: #A53L5QDGB3XTYTGY7JVZ1Z6B0GNC9C6Y
     $version: v1
     $permissions: /bali/permissions/public/v1
     $previous: none
