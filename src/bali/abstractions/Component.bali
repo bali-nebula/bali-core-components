@@ -324,7 +324,7 @@
     ]
 ](
     $name: /bali/abstractions/Component/v1
-    $type: /bali/types/Class/v1($existence: $abstract)
+    $type: /bali/types/Primitive/v1($existence: $abstract)
     $tag: #GC5TG7QPT80BM6243Z15SKR0NB59KD94
     $version: v1
     $permissions: /bali/permissions/public/v1

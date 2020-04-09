@@ -447,7 +447,7 @@
     ]
 ](
     $name: /bali/collections/Range/v1
-    $type: /bali/types/Class/v1($existence: $concrete)
+    $type: /bali/types/Primitive/v1($existence: $concrete)
     $tag: #2FFNKR4099WQLDH1VY7J83FTBMZ72ZPS
     $version: v1
     $permissions: /bali/permissions/public/v1

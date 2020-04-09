@@ -746,7 +746,7 @@
     ]
 ](
     $name: /bali/abstractions/Collection/v1
-    $type: /bali/types/Class/v1($existence: $abstract)
+    $type: /bali/types/Primitive/v1($existence: $abstract)
     $tag: #69KMNPGSBDXWLBATY5PR9GSNM9MV7GV2
     $version: v1
     $permissions: /bali/permissions/public/v1

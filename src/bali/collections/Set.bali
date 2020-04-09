@@ -432,7 +432,7 @@
     $literals: []
 ](
     $name: /bali/collections/Set/v1
-    $type: /bali/types/Class/v1($existence: $concrete)
+    $type: /bali/types/Primitive/v1($existence: $concrete)
     $tag: #J8BQT5WAQJH8DC72LAJDQMBRSFTTBJH5
     $version: v1
     $permissions: /bali/permissions/public/v1

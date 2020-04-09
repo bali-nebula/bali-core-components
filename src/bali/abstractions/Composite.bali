@@ -6,6 +6,7 @@
     $parent: /bali/abstractions/Component/v1
     $parameters: [:]
     $constants: [:]
+    $interfaces: []
     $procedures: [
         $subcomponent: [
             $description: "
@@ -129,7 +130,7 @@
     ]
 ](
     $name: /bali/abstractions/Composite/v1
-    $type: /bali/types/Class/v1($existence: $abstract)
+    $type: /bali/types/Primitive/v1($existence: $abstract)
     $tag: #XLWZBR7XA25FKLVS1P5DFW4ZLPJQC65F
     $version: v1
     $permissions: /bali/permissions/public/v1

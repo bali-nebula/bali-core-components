@@ -614,7 +614,7 @@
     $literals: []
 ](
     $name: /bali/collections/Catalog/v1
-    $type: /bali/types/Class/v1($existence: $concrete)
+    $type: /bali/types/Primitive/v1($existence: $concrete)
     $tag: #MK7A2JDNQHGYPB8QW8K40LC5PQ29G48K
     $version: v1
     $permissions: /bali/permissions/public/v1
