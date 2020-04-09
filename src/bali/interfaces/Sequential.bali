@@ -36,8 +36,6 @@
             $type: /bali/elements/Probability/v1($granularity: $boolean)
         ]
     ]
-    $procedures: [:]
-    $literals: []
 ](
     $name: /bali/interfaces/Sequential/v1
     $type: /bali/types/Interface/v1
