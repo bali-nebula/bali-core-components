@@ -1,6 +1,6 @@
 [
     $description: "
-        This class defines the procedures for the messages that queue components support.
+        This class defines the procedures for the messages that range components support.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Collection/v1
     $parameters: [:]
@@ -9,26 +9,47 @@
     $procedures: [
         $addItem: [
             $description: "
-                This procedure attempts to add the specified item to this queue.  The
-                updated queue is returned.
+                This procedure attempts to add the specified item to this range.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Queue/v1
+            $type: /bali/collections/Range/v1
             $source: {
-                return addItem(target, item)
+                throw [
+                    $module: /bali/collections/Range/v1
+                    $procedure: $addItem
+                    $exception: $invalidMethod
+                    $text: "Items cannot be added to a range."
+                ]
             }($item: /bali/abstractions/Component/v1)
             $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $target
-                PUSH PARAMETER $item
+                1.ThrowStatement:
+                INVOKE $catalog
+                PUSH LITERAL `$module`
+                PUSH LITERAL `/bali/collections/Range/v1`
+                INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
-                HANDLE RESULT
+                PUSH LITERAL `$procedure`
+                PUSH LITERAL `$addItem`
+                INVOKE $association WITH 2 ARGUMENTS
+                INVOKE $addItem WITH 2 ARGUMENTS
+                PUSH LITERAL `$exception`
+                PUSH LITERAL `$invalidMethod`
+                INVOKE $association WITH 2 ARGUMENTS
+                INVOKE $addItem WITH 2 ARGUMENTS
+                PUSH LITERAL `$text`
+                PUSH LITERAL `"Items cannot be added to a range."`
+                INVOKE $association WITH 2 ARGUMENTS
+                INVOKE $addItem WITH 2 ARGUMENTS
+                HANDLE EXCEPTION
             "($mediatype: "application/basm")
-            $bytecode: '60013801B001E000'(
+            $bytecode: '
+                A01428012802B00BB00128032804B00BB00128052806B00BB00128072808
+                B00BB001E800
+            '(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $addresses: [
-                "1.ReturnStatement": 1
+                "1.ThrowStatement": 1
             ]
             $parameters: [
                 $item
@@ -40,26 +61,47 @@
         ]
         $addItems: [
             $description: "
-                This procedure attempts to add the specified sequence of items to this
-                queue.  The updated queue is returned.
+                This procedure attempts to add the specified sequence of items to this range.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Collection/v1
             $source: {
-                return addItems(target, items)
+                throw [
+                    $module: /bali/collections/Range/v1
+                    $procedure: $addItems
+                    $exception: $invalidMethod
+                    $text: "Items cannot be added to a range."
+                ]
             }($items: /bali/interfaces/Sequential/v1)
             $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $target
-                PUSH PARAMETER $items
-                INVOKE $addItems WITH 2 ARGUMENTS
-                HANDLE RESULT
+                1.ThrowStatement:
+                INVOKE $catalog
+                PUSH LITERAL `$module`
+                PUSH LITERAL `/bali/collections/Range/v1`
+                INVOKE $association WITH 2 ARGUMENTS
+                INVOKE $addItem WITH 2 ARGUMENTS
+                PUSH LITERAL `$procedure`
+                PUSH LITERAL `$addItems`
+                INVOKE $association WITH 2 ARGUMENTS
+                INVOKE $addItem WITH 2 ARGUMENTS
+                PUSH LITERAL `$exception`
+                PUSH LITERAL `$invalidMethod`
+                INVOKE $association WITH 2 ARGUMENTS
+                INVOKE $addItem WITH 2 ARGUMENTS
+                PUSH LITERAL `$text`
+                PUSH LITERAL `"Items cannot be added to a range."`
+                INVOKE $association WITH 2 ARGUMENTS
+                INVOKE $addItem WITH 2 ARGUMENTS
+                HANDLE EXCEPTION
             "($mediatype: "application/basm")
-            $bytecode: '60013801B002E000'(
+            $bytecode: '
+                A01428012802B00BB00128032809B00BB00128052806B00BB00128072808
+                B00BB001E800
+            '(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $addresses: [
-                "1.ReturnStatement": 1
+                "1.ThrowStatement": 1
             ]
             $parameters: [
                 $items
@@ -71,7 +113,7 @@
         ]
         $containsAll: [
             $description: "
-                This procedure determines whether or not this queue contains all of the
+                This procedure determines whether or not this range contains all of the
                 specified items.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
@@ -102,7 +144,7 @@
         ]
         $containsAny: [
             $description: "
-                This procedure determines whether or not this queue contains any of the
+                This procedure determines whether or not this range contains any of the
                 specified items.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
@@ -133,7 +175,7 @@
         ]
         $containsItem: [
             $description: "
-                This procedure determines whether or not this queue contains the specified
+                This procedure determines whether or not this range contains the specified
                 item.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
@@ -162,21 +204,21 @@
             ]($type: /bali/collections/Set/v1)
             $messages: []($type: /bali/collections/Set/v1)
         ]
-        $head: [
+        $first: [
             $description: "
-                This procedure returns from this queue the head item.
+                This procedure returns from this range the first item.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Component/v1
             $source: {
-                return top(target)
+                return first(target)
             }
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                INVOKE $top WITH 1 ARGUMENT
+                INVOKE $first WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A87FE000'(
+            $bytecode: '6001A82AE000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -191,7 +233,7 @@
         ]
         $index: [
             $description: "
-                This procedure returns the index of the specified item from this queue,
+                This procedure returns the index of the specified item from this range,
                 or 0 if it is not found.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: [0..∞])
@@ -222,7 +264,7 @@
         ]
         $isEmpty: [
             $description: "
-                This procedure determines whether or not this queue is empty.
+                This procedure determines whether or not this range is empty.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $source: {
@@ -249,7 +291,7 @@
         ]
         $item: [
             $description: "
-                This procedure returns from this queue the item corresponding to the
+                This procedure returns from this range the item corresponding to the
                 specified index.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Component/v1
@@ -280,10 +322,10 @@
         ]
         $items: [
             $description: "
-                This procedure returns from this queue the subset of items in the
+                This procedure returns from this range the subset of items in the
                 specified range.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Queue/v1
+            $type: /bali/collections/Range/v1
             $source: {
                 return items(target, range)
             }($range: /bali/collections/Range/v1)
@@ -312,7 +354,7 @@
         $iterator: [
             $description: "
                 This procedure returns an iterator that can be used to visit, in order, each
-                item in this queue.
+                item in this range.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Iterator/v1
             $source: {
@@ -337,48 +379,21 @@
             ]($type: /bali/collections/Set/v1)
             $messages: []($type: /bali/collections/Set/v1)
         ]
-        $removeAll: [
+        $last: [
             $description: "
-                This procedure removes all items from this queue.  The updated queue is returned.
-            "($mediatype: "application/bsmd")
-            $type: /bali/collections/Queue/v1
-            $source: {
-                return removeAll(target)
-            }
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $target
-                INVOKE $removeAll WITH 1 ARGUMENT
-                HANDLE RESULT
-            "($mediatype: "application/basm")
-            $bytecode: '6001A863E000'(
-                $encoding: $base16
-                $mediatype: "application/bcod"
-            )
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $parameters: []
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
-            $messages: []($type: /bali/collections/Set/v1)
-        ]
-        $removeItem: [
-            $description: "
-                This procedure removes from this queue the head item.
+                This procedure returns from this range the last item.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Component/v1
             $source: {
-                return removeItem(target)
+                return last(target)
             }
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                INVOKE $removeItem WITH 1 ARGUMENT
+                INVOKE $last WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A866E000'(
+            $bytecode: '6001A846E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -393,7 +408,7 @@
         ]
         $size: [
             $description: "
-                This procedure returns the number of items contained in this queue.
+                This procedure returns the number of items contained in this range.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: [0..∞])
             $source: {
@@ -419,11 +434,21 @@
             $messages: []($type: /bali/collections/Set/v1)
         ]
     ]
-    $literals: []
+    $literals: [
+        $module
+        /bali/collections/Range/v1
+        $procedure
+        $addItem
+        $exception
+        $invalidMethod
+        $text
+        "Items cannot be added to a range."
+        $addItems
+    ]
 ](
-    $name: /bali/collections/Queue/v1
+    $name: /bali/collections/Range/v1
     $type: /bali/types/Class/v1($existence: $concrete)
-    $tag: #BG4RWKXM4T2NB1SXB3J17DR406ZLH8LR
+    $tag: #2FFNKR4099WQLDH1VY7J83FTBMZ72ZPS
     $version: v1
     $permissions: /bali/permissions/public/v1
     $previous: none
