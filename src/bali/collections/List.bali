@@ -1,0 +1,227 @@
+[
+    $description: "
+        This class defines the procedures for the messages that list components support.
+    "($mediatype: "application/bsmd")
+    $parent: /bali/abstractions/Collection/v1
+    $parameters: [:]
+    $constants: [:]
+    $interfaces: [
+        /bali/interfaces/Chainable
+        /bali/interfaces/Sortable
+    ]
+    $procedures: [
+        $addItem: [
+            $description: "
+                This procedure attempts to add the specified item to this list.  The
+                updated list is returned.
+            "($mediatype: "application/bsmd")
+            $type: /bali/collections/List/v1
+            $source: {
+                return addItem(target, item)
+            }($item: /bali/abstractions/Component/v1)
+        ]
+        $addItems: [
+            $description: "
+                This procedure attempts to add the specified sequence of items to this
+                list.  The updated list is returned.
+            "($mediatype: "application/bsmd")
+            $type: /bali/abstractions/Collection/v1
+            $source: {
+                return addItems(target, items)
+            }($items: /bali/interfaces/Sequential/v1)
+        ]
+        $containsAll: [
+            $description: "
+                This procedure determines whether or not this list contains all of the
+                specified items.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Probability/v1($granularity: $boolean)
+            $source: {
+                return containsAll(target, items)
+            }($items: /bali/interfaces/Sequential/v1)
+        ]
+        $containsAny: [
+            $description: "
+                This procedure determines whether or not this list contains any of the
+                specified items.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Probability/v1($granularity: $boolean)
+            $source: {
+                return containsAny(target, items)
+            }($items: /bali/interfaces/Sequential/v1)
+        ]
+        $containsItem: [
+            $description: "
+                This procedure determines whether or not this list contains the specified
+                item.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Probability/v1($granularity: $boolean)
+            $source: {
+                return containsItem(target, item)
+            }($item: /bali/abstractions/Component/v1)
+        ]
+        $index: [
+            $description: "
+                This procedure returns the index of the specified item from this list,
+                or 0 if it is not found.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Number/v1($range: [0..∞])
+            $source: {
+                return index(target, item)
+            }($item: /bali/abstractions/Component/v1)
+        ]
+        $insertItem: [
+            $description: "
+                This procedure attempts to insert the specified item to this list at the
+                specified index.  The updated list is returned.
+            "($mediatype: "application/bsmd")
+            $type: /bali/collections/List/v1
+            $source: {
+                return insertItem(target, index, item)
+            }(
+                $index: /bali/elements/Number/v1($range: [0..∞])
+                $item: /bali/abstractions/Component/v1
+            )
+        ]
+        $insertItems: [
+            $description: "
+                This procedure attempts to insert the specified sequence of items into this
+                list at the specified index.  The updated list is returned.
+            "($mediatype: "application/bsmd")
+            $type: /bali/abstractions/Collection/v1
+            $source: {
+                return insertItems(target, index, items)
+            }(
+                $index: /bali/elements/Number/v1($range: [0..∞])
+                $items: /bali/interfaces/Sequential/v1
+            )
+        ]
+        $isEmpty: [
+            $description: "
+                This procedure determines whether or not this list is empty.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Probability/v1($granularity: $boolean)
+            $source: {
+                return isEmpty(target)
+            }
+        ]
+        $item: [
+            $description: "
+                This procedure returns from this list the item corresponding to the
+                specified index.
+            "($mediatype: "application/bsmd")
+            $type: /bali/abstractions/Component/v1
+            $source: {
+                return item(target, index)
+            }($index: /bali/elements/Number/v1($range: [0..∞]))
+        ]
+        $items: [
+            $description: "
+                This procedure returns from this list the subset of items in the
+                specified range.
+            "($mediatype: "application/bsmd")
+            $type: /bali/abstractions/Component/v1
+            $source: {
+                return items(target, range)
+            }($range: /bali/collections/Range/v1)
+        ]
+        $iterator: [
+            $description: "
+                This procedure returns an iterator that can be used to visit, in order, each
+                item in this list.
+            "($mediatype: "application/bsmd")
+            $type: /bali/abstractions/Iterator/v1
+            $source: {
+                return iterator(target)
+            }
+        ]
+        $removeAll: [
+            $description: "
+                This procedure removes all items from this list.  The updated list is returned.
+            "($mediatype: "application/bsmd")
+            $type: /bali/collections/List/v1
+            $source: {
+                return removeAll(target)
+            }
+        ]
+        $removeItem: [
+            $description: "
+                This procedure removes from this list the item associated with the specified
+                index.  The updated list is returned.
+            "($mediatype: "application/bsmd")
+            $type: /bali/abstractions/Component/v1
+            $source: {
+                return removeItem(target, index)
+            }($index: /bali/elements/Number/v1($range: [0..∞]))
+        ]
+        $removeItems: [
+            $description: "
+                This procedure removes from this list the items associated with the specified
+                index range.  The updated list is returned.
+            "($mediatype: "application/bsmd")
+            $type: /bali/collections/List/v1
+            $source: {
+                return removeItems(target, range)
+            }($range: /bali/collections/Range/v1)
+        ]
+        $reverseItems: [
+            $description: "
+                This procedure reverses the order of the items contained in this list.  The
+                updated list is returned.
+            "($mediatype: "application/bsmd")
+            $type: /bali/collections/List/v1
+            $source: {
+                return reverseItems(target)
+            }
+        ]
+        $setItem: [
+            $description: "
+                This procedure associates in this list the specified item with the specified
+                index.  The updated list is returned.
+            "($mediatype: "application/bsmd")
+            $type: /bali/collections/List/v1
+            $source: {
+                return setItem(target, index, item)
+            }(
+                $index: /bali/elements/Number/v1($range: [0..∞])
+                $item: /bali/abstractions/Component/v1
+            )
+        ]
+        $sortItems: [
+            $description: "
+                This procedure orders the items contained in this list in their
+                natural order by value.  The updated list is returned.
+            "($mediatype: "application/bsmd")
+            $type: /bali/collections/List/v1
+            $source: {
+                return sortItems(target)
+            }
+        ]
+        $shuffleItems: [
+            $description: "
+                This procedure shuffles the items contained in this list into a random order.
+                The updated list is returned.
+            "($mediatype: "application/bsmd")
+            $type: /bali/collections/List/v1
+            $source: {
+                return shuffleItems(target)
+            }
+        ]
+        $size: [
+            $description: "
+                This procedure returns the number of items contained in this list.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Number/v1($range: [0..∞])
+            $source: {
+                return size(target)
+            }
+        ]
+    ]
+](
+    $name: /bali/collections/List/v1
+    $type: /bali/types/Class/v1($existence: $concrete)
+    $tag: #MK7A2JDNQHGYPB8QW8K40LC5PQ29G48K
+    $version: v1
+    $permissions: /bali/permissions/public/v1
+    $previous: none
+)

@@ -7,7 +7,6 @@
     $parameters: [:]
     $constants: [:]
     $procedures: [:]
-    $literals: []
 ](
     $name: /bali/abstractions/Element/v1
     $type: /bali/types/Class/v1($existence: $abstract)
