@@ -25,7 +25,7 @@
             $description: "
                 A reference to the parent type from which this type inherits its behavior.
             "($mediatype: "application/bsmd")
-            $type: /bali/elements/Reference/v1($referencedType: /bali/types/Type/v1($existence: $abstract))
+            $type: /bali/elements/Name/v1($referencedType: /bali/types/Type/v1($existence: $abstract))
         ]
         $parameters: [
             $description: "

@@ -41,6 +41,99 @@
             ]($type: /bali/collections/Set/v1)
             $messages: []($type: /bali/collections/Set/v1)
         ]
+        $addItems: [
+            $description: "
+                This procedure attempts to add the specified sequence of associations to this
+                catalog.  The updated catalog is returned.
+            "($mediatype: "application/bsmd")
+            $type: /bali/abstractions/Collection/v1
+            $source: {
+                return addItems(target, associations)
+            }($associations: /bali/interfaces/Sequential/v1)
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                PUSH PARAMETER $associations
+                INVOKE $addItems WITH 2 ARGUMENTS
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '60013801B002E000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $parameters: [
+                $associations
+            ]
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: []($type: /bali/collections/Set/v1)
+        ]
+        $containsAll: [
+            $description: "
+                This procedure determines whether or not this catalog contains all of the
+                specified associations.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Probability/v1($granularity: $boolean)
+            $source: {
+                return containsAll(target, associations)
+            }($associations: /bali/interfaces/Sequential/v1)
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                PUSH PARAMETER $associations
+                INVOKE $containsAll WITH 2 ARGUMENTS
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '60013801B01BE000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $parameters: [
+                $associations
+            ]
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: []($type: /bali/collections/Set/v1)
+        ]
+        $containsAny: [
+            $description: "
+                This procedure determines whether or not this catalog contains any of the
+                specified associations.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Probability/v1($granularity: $boolean)
+            $source: {
+                return containsAny(target, associations)
+            }($associations: /bali/interfaces/Sequential/v1)
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                PUSH PARAMETER $associations
+                INVOKE $containsAny WITH 2 ARGUMENTS
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '60013801B01CE000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $parameters: [
+                $associations
+            ]
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: []($type: /bali/collections/Set/v1)
+        ]
         $containsItem: [
             $description: "
                 This procedure determines whether or not this catalog contains the specified
@@ -72,6 +165,64 @@
             ]($type: /bali/collections/Set/v1)
             $messages: []($type: /bali/collections/Set/v1)
         ]
+        $index: [
+            $description: "
+                This procedure returns the index of the specified association from this catalog,
+                or 0 if it is not found.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Number/v1($range: [0..∞])
+            $source: {
+                return index(target, association)
+            }($association: /bali/composites/Association/v1)
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                PUSH PARAMETER $association
+                INVOKE $index WITH 2 ARGUMENTS
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '60013801B033E000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $parameters: [
+                $association
+            ]
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: []($type: /bali/collections/Set/v1)
+        ]
+        $isEmpty: [
+            $description: "
+                This procedure determines whether or not this catalog is empty.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Probability/v1($granularity: $boolean)
+            $source: {
+                return isEmpty(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                INVOKE $isEmpty WITH 1 ARGUMENT
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '6001A838E000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $parameters: []
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: []($type: /bali/collections/Set/v1)
+        ]
         $item: [
             $description: "
                 This procedure returns from this catalog the association corresponding to the
@@ -97,6 +248,37 @@
             ]
             $parameters: [
                 $index
+            ]
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: []($type: /bali/collections/Set/v1)
+        ]
+        $items: [
+            $description: "
+                This procedure returns from this catalog the subset of associations in the
+                specified range.
+            "($mediatype: "application/bsmd")
+            $type: /bali/abstractions/Component/v1
+            $source: {
+                return items(target, range)
+            }($range: /bali/collections/Range/v1)
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                PUSH PARAMETER $range
+                INVOKE $items WITH 2 ARGUMENTS
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '60013801B041E000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $parameters: [
+                $range
             ]
             $variables: [
                 $target

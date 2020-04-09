@@ -2,7 +2,7 @@
     $description: "
         This abstract class defines the procedures for the messages that all components support.
     "($mediatype: "application/bsmd")
-    $parent: none
+    $parent: /bali/abstractions/Component/v1
     $parameters: [:]
     $constants: [:]
     $procedures: [

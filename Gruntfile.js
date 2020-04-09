@@ -23,13 +23,22 @@ module.exports = function(grunt) {
 
     // grunt-mocha-test plugin configuration (unit testing)
     mochaTest: {
+      clean: {
+        options: {
+          reporter: 'spec',
+          timeout: 20000
+        },
+        src: [
+          'test/TestClean.js'
+        ]
+      },
       test: {
         options: {
           reporter: 'spec',
           timeout: 20000
         },
         src: [
-          'test/*.js'
+          'test/TestCompilation.js'
         ]
       }
     }
@@ -39,7 +48,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-eslint');
   grunt.loadNpmTasks('grunt-mocha-test');
 
-  grunt.registerTask('build', 'Build the module.', ['eslint', 'mochaTest']);
+  grunt.registerTask('clean', 'Clean the sources.', ['eslint', 'mochaTest:clean']);
+  grunt.registerTask('build', 'Build the module.', ['eslint', 'mochaTest:test']);
   grunt.registerTask('default', 'Default targets.', ['build']);
 
 };

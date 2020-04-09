@@ -12,8 +12,8 @@
     $procedures: [
         $addItem: [
             $description: "
-                This procedure attempts to add the specified item to this collection.  The return
-                value indicates whether or not the item was successfully added.
+                This procedure attempts to add the specified item to this collection.  The updated
+                collection is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Collection/v1
             $source: {
@@ -66,7 +66,7 @@
         $addItems: [
             $description: "
                 This procedure attempts to add the specified sequence of items to this collection.
-                The return value indicates the number of item that were successfully added.
+                The updated collection is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Collection/v1
             $source: {
