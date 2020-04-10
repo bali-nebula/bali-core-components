@@ -49,13 +49,9 @@
                 3.1.2.EvaluateStatement:
                 LOAD VARIABLE $current
                 PUSH LITERAL `$parent`
-                STORE VARIABLE $$index-1
-                INVOKE $list
-                LOAD VARIABLE $$index-1
-                INVOKE $addItem WITH 2 ARGUMENTS
-                SEND $subcomponent TO COMPONENT WITH ARGUMENTS
-                STORE VARIABLE $$location-2
-                LOAD DOCUMENT $$location-2
+                INVOKE $subcomponent WITH 2 ARGUMENTS
+                STORE VARIABLE $$location-1
+                LOAD DOCUMENT $$location-1
                 STORE VARIABLE $current
                 
                 3.ConditionRepeat:
@@ -69,8 +65,8 @@
                 HANDLE RESULT
             "($mediatype: "application/basm")
             $bytecode: '
-                A04980016006A883800200006002181A6001A0496002B001C80180056002
-                28018003A0496003B001C802800478048002000700006001E000
+                A04980016005A88580020000600218166001A0496002B001C80180046002
+                2801B07A800378038002000700006001E000
             '(
                 $encoding: $base16
                 $mediatype: "application/bcod"
@@ -82,22 +78,20 @@
                 "3.1.ConditionClause": 7
                 "3.1.1.EvaluateStatement": 9
                 "3.1.2.EvaluateStatement": 15
-                "3.ConditionRepeat": 25
-                "3.WhileStatementDone": 26
-                "4.ReturnStatement": 27
+                "3.ConditionRepeat": 21
+                "3.WhileStatementDone": 22
+                "4.ReturnStatement": 23
             ]
             $parameters: []
             $variables: [
                 $ancestry
                 $current
-                $$index-1
-                $$location-2
+                $$location-1
                 $$result
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [
                 $addItem
-                $subcomponent
             ]($type: /bali/collections/Set/v1)
         ]
         $isA: [
@@ -148,13 +142,9 @@
                 2.1.2.EvaluateStatement:
                 LOAD VARIABLE $current
                 PUSH LITERAL `$parent`
-                STORE VARIABLE $$index-1
-                INVOKE $list
-                LOAD VARIABLE $$index-1
-                INVOKE $addItem WITH 2 ARGUMENTS
-                SEND $subcomponent TO COMPONENT WITH ARGUMENTS
-                STORE VARIABLE $$location-2
-                LOAD DOCUMENT $$location-2
+                INVOKE $subcomponent WITH 2 ARGUMENTS
+                STORE VARIABLE $$location-1
+                LOAD DOCUMENT $$location-1
                 STORE VARIABLE $current
                 
                 2.ConditionRepeat:
@@ -168,8 +158,8 @@
                 HANDLE RESULT
             "($mediatype: "application/basm")
             $bytecode: '
-                6004A883800100006001181A000060013801B008180E2802E00000006001
-                28018002A0496002B001C801800378038001000500002803E000
+                6003A8858001000060011816000060013801B008180E2802E00000006001
+                2801B07A800278028001000500002803E000
             '(
                 $encoding: $base16
                 $mediatype: "application/bcod"
@@ -183,22 +173,19 @@
                 "2.1.1.1.1.ReturnStatement": 12
                 "2.1.1.IfStatementDone": 14
                 "2.1.2.EvaluateStatement": 15
-                "2.ConditionRepeat": 25
-                "2.WhileStatementDone": 26
-                "3.ReturnStatement": 27
+                "2.ConditionRepeat": 21
+                "2.WhileStatementDone": 22
+                "3.ReturnStatement": 23
             ]
             $parameters: [
                 $type
             ]
             $variables: [
                 $current
-                $$index-1
-                $$location-2
+                $$location-1
                 $target
             ]($type: /bali/collections/Set/v1)
-            $messages: [
-                $subcomponent
-            ]($type: /bali/collections/Set/v1)
+            $messages: []($type: /bali/collections/Set/v1)
         ]
         $isParameterized: [
             $description: "
@@ -303,7 +290,7 @@
                 INVOKE $type WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A883E000'(
+            $bytecode: '6001A885E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )

@@ -477,7 +477,7 @@
                 INVOKE $setValue WITH 3 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '600138013802B872E000'(
+            $bytecode: '600138013802B873E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -508,7 +508,7 @@
                 INVOKE $sortItems WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A876E000'(
+            $bytecode: '6001A877E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -535,7 +535,7 @@
                 INVOKE $size WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A875E000'(
+            $bytecode: '6001A876E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -564,7 +564,7 @@
                 INVOKE $value WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '60013801B084E000'(
+            $bytecode: '60013801B086E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -595,7 +595,7 @@
                 INVOKE $values WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '60013801B085E000'(
+            $bytecode: '60013801B087E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
