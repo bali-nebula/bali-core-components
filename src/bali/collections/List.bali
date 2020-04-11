@@ -522,7 +522,7 @@
                 INVOKE $setItem WITH 3 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '600138013802B872E000'(
+            $bytecode: '600138013802B871E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
