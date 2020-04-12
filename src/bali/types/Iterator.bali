@@ -3,7 +3,7 @@
         This abstract class defines the procedures for the messages that all iterator components
         support.
     "($mediatype: "application/bsmd")
-    $parent: /bali/abstractions/Component/v1
+    $parent: /bali/types/Component/v1
     $parameters: [:]
     $constants: [:]
     $procedures: [
@@ -15,7 +15,7 @@
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $source: {
                 throw [
-                    $module: /bali/abstractions/Iterator
+                    $module: /bali/types/Iterator
                     $procedure: $hasNext
                     $exception: $abstractMethod
                     $text: "An abstract method must be implemented by a subclass."
@@ -25,7 +25,7 @@
                 1.ThrowStatement:
                 INVOKE $catalog
                 PUSH LITERAL `$module`
-                PUSH LITERAL `/bali/abstractions/Iterator`
+                PUSH LITERAL `/bali/types/Iterator`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 PUSH LITERAL `$procedure`
@@ -66,7 +66,7 @@
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $source: {
                 throw [
-                    $module: /bali/abstractions/Iterator
+                    $module: /bali/types/Iterator
                     $procedure: $hasPrevious
                     $exception: $abstractMethod
                     $text: "An abstract method must be implemented by a subclass."
@@ -76,7 +76,7 @@
                 1.ThrowStatement:
                 INVOKE $catalog
                 PUSH LITERAL `$module`
-                PUSH LITERAL `/bali/abstractions/Iterator`
+                PUSH LITERAL `/bali/types/Iterator`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 PUSH LITERAL `$procedure`
@@ -114,10 +114,10 @@
                 This procedure retrieves the next item in the sequence that this iterator
                 refers to.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Component/v1
+            $type: /bali/types/Component/v1
             $source: {
                 throw [
-                    $module: /bali/abstractions/Iterator
+                    $module: /bali/types/Iterator
                     $procedure: $next
                     $exception: $abstractMethod
                     $text: "An abstract method must be implemented by a subclass."
@@ -127,7 +127,7 @@
                 1.ThrowStatement:
                 INVOKE $catalog
                 PUSH LITERAL `$module`
-                PUSH LITERAL `/bali/abstractions/Iterator`
+                PUSH LITERAL `/bali/types/Iterator`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 PUSH LITERAL `$procedure`
@@ -165,10 +165,10 @@
                 This procedure retrieves the previous item in the sequence that this iterator
                 refers to.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Component/v1
+            $type: /bali/types/Component/v1
             $source: {
                 throw [
-                    $module: /bali/abstractions/Iterator
+                    $module: /bali/types/Iterator
                     $procedure: $previous
                     $exception: $abstractMethod
                     $text: "An abstract method must be implemented by a subclass."
@@ -178,7 +178,7 @@
                 1.ThrowStatement:
                 INVOKE $catalog
                 PUSH LITERAL `$module`
-                PUSH LITERAL `/bali/abstractions/Iterator`
+                PUSH LITERAL `/bali/types/Iterator`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 PUSH LITERAL `$procedure`
@@ -216,10 +216,10 @@
                 This procedure moves this iterator to the slot following the last item in the
                 sequence that this iterator refers to.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Component/v1
+            $type: /bali/types/Component/v1
             $source: {
                 throw [
-                    $module: /bali/abstractions/Iterator
+                    $module: /bali/types/Iterator
                     $procedure: $toEnd
                     $exception: $abstractMethod
                     $text: "An abstract method must be implemented by a subclass."
@@ -229,7 +229,7 @@
                 1.ThrowStatement:
                 INVOKE $catalog
                 PUSH LITERAL `$module`
-                PUSH LITERAL `/bali/abstractions/Iterator`
+                PUSH LITERAL `/bali/types/Iterator`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 PUSH LITERAL `$procedure`
@@ -267,10 +267,10 @@
                 This procedure moves this iterator to the specified slot in the sequence that
                 this iterator refers to.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Component/v1
+            $type: /bali/types/Component/v1
             $source: {
                 throw [
-                    $module: /bali/abstractions/Iterator
+                    $module: /bali/types/Iterator
                     $procedure: $toSlot
                     $exception: $abstractMethod
                     $text: "An abstract method must be implemented by a subclass."
@@ -280,7 +280,7 @@
                 1.ThrowStatement:
                 INVOKE $catalog
                 PUSH LITERAL `$module`
-                PUSH LITERAL `/bali/abstractions/Iterator`
+                PUSH LITERAL `/bali/types/Iterator`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 PUSH LITERAL `$procedure`
@@ -320,10 +320,10 @@
                 This procedure moves this iterator to the slot preceding the first item in the
                 sequence that this iterator refers to.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Component/v1
+            $type: /bali/types/Component/v1
             $source: {
                 throw [
-                    $module: /bali/abstractions/Iterator
+                    $module: /bali/types/Iterator
                     $procedure: $toStart
                     $exception: $abstractMethod
                     $text: "An abstract method must be implemented by a subclass."
@@ -333,7 +333,7 @@
                 1.ThrowStatement:
                 INVOKE $catalog
                 PUSH LITERAL `$module`
-                PUSH LITERAL `/bali/abstractions/Iterator`
+                PUSH LITERAL `/bali/types/Iterator`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 PUSH LITERAL `$procedure`
@@ -369,7 +369,7 @@
     ]
     $literals: [
         $module
-        /bali/abstractions/Iterator
+        /bali/types/Iterator
         $procedure
         $hasNext
         $exception
@@ -384,7 +384,7 @@
         $toStart
     ]
 ](
-    $name: /bali/abstractions/Composite/v1
+    $name: /bali/types/Composite/v1
     $type: /bali/types/Class/v1($existence: $abstract)
     $tag: #XLWZBR7XA25FKLVS1P5DFW4ZLPJQC65F
     $version: v1

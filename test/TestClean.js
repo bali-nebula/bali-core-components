@@ -45,7 +45,7 @@ describe('Bali Nebula™ Type Compilation', function() {
         });
 
         it('should clean the abstract types', async function() {
-            const folder = './src/bali/abstractions/';
+            const folder = './src/bali/types/';
             const files = await pfs.readdir(folder);
             for (var i = 0; i < files.length; i++) {
                 var file = files[i];

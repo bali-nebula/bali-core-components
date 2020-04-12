@@ -3,7 +3,7 @@
         This abstract class defines the procedures for the messages that all composite components
         support.
     "($mediatype: "application/bsmd")
-    $parent: /bali/abstractions/Component/v1
+    $parent: /bali/types/Component/v1
     $parameters: [:]
     $constants: [:]
     $interfaces: []
@@ -12,20 +12,20 @@
             $description: "
                 This procedure retrieves the subcomponent associated with the specified index.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Component/v1
+            $type: /bali/types/Component/v1
             $source: {
                 throw [
-                    $module: /bali/abstractions/Composite
+                    $module: /bali/types/Composite
                     $procedure: $subcomponent
                     $exception: $abstractMethod
                     $text: "An abstract method must be implemented by a subclass."
                 ]
-            }($index: /bali/abstractions/Element/v1)
+            }($index: /bali/types/Element/v1)
             $instructions: "
                 1.ThrowStatement:
                 INVOKE $catalog
                 PUSH LITERAL `$module`
-                PUSH LITERAL `/bali/abstractions/Composite`
+                PUSH LITERAL `/bali/types/Composite`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 PUSH LITERAL `$procedure`
@@ -68,20 +68,20 @@
             $type: none
             $source: {
                 throw [
-                    $module: /bali/abstractions/Composite
+                    $module: /bali/types/Composite
                     $procedure: $subcomponent
                     $exception: $abstractMethod
                     $text: "An abstract method must be implemented by a subclass."
                 ]
             }(
-                $index: /bali/abstractions/Element/v1
-                $value: /bali/abstractions/Component/v1
+                $index: /bali/types/Element/v1
+                $value: /bali/types/Component/v1
             )
             $instructions: "
                 1.ThrowStatement:
                 INVOKE $catalog
                 PUSH LITERAL `$module`
-                PUSH LITERAL `/bali/abstractions/Composite`
+                PUSH LITERAL `/bali/types/Composite`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 PUSH LITERAL `$procedure`
@@ -120,7 +120,7 @@
     ]
     $literals: [
         $module
-        /bali/abstractions/Composite
+        /bali/types/Composite
         $procedure
         $subcomponent
         $exception
@@ -129,7 +129,7 @@
         "An abstract method must be implemented by a subclass."
     ]
 ](
-    $name: /bali/abstractions/Composite/v1
+    $name: /bali/types/Composite/v1
     $type: /bali/types/Primitive/v1($existence: $abstract)
     $tag: #XLWZBR7XA25FKLVS1P5DFW4ZLPJQC65F
     $version: v1

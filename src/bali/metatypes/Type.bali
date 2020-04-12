@@ -2,7 +2,7 @@
     $description: "
         This abstract structure defines the attributes and messages that all types support.
     "($mediatype: "application/bsmd")
-    $parent: /bali/abstractions/Component/v1
+    $parent: /bali/types/Component/v1
     $parameters: [
         $existence: [
             $description: "
@@ -37,7 +37,7 @@
             $description: "
                 A catalog of the constants that are used within the type definition.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Catalog/v1($valueType: /bali/abstractions/Element/v1)
+            $type: /bali/collections/Catalog/v1($valueType: /bali/types/Element/v1)
         ]
     ]
 ](

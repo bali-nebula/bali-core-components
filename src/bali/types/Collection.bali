@@ -3,7 +3,7 @@
         This abstract class defines the procedures for the messages that all collection components
         support.
     "($mediatype: "application/bsmd")
-    $parent: /bali/abstractions/Component/v1
+    $parent: /bali/types/Component/v1
     $parameters: [:]
     $constants: [:]
     $interfaces: [
@@ -15,20 +15,20 @@
                 This procedure attempts to add the specified item to this collection.  The updated
                 collection is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Collection/v1
+            $type: /bali/types/Collection/v1
             $source: {
                 throw [
-                    $module: /bali/abstractions/Collection
+                    $module: /bali/types/Collection
                     $procedure: $addItem
                     $exception: $abstractMethod
                     $text: "An abstract method must be implemented by a subclass."
                 ]
-            }($item: /bali/abstractions/Component/v1)
+            }($item: /bali/types/Component/v1)
             $instructions: "
                 1.ThrowStatement:
                 INVOKE $catalog
                 PUSH LITERAL `$module`
-                PUSH LITERAL `/bali/abstractions/Collection`
+                PUSH LITERAL `/bali/types/Collection`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 PUSH LITERAL `$procedure`
@@ -68,7 +68,7 @@
                 This procedure attempts to add the specified sequence of items to this collection.
                 The updated collection is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Collection/v1
+            $type: /bali/types/Collection/v1
             $source: {
                 with each $item in items do {
                     target.addItem(item)
@@ -325,7 +325,7 @@
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $source: {
                 return target.index(item) > 0
-            }($item: /bali/abstractions/Component/v1)
+            }($item: /bali/types/Component/v1)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -369,7 +369,7 @@
                     }
                 }
                 return index
-            }($item: /bali/abstractions/Component/v1)
+            }($item: /bali/types/Component/v1)
             $instructions: "
                 1.EvaluateStatement:
                 PUSH LITERAL `0`
@@ -490,7 +490,7 @@
                 This procedure returns from this collection the item corresponding to the specified
                 index.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Component/v1
+            $type: /bali/types/Component/v1
             $source: {
                 $iterator := target.iterator()
                 iterator.toSlot(index)
@@ -543,7 +543,7 @@
                 This procedure returns from this collection the subset of items in the specified
                 range.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Collection/v1
+            $type: /bali/types/Collection/v1
             $source: {
                 $items := []
                 with each $index in range do {
@@ -627,10 +627,10 @@
                 This procedure returns an iterator that can be used to visit, in order, each item
                 in this collection.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Iterator/v1
+            $type: /bali/types/Iterator/v1
             $source: {
                 throw [
-                    $module: /bali/abstractions/Collection
+                    $module: /bali/types/Collection
                     $procedure: $iterator
                     $exception: $abstractMethod
                     $text: "An abstract method must be implemented by a subclass."
@@ -640,7 +640,7 @@
                 1.ThrowStatement:
                 INVOKE $catalog
                 PUSH LITERAL `$module`
-                PUSH LITERAL `/bali/abstractions/Collection`
+                PUSH LITERAL `/bali/types/Collection`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 PUSH LITERAL `$procedure`
@@ -680,7 +680,7 @@
             $type: /bali/elements/Number/v1($range: [0..∞])
             $source: {
                 throw [
-                    $module: /bali/abstractions/Collection
+                    $module: /bali/types/Collection
                     $procedure: $size
                     $exception: $abstractMethod
                     $text: "An abstract method must be implemented by a subclass."
@@ -690,7 +690,7 @@
                 1.ThrowStatement:
                 INVOKE $catalog
                 PUSH LITERAL `$module`
-                PUSH LITERAL `/bali/abstractions/Collection`
+                PUSH LITERAL `/bali/types/Collection`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 PUSH LITERAL `$procedure`
@@ -726,7 +726,7 @@
     ]
     $literals: [
         $module
-        /bali/abstractions/Collection
+        /bali/types/Collection
         $procedure
         $addItem
         $exception
@@ -739,7 +739,7 @@
         $size
     ]
 ](
-    $name: /bali/abstractions/Collection/v1
+    $name: /bali/types/Collection/v1
     $type: /bali/types/Primitive/v1($existence: $abstract)
     $tag: #69KMNPGSBDXWLBATY5PR9GSNM9MV7GV2
     $version: v1

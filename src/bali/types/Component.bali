@@ -2,7 +2,7 @@
     $description: "
         This abstract class defines the procedures for the messages that all components support.
     "($mediatype: "application/bsmd")
-    $parent: /bali/abstractions/Component/v1
+    $parent: /bali/types/Component/v1
     $parameters: [:]
     $constants: [:]
     $procedures: [
@@ -219,7 +219,7 @@
                 This procedure returns a catalog of any parameters that were used to parameterize
                 this component.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Element/v1
+            $type: /bali/types/Element/v1
             $source: {
                 return parameter(target, key)
             }($key: /bali/elements/Symbol/v1)
@@ -252,7 +252,7 @@
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
                 $keyType: /bali/elements/Symbol/v1
-                $valueType: /bali/abstractions/Element/v1
+                $valueType: /bali/types/Element/v1
             )
             $source: {
                 return parameters(target)
@@ -310,7 +310,7 @@
         false
     ]
 ](
-    $name: /bali/abstractions/Component/v1
+    $name: /bali/types/Component/v1
     $type: /bali/types/Primitive/v1($existence: $abstract)
     $tag: #GC5TG7QPT80BM6243Z15SKR0NB59KD94
     $version: v1

@@ -2,7 +2,7 @@
     $description: "
         This class defines the procedures for the messages that catalog components support.
     "($mediatype: "application/bsmd")
-    $parent: /bali/abstractions/Collection/v1
+    $parent: /bali/types/Collection/v1
     $parameters: [:]
     $constants: [:]
     $interfaces: [
@@ -46,7 +46,7 @@
                 This procedure attempts to add the specified sequence of associations to this
                 catalog.  The updated catalog is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Collection/v1
+            $type: /bali/types/Collection/v1
             $source: {
                 return addItems(target, associations)
             }($associations: /bali/interfaces/Sequential/v1)
@@ -290,7 +290,7 @@
                 This procedure returns an iterator that can be used to visit, in order, each
                 association in this catalog.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Iterator/v1
+            $type: /bali/types/Iterator/v1
             $source: {
                 return iterator(target)
             }
@@ -373,10 +373,10 @@
                 This procedure removes from this catalog the value associated with the specified
                 key.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Component/v1
+            $type: /bali/types/Component/v1
             $source: {
                 return removeValue(target, key)
-            }($key: /bali/abstractions/Element/v1)
+            }($key: /bali/types/Element/v1)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -466,8 +466,8 @@
             $source: {
                 return setValue(target, key, value)
             }(
-                $key: /bali/abstractions/Element/v1
-                $value: /bali/abstractions/Component/v1
+                $key: /bali/types/Element/v1
+                $value: /bali/types/Component/v1
             )
             $instructions: "
                 1.ReturnStatement:
@@ -553,10 +553,10 @@
                 This procedure returns from this catalog the value corresponding to the
                 specified key.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Component/v1
+            $type: /bali/types/Component/v1
             $source: {
                 return value(target, key)
-            }($key: /bali/abstractions/Element/v1)
+            }($key: /bali/types/Element/v1)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target

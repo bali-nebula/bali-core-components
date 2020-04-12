@@ -3,14 +3,14 @@
         This abstract class defines the procedures for the messages that all elemental components
         support.
     "($mediatype: "application/bsmd")
-    $parent: /bali/abstractions/Component/v1
+    $parent: /bali/types/Component/v1
     $parameters: [:]
     $constants: [:]
     $interfaces: [:]
     $procedures: [:]
     $literals: []
 ](
-    $name: /bali/abstractions/Element/v1
+    $name: /bali/types/Element/v1
     $type: /bali/types/Primitive/v1($existence: $abstract)
     $tag: #3HX8AFPGP3N98J875TV7NNDFSBF7XRJH
     $version: v1

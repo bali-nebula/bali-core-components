@@ -3,7 +3,7 @@
         This interface defines the messages that all components that are a sequence of
         items.
     "($mediatype: "application/bsmd")
-    $parent: /bali/abstractions/Component/v1
+    $parent: /bali/types/Component/v1
     $parameters: [
         $itemType: [
             $description: "
@@ -19,7 +19,7 @@
                 This message causes the target component to return an iterator component
                 that can be used to iterate over the items that make up the sequence.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Iterator/v1($itemType: $itemType)
+            $type: /bali/types/Iterator/v1($itemType: $itemType)
         ]
         $size: [
             $description: "

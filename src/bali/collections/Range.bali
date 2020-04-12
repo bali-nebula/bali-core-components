@@ -2,7 +2,7 @@
     $description: "
         This class defines the procedures for the messages that range components support.
     "($mediatype: "application/bsmd")
-    $parent: /bali/abstractions/Collection/v1
+    $parent: /bali/types/Collection/v1
     $parameters: [:]
     $constants: [:]
     $interfaces: []
@@ -19,7 +19,7 @@
                     $exception: $invalidMethod
                     $text: "Items cannot be added to a range."
                 ]
-            }($item: /bali/abstractions/Component/v1)
+            }($item: /bali/types/Component/v1)
             $instructions: "
                 1.ThrowStatement:
                 INVOKE $catalog
@@ -63,7 +63,7 @@
             $description: "
                 This procedure attempts to add the specified sequence of items to this range.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Collection/v1
+            $type: /bali/types/Collection/v1
             $source: {
                 throw [
                     $module: /bali/collections/Range/v1
@@ -181,7 +181,7 @@
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $source: {
                 return containsItem(target, item)
-            }($item: /bali/abstractions/Component/v1)
+            }($item: /bali/types/Component/v1)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -208,7 +208,7 @@
             $description: "
                 This procedure returns from this range the first item.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Component/v1
+            $type: /bali/types/Component/v1
             $source: {
                 return first(target)
             }
@@ -239,7 +239,7 @@
             $type: /bali/elements/Number/v1($range: [0..∞])
             $source: {
                 return index(target, item)
-            }($item: /bali/abstractions/Component/v1)
+            }($item: /bali/types/Component/v1)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -294,7 +294,7 @@
                 This procedure returns from this range the item corresponding to the
                 specified index.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Component/v1
+            $type: /bali/types/Component/v1
             $source: {
                 return item(target, index)
             }($index: /bali/elements/Number/v1($range: [0..∞]))
@@ -356,7 +356,7 @@
                 This procedure returns an iterator that can be used to visit, in order, each
                 item in this range.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Iterator/v1
+            $type: /bali/types/Iterator/v1
             $source: {
                 return iterator(target)
             }
@@ -383,7 +383,7 @@
             $description: "
                 This procedure returns from this range the last item.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Component/v1
+            $type: /bali/types/Component/v1
             $source: {
                 return last(target)
             }
