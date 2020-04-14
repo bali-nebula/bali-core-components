@@ -420,7 +420,7 @@
             $type: /bali/types/Component/v1
             $source: {
                 return removeItem(target, index)
-            }($index: /bali/elements/Number/v1($range: [0..∞]))
+            }($index: /bali/elements/Number/v1($range: [1..∞]))
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target

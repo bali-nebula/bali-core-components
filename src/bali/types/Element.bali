@@ -6,7 +6,9 @@
     $parent: /bali/types/Component/v1
     $parameters: [:]
     $constants: [:]
-    $interfaces: [:]
+    $interfaces: [
+        /bali/interfaces/Literal/v1
+    ]
     $procedures: [:]
     $literals: []
 ](
