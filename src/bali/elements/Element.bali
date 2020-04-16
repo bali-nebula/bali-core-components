@@ -10,7 +10,6 @@
         /bali/interfaces/Literal/v1
     ]
     $procedures: [:]
-    $literals: []
 ](
     $name: /bali/types/Element/v1
     $type: /bali/types/Primitive/v1($existence: $abstract)

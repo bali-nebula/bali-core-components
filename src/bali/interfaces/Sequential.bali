@@ -26,7 +26,7 @@
                 This message causes the target component to return the number of items that
                 are in the sequence.
             "($mediatype: "application/bsmd")
-            $type: /bali/elements/Number/v1($range: [0..∞])
+            $type: /bali/elements/Number/v1($range: 0..)
         ]
         $isEmpty: [
             $description: "

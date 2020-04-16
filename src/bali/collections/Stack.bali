@@ -5,7 +5,7 @@
     $parent: /bali/types/Collection/v1
     $parameters: [:]
     $constants: [:]
-    $interfaces: []
+    $interfaces: [ ]
     $procedures: [
         $addItem: [
             $description: "
@@ -16,27 +16,6 @@
             $source: {
                 return addItem(target, item)
             }($item: /bali/types/Component/v1)
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $target
-                PUSH PARAMETER $item
-                INVOKE $addItem WITH 2 ARGUMENTS
-                HANDLE RESULT
-            "($mediatype: "application/basm")
-            $bytecode: '60013801B001E000'(
-                $encoding: $base16
-                $mediatype: "application/bcod"
-            )
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $parameters: [
-                $item
-            ]
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
-            $messages: []($type: /bali/collections/Set/v1)
         ]
         $addItems: [
             $description: "
@@ -47,27 +26,6 @@
             $source: {
                 return addItems(target, items)
             }($items: /bali/interfaces/Sequential/v1)
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $target
-                PUSH PARAMETER $items
-                INVOKE $addItems WITH 2 ARGUMENTS
-                HANDLE RESULT
-            "($mediatype: "application/basm")
-            $bytecode: '60013801B002E000'(
-                $encoding: $base16
-                $mediatype: "application/bcod"
-            )
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $parameters: [
-                $items
-            ]
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
-            $messages: []($type: /bali/collections/Set/v1)
         ]
         $containsAll: [
             $description: "
@@ -78,27 +36,6 @@
             $source: {
                 return containsAll(target, items)
             }($items: /bali/interfaces/Sequential/v1)
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $target
-                PUSH PARAMETER $items
-                INVOKE $containsAll WITH 2 ARGUMENTS
-                HANDLE RESULT
-            "($mediatype: "application/basm")
-            $bytecode: '60013801B01BE000'(
-                $encoding: $base16
-                $mediatype: "application/bcod"
-            )
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $parameters: [
-                $items
-            ]
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
-            $messages: []($type: /bali/collections/Set/v1)
         ]
         $containsAny: [
             $description: "
@@ -109,27 +46,6 @@
             $source: {
                 return containsAny(target, items)
             }($items: /bali/interfaces/Sequential/v1)
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $target
-                PUSH PARAMETER $items
-                INVOKE $containsAny WITH 2 ARGUMENTS
-                HANDLE RESULT
-            "($mediatype: "application/basm")
-            $bytecode: '60013801B01CE000'(
-                $encoding: $base16
-                $mediatype: "application/bcod"
-            )
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $parameters: [
-                $items
-            ]
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
-            $messages: []($type: /bali/collections/Set/v1)
         ]
         $containsItem: [
             $description: "
@@ -140,58 +56,16 @@
             $source: {
                 return containsItem(target, item)
             }($item: /bali/types/Component/v1)
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $target
-                PUSH PARAMETER $item
-                INVOKE $containsItem WITH 2 ARGUMENTS
-                HANDLE RESULT
-            "($mediatype: "application/basm")
-            $bytecode: '60013801B01DE000'(
-                $encoding: $base16
-                $mediatype: "application/bcod"
-            )
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $parameters: [
-                $item
-            ]
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
-            $messages: []($type: /bali/collections/Set/v1)
         ]
         $index: [
             $description: "
                 This procedure returns the index of the specified item from this stack,
                 or 0 if it is not found.
             "($mediatype: "application/bsmd")
-            $type: /bali/elements/Number/v1($range: [0..∞])
+            $type: /bali/elements/Number/v1($range: 0..)
             $source: {
                 return index(target, item)
             }($item: /bali/types/Component/v1)
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $target
-                PUSH PARAMETER $item
-                INVOKE $index WITH 2 ARGUMENTS
-                HANDLE RESULT
-            "($mediatype: "application/basm")
-            $bytecode: '60013801B033E000'(
-                $encoding: $base16
-                $mediatype: "application/bcod"
-            )
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $parameters: [
-                $item
-            ]
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
-            $messages: []($type: /bali/collections/Set/v1)
         ]
         $isEmpty: [
             $description: "
@@ -201,24 +75,6 @@
             $source: {
                 return isEmpty(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $target
-                INVOKE $isEmpty WITH 1 ARGUMENT
-                HANDLE RESULT
-            "($mediatype: "application/basm")
-            $bytecode: '6001A838E000'(
-                $encoding: $base16
-                $mediatype: "application/bcod"
-            )
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $parameters: []
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
-            $messages: []($type: /bali/collections/Set/v1)
         ]
         $item: [
             $description: "
@@ -228,28 +84,7 @@
             $type: /bali/types/Component/v1
             $source: {
                 return item(target, index)
-            }($index: /bali/elements/Number/v1($range: [0..∞]))
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $target
-                PUSH PARAMETER $index
-                INVOKE $item WITH 2 ARGUMENTS
-                HANDLE RESULT
-            "($mediatype: "application/basm")
-            $bytecode: '60013801B040E000'(
-                $encoding: $base16
-                $mediatype: "application/bcod"
-            )
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $parameters: [
-                $index
-            ]
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
-            $messages: []($type: /bali/collections/Set/v1)
+            }($index: /bali/elements/Number/v1($range: 0..))
         ]
         $items: [
             $description: "
@@ -260,27 +95,6 @@
             $source: {
                 return items(target, range)
             }($range: /bali/collections/Range/v1)
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $target
-                PUSH PARAMETER $range
-                INVOKE $items WITH 2 ARGUMENTS
-                HANDLE RESULT
-            "($mediatype: "application/basm")
-            $bytecode: '60013801B041E000'(
-                $encoding: $base16
-                $mediatype: "application/bcod"
-            )
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $parameters: [
-                $range
-            ]
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
-            $messages: []($type: /bali/collections/Set/v1)
         ]
         $iterator: [
             $description: "
@@ -291,24 +105,6 @@
             $source: {
                 return iterator(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $target
-                INVOKE $iterator WITH 1 ARGUMENT
-                HANDLE RESULT
-            "($mediatype: "application/basm")
-            $bytecode: '6001A842E000'(
-                $encoding: $base16
-                $mediatype: "application/bcod"
-            )
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $parameters: []
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
-            $messages: []($type: /bali/collections/Set/v1)
         ]
         $removeAll: [
             $description: "
@@ -318,24 +114,6 @@
             $source: {
                 return removeAll(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $target
-                INVOKE $removeAll WITH 1 ARGUMENT
-                HANDLE RESULT
-            "($mediatype: "application/basm")
-            $bytecode: '6001A863E000'(
-                $encoding: $base16
-                $mediatype: "application/bcod"
-            )
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $parameters: []
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
-            $messages: []($type: /bali/collections/Set/v1)
         ]
         $removeItem: [
             $description: "
@@ -345,51 +123,15 @@
             $source: {
                 return removeItem(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $target
-                INVOKE $removeItem WITH 1 ARGUMENT
-                HANDLE RESULT
-            "($mediatype: "application/basm")
-            $bytecode: '6001A866E000'(
-                $encoding: $base16
-                $mediatype: "application/bcod"
-            )
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $parameters: []
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
-            $messages: []($type: /bali/collections/Set/v1)
         ]
         $size: [
             $description: "
                 This procedure returns the number of items contained in this stack.
             "($mediatype: "application/bsmd")
-            $type: /bali/elements/Number/v1($range: [0..∞])
+            $type: /bali/elements/Number/v1($range: 0..)
             $source: {
                 return size(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $target
-                INVOKE $size WITH 1 ARGUMENT
-                HANDLE RESULT
-            "($mediatype: "application/basm")
-            $bytecode: '6001A876E000'(
-                $encoding: $base16
-                $mediatype: "application/bcod"
-            )
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $parameters: []
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
-            $messages: []($type: /bali/collections/Set/v1)
         ]
         $top: [
             $description: "
@@ -399,27 +141,8 @@
             $source: {
                 return top(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $target
-                INVOKE $top WITH 1 ARGUMENT
-                HANDLE RESULT
-            "($mediatype: "application/basm")
-            $bytecode: '6001A881E000'(
-                $encoding: $base16
-                $mediatype: "application/bcod"
-            )
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $parameters: []
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
-            $messages: []($type: /bali/collections/Set/v1)
         ]
     ]
-    $literals: []
 ](
     $name: /bali/collections/Stack/v1
     $type: /bali/types/Primitive/v1($existence: $concrete)

@@ -1,13 +1,13 @@
 [
     $description: "
-        This abstract structure defines the attributes and messages that all types support.
+        This abstract composite type defines the attributes that all type components support.
     "($mediatype: "application/bsmd")
     $parent: /bali/types/Component/v1
     $parameters: [
         $existence: [
             $description: "
-                This parameter describes whether this type is concrete and can be instantiated
-                or if it is abstract and cannot.
+                This parameter specifies whether or not this type is abstract. An abstract type
+                cannot be instantiated whereas a concrete type can be.
             "($mediatype: "application/bsmd")
             $type: /bali/enumerations/Existence/v1
             $default: $concrete
@@ -17,15 +17,15 @@
     $attributes: [
         $description: [
             $description: "
-                This attribute describes the purpose for a component.
+                This attribute describes the purpose of the component type.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Text/v1($mediatype: /bali/elements/Text/v1)
         ]
         $parent: [
             $description: "
-                A reference to the parent type from which this type inherits its behavior.
+                The name of the parent type from which this type inherits its behavior.
             "($mediatype: "application/bsmd")
-            $type: /bali/elements/Name/v1($referencedType: /bali/types/Type/v1($existence: $abstract))
+            $type: /bali/elements/Name/v1
         ]
         $parameters: [
             $description: "
@@ -42,7 +42,7 @@
     ]
 ](
     $name: /bali/types/Type/v1
-    $type: /bali/types/Structure/v1($existence: $abstract)
+    $type: /bali/types/Composite/v1($existence: $abstract)
     $tag: #Z2RZ1550HK9HSW6QVVP6WTAA55P31ZQX
     $version: v1
     $permissions: /bali/permissions/public/v1
