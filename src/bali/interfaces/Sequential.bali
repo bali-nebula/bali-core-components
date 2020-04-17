@@ -5,7 +5,7 @@
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Component/v1
     $parameters: [
-        $itemType: [
+        $ItemType: [
             $description: "
                 This parameter defines the type of items that make up the sequence.
             "($mediatype: "application/bsmd")
@@ -19,7 +19,7 @@
                 This message causes the target component to return an iterator component
                 that can be used to iterate over the items that make up the sequence.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Iterator/v1($itemType: $itemType)
+            $type: /bali/abstractions/Iterator/v1($ItemType: $ItemType)
         ]
         $size: [
             $description: "

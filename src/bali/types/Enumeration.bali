@@ -1,10 +1,19 @@
 [
     $description: "
-        This ...
+        This concrete structure defines the attributes that all enumerated types support.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Type/v1
     $parameters: [:]
     $constants: [:]
+    $attributes: [
+        $values: [
+            $description: "
+                This attribute is a list of the symbol values that make up the possible
+                enumerated values for this type.
+            "($mediatype: "application/bsmd")
+            $type: /bali/collections/Set/v1($ItemType: /bali/elements/Symbol/v1)
+        ]
+    ]
 ](
     $name: /bali/types/Enumeration/v1
     $type: /bali/types/Structure/v1
