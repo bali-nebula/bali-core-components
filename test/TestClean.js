@@ -9,8 +9,7 @@
  ************************************************************************/
 
 const debug = 1;
-const pfs = require('fs').promises;
-const crypto = require('crypto');
+const fs = require('fs');
 const mocha = require('mocha');
 const expect = require('chai').expect;
 const bali = require('bali-component-framework').api(1);
@@ -18,101 +17,32 @@ const compiler = require('bali-type-compiler').api(debug);
 
 
 describe('Bali Nebula™ Type Compilation', function() {
+    const folder = './src/bali/';
+    const directories = fs.readdirSync(folder);
+    for (var i = 0; i < directories.length; i++) {
+        const name = directories[i];
+        const directory = folder + name + '/';
+        describe('Clean the ' + name + ' definitions.', function() {
+            const files = fs.readdirSync(directory);
+            for (var j = 0; j < files.length; j++) {
+                const file = files[j];
+                const prefix = file.split('.').slice(0, 1);
+                it('should clean the ' + prefix + ' name', function() {
 
-    describe('Clean the types.', function() {
+                    // read in the source code
+                    var filename = directory + prefix + '.bali';
+                    var source = fs.readFileSync(filename, 'utf8');
+                    var type = bali.component(source);
+                    expect(type).to.exist;
 
-        it('should clean the metatypes', async function() {
-            const folder = './src/bali/types/';
-            const files = await pfs.readdir(folder);
-            for (var i = 0; i < files.length; i++) {
-                var file = files[i];
+                    // compile the source code
+                    compiler.cleanType(type);
 
-                // read in the source code
-                console.log('      ' + file);
-                var prefix = file.split('.').slice(0, 1);
-                var filename = folder + prefix + '.bali';
-                var source = await pfs.readFile(filename, 'utf8');
-                var type = bali.component(source);
-                expect(type).to.exist;
-
-                // compile the source code
-                await compiler.cleanType(type);
-
-                // check for differences
-                source = type.toString() + '\n';  // POSIX compliant <EOL>
-                await pfs.writeFile(filename, source, 'utf8');
+                    // update the source file
+                    source = type.toString() + '\n';  // POSIX compliant <EOL>
+                    fs.writeFileSync(filename, source, 'utf8');
+                });
             }
         });
-
-        it('should clean the abstract types', async function() {
-            const folder = './src/bali/types/';
-            const files = await pfs.readdir(folder);
-            for (var i = 0; i < files.length; i++) {
-                var file = files[i];
-
-                // read in the source code
-                console.log('      ' + file);
-                var prefix = file.split('.').slice(0, 1);
-                var filename = folder + prefix + '.bali';
-                var source = await pfs.readFile(filename, 'utf8');
-                var type = bali.component(source);
-                expect(type).to.exist;
-
-                // compile the source code
-                await compiler.cleanType(type);
-
-                // check for differences
-                source = type.toString() + '\n';  // POSIX compliant <EOL>
-                await pfs.writeFile(filename, source, 'utf8');
-            }
-        });
-
-        it('should clean the interface types', async function() {
-            const folder = './src/bali/interfaces/';
-            const files = await pfs.readdir(folder);
-            for (var i = 0; i < files.length; i++) {
-                var file = files[i];
-
-                // read in the source code
-                console.log('      ' + file);
-                var prefix = file.split('.').slice(0, 1);
-                var filename = folder + prefix + '.bali';
-                var source = await pfs.readFile(filename, 'utf8');
-                var type = bali.component(source);
-                expect(type).to.exist;
-
-                // compile the source code
-                await compiler.cleanType(type);
-
-                // check for differences
-                source = type.toString() + '\n';  // POSIX compliant <EOL>
-                await pfs.writeFile(filename, source, 'utf8');
-            }
-        });
-
-        it('should clean the collection types', async function() {
-            const folder = './src/bali/collections/';
-            const files = await pfs.readdir(folder);
-            for (var i = 0; i < files.length; i++) {
-                var file = files[i];
-
-                // read in the source code
-                console.log('      ' + file);
-                var prefix = file.split('.').slice(0, 1);
-                var filename = folder + prefix + '.bali';
-                var source = await pfs.readFile(filename, 'utf8');
-                var type = bali.component(source);
-                expect(type).to.exist;
-
-                // compile the source code
-                await compiler.cleanType(type);
-
-                // check for differences
-                source = type.toString() + '\n';  // POSIX compliant <EOL>
-                await pfs.writeFile(filename, source, 'utf8');
-            }
-        });
-
-    });
-
+    }
 });

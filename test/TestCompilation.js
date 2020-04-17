@@ -17,23 +17,19 @@ const compiler = require('bali-type-compiler').api(debug);
 
 
 describe('Bali Nebula™ Type Compilation', function() {
-
-    describe('Compile the core Bali type definitions.', function() {
-
-        const folder = './src/bali/';
-        const directories = fs.readdirSync(folder);
-        for (var i = 0; i < directories.length; i++) {
-            var type = directories[i];
-            var directory = folder + type + '/';
-
-            it('should compile the ' + type + ' type', function() {
-                const files = fs.readdirSync(directory);
-                for (var i = 0; i < files.length; i++) {
-                    var file = files[i];
+    const folder = './src/bali/';
+    const directories = fs.readdirSync(folder);
+    for (var i = 0; i < directories.length; i++) {
+        const name = directories[i];
+        const directory = folder + name + '/';
+        describe('Compile the ' + name + ' definitions.', function() {
+            const files = fs.readdirSync(directory);
+            for (var j = 0; j < files.length; j++) {
+                const file = files[j];
+                const prefix = file.split('.').slice(0, 1);
+                it('should compile the ' + prefix + ' name', function() {
 
                     // read in the source code
-                    console.log('      ' + file);
-                    var prefix = file.split('.').slice(0, 1);
                     var filename = directory + prefix + '.bali';
                     var source = fs.readFileSync(filename, 'utf8');
                     var type = bali.component(source);
@@ -48,11 +44,8 @@ describe('Bali Nebula™ Type Compilation', function() {
                     var expected = fs.readFileSync(filename, 'utf8');
                     expect(expected).to.exist;
                     expect(source).to.equal(expected);
-                }
-            });
-
-        }
-
-    });
-
+                });
+            }
+        });
+    }
 });
