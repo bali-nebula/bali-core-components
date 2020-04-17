@@ -1,0 +1,15 @@
+[
+    $description: "
+        This ...
+    "($mediatype: "application/bsmd")
+    $parent: /bali/abstractions/Component/v1
+    $parameters: [:]
+    $constants: [:]
+](
+    $name: /bali/abstractions/Comparator/v1
+    $type: /bali/types/Primitive/v1($existence: $abstract)
+    $tag: #QZF3FFLSNWT2WXXWV94YKFV8R8Z9S6RW
+    $version: v1
+    $permissions: /bali/permissions/public/v1
+    $previous: none
+)

@@ -1,0 +1,15 @@
+[
+    $description: "
+        This ...
+    "($mediatype: "application/bsmd")
+    $parent: /bali/abstractions/Component/v1
+    $parameters: [:]
+    $constants: [:]
+](
+    $name: /bali/aspects/Message/v1
+    $type: /bali/types/Structure/v1
+    $tag: #AJK59A8951P20ATHT8QNGXZVHGW0WXC8
+    $version: v1
+    $permissions: /bali/permissions/public/v1
+    $previous: none
+)

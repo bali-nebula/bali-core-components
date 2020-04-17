@@ -114,7 +114,7 @@
         ]
     ]
 ](
-    $name: /bali/types/Composite/v1
+    $name: /bali/abstractions/Iterator/v1
     $type: /bali/types/Class/v1($existence: $abstract)
     $tag: #XLWZBR7XA25FKLVS1P5DFW4ZLPJQC65F
     $version: v1

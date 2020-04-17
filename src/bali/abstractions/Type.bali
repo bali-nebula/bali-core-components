@@ -42,7 +42,7 @@
     ]
 ](
     $name: /bali/types/Type/v1
-    $type: /bali/types/Composite/v1($existence: $abstract)
+    $type: /bali/types/Structure/v1($existence: $abstract)
     $tag: #Z2RZ1550HK9HSW6QVVP6WTAA55P31ZQX
     $version: v1
     $permissions: /bali/permissions/public/v1
