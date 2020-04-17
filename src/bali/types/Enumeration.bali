@@ -14,6 +14,7 @@
             $type: /bali/collections/Set/v1($ItemType: /bali/elements/Symbol/v1)
         ]
     ]
+    $events: [:]
 ](
     $name: /bali/types/Enumeration/v1
     $type: /bali/types/Structure/v1

@@ -1,10 +1,47 @@
 [
     $description: "
-        This ...
+        This concrete structure defines the attributes that all primitive types support.
     "($mediatype: "application/bsmd")
-    $parent: /bali/abstractions/Type/v1
-    $parameters: [:]
+    $parent: /bali/abstractions/Type/v1($existence: $existence)
+    $parameters: [
+        $existence: [
+            $description: "
+                This parameter specifies whether or not this primitive type is abstract. An
+                abstract primitive type cannot be instantiated whereas a concrete primitive
+                type can be.
+            "($mediatype: "application/bsmd")
+            $type: /bali/enumerations/Existence/v1
+            $default: $concrete
+        ]
+    ]
     $constants: [:]
+    $attributes: [
+        $interfaces: [
+            $description: "
+                This attribute is a list of all the interfaces that instances of this primitive
+                type support.
+            "($mediatype: "application/bsmd")
+            $type: /bali/collections/List/v1($ItemType: /bali/types/Interface/v1)
+            $default: [ ]
+        ]
+        $procedures: [
+            $description: "
+                This attribute is a catalog of all the messages and corresponding procedures
+                that instances of this primitive type support.
+            "($mediatype: "application/bsmd")
+            $type: /bali/collections/Catalog/v1($ValueType: /bali/aspects/Procedure/v1)
+            $default: [:]
+        ]
+        $literals: [
+            $description: "
+                This attribute is a list of all the literal values that occur in the procedures
+                and is needed by the virtual machine.
+            "($mediatype: "application/bsmd")
+            $type: /bali/collections/List/v1($ItemType: /bali/interfaces/Literal/v1)
+            $default: [ ]
+        ]
+    ]
+    $events: [:]
 ](
     $name: /bali/types/Primitive/v1
     $type: /bali/types/Structure/v1

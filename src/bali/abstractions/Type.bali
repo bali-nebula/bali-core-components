@@ -43,6 +43,7 @@
             $default: [:]
         ]
     ]
+    $events: [:]
 ](
     $name: /bali/abstractions/Type/v1
     $type: /bali/types/Structure/v1($existence: $abstract)
