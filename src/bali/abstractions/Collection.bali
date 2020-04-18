@@ -15,7 +15,7 @@
     ]
     $constants: [:]
     $interfaces: [
-        /bali/interfaces/Sequential/v1
+        /bali/interfaces/Sequential/v1($ItemType: $ItemType)
     ]
     $procedures: [
         $addItem: [
