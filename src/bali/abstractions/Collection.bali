@@ -24,6 +24,14 @@
                 collection is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+            $arguments: [
+                $item: [
+                    $description: "
+                        This argument specifies the item to be added to this collection.
+                    "($mediatype: "application/bsmd")
+                    $type: $ItemType
+                ]
+            ]
             $source: {
                 throw [
                     $module: /bali/abstractions/Collection/v1
@@ -77,6 +85,14 @@
                 The updated collection is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+            $arguments: [
+                $items: [
+                    $description: "
+                        This argument specifies the collection of items to be added to this collection.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+                ]
+            ]
             $source: {
                 with each $item in items do {
                     target.addItem(item)
@@ -152,6 +168,15 @@
                 specified items.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
+            $arguments: [
+                $items: [
+                    $description: "
+                        This argument specifies the collection of items to be searched for in this
+                        collection.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+                ]
+            ]
             $source: {
                 with each $item in items do {
                     if NOT target.containsItem(item) then {
@@ -242,6 +267,15 @@
                 specified items.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
+            $arguments: [
+                $items: [
+                    $description: "
+                        This argument specifies the collection of items to be searched for in this
+                        collection.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+                ]
+            ]
             $source: {
                 with each $item in items do {
                     if target.containsItem(item) then {
@@ -331,6 +365,14 @@
                 item.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
+            $arguments: [
+                $item: [
+                    $description: "
+                        This argument specifies the item to be searched for in this collection.
+                    "($mediatype: "application/bsmd")
+                    $type: $ItemType
+                ]
+            ]
             $source: {
                 return target.index(item) > 0
             }($item: $ItemType)
@@ -368,6 +410,14 @@
                 if it is not found.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
+            $arguments: [
+                $item: [
+                    $description: "
+                        This argument specifies the item to be searched for in this collection.
+                    "($mediatype: "application/bsmd")
+                    $type: $ItemType
+                ]
+            ]
             $source: {
                 $index := 0
                 with each $candidate in target do {
@@ -499,6 +549,15 @@
                 index.
             "($mediatype: "application/bsmd")
             $type: $ItemType
+            $arguments: [
+                $index: [
+                    $description: "
+                        This argument specifies the index of the item to be returned from this
+                        collection.
+                    "($mediatype: "application/bsmd")
+                    $type: $ItemType
+                ]
+            ]
             $source: {
                 $iterator := target.iterator()
                 iterator.toSlot(index)

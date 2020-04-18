@@ -97,10 +97,19 @@
         ]
         $isA: [
             $description: "
-                This procedure determines whether or not a component is an instance of the
-                specified type or any of its ancestors.
+                This procedure determines whether or not the ancestry of this component includes
+                the specified named type.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
+            $arguments: [
+                $type: [
+                    $description: "
+                        This argument specifies the name of the type to be searched for in this
+                        component's ancestry.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/elements/Name/v1
+                ]
+            ]
             $source: {
                 $current := type(target)
                 while current do {
@@ -221,6 +230,14 @@
                 this component.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Component/v1
+            $arguments: [
+                $key: [
+                    $description: "
+                        This argument specifies the key for the parameter value to be returned.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/elements/Symbol/v1
+                ]
+            ]
             $source: {
                 return parameter(target, key)
             }($key: /bali/elements/Symbol/v1)
