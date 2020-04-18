@@ -368,7 +368,7 @@
     $literals: [ ]
 ](
     $name: /bali/collections/Tree/v1
-    $type: /bali/types/Primitive/v1($existence: $concrete)
+    $type: /bali/types/Primitive/v1
     $tag: #LY5KN1KTJN0GJ7526W7HCW8FZ4HJC4J6
     $version: v1
     $permissions: /bali/permissions/public/v1

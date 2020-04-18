@@ -422,7 +422,7 @@
     $literals: [ ]
 ](
     $name: /bali/collections/Queue/v1
-    $type: /bali/types/Primitive/v1($existence: $concrete)
+    $type: /bali/types/Primitive/v1
     $tag: #BG4RWKXM4T2NB1SXB3J17DR406ZLH8LR
     $version: v1
     $permissions: /bali/permissions/public/v1

@@ -1,9 +1,27 @@
 [
     $description: "
-        This class defines the procedures for the messages that catalog components support.
+        This concrete primitive type defines the procedures for the messages that all catalog
+        types support.
     "($mediatype: "application/bsmd")
-    $parent: /bali/abstractions/Collection/v1
-    $parameters: [:]
+    $parent: /bali/abstractions/Collection/v1($ItemType: /bali/collections/Association($KeyType: $KeyType, $ValueType: $ValueType))
+    $parameters: [
+        $KeyType: [
+            $description: "
+                This parameter specifies the name of the type for each key managed by this type of
+                catalog.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Name/v1
+            $default: /bali/elements/Symbol/v1
+        ]
+        $ValueType: [
+            $description: "
+                This parameter specifies the name of the type for each value managed by this type of
+                catalog.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Name/v1
+            $default: /bali/abstractions/Component/v1
+        ]
+    ]
     $constants: [:]
     $interfaces: [
         /bali/interfaces/Chainable
@@ -614,7 +632,7 @@
     $literals: [ ]
 ](
     $name: /bali/collections/Catalog/v1
-    $type: /bali/types/Primitive/v1($existence: $concrete)
+    $type: /bali/types/Primitive/v1
     $tag: #MK7A2JDNQHGYPB8QW8K40LC5PQ29G48K
     $version: v1
     $permissions: /bali/permissions/public/v1
