@@ -1,10 +1,18 @@
 [
     $description: "
-        This abstract class defines the procedures for the messages that all collection components
-        support.
+        This abstract primitive type defines the procedures for the messages that all collection
+        types support.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Component/v1
-    $parameters: [:]
+    $parameters: [
+        $ItemType: [
+            $description: "
+                This parameter specifies the type of items that a collection of this type supports.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Name/v1
+            $default: /bali/abstractions/Component/v1
+        ]
+    ]
     $constants: [:]
     $interfaces: [
         /bali/interfaces/Sequential/v1
@@ -15,20 +23,20 @@
                 This procedure attempts to add the specified item to this collection.  The updated
                 collection is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Collection/v1
+            $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
             $source: {
                 throw [
-                    $module: /bali/abstractions/Collection
+                    $module: /bali/abstractions/Collection/v1
                     $procedure: $addItem
                     $exception: $abstractMethod
-                    $text: "An abstract method must be implemented by a subclass."
+                    $text: "An abstract method must be implemented by a subtype."
                 ]
-            }($item: /bali/abstractions/Component/v1)
+            }($item: $ItemType)
             $instructions: "
                 1.ThrowStatement:
                 INVOKE $catalog
                 PUSH LITERAL `$module`
-                PUSH LITERAL `/bali/abstractions/Collection`
+                PUSH LITERAL `/bali/abstractions/Collection/v1`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 PUSH LITERAL `$procedure`
@@ -40,7 +48,7 @@
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 PUSH LITERAL `$text`
-                PUSH LITERAL `"An abstract method must be implemented by a subclass."`
+                PUSH LITERAL `"An abstract method must be implemented by a subtype."`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 HANDLE EXCEPTION
@@ -68,13 +76,13 @@
                 This procedure attempts to add the specified sequence of items to this collection.
                 The updated collection is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Collection/v1
+            $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
             $source: {
                 with each $item in items do {
                     target.addItem(item)
                 }
                 return target
-            }($items: /bali/interfaces/Sequential/v1)
+            }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
             $instructions: "
                 1.WithStatement:
                 PUSH PARAMETER $items
@@ -151,7 +159,7 @@
                     }
                 }
                 return true
-            }($items: /bali/interfaces/Sequential/v1)
+            }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
             $instructions: "
                 1.WithStatement:
                 PUSH PARAMETER $items
@@ -241,7 +249,7 @@
                     }
                 }
                 return false
-            }($items: /bali/interfaces/Sequential/v1)
+            }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
             $instructions: "
                 1.WithStatement:
                 PUSH PARAMETER $items
@@ -325,7 +333,7 @@
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $source: {
                 return target.index(item) > 0
-            }($item: /bali/abstractions/Component/v1)
+            }($item: $ItemType)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -369,7 +377,7 @@
                     }
                 }
                 return index
-            }($item: /bali/abstractions/Component/v1)
+            }($item: $ItemType)
             $instructions: "
                 1.EvaluateStatement:
                 PUSH LITERAL `0`
@@ -490,7 +498,7 @@
                 This procedure returns from this collection the item corresponding to the specified
                 index.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Component/v1
+            $type: $ItemType
             $source: {
                 $iterator := target.iterator()
                 iterator.toSlot(index)
@@ -543,14 +551,14 @@
                 This procedure returns from this collection the subset of items in the specified
                 range.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Collection/v1
+            $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
             $source: {
                 $items := [ ]
                 with each $index in range do {
                     items.addItem(target[index])
                 }
                 return items
-            }($range: /bali/collections/Range/v1)
+            }($range: /bali/elements/Range/v1)
             $instructions: "
                 1.EvaluateStatement:
                 INVOKE $list
@@ -627,20 +635,20 @@
                 This procedure returns an iterator that can be used to visit, in order, each item
                 in this collection.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Iterator/v1
+            $type: /bali/abstractions/Iterator/v1($ItemType: $ItemType)
             $source: {
                 throw [
-                    $module: /bali/abstractions/Collection
+                    $module: /bali/abstractions/Collection/v1
                     $procedure: $iterator
                     $exception: $abstractMethod
-                    $text: "An abstract method must be implemented by a subclass."
+                    $text: "An abstract method must be implemented by a subtype."
                 ]
             }
             $instructions: "
                 1.ThrowStatement:
                 INVOKE $catalog
                 PUSH LITERAL `$module`
-                PUSH LITERAL `/bali/abstractions/Collection`
+                PUSH LITERAL `/bali/abstractions/Collection/v1`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 PUSH LITERAL `$procedure`
@@ -652,13 +660,63 @@
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 PUSH LITERAL `$text`
-                PUSH LITERAL `"An abstract method must be implemented by a subclass."`
+                PUSH LITERAL `"An abstract method must be implemented by a subtype."`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 HANDLE EXCEPTION
             "($mediatype: "application/basm")
             $bytecode: '
                 A01428012802B00BB0012803280BB00BB00128052806B00BB00128072808
+                B00BB001E800
+            '(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ThrowStatement": 1
+            ]
+            $parameters: [ ]
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]
+        $removeAll: [
+            $description: "
+                This procedure removes all the items from this collection.
+            "($mediatype: "application/bsmd")
+            $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+            $source: {
+                throw [
+                    $module: /bali/abstractions/Collection/v1
+                    $procedure: $removeAll
+                    $exception: $abstractMethod
+                    $text: "An abstract method must be implemented by a subtype."
+                ]
+            }
+            $instructions: "
+                1.ThrowStatement:
+                INVOKE $catalog
+                PUSH LITERAL `$module`
+                PUSH LITERAL `/bali/abstractions/Collection/v1`
+                INVOKE $association WITH 2 ARGUMENTS
+                INVOKE $addItem WITH 2 ARGUMENTS
+                PUSH LITERAL `$procedure`
+                PUSH LITERAL `$removeAll`
+                INVOKE $association WITH 2 ARGUMENTS
+                INVOKE $addItem WITH 2 ARGUMENTS
+                PUSH LITERAL `$exception`
+                PUSH LITERAL `$abstractMethod`
+                INVOKE $association WITH 2 ARGUMENTS
+                INVOKE $addItem WITH 2 ARGUMENTS
+                PUSH LITERAL `$text`
+                PUSH LITERAL `"An abstract method must be implemented by a subtype."`
+                INVOKE $association WITH 2 ARGUMENTS
+                INVOKE $addItem WITH 2 ARGUMENTS
+                HANDLE EXCEPTION
+            "($mediatype: "application/basm")
+            $bytecode: '
+                A01428012802B00BB0012803280CB00BB00128052806B00BB00128072808
                 B00BB001E800
             '(
                 $encoding: $base16
@@ -680,17 +738,17 @@
             $type: /bali/elements/Number/v1($range: 0..)
             $source: {
                 throw [
-                    $module: /bali/abstractions/Collection
+                    $module: /bali/abstractions/Collection/v1
                     $procedure: $size
                     $exception: $abstractMethod
-                    $text: "An abstract method must be implemented by a subclass."
+                    $text: "An abstract method must be implemented by a subtype."
                 ]
             }
             $instructions: "
                 1.ThrowStatement:
                 INVOKE $catalog
                 PUSH LITERAL `$module`
-                PUSH LITERAL `/bali/abstractions/Collection`
+                PUSH LITERAL `/bali/abstractions/Collection/v1`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 PUSH LITERAL `$procedure`
@@ -702,13 +760,13 @@
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 PUSH LITERAL `$text`
-                PUSH LITERAL `"An abstract method must be implemented by a subclass."`
+                PUSH LITERAL `"An abstract method must be implemented by a subtype."`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 HANDLE EXCEPTION
             "($mediatype: "application/basm")
             $bytecode: '
-                A01428012802B00BB0012803280CB00BB00128052806B00BB00128072808
+                A01428012802B00BB0012803280DB00BB00128052806B00BB00128072808
                 B00BB001E800
             '(
                 $encoding: $base16
@@ -726,16 +784,17 @@
     ]
     $literals: [
         $module
-        /bali/abstractions/Collection
+        /bali/abstractions/Collection/v1
         $procedure
         $addItem
         $exception
         $abstractMethod
         $text
-        "An abstract method must be implemented by a subclass."
+        "An abstract method must be implemented by a subtype."
         false
         true
         $iterator
+        $removeAll
         $size
     ]
 ](
