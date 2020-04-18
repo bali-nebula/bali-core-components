@@ -1,10 +1,25 @@
 [
     $description: "
-        This ...
+        This abstract structure defines the attributes that all event types support.
     "($mediatype: "application/bsmd")
-    $parent: /bali/abstractions/Component/v1
+    $parent: /bali/abstractions/Aspect/v1
     $parameters: [:]
     $constants: [:]
+    $attributes: [
+        $type: [
+            $description: "
+                This attribute defines the name of the type of the event.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Name/v1
+        ]
+        $tag: [
+            $description: "
+                The unique tag for this type of event.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Tag/v1
+        ]
+    ]
+    $events: [:]
 ](
     $name: /bali/aspects/Event/v1
     $type: /bali/types/Structure/v1

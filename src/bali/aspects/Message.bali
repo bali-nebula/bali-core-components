@@ -1,10 +1,36 @@
 [
     $description: "
-        This ...
+        This abstract structure defines the attributes that all message types support.
     "($mediatype: "application/bsmd")
-    $parent: /bali/abstractions/Component/v1
-    $parameters: [:]
+    $parent: /bali/abstractions/Aspect/v1
+    $parameters: [
+        $visibility: [
+            $description: "
+                This parameter specifies whether or not this message type is visible outside
+                the scope of the containing type definition. By default it is visible.
+            "($mediatype: "application/bsmd")
+            $type: /bali/enumerations/Visibility/v1
+            $default: $public
+        ]
+    ]
     $constants: [:]
+    $attributes: [
+        $type: [
+            $description: "
+                This attribute defines the name of the type that is returned by the procedure
+                that implements this message type.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Name/v1
+        ]
+        $arguments: [
+            $description: "
+                A catalog of argument types that are expected to be passed each time this message
+                type is sent.
+            "($mediatype: "application/bsmd")
+            $type: /bali/collection/Catalog/v1($ItemType: /bali/aspects/Argument/v1)
+        ]
+    ]
+    $events: [:]
 ](
     $name: /bali/aspects/Message/v1
     $type: /bali/types/Structure/v1

@@ -1,10 +1,16 @@
 [
     $description: "
-        This ...
+        This concrete primitive type defines the procedures for the messages that all source
+        types support.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Component/v1
     $parameters: [:]
     $constants: [:]
+    $interfaces: [
+        /bali/interfaces/Literal/v1
+    ]
+    $procedures: [:]
+    $literals: [ ]
 ](
     $name: /bali/aspects/Source/v1
     $type: /bali/types/Primitive/v1
