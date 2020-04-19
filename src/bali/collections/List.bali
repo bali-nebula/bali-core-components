@@ -1,9 +1,17 @@
 [
     $description: "
-        This class defines the procedures for the messages that list components support.
+        This class defines the procedures for the messages that all lists support.
     "($mediatype: "application/bsmd")
-    $parent: /bali/abstractions/Collection/v1
-    $parameters: [:]
+    $parent: /bali/abstractions/Collection/v1($ItemType: /bali/collections/Association($KeyType: $KeyType, $ValueType: $ValueType))
+    $parameters: [
+        $ItemType: [
+            $description: "
+                This parameter specifies the name of the type for each item managed by this list.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Name/v1
+            $default: /bali/abstractions/Component/v1
+        ]
+    ]
     $constants: [:]
     $interfaces: [
         /bali/interfaces/Chainable
@@ -15,10 +23,18 @@
                 This procedure attempts to add the specified item to this list.  The
                 updated list is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/List/v1
+            $type: /bali/collections/List/v1($ItemType: $ItemType)
+            $arguments: [
+                $item: [
+                    $description: "
+                        This argument specifies the item to be added to this list.
+                    "($mediatype: "application/bsmd")
+                    $type: $ItemType
+                ]
+            ]
             $source: {
                 return addItem(target, item)
-            }($item: /bali/abstractions/Component/v1)
+            }($item: $ItemType)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -46,10 +62,18 @@
                 This procedure attempts to add the specified sequence of items to this
                 list.  The updated list is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Collection/v1
+            $type: /bali/collections/List/v1($ItemType: $ItemType)
+            $arguments: [
+                $items: [
+                    $description: "
+                        This argument specifies the items to be added to this list.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+                ]
+            ]
             $source: {
                 return addItems(target, items)
-            }($items: /bali/interfaces/Sequential/v1)
+            }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -78,9 +102,17 @@
                 specified items.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
+            $arguments: [
+                $items: [
+                    $description: "
+                        This argument specifies the items to be searched for in this list.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+                ]
+            ]
             $source: {
                 return containsAll(target, items)
-            }($items: /bali/interfaces/Sequential/v1)
+            }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -109,9 +141,17 @@
                 specified items.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
+            $arguments: [
+                $items: [
+                    $description: "
+                        This argument specifies the items to be searched for in this list.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+                ]
+            ]
             $source: {
                 return containsAny(target, items)
-            }($items: /bali/interfaces/Sequential/v1)
+            }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -140,9 +180,17 @@
                 item.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
+            $arguments: [
+                $item: [
+                    $description: "
+                        This argument specifies the item to be searched for in this list.
+                    "($mediatype: "application/bsmd")
+                    $type: $ItemType
+                ]
+            ]
             $source: {
                 return containsItem(target, item)
-            }($item: /bali/abstractions/Component/v1)
+            }($item: $ItemType)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -171,9 +219,18 @@
                 or 0 if it is not found.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
+            $arguments: [
+                $item: [
+                    $description: "
+                        This argument specifies the item in this list for which the index
+                        should be returned.
+                    "($mediatype: "application/bsmd")
+                    $type: $ItemType
+                ]
+            ]
             $source: {
                 return index(target, item)
-            }($item: /bali/abstractions/Component/v1)
+            }($item: $ItemType)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -198,20 +255,35 @@
         ]
         $insertItem: [
             $description: "
-                This procedure attempts to insert the specified item to this list at the
-                specified index.  The updated list is returned.
+                This procedure attempts to insert the specified item to this list in the
+                specified slot.  The updated list is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/List/v1
+            $type: /bali/collections/List/v1($ItemType: $ItemType)
+            $arguments: [
+                $slot: [
+                    $description: "
+                        This argument specifies the slot in this list where the item should be
+                        inserted.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/elements/Number/v1
+                ]
+                $item: [
+                    $description: "
+                        This argument specifies the item that should be inserted into this list.
+                    "($mediatype: "application/bsmd")
+                    $type: $ItemType
+                ]
+            ]
             $source: {
-                return insertItem(target, index, item)
+                return insertItem(target, slot, item)
             }(
-                $index: /bali/elements/Number/v1($range: 0..)
-                $item: /bali/abstractions/Component/v1
+                $slot: /bali/elements/Number/v1
+                $item: $ItemType
             )
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $index
+                PUSH PARAMETER $slot
                 PUSH PARAMETER $item
                 INVOKE $insertItem WITH 3 ARGUMENTS
                 HANDLE RESULT
@@ -224,7 +296,7 @@
                 "1.ReturnStatement": 1
             ]
             $parameters: [
-                $index
+                $slot
                 $item
             ]
             $variables: [
@@ -237,17 +309,32 @@
                 This procedure attempts to insert the specified sequence of items into this
                 list at the specified index.  The updated list is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Collection/v1
+            $type: /bali/collections/List/v1($ItemType: $ItemType)
+            $arguments: [
+                $slot: [
+                    $description: "
+                        This argument specifies the slot in this list where the items should be
+                        inserted.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/elements/Number/v1
+                ]
+                $items: [
+                    $description: "
+                        This argument specifies the items that should be inserted into this list.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+                ]
+            ]
             $source: {
-                return insertItems(target, index, items)
+                return insertItems(target, slot, items)
             }(
-                $index: /bali/elements/Number/v1($range: 0..)
-                $items: /bali/interfaces/Sequential/v1
+                $slot: /bali/elements/Number/v1
+                $items: /bali/abstractions/Collection/v1($ItemType: $ItemType)
             )
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $index
+                PUSH PARAMETER $slot
                 PUSH PARAMETER $items
                 INVOKE $insertItems WITH 3 ARGUMENTS
                 HANDLE RESULT
@@ -260,7 +347,7 @@
                 "1.ReturnStatement": 1
             ]
             $parameters: [
-                $index
+                $slot
                 $items
             ]
             $variables: [
@@ -300,10 +387,18 @@
                 This procedure returns from this list the item corresponding to the
                 specified index.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Component/v1
+            $type: $ItemType
+            $arguments: [
+                $index: [
+                    $description: "
+                        This argument specifies the index of the item in this list to be retrieved.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/elements/Number/v1
+                ]
+            ]
             $source: {
                 return item(target, index)
-            }($index: /bali/elements/Number/v1($range: 0..))
+            }($index: /bali/elements/Number/v1)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -331,10 +426,19 @@
                 This procedure returns from this list the subset of items in the
                 specified range.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/List/v1
+            $type: /bali/collections/List/v1($ItemType: $ItemType)
+            $arguments: [
+                $range: [
+                    $description: "
+                        This argument specifies the range of indices of the items in this list to
+                        be retrieved.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/elements/Range/v1
+                ]
+            ]
             $source: {
                 return items(target, range)
-            }($range: /bali/collections/Range/v1)
+            }($range: /bali/elements/Range/v1)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -362,7 +466,7 @@
                 This procedure returns an iterator that can be used to visit, in order, each
                 item in this list.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Iterator/v1
+            $type: /bali/abstractions/Iterator/v1($ItemType: $ItemType)
             $source: {
                 return iterator(target)
             }
@@ -389,7 +493,7 @@
             $description: "
                 This procedure removes all items from this list.  The updated list is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/List/v1
+            $type: /bali/collections/List/v1($ItemType: $ItemType)
             $source: {
                 return removeAll(target)
             }
@@ -417,10 +521,18 @@
                 This procedure removes from this list the item associated with the specified
                 index.  The updated list is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Component/v1
+            $type: /bali/collections/List/v1($ItemType: $ItemType)
+            $arguments: [
+                $index: [
+                    $description: "
+                        This argument specifies the index of the item in this list to be removed.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/elements/Number/v1
+                ]
+            ]
             $source: {
                 return removeItem(target, index)
-            }($index: /bali/elements/Number/v1($range: [1..]))
+            }($index: /bali/elements/Number/v1)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -448,10 +560,19 @@
                 This procedure removes from this list the items associated with the specified
                 index range.  The updated list is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/List/v1
+            $type: /bali/collections/List/v1($ItemType: $ItemType)
+            $arguments: [
+                $range: [
+                    $description: "
+                        This argument specifies the range of indices of the items in this list to
+                        be removed.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/elements/Range/v1
+                ]
+            ]
             $source: {
                 return removeItems(target, range)
-            }($range: /bali/collections/Range/v1)
+            }($range: /bali/elements/Range/v1)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -479,7 +600,7 @@
                 This procedure reverses the order of the items contained in this list.  The
                 updated list is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/List/v1
+            $type: /bali/collections/List/v1($ItemType: $ItemType)
             $source: {
                 return reverseItems(target)
             }
@@ -507,11 +628,26 @@
                 This procedure associates in this list the specified item with the specified
                 index.  The updated list is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/List/v1
+            $type: /bali/collections/List/v1($ItemType: $ItemType)
+            $arguments: [
+                $index: [
+                    $description: "
+                        This argument specifies the index in this list of the item to be set.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/elements/Number/v1
+                ]
+                $item: [
+                    $description: "
+                        This argument specifies the item that should replace the current item
+                        in this list at the specified index.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+                ]
+            ]
             $source: {
                 return setItem(target, index, item)
             }(
-                $index: /bali/elements/Number/v1($range: 0..)
+                $index: /bali/elements/Number/v1
                 $item: /bali/abstractions/Component/v1
             )
             $instructions: "
@@ -543,7 +679,7 @@
                 This procedure orders the items contained in this list in their
                 natural order by value.  The updated list is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/List/v1
+            $type: /bali/collections/List/v1($ItemType: $ItemType)
             $source: {
                 return sortItems(target)
             }
@@ -571,7 +707,7 @@
                 This procedure shuffles the items contained in this list into a random order.
                 The updated list is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/List/v1
+            $type: /bali/collections/List/v1($ItemType: $ItemType)
             $source: {
                 return shuffleItems(target)
             }
