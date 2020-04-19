@@ -31,16 +31,30 @@
         $addItem: [
             $description: "
                 This procedure attempts to add the specified association to this catalog.  The
-                return value indicates whether or not the association was successfully added.
+                updated catalog is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Catalog/v1
+            $type: /bali/collections/Catalog/v1(
+                $KeyType: $KeyType
+                $ValueType: $ValueType
+            )
+            $arguments: [
+                $item: [
+                    $description: "
+                        This argument specifies the association to be added to this catalog.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/collections/Association/v1(
+                        $KeyType: $KeyType
+                        $ValueType: $ValueType
+                    )
+                ]
+            ]
             $source: {
-                return addItem(target, association)
-            }($association: /bali/collections/Association/v1)
+                return addItem(target, item)
+            }($item: /bali/collections/Association/v1($KeyType: $KeyType, $ValueType: $ValueType))
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $association
+                PUSH PARAMETER $item
                 INVOKE $addItem WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
@@ -52,7 +66,7 @@
                 "1.ReturnStatement": 1
             ]
             $parameters: [
-                $association
+                $item
             ]
             $variables: [
                 $target
@@ -61,17 +75,31 @@
         ]
         $addItems: [
             $description: "
-                This procedure attempts to add the specified sequence of associations to this
-                catalog.  The updated catalog is returned.
+                This procedure attempts to add the specified associations to this catalog.  The
+                updated catalog is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Collection/v1
+            $type: /bali/collections/Catalog/v1(
+                $KeyType: $KeyType
+                $ValueType: $ValueType
+            )
+            $arguments: [
+                $items: [
+                    $description: "
+                        This argument specifies the associations to be added to this catalog.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/collections/Catalog/v1(
+                        $KeyType: $KeyType
+                        $ValueType: $ValueType
+                    )
+                ]
+            ]
             $source: {
-                return addItems(target, associations)
-            }($associations: /bali/interfaces/Sequential/v1)
+                return addItems(target, items)
+            }($items: /bali/collections/Catalog/v1($KeyType: $KeyType, $ValueType: $ValueType))
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $associations
+                PUSH PARAMETER $items
                 INVOKE $addItems WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
@@ -83,7 +111,7 @@
                 "1.ReturnStatement": 1
             ]
             $parameters: [
-                $associations
+                $items
             ]
             $variables: [
                 $target
@@ -96,13 +124,24 @@
                 specified associations.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
+            $arguments: [
+                $items: [
+                    $description: "
+                        This argument specifies the associations to be searched for in this catalog.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/collections/Catalog/v1(
+                        $KeyType: $KeyType
+                        $ValueType: $ValueType
+                    )
+                ]
+            ]
             $source: {
-                return containsAll(target, associations)
-            }($associations: /bali/interfaces/Sequential/v1)
+                return containsAll(target, items)
+            }($items: /bali/collections/Catalog/v1($KeyType: $KeyType, $ValueType: $ValueType))
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $associations
+                PUSH PARAMETER $items
                 INVOKE $containsAll WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
@@ -114,7 +153,7 @@
                 "1.ReturnStatement": 1
             ]
             $parameters: [
-                $associations
+                $items
             ]
             $variables: [
                 $target
@@ -127,13 +166,24 @@
                 specified associations.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
+            $arguments: [
+                $items: [
+                    $description: "
+                        This argument specifies the associations to be searched for in this catalog.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/collections/Catalog/v1(
+                        $KeyType: $KeyType
+                        $ValueType: $ValueType
+                    )
+                ]
+            ]
             $source: {
-                return containsAny(target, associations)
-            }($associations: /bali/interfaces/Sequential/v1)
+                return containsAny(target, items)
+            }($items: /bali/collections/Catalog/v1($KeyType: $KeyType, $ValueType: $ValueType))
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $associations
+                PUSH PARAMETER $items
                 INVOKE $containsAny WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
@@ -145,7 +195,7 @@
                 "1.ReturnStatement": 1
             ]
             $parameters: [
-                $associations
+                $items
             ]
             $variables: [
                 $target
@@ -158,13 +208,24 @@
                 association.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
+            $arguments: [
+                $item: [
+                    $description: "
+                        This argument specifies the association to be searched for in this catalog.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/collections/Association/v1(
+                        $KeyType: $KeyType
+                        $ValueType: $ValueType
+                    )
+                ]
+            ]
             $source: {
-                return containsItem(target, association)
-            }($association: /bali/collections/Association/v1)
+                return containsItem(target, item)
+            }($item: /bali/collections/Association/v1($KeyType: $KeyType, $ValueType: $ValueType))
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $association
+                PUSH PARAMETER $item
                 INVOKE $containsItem WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
@@ -176,7 +237,7 @@
                 "1.ReturnStatement": 1
             ]
             $parameters: [
-                $association
+                $item
             ]
             $variables: [
                 $target
@@ -189,13 +250,25 @@
                 or 0 if it is not found.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
+            $arguments: [
+                $item: [
+                    $description: "
+                        This argument specifies the association in the catalog for which the
+                        index should be retrieved.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/collections/Association/v1(
+                        $KeyType: $KeyType
+                        $ValueType: $ValueType
+                    )
+                ]
+            ]
             $source: {
-                return index(target, association)
-            }($association: /bali/collections/Association/v1)
+                return index(target, item)
+            }($item: /bali/collections/Association/v1($KeyType: $KeyType, $ValueType: $ValueType))
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $association
+                PUSH PARAMETER $item
                 INVOKE $index WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
@@ -207,7 +280,7 @@
                 "1.ReturnStatement": 1
             ]
             $parameters: [
-                $association
+                $item
             ]
             $variables: [
                 $target
@@ -247,9 +320,18 @@
                 specified index.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Association/v1
+            $arguments: [
+                $index: [
+                    $description: "
+                        This argument specifies the index of the association to be retrieved from
+                        this catalog.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/elements/Number/v1
+                ]
+            ]
             $source: {
                 return item(target, index)
-            }($index: /bali/elements/Number/v1($range: 0..))
+            }($index: /bali/elements/Number/v1)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -278,6 +360,15 @@
                 specified range.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Catalog/v1
+            $arguments: [
+                $range: [
+                    $description: "
+                        This argument specifies the range of indices for the associations to be
+                        retrieved from this catalog.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/elements/Range/v1
+                ]
+            ]
             $source: {
                 return items(target, range)
             }($range: /bali/collections/Range/v1)
@@ -363,7 +454,10 @@
             $description: "
                 This procedure removes all associations from this catalog.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Catalog/v1
+            $type: /bali/collections/Catalog/v1(
+                $KeyType: $KeyType
+                $ValueType: $ValueType
+            )
             $source: {
                 return removeAll(target)
             }
@@ -391,10 +485,22 @@
                 This procedure removes from this catalog the value associated with the specified
                 key.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Component/v1
+            $type: /bali/collections/Catalog/v1(
+                $KeyType: $KeyType
+                $ValueType: $ValueType
+            )
+            $arguments: [
+                $key: [
+                    $description: "
+                        This argument specifies the key in the catalog for the value to be
+                        removed.
+                    "($mediatype: "application/bsmd")
+                    $type: $KeyType
+                ]
+            ]
             $source: {
                 return removeValue(target, key)
-            }($key: /bali/abstractions/Element/v1)
+            }($key: $KeyType)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -422,10 +528,22 @@
                 This procedure removes from this catalog the values associated with the specified
                 keys.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/List/v1
+            $type: /bali/collections/Catalog/v1(
+                $KeyType: $KeyType
+                $ValueType: $ValueType
+            )
+            $arguments: [
+                $keys: [
+                    $description: "
+                        This argument specifies the list of keys in the catalog for the values
+                        to be removed.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/collections/List/v1($ItemType: $KeyType)
+                ]
+            ]
             $source: {
                 return removeValues(target, keys)
-            }($keys: /bali/collections/List/v1)
+            }($keys: /bali/collections/List/v1($ItemType: $KeyType))
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -452,7 +570,10 @@
             $description: "
                 This procedure reverses the order of the associations contained in this catalog.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Catalog/v1
+            $type: /bali/collections/Catalog/v1(
+                $KeyType: $KeyType
+                $ValueType: $ValueType
+            )
             $source: {
                 return reverseItems(target)
             }
@@ -480,12 +601,29 @@
                 This procedure associates in this catalog the specified key with the specified
                 value.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Catalog/v1
+            $type: /bali/collections/Catalog/v1(
+                $KeyType: $KeyType
+                $ValueType: $ValueType
+            )
+            $arguments: [
+                $key: [
+                    $description: "
+                        This argument specifies the key in the catalog for the value to be set.
+                    "($mediatype: "application/bsmd")
+                    $type: $KeyType
+                ]
+                $value: [
+                    $description: "
+                        This argument specifies the value in the catalog to be set.
+                    "($mediatype: "application/bsmd")
+                    $type: $ValueType
+                ]
+            ]
             $source: {
                 return setValue(target, key, value)
             }(
-                $key: /bali/abstractions/Element/v1
-                $value: /bali/abstractions/Component/v1
+                $key: $KeyType
+                $value: $ValueType
             )
             $instructions: "
                 1.ReturnStatement:
@@ -543,7 +681,10 @@
                 This procedure orders the associations contained in this catalog in their
                 natural order by key.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Catalog/v1
+            $type: /bali/collections/Catalog/v1(
+                $KeyType: $KeyType
+                $ValueType: $ValueType
+            )
             $source: {
                 return sortItems(target)
             }
@@ -572,9 +713,18 @@
                 specified key.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Component/v1
+            $arguments: [
+                $key: [
+                    $description: "
+                        This argument specifies the key in the catalog for the value to be
+                        retrieved.
+                    "($mediatype: "application/bsmd")
+                    $type: $KeyType
+                ]
+            ]
             $source: {
                 return value(target, key)
-            }($key: /bali/abstractions/Element/v1)
+            }($key: $KeyType)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -602,10 +752,19 @@
                 This procedure returns from this catalog a list of the values corresponding to the
                 specified keys.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/List/v1
+            $type: /bali/collections/List/v1($ItemType: $ValueType)
+            $arguments: [
+                $keys: [
+                    $description: "
+                        This argument specifies a list of keys in the catalog for the values to be
+                        retrieved.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/collections/List/v1($ItemType: $KeyType)
+                ]
+            ]
             $source: {
                 return values(target, keys)
-            }($keys: /bali/interfaces/Sequential/v1)
+            }($keys: /bali/collections/List/v1($ItemType: $KeyType))
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
