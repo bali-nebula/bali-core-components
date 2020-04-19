@@ -9,8 +9,6 @@
     $interfaces: [
         /bali/interfaces/Literal/v1
     ]
-    $procedures: [:]
-    $literals: [ ]
 ](
     $name: /bali/abstractions/Element/v1
     $type: /bali/types/Primitive/v1($existence: $abstract)

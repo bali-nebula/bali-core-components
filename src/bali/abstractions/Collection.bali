@@ -555,14 +555,14 @@
                         This argument specifies the index of the item to be returned from this
                         collection.
                     "($mediatype: "application/bsmd")
-                    $type: $ItemType
+                    $type: /bali/elements/Number/v1
                 ]
             ]
             $source: {
                 $iterator := target.iterator()
                 iterator.toSlot(index)
                 return iterator.previous()
-            }($index: /bali/elements/Number/v1($range: 0..))
+            }($index: /bali/elements/Number/v1)
             $instructions: "
                 1.EvaluateStatement:
                 LOAD VARIABLE $target
@@ -611,6 +611,15 @@
                 range.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+            $arguments: [
+                $range: [
+                    $description: "
+                        This argument specifies the range of indices for the items to be returned
+                        from this collection.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/elements/Number/v1
+                ]
+            ]
             $source: {
                 $items := [ ]
                 with each $index in range do {
