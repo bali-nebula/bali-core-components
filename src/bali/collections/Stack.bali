@@ -14,7 +14,7 @@
     ]
     $constants: [:]
     $interfaces: [
-        /bali/interfaces/FIFO
+        /bali/interfaces/LIFO
     ]
     $procedures: [
         $addItem: [
@@ -419,15 +419,15 @@
             "($mediatype: "application/bsmd")
             $type: $ItemType
             $source: {
-                return removeItem(target)
+                return removeTop(target)
             }
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                INVOKE $removeItem WITH 1 ARGUMENT
+                INVOKE $removeTop WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A866E000'(
+            $bytecode: '6001A869E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )

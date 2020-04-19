@@ -531,16 +531,16 @@
                 ]
             ]
             $source: {
-                return removeItem(target, index)
+                return removeIndex(target, index)
             }($index: /bali/elements/Number/v1)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
                 PUSH PARAMETER $index
-                INVOKE $removeItem WITH 2 ARGUMENTS
+                INVOKE $removeIndex WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '60013801B066E000'(
+            $bytecode: '60013801B065E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
