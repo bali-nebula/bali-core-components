@@ -23,6 +23,15 @@
                 if it is not found.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
+            $arguments: [
+                $item: [
+                    $description: "
+                        This argument specifies the item in the string for which the index should
+                        be returned.
+                    "($mediatype: "application/bsmd")
+                    $type: $ItemType
+                ]
+            ]
             $source: {
                 $index := 0
                 with each $candidate in target do {
@@ -154,11 +163,20 @@
                 index.
             "($mediatype: "application/bsmd")
             $type: $ItemType
+            $arguments: [
+                $index: [
+                    $description: "
+                        This argument specifies the index of the item to be returned from this
+                        string.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/elements/Number/v1
+                ]
+            ]
             $source: {
                 $iterator := target.iterator()
                 iterator.toSlot(index)
                 return iterator.previous()
-            }($index: /bali/elements/Number/v1($range: 0..))
+            }($index: /bali/elements/Number/v1)
             $instructions: "
                 1.EvaluateStatement:
                 LOAD VARIABLE $target
@@ -207,6 +225,15 @@
                 range.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/String/v1($ItemType: $ItemType)
+            $arguments: [
+                $range: [
+                    $description: "
+                        This argument specifies the range of indices for the subset of this
+                        string to be returned.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/elements/Range/v1
+                ]
+            ]
             $source: {
                 $items := [ ]
                 with each $index in range do {

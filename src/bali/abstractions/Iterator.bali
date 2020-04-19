@@ -276,6 +276,15 @@
                 this iterator refers to.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Iterator/v1($ItemType: $ItemType)
+            $arguments: [
+                $slot: [
+                    $description: "
+                        This argument specifies the slot between items in the sequence to which
+                        the iterator should move.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/elements/Number/v1
+                ]
+            ]
             $source: {
                 throw [
                     $module: /bali/abstractions/Iterator
@@ -283,7 +292,7 @@
                     $exception: $abstractMethod
                     $text: "An abstract method must be implemented by a subtype."
                 ]
-            }($slot: /bali/elements/Number/v1($range: 0..))
+            }($slot: /bali/elements/Number/v1)
             $instructions: "
                 1.ThrowStatement:
                 INVOKE $catalog

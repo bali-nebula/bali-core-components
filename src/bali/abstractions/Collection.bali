@@ -413,7 +413,8 @@
             $arguments: [
                 $item: [
                     $description: "
-                        This argument specifies the item to be searched for in this collection.
+                        This argument specifies the item in the collection for which the index
+                        should be returned.
                     "($mediatype: "application/bsmd")
                     $type: $ItemType
                 ]
@@ -617,7 +618,7 @@
                         This argument specifies the range of indices for the items to be returned
                         from this collection.
                     "($mediatype: "application/bsmd")
-                    $type: /bali/elements/Number/v1
+                    $type: /bali/elements/Range/v1
                 ]
             ]
             $source: {
