@@ -2,7 +2,7 @@
     $description: "
         This class defines the procedures for the messages that all lists support.
     "($mediatype: "application/bsmd")
-    $parent: /bali/abstractions/Collection/v1($ItemType: /bali/collections/Association($KeyType: $KeyType, $ValueType: $ValueType))
+    $parent: /bali/abstractions/Collection/v1($ItemType: $ItemType)
     $parameters: [
         $ItemType: [
             $description: "
