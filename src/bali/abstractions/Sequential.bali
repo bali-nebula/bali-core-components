@@ -57,7 +57,7 @@
                 This method returns from this sequential component the subset of items in the
                 specified range.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Sequential/v1($ItemType: $ItemType)
+            $type: /bali/abstractions/Sequential/v1($ItemType: $ItemType)
             $arguments: [
                 $range: [
                     $description: "

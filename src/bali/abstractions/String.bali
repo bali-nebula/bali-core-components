@@ -14,7 +14,7 @@
     ]
     $constants: [:]
     $interfaces: [
-        /bali/interfaces/Sequential/v1($ItemType: $ItemType)
+        /bali/abstractions/Sequential/v1($ItemType: $ItemType)
     ]
     $methods: [
         $index: [
