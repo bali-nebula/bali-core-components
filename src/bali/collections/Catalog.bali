@@ -399,7 +399,7 @@
                 This procedure returns an iterator that can be used to visit, in order, each
                 association in this catalog.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Iterator/v1
+            $type: /bali/collections/Iterator/v1
             $source: {
                 return iterator(target)
             }

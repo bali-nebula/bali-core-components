@@ -466,7 +466,7 @@
                 This procedure returns an iterator that can be used to visit, in order, each
                 item in this list.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Iterator/v1($ItemType: $ItemType)
+            $type: /bali/collections/Iterator/v1($ItemType: $ItemType)
             $source: {
                 return iterator(target)
             }

@@ -19,7 +19,7 @@
                 This message causes the target component to return an iterator component
                 that can be used to iterate over the items that make up the sequence.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Iterator/v1($ItemType: $ItemType)
+            $type: /bali/collections/Iterator/v1($ItemType: $ItemType)
         ]
         $size: [
             $description: "

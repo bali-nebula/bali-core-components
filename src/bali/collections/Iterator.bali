@@ -1,0 +1,235 @@
+[
+    $description: "
+        This concrete primitive type defines the procedures for the messages that all iterators
+        support.
+    "($mediatype: "application/bsmd")
+    $parent: /bali/abstractions/Component/v1
+    $parameters: [
+        $ItemType: [
+            $description: "
+                This parameter specifies the type of items that an iterator of this type supports.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Name/v1
+        ]
+    ]
+    $constants: [:]
+    $interfaces: [ ]
+    $procedures: [
+        $hasNext: [
+            $description: "
+                This procedure determines whether or not there is an item following the slot
+                between the items in the sequence that this iterator refers to.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Probability/v1($granularity: $boolean)
+            $source: {
+                return hasNext(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                INVOKE $hasNext WITH 1 ARGUMENT
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '6001A82EE000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $parameters: [ ]
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]
+        $hasPrevious: [
+            $description: "
+                This procedure determines whether or not there is an item preceding the slot
+                between the items in the sequence that this iterator refers to.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Probability/v1($granularity: $boolean)
+            $source: {
+                return hasPrevious(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                INVOKE $hasPrevious WITH 1 ARGUMENT
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '6001A82FE000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $parameters: [ ]
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]
+        $next: [
+            $description: "
+                This procedure retrieves the next item in the sequence that this iterator
+                refers to.
+            "($mediatype: "application/bsmd")
+            $type: $ItemType
+            $source: {
+                return next(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                INVOKE $next WITH 1 ARGUMENT
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '6001A84CE000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $parameters: [ ]
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]
+        $previous: [
+            $description: "
+                This procedure retrieves the previous item in the sequence that this iterator
+                refers to.
+            "($mediatype: "application/bsmd")
+            $type: $ItemType
+            $source: {
+                return previous(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                INVOKE $previous WITH 1 ARGUMENT
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '6001A857E000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $parameters: [ ]
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]
+        $toEnd: [
+            $description: "
+                This procedure moves this iterator to the slot following the last item in the
+                sequence that this iterator refers to.
+            "($mediatype: "application/bsmd")
+            $type: /bali/collections/Iterator/v1($ItemType: $ItemType)
+            $source: {
+                return toEnd(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                INVOKE $toEnd WITH 1 ARGUMENT
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '6001A880E000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $parameters: [ ]
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]
+        $toSlot: [
+            $description: "
+                This procedure moves this iterator to the specified slot in the sequence that
+                this iterator refers to.
+            "($mediatype: "application/bsmd")
+            $type: /bali/collections/Iterator/v1($ItemType: $ItemType)
+            $arguments: [
+                $slot: [
+                    $description: "
+                        This argument specifies the slot between the items in the sequence to which
+                        the iterator should move.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/elements/Number/v1
+                ]
+            ]
+            $source: {
+                return toSlot(target, slot)
+            }($slot: /bali/elements/Number/v1)
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                PUSH PARAMETER $slot
+                INVOKE $toSlot WITH 2 ARGUMENTS
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '60013801B082E000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $parameters: [
+                $slot
+            ]
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]
+        $toStart: [
+            $description: "
+                This procedure moves this iterator to the slot preceding the first item in the
+                sequence that this iterator refers to.
+            "($mediatype: "application/bsmd")
+            $type: /bali/collections/Iterator/v1($ItemType: $ItemType)
+            $source: {
+                return toStart(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                INVOKE $toStart WITH 1 ARGUMENT
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '6001A883E000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $parameters: [ ]
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]
+    ]
+    $literals: [ ]
+](
+    $name: /bali/collections/Iterator/v1
+    $type: /bali/types/Primitive/v1($existence: $abstract)
+    $tag: #XLWZBR7XA25FKLVS1P5DFW4ZLPJQC65F
+    $version: v1
+    $permissions: /bali/permissions/public/v1
+    $previous: none
+)

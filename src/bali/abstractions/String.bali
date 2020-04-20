@@ -317,7 +317,7 @@
                 This procedure returns an iterator that can be used to visit, in order, each item
                 in this string.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Iterator/v1($ItemType: $ItemType)
+            $type: /bali/collections/Iterator/v1($ItemType: $ItemType)
             $source: {
                 throw [
                     $module: /bali/abstractions/String/v1
