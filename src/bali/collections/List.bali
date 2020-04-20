@@ -13,10 +13,7 @@
         ]
     ]
     $constants: [:]
-    $interfaces: [
-        /bali/interfaces/Chainable
-        /bali/interfaces/Sortable
-    ]
+    $interfaces: [ ]
     $procedures: [
         $addItem: [
             $description: "

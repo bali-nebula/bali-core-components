@@ -13,9 +13,7 @@
         ]
     ]
     $constants: [:]
-    $interfaces: [
-        /bali/interfaces/Logical
-    ]
+    $interfaces: [ ]
     $procedures: [
         $addItem: [
             $description: "

@@ -13,9 +13,7 @@
         ]
     ]
     $constants: [:]
-    $interfaces: [
-        /bali/interfaces/FIFO
-    ]
+    $interfaces: [ ]
     $procedures: [
         $addItem: [
             $description: "

@@ -13,9 +13,7 @@
         ]
     ]
     $constants: [:]
-    $interfaces: [
-        /bali/interfaces/LIFO
-    ]
+    $interfaces: [ ]
     $procedures: [
         $addItem: [
             $description: "
