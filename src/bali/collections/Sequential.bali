@@ -16,7 +16,7 @@
     $messages: [
         $index: [
             $description: "
-                This procedure returns the index of the specified item from this sequential
+                This method returns the index of the specified item from this sequential
                 component, or 0 if it is not found.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
@@ -32,13 +32,13 @@
         ]
         $isEmpty: [
             $description: "
-                This procedure determines whether or not this sequential component is empty.
+                This method determines whether or not this sequential component is empty.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
         ]
         $item: [
             $description: "
-                This procedure returns from this sequential component the item corresponding to
+                This method returns from this sequential component the item corresponding to
                 the specified index.
             "($mediatype: "application/bsmd")
             $type: $ItemType
@@ -54,7 +54,7 @@
         ]
         $items: [
             $description: "
-                This procedure returns from this sequential component the subset of items in the
+                This method returns from this sequential component the subset of items in the
                 specified range.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Sequential/v1($ItemType: $ItemType)
@@ -70,7 +70,7 @@
         ]
         $iterator: [
             $description: "
-                This procedure returns an iterator that can be used to visit, in order, each item
+                This method returns an iterator that can be used to visit, in order, each item
                 in this sequential component.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Iterator/v1($ItemType: $ItemType)

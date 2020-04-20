@@ -1,38 +1,18 @@
 [
     $description: "
-        This abstract structure defines the attributes that all procedure types support.
+        This concrete primitive type defines the methods for the messages that all procedure
+        types support.
     "($mediatype: "application/bsmd")
-    $parent: /bali/abstractions/Aspect/v1
+    $parent: /bali/abstractions/Component/v1
     $parameters: [:]
     $constants: [:]
-    $attributes: [
-        $type: [
-            $description: "
-                This attribute defines the name of the type that is returned by the procedure.
-            "($mediatype: "application/bsmd")
-            $type: /bali/elements/Name/v1
-        ]
-        $source: [
-            $description: "
-                The source code defining what should be done each time the procedure is called.
-            "($mediatype: "application/bsmd")
-            $type: /bali/aspects/Source/v1
-        ]
-        $bytecode: [
-            $description: "
-                The compiled bytecode corresponding to the source code.
-            "($mediatype: "application/bsmd")
-            $type: /bali/elements/Binary/v1(
-                $base: $base16
-                $mediatype: "application/bcod"
-            )
-        ]
+    $interfaces: [
+        /bali/interfaces/Literal/v1
     ]
-    $events: [:]
 ](
     $name: /bali/aspects/Procedure/v1
-    $type: /bali/types/Structure/v1
-    $tag: #N8M08QK85MZWA8KJGV8SBFHJWRBV8JFC
+    $type: /bali/types/Primitive/v1
+    $tag: #FTPRWBCWQC1ZPMN5PGCVMAH37Z8L0QXP
     $version: v1
     $permissions: /bali/permissions/public/v1
     $previous: none

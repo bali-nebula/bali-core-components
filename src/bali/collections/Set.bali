@@ -1,6 +1,6 @@
 [
     $description: "
-        This class defines the procedures for the messages that all sets support.
+        This class defines the methods for the messages that all sets support.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Collection/v1($ItemType: $ItemType)
     $parameters: [
@@ -14,10 +14,10 @@
     ]
     $constants: [:]
     $interfaces: [ ]
-    $procedures: [
+    $methods: [
         $addItem: [
             $description: "
-                This procedure attempts to add the specified item to this set.  The
+                This method attempts to add the specified item to this set.  The
                 updated set is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Set/v1($ItemType: $ItemType)
@@ -29,7 +29,7 @@
                     $type: $ItemType
                 ]
             ]
-            $source: {
+            $procedure: {
                 return addItem(target, item)
             }($item: $ItemType)
             $instructions: "
@@ -56,7 +56,7 @@
         ]
         $addItems: [
             $description: "
-                This procedure attempts to add the specified sequence of items to this
+                This method attempts to add the specified sequence of items to this
                 set.  The updated set is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Set/v1($ItemType: $ItemType)
@@ -68,7 +68,7 @@
                     $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
                 ]
             ]
-            $source: {
+            $procedure: {
                 return addItems(target, items)
             }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
             $instructions: "
@@ -95,7 +95,7 @@
         ]
         $containsAll: [
             $description: "
-                This procedure determines whether or not this set contains all of the
+                This method determines whether or not this set contains all of the
                 specified items.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
@@ -107,7 +107,7 @@
                     $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
                 ]
             ]
-            $source: {
+            $procedure: {
                 return containsAll(target, items)
             }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
             $instructions: "
@@ -134,7 +134,7 @@
         ]
         $containsAny: [
             $description: "
-                This procedure determines whether or not this set contains any of the
+                This method determines whether or not this set contains any of the
                 specified items.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
@@ -146,7 +146,7 @@
                     $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
                 ]
             ]
-            $source: {
+            $procedure: {
                 return containsAny(target, items)
             }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
             $instructions: "
@@ -173,7 +173,7 @@
         ]
         $containsItem: [
             $description: "
-                This procedure determines whether or not this set contains the specified
+                This method determines whether or not this set contains the specified
                 item.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
@@ -185,7 +185,7 @@
                     $type: $ItemType
                 ]
             ]
-            $source: {
+            $procedure: {
                 return containsItem(target, item)
             }($item: $ItemType)
             $instructions: "
@@ -212,7 +212,7 @@
         ]
         $index: [
             $description: "
-                This procedure returns the index of the specified item from this set,
+                This method returns the index of the specified item from this set,
                 or 0 if it is not found.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
@@ -225,7 +225,7 @@
                     $type: $ItemType
                 ]
             ]
-            $source: {
+            $procedure: {
                 return index(target, item)
             }($item: $ItemType)
             $instructions: "
@@ -252,10 +252,10 @@
         ]
         $isEmpty: [
             $description: "
-                This procedure determines whether or not this set is empty.
+                This method determines whether or not this set is empty.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
-            $source: {
+            $procedure: {
                 return isEmpty(target)
             }
             $instructions: "
@@ -279,7 +279,7 @@
         ]
         $item: [
             $description: "
-                This procedure returns from this set the item corresponding to the specified
+                This method returns from this set the item corresponding to the specified
                 index.
             "($mediatype: "application/bsmd")
             $type: $ItemType
@@ -291,7 +291,7 @@
                     $type: /bali/elements/Number/v1
                 ]
             ]
-            $source: {
+            $procedure: {
                 return item(target, index)
             }($index: /bali/elements/Number/v1)
             $instructions: "
@@ -318,7 +318,7 @@
         ]
         $items: [
             $description: "
-                This procedure returns from this set the subset of items in the
+                This method returns from this set the subset of items in the
                 specified range.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Set/v1($ItemType: $ItemType)
@@ -331,7 +331,7 @@
                     $type: /bali/elements/Range/v1
                 ]
             ]
-            $source: {
+            $procedure: {
                 return items(target, range)
             }($range: /bali/collections/Range/v1)
             $instructions: "
@@ -358,11 +358,11 @@
         ]
         $iterator: [
             $description: "
-                This procedure returns an iterator that can be used to visit, in order, each
+                This method returns an iterator that can be used to visit, in order, each
                 item in this set.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Iterator/v1($ItemType: $ItemType)
-            $source: {
+            $procedure: {
                 return iterator(target)
             }
             $instructions: "
@@ -386,10 +386,10 @@
         ]
         $removeAll: [
             $description: "
-                This procedure removes all items from this set.  The updated set is returned.
+                This method removes all items from this set.  The updated set is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Set/v1($ItemType: $ItemType)
-            $source: {
+            $procedure: {
                 return removeAll(target)
             }
             $instructions: "
@@ -413,7 +413,7 @@
         ]
         $removeItem: [
             $description: "
-                This procedure removes from this set the specified item.  The updated set is
+                This method removes from this set the specified item.  The updated set is
                 returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Set/v1($ItemType: $ItemType)
@@ -425,7 +425,7 @@
                     $type: $ItemType
                 ]
             ]
-            $source: {
+            $procedure: {
                 return removeItem(target, item)
             }($item: $ItemType)
             $instructions: "
@@ -452,7 +452,7 @@
         ]
         $removeItems: [
             $description: "
-                This procedure removes from this set the specified items.  The updated set is
+                This method removes from this set the specified items.  The updated set is
                 returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Set/v1($ItemType: $ItemType)
@@ -464,7 +464,7 @@
                     $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
                 ]
             ]
-            $source: {
+            $procedure: {
                 return removeItems(target, range)
             }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
             $instructions: "
@@ -492,10 +492,10 @@
         ]
         $size: [
             $description: "
-                This procedure returns the number of items contained in this set.
+                This method returns the number of items contained in this set.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
-            $source: {
+            $procedure: {
                 return size(target)
             }
             $instructions: "

@@ -1,6 +1,6 @@
 [
     $description: "
-        This concrete primitive type defines the procedures for the messages that all catalogs
+        This concrete primitive type defines the methods for the messages that all catalogs
         support.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Collection/v1($ItemType: /bali/collections/Association($KeyType: $KeyType, $ValueType: $ValueType))
@@ -24,10 +24,10 @@
     ]
     $constants: [:]
     $interfaces: [ ]
-    $procedures: [
+    $methods: [
         $addItem: [
             $description: "
-                This procedure attempts to add the specified association to this catalog.  The
+                This method attempts to add the specified association to this catalog.  The
                 updated catalog is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
@@ -45,7 +45,7 @@
                     )
                 ]
             ]
-            $source: {
+            $procedure: {
                 return addItem(target, item)
             }($item: /bali/collections/Association/v1($KeyType: $KeyType, $ValueType: $ValueType))
             $instructions: "
@@ -72,7 +72,7 @@
         ]
         $addItems: [
             $description: "
-                This procedure attempts to add the specified associations to this catalog.  The
+                This method attempts to add the specified associations to this catalog.  The
                 updated catalog is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
@@ -90,7 +90,7 @@
                     )
                 ]
             ]
-            $source: {
+            $procedure: {
                 return addItems(target, items)
             }($items: /bali/collections/Catalog/v1($KeyType: $KeyType, $ValueType: $ValueType))
             $instructions: "
@@ -117,7 +117,7 @@
         ]
         $containsAll: [
             $description: "
-                This procedure determines whether or not this catalog contains all of the
+                This method determines whether or not this catalog contains all of the
                 specified associations.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
@@ -132,7 +132,7 @@
                     )
                 ]
             ]
-            $source: {
+            $procedure: {
                 return containsAll(target, items)
             }($items: /bali/collections/Catalog/v1($KeyType: $KeyType, $ValueType: $ValueType))
             $instructions: "
@@ -159,7 +159,7 @@
         ]
         $containsAny: [
             $description: "
-                This procedure determines whether or not this catalog contains any of the
+                This method determines whether or not this catalog contains any of the
                 specified associations.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
@@ -174,7 +174,7 @@
                     )
                 ]
             ]
-            $source: {
+            $procedure: {
                 return containsAny(target, items)
             }($items: /bali/collections/Catalog/v1($KeyType: $KeyType, $ValueType: $ValueType))
             $instructions: "
@@ -201,7 +201,7 @@
         ]
         $containsItem: [
             $description: "
-                This procedure determines whether or not this catalog contains the specified
+                This method determines whether or not this catalog contains the specified
                 association.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
@@ -216,7 +216,7 @@
                     )
                 ]
             ]
-            $source: {
+            $procedure: {
                 return containsItem(target, item)
             }($item: /bali/collections/Association/v1($KeyType: $KeyType, $ValueType: $ValueType))
             $instructions: "
@@ -243,7 +243,7 @@
         ]
         $index: [
             $description: "
-                This procedure returns the index of the specified association from this catalog,
+                This method returns the index of the specified association from this catalog,
                 or 0 if it is not found.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
@@ -259,7 +259,7 @@
                     )
                 ]
             ]
-            $source: {
+            $procedure: {
                 return index(target, item)
             }($item: /bali/collections/Association/v1($KeyType: $KeyType, $ValueType: $ValueType))
             $instructions: "
@@ -286,10 +286,10 @@
         ]
         $isEmpty: [
             $description: "
-                This procedure determines whether or not this catalog is empty.
+                This method determines whether or not this catalog is empty.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
-            $source: {
+            $procedure: {
                 return isEmpty(target)
             }
             $instructions: "
@@ -313,7 +313,7 @@
         ]
         $item: [
             $description: "
-                This procedure returns from this catalog the association corresponding to the
+                This method returns from this catalog the association corresponding to the
                 specified index.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Association/v1
@@ -326,7 +326,7 @@
                     $type: /bali/elements/Number/v1
                 ]
             ]
-            $source: {
+            $procedure: {
                 return item(target, index)
             }($index: /bali/elements/Number/v1)
             $instructions: "
@@ -353,7 +353,7 @@
         ]
         $items: [
             $description: "
-                This procedure returns from this catalog the subset of associations in the
+                This method returns from this catalog the subset of associations in the
                 specified range.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Catalog/v1
@@ -366,7 +366,7 @@
                     $type: /bali/elements/Range/v1
                 ]
             ]
-            $source: {
+            $procedure: {
                 return items(target, range)
             }($range: /bali/collections/Range/v1)
             $instructions: "
@@ -393,11 +393,11 @@
         ]
         $iterator: [
             $description: "
-                This procedure returns an iterator that can be used to visit, in order, each
+                This method returns an iterator that can be used to visit, in order, each
                 association in this catalog.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Iterator/v1
-            $source: {
+            $procedure: {
                 return iterator(target)
             }
             $instructions: "
@@ -421,11 +421,11 @@
         ]
         $keys: [
             $description: "
-                This procedure returns from this catalog a list containing the keys in the
+                This method returns from this catalog a list containing the keys in the
                 same order as they are in the catalog.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1
-            $source: {
+            $procedure: {
                 return keys(target)
             }
             $instructions: "
@@ -449,13 +449,13 @@
         ]
         $removeAll: [
             $description: "
-                This procedure removes all associations from this catalog.
+                This method removes all associations from this catalog.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
                 $KeyType: $KeyType
                 $ValueType: $ValueType
             )
-            $source: {
+            $procedure: {
                 return removeAll(target)
             }
             $instructions: "
@@ -479,7 +479,7 @@
         ]
         $removeValue: [
             $description: "
-                This procedure removes from this catalog the value associated with the specified
+                This method removes from this catalog the value associated with the specified
                 key.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
@@ -495,7 +495,7 @@
                     $type: $KeyType
                 ]
             ]
-            $source: {
+            $procedure: {
                 return removeValue(target, key)
             }($key: $KeyType)
             $instructions: "
@@ -522,7 +522,7 @@
         ]
         $removeValues: [
             $description: "
-                This procedure removes from this catalog the values associated with the specified
+                This method removes from this catalog the values associated with the specified
                 keys.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
@@ -538,7 +538,7 @@
                     $type: /bali/collections/List/v1($ItemType: $KeyType)
                 ]
             ]
-            $source: {
+            $procedure: {
                 return removeValues(target, keys)
             }($keys: /bali/collections/List/v1($ItemType: $KeyType))
             $instructions: "
@@ -565,13 +565,13 @@
         ]
         $reverseItems: [
             $description: "
-                This procedure reverses the order of the associations contained in this catalog.
+                This method reverses the order of the associations contained in this catalog.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
                 $KeyType: $KeyType
                 $ValueType: $ValueType
             )
-            $source: {
+            $procedure: {
                 return reverseItems(target)
             }
             $instructions: "
@@ -595,7 +595,7 @@
         ]
         $setValue: [
             $description: "
-                This procedure associates in this catalog the specified key with the specified
+                This method associates in this catalog the specified key with the specified
                 value.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
@@ -616,7 +616,7 @@
                     $type: $ValueType
                 ]
             ]
-            $source: {
+            $procedure: {
                 return setValue(target, key, value)
             }(
                 $key: $KeyType
@@ -648,10 +648,10 @@
         ]
         $size: [
             $description: "
-                This procedure returns the number of associations contained in this catalog.
+                This method returns the number of associations contained in this catalog.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
-            $source: {
+            $procedure: {
                 return size(target)
             }
             $instructions: "
@@ -675,14 +675,14 @@
         ]
         $sortItems: [
             $description: "
-                This procedure orders the associations contained in this catalog in their
+                This method orders the associations contained in this catalog in their
                 natural order by key.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
                 $KeyType: $KeyType
                 $ValueType: $ValueType
             )
-            $source: {
+            $procedure: {
                 return sortItems(target)
             }
             $instructions: "
@@ -706,7 +706,7 @@
         ]
         $value: [
             $description: "
-                This procedure returns from this catalog the value corresponding to the
+                This method returns from this catalog the value corresponding to the
                 specified key.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Component/v1
@@ -719,7 +719,7 @@
                     $type: $KeyType
                 ]
             ]
-            $source: {
+            $procedure: {
                 return value(target, key)
             }($key: $KeyType)
             $instructions: "
@@ -746,7 +746,7 @@
         ]
         $values: [
             $description: "
-                This procedure returns from this catalog a list of the values corresponding to the
+                This method returns from this catalog a list of the values corresponding to the
                 specified keys.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($ItemType: $ValueType)
@@ -759,7 +759,7 @@
                     $type: /bali/collections/List/v1($ItemType: $KeyType)
                 ]
             ]
-            $source: {
+            $procedure: {
                 return values(target, keys)
             }($keys: /bali/collections/List/v1($ItemType: $KeyType))
             $instructions: "

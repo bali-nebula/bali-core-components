@@ -1,21 +1,20 @@
 [
     $description: "
-        This abstract structure defines the attributes that all event handler types support.
+        This abstract structure defines the attributes that all method types support.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Aspect/v1
     $parameters: [:]
     $constants: [:]
     $attributes: [
-        $tag: [
+        $type: [
             $description: "
-                The unique tag for the type of event that triggers this handler.
+                This attribute defines the name of the type that is returned by the method.
             "($mediatype: "application/bsmd")
-            $type: /bali/elements/Tag/v1
+            $type: /bali/elements/Name/v1
         ]
         $procedure: [
             $description: "
-                The procedure code defining what should be done each time a matching event is
-                published.
+                The procedure code defining what should be done each time the method is called.
             "($mediatype: "application/bsmd")
             $type: /bali/aspects/Procedure/v1
         ]
@@ -31,9 +30,9 @@
     ]
     $events: [:]
 ](
-    $name: /bali/aspects/Handler/v1
+    $name: /bali/aspects/Method/v1
     $type: /bali/types/Structure/v1
-    $tag: #5HFQ80TF9F5ZTA7LKAQ9D5JSYS2K9HFN
+    $tag: #N8M08QK85MZWA8KJGV8SBFHJWRBV8JFC
     $version: v1
     $permissions: /bali/permissions/public/v1
     $previous: none

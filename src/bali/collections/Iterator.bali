@@ -1,6 +1,6 @@
 [
     $description: "
-        This concrete primitive type defines the procedures for the messages that all iterators
+        This concrete primitive type defines the methods for the messages that all iterators
         support.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Component/v1
@@ -14,14 +14,14 @@
     ]
     $constants: [:]
     $interfaces: [ ]
-    $procedures: [
+    $methods: [
         $hasNext: [
             $description: "
-                This procedure determines whether or not there is an item following the slot
+                This method determines whether or not there is an item following the slot
                 between the items in the sequence that this iterator refers to.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
-            $source: {
+            $procedure: {
                 return hasNext(target)
             }
             $instructions: "
@@ -45,11 +45,11 @@
         ]
         $hasPrevious: [
             $description: "
-                This procedure determines whether or not there is an item preceding the slot
+                This method determines whether or not there is an item preceding the slot
                 between the items in the sequence that this iterator refers to.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
-            $source: {
+            $procedure: {
                 return hasPrevious(target)
             }
             $instructions: "
@@ -73,11 +73,11 @@
         ]
         $next: [
             $description: "
-                This procedure retrieves the next item in the sequence that this iterator
+                This method retrieves the next item in the sequence that this iterator
                 refers to.
             "($mediatype: "application/bsmd")
             $type: $ItemType
-            $source: {
+            $procedure: {
                 return next(target)
             }
             $instructions: "
@@ -101,11 +101,11 @@
         ]
         $previous: [
             $description: "
-                This procedure retrieves the previous item in the sequence that this iterator
+                This method retrieves the previous item in the sequence that this iterator
                 refers to.
             "($mediatype: "application/bsmd")
             $type: $ItemType
-            $source: {
+            $procedure: {
                 return previous(target)
             }
             $instructions: "
@@ -129,11 +129,11 @@
         ]
         $toEnd: [
             $description: "
-                This procedure moves this iterator to the slot following the last item in the
+                This method moves this iterator to the slot following the last item in the
                 sequence that this iterator refers to.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Iterator/v1($ItemType: $ItemType)
-            $source: {
+            $procedure: {
                 return toEnd(target)
             }
             $instructions: "
@@ -157,7 +157,7 @@
         ]
         $toSlot: [
             $description: "
-                This procedure moves this iterator to the specified slot in the sequence that
+                This method moves this iterator to the specified slot in the sequence that
                 this iterator refers to.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Iterator/v1($ItemType: $ItemType)
@@ -170,7 +170,7 @@
                     $type: /bali/elements/Number/v1
                 ]
             ]
-            $source: {
+            $procedure: {
                 return toSlot(target, slot)
             }($slot: /bali/elements/Number/v1)
             $instructions: "
@@ -197,11 +197,11 @@
         ]
         $toStart: [
             $description: "
-                This procedure moves this iterator to the slot preceding the first item in the
+                This method moves this iterator to the slot preceding the first item in the
                 sequence that this iterator refers to.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Iterator/v1($ItemType: $ItemType)
-            $source: {
+            $procedure: {
                 return toStart(target)
             }
             $instructions: "

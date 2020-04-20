@@ -1,6 +1,6 @@
 [
     $description: "
-        This class defines the procedures for the messages that all queues support.
+        This class defines the methods for the messages that all queues support.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Collection/v1($ItemType: $ItemType)
     $parameters: [
@@ -14,10 +14,10 @@
     ]
     $constants: [:]
     $interfaces: [ ]
-    $procedures: [
+    $methods: [
         $addItem: [
             $description: "
-                This procedure attempts to add the specified item to this queue.  The
+                This method attempts to add the specified item to this queue.  The
                 updated queue is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Queue/v1($ItemType: $ItemType)
@@ -29,7 +29,7 @@
                     $type: $ItemType
                 ]
             ]
-            $source: {
+            $procedure: {
                 return addItem(target, item)
             }($item: $ItemType)
             $instructions: "
@@ -56,7 +56,7 @@
         ]
         $addItems: [
             $description: "
-                This procedure attempts to add the specified sequence of items to this
+                This method attempts to add the specified sequence of items to this
                 queue.  The updated queue is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Queue/v1($ItemType: $ItemType)
@@ -68,7 +68,7 @@
                     $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
                 ]
             ]
-            $source: {
+            $procedure: {
                 return addItems(target, items)
             }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
             $instructions: "
@@ -95,7 +95,7 @@
         ]
         $containsAll: [
             $description: "
-                This procedure determines whether or not this queue contains all of the
+                This method determines whether or not this queue contains all of the
                 specified items.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
@@ -107,7 +107,7 @@
                     $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
                 ]
             ]
-            $source: {
+            $procedure: {
                 return containsAll(target, items)
             }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
             $instructions: "
@@ -134,7 +134,7 @@
         ]
         $containsAny: [
             $description: "
-                This procedure determines whether or not this queue contains any of the
+                This method determines whether or not this queue contains any of the
                 specified items.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
@@ -146,7 +146,7 @@
                     $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
                 ]
             ]
-            $source: {
+            $procedure: {
                 return containsAny(target, items)
             }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
             $instructions: "
@@ -173,7 +173,7 @@
         ]
         $containsItem: [
             $description: "
-                This procedure determines whether or not this queue contains the specified
+                This method determines whether or not this queue contains the specified
                 item.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
@@ -185,7 +185,7 @@
                     $type: $ItemType
                 ]
             ]
-            $source: {
+            $procedure: {
                 return containsItem(target, item)
             }($item: $ItemType)
             $instructions: "
@@ -212,10 +212,10 @@
         ]
         $head: [
             $description: "
-                This procedure returns from this queue the head item.
+                This method returns from this queue the head item.
             "($mediatype: "application/bsmd")
             $type: $ItemType
-            $source: {
+            $procedure: {
                 return head(target)
             }
             $instructions: "
@@ -239,7 +239,7 @@
         ]
         $index: [
             $description: "
-                This procedure returns the index of the specified item from this queue,
+                This method returns the index of the specified item from this queue,
                 or 0 if it is not found.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
@@ -252,7 +252,7 @@
                     $type: $ItemType
                 ]
             ]
-            $source: {
+            $procedure: {
                 return index(target, item)
             }($item: $ItemType)
             $instructions: "
@@ -279,10 +279,10 @@
         ]
         $isEmpty: [
             $description: "
-                This procedure determines whether or not this queue is empty.
+                This method determines whether or not this queue is empty.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
-            $source: {
+            $procedure: {
                 return isEmpty(target)
             }
             $instructions: "
@@ -306,7 +306,7 @@
         ]
         $item: [
             $description: "
-                This procedure returns from this queue the item corresponding to the specified
+                This method returns from this queue the item corresponding to the specified
                 index.
             "($mediatype: "application/bsmd")
             $type: $ItemType
@@ -318,7 +318,7 @@
                     $type: /bali/elements/Number/v1
                 ]
             ]
-            $source: {
+            $procedure: {
                 return item(target, index)
             }($index: /bali/elements/Number/v1)
             $instructions: "
@@ -345,7 +345,7 @@
         ]
         $items: [
             $description: "
-                This procedure returns from this queue the subset of items in the
+                This method returns from this queue the subset of items in the
                 specified range.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Queue/v1($ItemType: $ItemType)
@@ -358,7 +358,7 @@
                     $type: /bali/elements/Range/v1
                 ]
             ]
-            $source: {
+            $procedure: {
                 return items(target, range)
             }($range: /bali/collections/Range/v1)
             $instructions: "
@@ -385,11 +385,11 @@
         ]
         $iterator: [
             $description: "
-                This procedure returns an iterator that can be used to visit, in order, each
+                This method returns an iterator that can be used to visit, in order, each
                 item in this queue.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Iterator/v1($ItemType: $ItemType)
-            $source: {
+            $procedure: {
                 return iterator(target)
             }
             $instructions: "
@@ -413,10 +413,10 @@
         ]
         $removeAll: [
             $description: "
-                This procedure removes all items from this queue.  The updated queue is returned.
+                This method removes all items from this queue.  The updated queue is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Queue/v1($ItemType: $ItemType)
-            $source: {
+            $procedure: {
                 return removeAll(target)
             }
             $instructions: "
@@ -440,10 +440,10 @@
         ]
         $removeItem: [
             $description: "
-                This procedure removes and returns from this queue the head item.
+                This method removes and returns from this queue the head item.
             "($mediatype: "application/bsmd")
             $type: $ItemType
-            $source: {
+            $procedure: {
                 return removeHead(target)
             }
             $instructions: "
@@ -467,10 +467,10 @@
         ]
         $size: [
             $description: "
-                This procedure returns the number of items contained in this queue.
+                This method returns the number of items contained in this queue.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
-            $source: {
+            $procedure: {
                 return size(target)
             }
             $instructions: "

@@ -1,6 +1,6 @@
 [
     $description: "
-        This abstract primitive type defines the procedures for the messages that all elemental
+        This abstract primitive type defines the methods for the messages that all elemental
         types support.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Component/v1

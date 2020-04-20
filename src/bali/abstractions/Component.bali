@@ -1,19 +1,19 @@
 [
     $description: "
-        This abstract primitive type defines the procedures for the messages that all components support.
+        This abstract primitive type defines the methods for the messages that all components support.
     "($mediatype: "application/bsmd")
     $parent: none
     $parameters: [:]
     $constants: [:]
     $interfaces: [ ]
-    $procedures: [
+    $methods: [
         $ancestry: [
             $description: "
-                This procedure returns a list of the type names of the ancestors for this type of
+                This method returns a list of the type names of the ancestors for this type of
                 component.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($ItemType: /bali/elements/Name/v1)
-            $source: {
+            $procedure: {
                 $ancestry := [ ]
                 $current := type(target)
                 while current do {
@@ -97,7 +97,7 @@
         ]
         $isA: [
             $description: "
-                This procedure determines whether or not the ancestry of this component includes
+                This method determines whether or not the ancestry of this component includes
                 the specified named type.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
@@ -110,7 +110,7 @@
                     $type: /bali/elements/Name/v1
                 ]
             ]
-            $source: {
+            $procedure: {
                 $current := type(target)
                 while current do {
                     if current = type then {
@@ -199,10 +199,10 @@
         ]
         $isParameterized: [
             $description: "
-                This procedure determines whether or not this component is parameterized.
+                This method determines whether or not this component is parameterized.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
-            $source: {
+            $procedure: {
                 return isParameterized(target)
             }
             $instructions: "
@@ -226,7 +226,7 @@
         ]
         $parameter: [
             $description: "
-                This procedure returns a catalog of any parameters that were used to parameterize
+                This method returns a catalog of any parameters that were used to parameterize
                 this component.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Component/v1
@@ -238,7 +238,7 @@
                     $type: /bali/elements/Symbol/v1
                 ]
             ]
-            $source: {
+            $procedure: {
                 return parameter(target, key)
             }($key: /bali/elements/Symbol/v1)
             $instructions: "
@@ -265,11 +265,11 @@
         ]
         $parameters: [
             $description: "
-                This procedure returns a catalog of any parameters that were used to parameterize
+                This method returns a catalog of any parameters that were used to parameterize
                 this component.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Catalog/v1
-            $source: {
+            $procedure: {
                 return parameters(target)
             }
             $instructions: "
@@ -293,10 +293,10 @@
         ]
         $type: [
             $description: "
-                This procedure returns the name of the type of this component.
+                This method returns the name of the type of this component.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Name/v1
-            $source: {
+            $procedure: {
                 return type(target)
             }
             $instructions: "

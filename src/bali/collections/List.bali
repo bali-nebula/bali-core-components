@@ -1,6 +1,6 @@
 [
     $description: "
-        This class defines the procedures for the messages that all lists support.
+        This class defines the methods for the messages that all lists support.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Collection/v1($ItemType: $ItemType)
     $parameters: [
@@ -14,10 +14,10 @@
     ]
     $constants: [:]
     $interfaces: [ ]
-    $procedures: [
+    $methods: [
         $addItem: [
             $description: "
-                This procedure attempts to add the specified item to this list.  The
+                This method attempts to add the specified item to this list.  The
                 updated list is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($ItemType: $ItemType)
@@ -29,7 +29,7 @@
                     $type: $ItemType
                 ]
             ]
-            $source: {
+            $procedure: {
                 return addItem(target, item)
             }($item: $ItemType)
             $instructions: "
@@ -56,7 +56,7 @@
         ]
         $addItems: [
             $description: "
-                This procedure attempts to add the specified sequence of items to this
+                This method attempts to add the specified sequence of items to this
                 list.  The updated list is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($ItemType: $ItemType)
@@ -68,7 +68,7 @@
                     $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
                 ]
             ]
-            $source: {
+            $procedure: {
                 return addItems(target, items)
             }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
             $instructions: "
@@ -95,7 +95,7 @@
         ]
         $containsAll: [
             $description: "
-                This procedure determines whether or not this list contains all of the
+                This method determines whether or not this list contains all of the
                 specified items.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
@@ -107,7 +107,7 @@
                     $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
                 ]
             ]
-            $source: {
+            $procedure: {
                 return containsAll(target, items)
             }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
             $instructions: "
@@ -134,7 +134,7 @@
         ]
         $containsAny: [
             $description: "
-                This procedure determines whether or not this list contains any of the
+                This method determines whether or not this list contains any of the
                 specified items.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
@@ -146,7 +146,7 @@
                     $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
                 ]
             ]
-            $source: {
+            $procedure: {
                 return containsAny(target, items)
             }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
             $instructions: "
@@ -173,7 +173,7 @@
         ]
         $containsItem: [
             $description: "
-                This procedure determines whether or not this list contains the specified
+                This method determines whether or not this list contains the specified
                 item.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
@@ -185,7 +185,7 @@
                     $type: $ItemType
                 ]
             ]
-            $source: {
+            $procedure: {
                 return containsItem(target, item)
             }($item: $ItemType)
             $instructions: "
@@ -212,7 +212,7 @@
         ]
         $index: [
             $description: "
-                This procedure returns the index of the specified item from this list,
+                This method returns the index of the specified item from this list,
                 or 0 if it is not found.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
@@ -225,7 +225,7 @@
                     $type: $ItemType
                 ]
             ]
-            $source: {
+            $procedure: {
                 return index(target, item)
             }($item: $ItemType)
             $instructions: "
@@ -252,7 +252,7 @@
         ]
         $insertItem: [
             $description: "
-                This procedure attempts to insert the specified item to this list in the
+                This method attempts to insert the specified item to this list in the
                 specified slot.  The updated list is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($ItemType: $ItemType)
@@ -271,7 +271,7 @@
                     $type: $ItemType
                 ]
             ]
-            $source: {
+            $procedure: {
                 return insertItem(target, slot, item)
             }(
                 $slot: /bali/elements/Number/v1
@@ -303,7 +303,7 @@
         ]
         $insertItems: [
             $description: "
-                This procedure attempts to insert the specified sequence of items into this
+                This method attempts to insert the specified sequence of items into this
                 list at the specified index.  The updated list is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($ItemType: $ItemType)
@@ -322,7 +322,7 @@
                     $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
                 ]
             ]
-            $source: {
+            $procedure: {
                 return insertItems(target, slot, items)
             }(
                 $slot: /bali/elements/Number/v1
@@ -354,10 +354,10 @@
         ]
         $isEmpty: [
             $description: "
-                This procedure determines whether or not this list is empty.
+                This method determines whether or not this list is empty.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
-            $source: {
+            $procedure: {
                 return isEmpty(target)
             }
             $instructions: "
@@ -381,7 +381,7 @@
         ]
         $item: [
             $description: "
-                This procedure returns from this list the item corresponding to the
+                This method returns from this list the item corresponding to the
                 specified index.
             "($mediatype: "application/bsmd")
             $type: $ItemType
@@ -393,7 +393,7 @@
                     $type: /bali/elements/Number/v1
                 ]
             ]
-            $source: {
+            $procedure: {
                 return item(target, index)
             }($index: /bali/elements/Number/v1)
             $instructions: "
@@ -420,7 +420,7 @@
         ]
         $items: [
             $description: "
-                This procedure returns from this list the subset of items in the
+                This method returns from this list the subset of items in the
                 specified range.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($ItemType: $ItemType)
@@ -433,7 +433,7 @@
                     $type: /bali/elements/Range/v1
                 ]
             ]
-            $source: {
+            $procedure: {
                 return items(target, range)
             }($range: /bali/elements/Range/v1)
             $instructions: "
@@ -460,11 +460,11 @@
         ]
         $iterator: [
             $description: "
-                This procedure returns an iterator that can be used to visit, in order, each
+                This method returns an iterator that can be used to visit, in order, each
                 item in this list.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Iterator/v1($ItemType: $ItemType)
-            $source: {
+            $procedure: {
                 return iterator(target)
             }
             $instructions: "
@@ -488,10 +488,10 @@
         ]
         $removeAll: [
             $description: "
-                This procedure removes all items from this list.  The updated list is returned.
+                This method removes all items from this list.  The updated list is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($ItemType: $ItemType)
-            $source: {
+            $procedure: {
                 return removeAll(target)
             }
             $instructions: "
@@ -515,7 +515,7 @@
         ]
         $removeItem: [
             $description: "
-                This procedure removes from this list the item associated with the specified
+                This method removes from this list the item associated with the specified
                 index.  The updated list is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($ItemType: $ItemType)
@@ -527,7 +527,7 @@
                     $type: /bali/elements/Number/v1
                 ]
             ]
-            $source: {
+            $procedure: {
                 return removeIndex(target, index)
             }($index: /bali/elements/Number/v1)
             $instructions: "
@@ -554,7 +554,7 @@
         ]
         $removeItems: [
             $description: "
-                This procedure removes from this list the items associated with the specified
+                This method removes from this list the items associated with the specified
                 index range.  The updated list is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($ItemType: $ItemType)
@@ -567,7 +567,7 @@
                     $type: /bali/elements/Range/v1
                 ]
             ]
-            $source: {
+            $procedure: {
                 return removeItems(target, range)
             }($range: /bali/elements/Range/v1)
             $instructions: "
@@ -594,11 +594,11 @@
         ]
         $reverseItems: [
             $description: "
-                This procedure reverses the order of the items contained in this list.  The
+                This method reverses the order of the items contained in this list.  The
                 updated list is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($ItemType: $ItemType)
-            $source: {
+            $procedure: {
                 return reverseItems(target)
             }
             $instructions: "
@@ -622,7 +622,7 @@
         ]
         $setItem: [
             $description: "
-                This procedure associates in this list the specified item with the specified
+                This method associates in this list the specified item with the specified
                 index.  The updated list is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($ItemType: $ItemType)
@@ -641,7 +641,7 @@
                     $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
                 ]
             ]
-            $source: {
+            $procedure: {
                 return setItem(target, index, item)
             }(
                 $index: /bali/elements/Number/v1
@@ -673,11 +673,11 @@
         ]
         $sortItems: [
             $description: "
-                This procedure orders the items contained in this list in their
+                This method orders the items contained in this list in their
                 natural order by value.  The updated list is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($ItemType: $ItemType)
-            $source: {
+            $procedure: {
                 return sortItems(target)
             }
             $instructions: "
@@ -701,11 +701,11 @@
         ]
         $shuffleItems: [
             $description: "
-                This procedure shuffles the items contained in this list into a random order.
+                This method shuffles the items contained in this list into a random order.
                 The updated list is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($ItemType: $ItemType)
-            $source: {
+            $procedure: {
                 return shuffleItems(target)
             }
             $instructions: "
@@ -729,10 +729,10 @@
         ]
         $size: [
             $description: "
-                This procedure returns the number of items contained in this list.
+                This method returns the number of items contained in this list.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
-            $source: {
+            $procedure: {
                 return size(target)
             }
             $instructions: "

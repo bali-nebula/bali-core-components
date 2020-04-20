@@ -1,6 +1,6 @@
 [
     $description: "
-        This abstract primitive type defines the procedures for the messages that all elemental
+        This abstract primitive type defines the methods for the messages that all elemental
         string types support. Since strings are elemental they are immutable.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Element/v1
@@ -16,10 +16,10 @@
     $interfaces: [
         /bali/interfaces/Sequential/v1($ItemType: $ItemType)
     ]
-    $procedures: [
+    $methods: [
         $index: [
             $description: "
-                This procedure returns the index of the specified item from this string, or 0
+                This method returns the index of the specified item from this string, or 0
                 if it is not found.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
@@ -32,7 +32,7 @@
                     $type: $ItemType
                 ]
             ]
-            $source: {
+            $procedure: {
                 $index := 0
                 with each $candidate in target do {
                     $index := index + 1
@@ -128,10 +128,10 @@
         ]
         $isEmpty: [
             $description: "
-                This procedure determines whether or not this string is empty.
+                This method determines whether or not this string is empty.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
-            $source: {
+            $procedure: {
                 return target.size() = 0
             }
             $instructions: "
@@ -159,7 +159,7 @@
         ]
         $item: [
             $description: "
-                This procedure returns from this string the item corresponding to the specified
+                This method returns from this string the item corresponding to the specified
                 index.
             "($mediatype: "application/bsmd")
             $type: $ItemType
@@ -172,7 +172,7 @@
                     $type: /bali/elements/Number/v1
                 ]
             ]
-            $source: {
+            $procedure: {
                 $iterator := target.iterator()
                 iterator.toSlot(index)
                 return iterator.previous()
@@ -221,7 +221,7 @@
         ]
         $items: [
             $description: "
-                This procedure returns from this string the subset of items in the specified
+                This method returns from this string the subset of items in the specified
                 range.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/String/v1($ItemType: $ItemType)
@@ -234,7 +234,7 @@
                     $type: /bali/elements/Range/v1
                 ]
             ]
-            $source: {
+            $procedure: {
                 $items := [ ]
                 with each $index in range do {
                     items.addItem(target[index])
@@ -314,14 +314,14 @@
         ]
         $iterator: [
             $description: "
-                This procedure returns an iterator that can be used to visit, in order, each item
+                This method returns an iterator that can be used to visit, in order, each item
                 in this string.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Iterator/v1($ItemType: $ItemType)
-            $source: {
+            $procedure: {
                 throw [
                     $module: /bali/abstractions/String/v1
-                    $procedure: $iterator
+                    $method: $iterator
                     $exception: $abstractMethod
                     $text: "An abstract method must be implemented by a subtype."
                 ]
@@ -333,7 +333,7 @@
                 PUSH LITERAL `/bali/abstractions/String/v1`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
-                PUSH LITERAL `$procedure`
+                PUSH LITERAL `$method`
                 PUSH LITERAL `$iterator`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
@@ -365,13 +365,13 @@
         ]
         $size: [
             $description: "
-                This procedure returns the number of items contained in this string.
+                This method returns the number of items contained in this string.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
-            $source: {
+            $procedure: {
                 throw [
                     $module: /bali/abstractions/String/v1
-                    $procedure: $size
+                    $method: $size
                     $exception: $abstractMethod
                     $text: "An abstract method must be implemented by a subtype."
                 ]
@@ -383,7 +383,7 @@
                 PUSH LITERAL `/bali/abstractions/String/v1`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
-                PUSH LITERAL `$procedure`
+                PUSH LITERAL `$method`
                 PUSH LITERAL `$size`
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
@@ -419,7 +419,7 @@
         1
         $module
         /bali/abstractions/String/v1
-        $procedure
+        $method
         $iterator
         $exception
         $abstractMethod

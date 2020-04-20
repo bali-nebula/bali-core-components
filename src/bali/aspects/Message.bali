@@ -17,7 +17,7 @@
     $attributes: [
         $type: [
             $description: "
-                This attribute defines the name of the type that is returned by the procedure
+                This attribute defines the name of the type that is returned by the method
                 that implements this message type.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Name/v1

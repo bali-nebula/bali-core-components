@@ -24,17 +24,17 @@
             $type: /bali/collections/List/v1($ItemType: /bali/types/Interface/v1)
             $default: [ ]
         ]
-        $procedures: [
+        $methods: [
             $description: "
-                This attribute is a catalog of all the messages and corresponding procedures
+                This attribute is a catalog of all the messages and corresponding methods
                 that instances of this primitive type support.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Catalog/v1($ValueType: /bali/aspects/Procedure/v1)
+            $type: /bali/collections/Catalog/v1($ValueType: /bali/aspects/Method/v1)
             $default: [:]
         ]
         $literals: [
             $description: "
-                This attribute is a list of all the literal values that occur in the procedures
+                This attribute is a list of all the literal values that occur in the methods
                 and is needed by the virtual machine.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($ItemType: /bali/interfaces/Literal/v1)
