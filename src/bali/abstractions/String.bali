@@ -5,7 +5,7 @@
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Element/v1
     $parameters: [
-        $ItemType: [
+        $itemType: [
             $description: "
                 This parameter specifies the type of items that a string of this type contains.
             "($mediatype: "application/bsmd")
@@ -14,7 +14,7 @@
     ]
     $constants: [:]
     $interfaces: [
-        /bali/abstractions/Sequential/v1($ItemType: $ItemType)
+        /bali/abstractions/Sequential/v1($itemType: $itemType)
     ]
     $methods: [
         $index: [
@@ -29,7 +29,7 @@
                         This argument specifies the item in the string for which the index should
                         be returned.
                     "($mediatype: "application/bsmd")
-                    $type: $ItemType
+                    $type: $itemType
                 ]
             ]
             $procedure: {
@@ -41,7 +41,7 @@
                     }
                 }
                 return index
-            }($item: $ItemType)
+            }($item: $itemType)
             $instructions: "
                 1.EvaluateStatement:
                 PUSH LITERAL `0`
@@ -162,7 +162,7 @@
                 This method returns from this string the item corresponding to the specified
                 index.
             "($mediatype: "application/bsmd")
-            $type: $ItemType
+            $type: $itemType
             $arguments: [
                 $index: [
                     $description: "
@@ -224,7 +224,7 @@
                 This method returns from this string the subset of items in the specified
                 range.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/String/v1($ItemType: $ItemType)
+            $type: /bali/abstractions/String/v1($itemType: $itemType)
             $arguments: [
                 $range: [
                     $description: "
@@ -317,7 +317,7 @@
                 This method returns an iterator that can be used to visit, in order, each item
                 in this string.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Iterator/v1($ItemType: $ItemType)
+            $type: /bali/collections/Iterator/v1($itemType: $itemType)
             $procedure: {
                 throw [
                     $module: /bali/abstractions/String/v1

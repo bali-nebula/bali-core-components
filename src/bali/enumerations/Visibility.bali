@@ -8,7 +8,7 @@
     $values: [
         $private
         $public
-    ]($type: /bali/collections/Set/v1($ItemType: /bali/elements/Symbol/v1))
+    ]($type: /bali/collections/Set/v1($itemType: /bali/elements/Symbol/v1))
 ](
     $name: /bali/enumerations/Visibility/v1
     $type: /bali/types/Enumeration/v1

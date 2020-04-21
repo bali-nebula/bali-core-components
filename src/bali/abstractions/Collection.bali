@@ -5,7 +5,7 @@
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Component/v1
     $parameters: [
-        $ItemType: [
+        $itemType: [
             $description: "
                 This parameter specifies the type of items that a collection of this type supports.
             "($mediatype: "application/bsmd")
@@ -15,7 +15,7 @@
     ]
     $constants: [:]
     $interfaces: [
-        /bali/abstractions/Sequential/v1($ItemType: $ItemType)
+        /bali/abstractions/Sequential/v1($itemType: $itemType)
     ]
     $methods: [
         $addItem: [
@@ -23,13 +23,13 @@
                 This method attempts to add the specified item to this collection.  The updated
                 collection is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+            $type: /bali/abstractions/Collection/v1($itemType: $itemType)
             $arguments: [
                 $item: [
                     $description: "
                         This argument specifies the item to be added to this collection.
                     "($mediatype: "application/bsmd")
-                    $type: $ItemType
+                    $type: $itemType
                 ]
             ]
             $procedure: {
@@ -39,7 +39,7 @@
                     $exception: $abstractMethod
                     $text: "An abstract method must be implemented by a subtype."
                 ]
-            }($item: $ItemType)
+            }($item: $itemType)
             $instructions: "
                 1.ThrowStatement:
                 INVOKE $catalog
@@ -84,13 +84,13 @@
                 This method attempts to add the specified sequence of items to this collection.
                 The updated collection is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+            $type: /bali/abstractions/Collection/v1($itemType: $itemType)
             $arguments: [
                 $items: [
                     $description: "
                         This argument specifies the collection of items to be added to this collection.
                     "($mediatype: "application/bsmd")
-                    $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+                    $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
             ]
             $procedure: {
@@ -98,7 +98,7 @@
                     target.addItem(item)
                 }
                 return target
-            }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
+            }($items: /bali/abstractions/Collection/v1($itemType: $itemType))
             $instructions: "
                 1.WithStatement:
                 PUSH PARAMETER $items
@@ -174,7 +174,7 @@
                         This argument specifies the collection of items to be searched for in this
                         collection.
                     "($mediatype: "application/bsmd")
-                    $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+                    $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
             ]
             $procedure: {
@@ -184,7 +184,7 @@
                     }
                 }
                 return true
-            }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
+            }($items: /bali/abstractions/Collection/v1($itemType: $itemType))
             $instructions: "
                 1.WithStatement:
                 PUSH PARAMETER $items
@@ -273,7 +273,7 @@
                         This argument specifies the collection of items to be searched for in this
                         collection.
                     "($mediatype: "application/bsmd")
-                    $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+                    $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
             ]
             $procedure: {
@@ -283,7 +283,7 @@
                     }
                 }
                 return false
-            }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
+            }($items: /bali/abstractions/Collection/v1($itemType: $itemType))
             $instructions: "
                 1.WithStatement:
                 PUSH PARAMETER $items
@@ -370,12 +370,12 @@
                     $description: "
                         This argument specifies the item to be searched for in this collection.
                     "($mediatype: "application/bsmd")
-                    $type: $ItemType
+                    $type: $itemType
                 ]
             ]
             $procedure: {
                 return target.index(item) > 0
-            }($item: $ItemType)
+            }($item: $itemType)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -416,7 +416,7 @@
                         This argument specifies the item in the collection for which the index
                         should be returned.
                     "($mediatype: "application/bsmd")
-                    $type: $ItemType
+                    $type: $itemType
                 ]
             ]
             $procedure: {
@@ -428,7 +428,7 @@
                     }
                 }
                 return index
-            }($item: $ItemType)
+            }($item: $itemType)
             $instructions: "
                 1.EvaluateStatement:
                 PUSH LITERAL `0`
@@ -549,7 +549,7 @@
                 This method returns from this collection the item corresponding to the specified
                 index.
             "($mediatype: "application/bsmd")
-            $type: $ItemType
+            $type: $itemType
             $arguments: [
                 $index: [
                     $description: "
@@ -611,7 +611,7 @@
                 This method returns from this collection the subset of items in the specified
                 range.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+            $type: /bali/abstractions/Collection/v1($itemType: $itemType)
             $arguments: [
                 $range: [
                     $description: "
@@ -704,7 +704,7 @@
                 This method returns an iterator that can be used to visit, in order, each item
                 in this collection.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Iterator/v1($ItemType: $ItemType)
+            $type: /bali/collections/Iterator/v1($itemType: $itemType)
             $procedure: {
                 throw [
                     $module: /bali/abstractions/Collection/v1
@@ -754,7 +754,7 @@
             $description: "
                 This method removes all the items from this collection.
             "($mediatype: "application/bsmd")
-            $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+            $type: /bali/abstractions/Collection/v1($itemType: $itemType)
             $procedure: {
                 throw [
                     $module: /bali/abstractions/Collection/v1

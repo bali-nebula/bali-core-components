@@ -12,7 +12,7 @@
                 This method returns a list of the type names of the ancestors for this type of
                 component.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/List/v1($ItemType: /bali/elements/Name/v1)
+            $type: /bali/collections/List/v1($itemType: /bali/elements/Name/v1)
             $procedure: {
                 $ancestry := [ ]
                 $current := type(target)

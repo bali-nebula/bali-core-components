@@ -2,9 +2,9 @@
     $description: "
         This class defines the methods for the messages that all queues support.
     "($mediatype: "application/bsmd")
-    $parent: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+    $parent: /bali/abstractions/Collection/v1($itemType: $itemType)
     $parameters: [
-        $ItemType: [
+        $itemType: [
             $description: "
                 This parameter specifies the name of the type for each item managed by this queue.
             "($mediatype: "application/bsmd")
@@ -20,18 +20,18 @@
                 This method attempts to add the specified item to this queue.  The
                 updated queue is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Queue/v1($ItemType: $ItemType)
+            $type: /bali/collections/Queue/v1($itemType: $itemType)
             $arguments: [
                 $item: [
                     $description: "
                         This argument specifies the item to be added to this queue.
                     "($mediatype: "application/bsmd")
-                    $type: $ItemType
+                    $type: $itemType
                 ]
             ]
             $procedure: {
                 return addItem(target, item)
-            }($item: $ItemType)
+            }($item: $itemType)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -59,18 +59,18 @@
                 This method attempts to add the specified sequence of items to this
                 queue.  The updated queue is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Queue/v1($ItemType: $ItemType)
+            $type: /bali/collections/Queue/v1($itemType: $itemType)
             $arguments: [
                 $items: [
                     $description: "
                         This argument specifies the items to be added to this queue.
                     "($mediatype: "application/bsmd")
-                    $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+                    $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
             ]
             $procedure: {
                 return addItems(target, items)
-            }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
+            }($items: /bali/abstractions/Collection/v1($itemType: $itemType))
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -104,12 +104,12 @@
                     $description: "
                         This argument specifies the items to be searched for in this queue.
                     "($mediatype: "application/bsmd")
-                    $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+                    $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
             ]
             $procedure: {
                 return containsAll(target, items)
-            }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
+            }($items: /bali/abstractions/Collection/v1($itemType: $itemType))
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -143,12 +143,12 @@
                     $description: "
                         This argument specifies the items to be searched for in this queue.
                     "($mediatype: "application/bsmd")
-                    $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+                    $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
             ]
             $procedure: {
                 return containsAny(target, items)
-            }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
+            }($items: /bali/abstractions/Collection/v1($itemType: $itemType))
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -182,12 +182,12 @@
                     $description: "
                         This argument specifies the item to be searched for in this queue.
                     "($mediatype: "application/bsmd")
-                    $type: $ItemType
+                    $type: $itemType
                 ]
             ]
             $procedure: {
                 return containsItem(target, item)
-            }($item: $ItemType)
+            }($item: $itemType)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -214,7 +214,7 @@
             $description: "
                 This method returns from this queue the head item.
             "($mediatype: "application/bsmd")
-            $type: $ItemType
+            $type: $itemType
             $procedure: {
                 return head(target)
             }
@@ -249,12 +249,12 @@
                         This argument specifies the item in this queue for which the index
                         should be returned.
                     "($mediatype: "application/bsmd")
-                    $type: $ItemType
+                    $type: $itemType
                 ]
             ]
             $procedure: {
                 return index(target, item)
-            }($item: $ItemType)
+            }($item: $itemType)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -309,7 +309,7 @@
                 This method returns from this queue the item corresponding to the specified
                 index.
             "($mediatype: "application/bsmd")
-            $type: $ItemType
+            $type: $itemType
             $arguments: [
                 $index: [
                     $description: "
@@ -348,7 +348,7 @@
                 This method returns from this queue the subset of items in the
                 specified range.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Queue/v1($ItemType: $ItemType)
+            $type: /bali/collections/Queue/v1($itemType: $itemType)
             $arguments: [
                 $range: [
                     $description: "
@@ -388,7 +388,7 @@
                 This method returns an iterator that can be used to visit, in order, each
                 item in this queue.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Iterator/v1($ItemType: $ItemType)
+            $type: /bali/collections/Iterator/v1($itemType: $itemType)
             $procedure: {
                 return iterator(target)
             }
@@ -415,7 +415,7 @@
             $description: "
                 This method removes all items from this queue.  The updated queue is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Queue/v1($ItemType: $ItemType)
+            $type: /bali/collections/Queue/v1($itemType: $itemType)
             $procedure: {
                 return removeAll(target)
             }
@@ -442,7 +442,7 @@
             $description: "
                 This method removes and returns from this queue the head item.
             "($mediatype: "application/bsmd")
-            $type: $ItemType
+            $type: $itemType
             $procedure: {
                 return removeHead(target)
             }

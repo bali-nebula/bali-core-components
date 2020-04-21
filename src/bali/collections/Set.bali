@@ -2,9 +2,9 @@
     $description: "
         This class defines the methods for the messages that all sets support.
     "($mediatype: "application/bsmd")
-    $parent: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+    $parent: /bali/abstractions/Collection/v1($itemType: $itemType)
     $parameters: [
-        $ItemType: [
+        $itemType: [
             $description: "
                 This parameter specifies the name of the type for each item managed by this set.
             "($mediatype: "application/bsmd")
@@ -20,18 +20,18 @@
                 This method attempts to add the specified item to this set.  The
                 updated set is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Set/v1($ItemType: $ItemType)
+            $type: /bali/collections/Set/v1($itemType: $itemType)
             $arguments: [
                 $item: [
                     $description: "
                         This argument specifies the item to be added to this set.
                     "($mediatype: "application/bsmd")
-                    $type: $ItemType
+                    $type: $itemType
                 ]
             ]
             $procedure: {
                 return addItem(target, item)
-            }($item: $ItemType)
+            }($item: $itemType)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -59,18 +59,18 @@
                 This method attempts to add the specified sequence of items to this
                 set.  The updated set is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Set/v1($ItemType: $ItemType)
+            $type: /bali/collections/Set/v1($itemType: $itemType)
             $arguments: [
                 $items: [
                     $description: "
                         This argument specifies the items to be added to this set.
                     "($mediatype: "application/bsmd")
-                    $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+                    $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
             ]
             $procedure: {
                 return addItems(target, items)
-            }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
+            }($items: /bali/abstractions/Collection/v1($itemType: $itemType))
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -104,12 +104,12 @@
                     $description: "
                         This argument specifies the items to be searched for in this set.
                     "($mediatype: "application/bsmd")
-                    $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+                    $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
             ]
             $procedure: {
                 return containsAll(target, items)
-            }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
+            }($items: /bali/abstractions/Collection/v1($itemType: $itemType))
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -143,12 +143,12 @@
                     $description: "
                         This argument specifies the items to be searched for in this set.
                     "($mediatype: "application/bsmd")
-                    $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+                    $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
             ]
             $procedure: {
                 return containsAny(target, items)
-            }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
+            }($items: /bali/abstractions/Collection/v1($itemType: $itemType))
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -182,12 +182,12 @@
                     $description: "
                         This argument specifies the item to be searched for in this set.
                     "($mediatype: "application/bsmd")
-                    $type: $ItemType
+                    $type: $itemType
                 ]
             ]
             $procedure: {
                 return containsItem(target, item)
-            }($item: $ItemType)
+            }($item: $itemType)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -222,12 +222,12 @@
                         This argument specifies the item in this set for which the index
                         should be returned.
                     "($mediatype: "application/bsmd")
-                    $type: $ItemType
+                    $type: $itemType
                 ]
             ]
             $procedure: {
                 return index(target, item)
-            }($item: $ItemType)
+            }($item: $itemType)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -282,7 +282,7 @@
                 This method returns from this set the item corresponding to the specified
                 index.
             "($mediatype: "application/bsmd")
-            $type: $ItemType
+            $type: $itemType
             $arguments: [
                 $index: [
                     $description: "
@@ -321,7 +321,7 @@
                 This method returns from this set the subset of items in the
                 specified range.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Set/v1($ItemType: $ItemType)
+            $type: /bali/collections/Set/v1($itemType: $itemType)
             $arguments: [
                 $range: [
                     $description: "
@@ -361,7 +361,7 @@
                 This method returns an iterator that can be used to visit, in order, each
                 item in this set.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Iterator/v1($ItemType: $ItemType)
+            $type: /bali/collections/Iterator/v1($itemType: $itemType)
             $procedure: {
                 return iterator(target)
             }
@@ -388,7 +388,7 @@
             $description: "
                 This method removes all items from this set.  The updated set is returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Set/v1($ItemType: $ItemType)
+            $type: /bali/collections/Set/v1($itemType: $itemType)
             $procedure: {
                 return removeAll(target)
             }
@@ -416,18 +416,18 @@
                 This method removes from this set the specified item.  The updated set is
                 returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Set/v1($ItemType: $ItemType)
+            $type: /bali/collections/Set/v1($itemType: $itemType)
             $arguments: [
                 $item: [
                     $description: "
                         This argument specifies the item to be removed from this set.
                     "($mediatype: "application/bsmd")
-                    $type: $ItemType
+                    $type: $itemType
                 ]
             ]
             $procedure: {
                 return removeItem(target, item)
-            }($item: $ItemType)
+            }($item: $itemType)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
@@ -455,18 +455,18 @@
                 This method removes from this set the specified items.  The updated set is
                 returned.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Set/v1($ItemType: $ItemType)
+            $type: /bali/collections/Set/v1($itemType: $itemType)
             $arguments: [
                 $items: [
                     $description: "
                         This argument specifies the items to be removed from this set.
                     "($mediatype: "application/bsmd")
-                    $type: /bali/abstractions/Collection/v1($ItemType: $ItemType)
+                    $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
             ]
             $procedure: {
                 return removeItems(target, range)
-            }($items: /bali/abstractions/Collection/v1($ItemType: $ItemType))
+            }($items: /bali/abstractions/Collection/v1($itemType: $itemType))
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target

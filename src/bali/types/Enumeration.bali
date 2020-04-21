@@ -11,7 +11,7 @@
                 This attribute is a list of the symbol values that make up the possible
                 enumerated values for this type.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Set/v1($ItemType: /bali/elements/Symbol/v1)
+            $type: /bali/collections/Set/v1($itemType: /bali/elements/Symbol/v1)
         ]
     ]
     $events: [:]

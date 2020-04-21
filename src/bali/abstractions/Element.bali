@@ -6,9 +6,7 @@
     $parent: /bali/abstractions/Component/v1
     $parameters: [:]
     $constants: [:]
-    $interfaces: [
-        /bali/interfaces/Literal/v1
-    ]
+    $interfaces: [ ]
 ](
     $name: /bali/abstractions/Element/v1
     $type: /bali/types/Primitive/v1($existence: $abstract)

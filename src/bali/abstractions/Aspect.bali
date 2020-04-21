@@ -16,7 +16,7 @@
             $description: "
                 A catalog of the parameters that are used to parameterize instances of this type.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Catalog/v1($ValueType: /bali/aspects/Parameter/v1)
+            $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1)
             $default: [:]
         ]
     ]

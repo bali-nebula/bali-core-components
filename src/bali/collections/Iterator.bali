@@ -5,7 +5,7 @@
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Component/v1
     $parameters: [
-        $ItemType: [
+        $itemType: [
             $description: "
                 This parameter specifies the type of items that an iterator of this type supports.
             "($mediatype: "application/bsmd")
@@ -76,7 +76,7 @@
                 This method retrieves the next item in the sequence that this iterator
                 refers to.
             "($mediatype: "application/bsmd")
-            $type: $ItemType
+            $type: $itemType
             $procedure: {
                 return next(target)
             }
@@ -104,7 +104,7 @@
                 This method retrieves the previous item in the sequence that this iterator
                 refers to.
             "($mediatype: "application/bsmd")
-            $type: $ItemType
+            $type: $itemType
             $procedure: {
                 return previous(target)
             }
@@ -132,7 +132,7 @@
                 This method moves this iterator to the slot following the last item in the
                 sequence that this iterator refers to.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Iterator/v1($ItemType: $ItemType)
+            $type: /bali/collections/Iterator/v1($itemType: $itemType)
             $procedure: {
                 return toEnd(target)
             }
@@ -160,7 +160,7 @@
                 This method moves this iterator to the specified slot in the sequence that
                 this iterator refers to.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Iterator/v1($ItemType: $ItemType)
+            $type: /bali/collections/Iterator/v1($itemType: $itemType)
             $arguments: [
                 $slot: [
                     $description: "
@@ -200,7 +200,7 @@
                 This method moves this iterator to the slot preceding the first item in the
                 sequence that this iterator refers to.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Iterator/v1($ItemType: $ItemType)
+            $type: /bali/collections/Iterator/v1($itemType: $itemType)
             $procedure: {
                 return toStart(target)
             }

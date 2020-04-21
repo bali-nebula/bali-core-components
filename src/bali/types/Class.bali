@@ -20,7 +20,7 @@
                 This attribute is a list of all the interfaces that instances of this class type
                 support.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/List/v1($ItemType: /bali/types/Interface/v1)
+            $type: /bali/collections/List/v1($itemType: /bali/types/Interface/v1)
             $default: [ ]
         ]
         $attributes: [
@@ -28,7 +28,7 @@
                 This attribute is a catalog of all the attributes that instances of this class
                 type will have.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Catalog/v1($ValueType: /bali/aspects/Attribute/v1)
+            $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1)
             $default: [:]
         ]
         $methods: [
@@ -36,7 +36,7 @@
                 This attribute is a catalog of all the messages and corresponding methods
                 that instances of this class type support.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Catalog/v1($ValueType: /bali/aspects/Method/v1)
+            $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Method/v1)
             $default: [:]
         ]
         $events: [
@@ -44,7 +44,7 @@
                 This attribute is a catalog of all the event types that instances of this class
                 type are capable of publishing.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Catalog/v1($ValueType: /bali/aspects/Event/v1)
+            $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Event/v1)
             $default: [:]
         ]
         $handlers: [
@@ -52,16 +52,8 @@
                 This attribute is a catalog of all the event types and corresponding handlers
                 that instances of this class type are interested in responding to.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Catalog/v1($ValueType: /bali/aspects/Handler/v1)
+            $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Handler/v1)
             $default: [:]
-        ]
-        $literals: [
-            $description: "
-                This attribute is a list of all the literal values that occur in the methods
-                and handlers and is needed by the virtual machine.
-            "($mediatype: "application/bsmd")
-            $type: /bali/collections/List/v1($ItemType: /bali/interfaces/Literal/v1)
-            $default: [ ]
         ]
     ]
     $events: [:]

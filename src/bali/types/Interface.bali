@@ -11,14 +11,14 @@
                 This attribute is a catalog of all the messages that are supported by all types
                 that implement this interface.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Catalog/v1($ValueType: /bali/aspects/Message/v1)
+            $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1)
         ]
         $events: [
             $description: "
                 This attribute is a catalog of all the event types that may be published by
                 types that implement this interface.
             "($mediatype: "application/bsmd")
-            $type: /bali/collections/Catalog/v1($ValueType: /bali/aspects/Event/v1)
+            $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Event/v1)
             $default: [:]
         ]
     ]

@@ -17,7 +17,7 @@
                 A catalog of argument types that are expected to be passed each time this method
                 type is called.
             "($mediatype: "application/bsmd")
-            $type: /bali/collection/Catalog/v1($ItemType: /bali/aspects/Argument/v1)
+            $type: /bali/collection/Catalog/v1($itemType: /bali/aspects/Argument/v1)
         ]
         $procedure: [
             $description: "
