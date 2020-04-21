@@ -1,0 +1,15 @@
+[
+    $description: "
+        This class defines the methods for the messages that all moments support.
+    "($mediatype: "application/bsmd")
+    $parent: /bali/abstractions/Element/v1
+    $parameters: [:]
+    $constants: [:]
+](
+    $name: /bali/elements/Moment/v1
+    $type: /bali/types/Primitive/v1
+    $tag: #ZZMWL6HBN3KVLVKPAWRQL705B45ZG011
+    $version: v1
+    $permissions: /bali/permissions/public/v1
+    $previous: none
+)

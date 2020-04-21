@@ -1,0 +1,153 @@
+[
+    $description: "
+        This class defines the methods for the messages that all binary strings support.
+    "($mediatype: "application/bsmd")
+    $parent: /bali/abstractions/String/v1($itemType: /bali/elements/Number/v1($range: 0..255))
+    $methods: [
+        $item: [
+            $description: "
+                This method returns from this binary string the byte corresponding to the specified
+                index.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Number/v1($range: 0..255)
+            $arguments: [
+                $index: [
+                    $description: "
+                        This argument specifies the index of the byte to be returned from this
+                        binary string.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/elements/Number/v1
+                ]
+            ]
+            $procedure: {
+                return item(target, index)
+            }($index: /bali/elements/Number/v1)
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                PUSH PARAMETER $index
+                INVOKE $item WITH 2 ARGUMENTS
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '60013801B040E000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $parameters: [
+                $index
+            ]
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]
+        $items: [
+            $description: "
+                This method returns from this binary string the subset of bytes in the specified
+                range.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Binary/v1
+            $arguments: [
+                $range: [
+                    $description: "
+                        This argument specifies the range of indices for the subset of this
+                        binary string to be returned.
+                    "($mediatype: "application/bsmd")
+                    $type: /bali/elements/Range/v1
+                ]
+            ]
+            $procedure: {
+                return items(target, range)
+            }($range: /bali/elements/Range/v1)
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                PUSH PARAMETER $range
+                INVOKE $items WITH 2 ARGUMENTS
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '60013801B041E000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $parameters: [
+                $range
+            ]
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]
+        $iterator: [
+            $description: "
+                This method returns an iterator that can be used to visit, in order, each byte
+                in this binary string.
+            "($mediatype: "application/bsmd")
+            $type: /bali/collections/Iterator/v1($itemType: /bali/elements/Number/v1($range: 0..255))
+            $procedure: {
+                return iterator(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                INVOKE $iterator WITH 1 ARGUMENT
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '6001A842E000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $parameters: [ ]
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]
+        $size: [
+            $description: "
+                This method returns the number of bytes contained in this binary string.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Number/v1($range: 0..)
+            $procedure: {
+                return size(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                INVOKE $size WITH 1 ARGUMENT
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '6001A876E000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $parameters: [ ]
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]
+    ]
+    $parameters: [:]
+    $constants: [:]
+    $literals: [ ]
+](
+    $name: /bali/elements/Binary/v1
+    $type: /bali/types/Primitive/v1
+    $tag: #90CH6M405DSZ1A2WV0HDRAJ7V9VAL0CD
+    $version: v1
+    $permissions: /bali/permissions/public/v1
+    $previous: none
+)

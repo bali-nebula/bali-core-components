@@ -1,0 +1,15 @@
+[
+    $description: "
+        This class defines the methods for the messages that all symbols support.
+    "($mediatype: "application/bsmd")
+    $parent: /bali/abstractions/Element/v1
+    $parameters: [:]
+    $constants: [:]
+](
+    $name: /bali/elements/Symbol/v1
+    $type: /bali/types/Primitive/v1
+    $tag: #Y4TQ6LVJCT5QNQ0Y0RKMMBKR3ZNLSC2C
+    $version: v1
+    $permissions: /bali/permissions/public/v1
+    $previous: none
+)

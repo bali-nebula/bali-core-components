@@ -173,51 +173,51 @@
                 ]
             ]
             $procedure: {
-                $iterator := target.iterator()
-                iterator.toSlot(index)
-                return iterator.previous()
+                throw [
+                    $module: /bali/abstractions/String/v1
+                    $method: $item
+                    $exception: $abstractMethod
+                    $text: "An abstract method must be implemented by a subtype."
+                ]
             }($index: /bali/elements/Number/v1)
             $instructions: "
-                1.EvaluateStatement:
-                LOAD VARIABLE $target
-                SEND $iterator TO COMPONENT
-                STORE VARIABLE $iterator
-                
-                2.EvaluateStatement:
-                LOAD VARIABLE $iterator
-                INVOKE $list
-                PUSH PARAMETER $index
+                1.ThrowStatement:
+                INVOKE $catalog
+                PUSH LITERAL `$module`
+                PUSH LITERAL `/bali/abstractions/String/v1`
+                INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
-                SEND $toSlot TO COMPONENT WITH ARGUMENTS
-                STORE VARIABLE $$result
-                
-                3.ReturnStatement:
-                LOAD VARIABLE $iterator
-                SEND $previous TO COMPONENT
-                HANDLE RESULT
+                PUSH LITERAL `$method`
+                PUSH LITERAL `$item`
+                INVOKE $association WITH 2 ARGUMENTS
+                INVOKE $addItem WITH 2 ARGUMENTS
+                PUSH LITERAL `$exception`
+                PUSH LITERAL `$abstractMethod`
+                INVOKE $association WITH 2 ARGUMENTS
+                INVOKE $addItem WITH 2 ARGUMENTS
+                PUSH LITERAL `$text`
+                PUSH LITERAL `"An abstract method must be implemented by a subtype."`
+                INVOKE $association WITH 2 ARGUMENTS
+                INVOKE $addItem WITH 2 ARGUMENTS
+                HANDLE EXCEPTION
             "($mediatype: "application/basm")
-            $bytecode: '6003C00180016001A0493801B001C80380026001C002E000'(
+            $bytecode: '
+                A01428032804B00BB00128052806B00BB00128072808B00BB0012809280A
+                B00BB001E800
+            '(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $addresses: [
-                "1.EvaluateStatement": 1
-                "2.EvaluateStatement": 4
-                "3.ReturnStatement": 10
+                "1.ThrowStatement": 1
             ]
             $parameters: [
                 $index
             ]
             $variables: [
-                $iterator
-                $$result
                 $target
             ]($type: /bali/collections/Set/v1)
-            $messages: [
-                $iterator
-                $previous
-                $toSlot
-            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $items: [
             $description: "
@@ -235,82 +235,51 @@
                 ]
             ]
             $procedure: {
-                $items := [ ]
-                with each $index in range do {
-                    items.addItem(target[index])
-                }
-                return items
+                throw [
+                    $module: /bali/abstractions/String/v1
+                    $method: $items
+                    $exception: $abstractMethod
+                    $text: "An abstract method must be implemented by a subtype."
+                ]
             }($range: /bali/elements/Range/v1)
             $instructions: "
-                1.EvaluateStatement:
-                INVOKE $list
-                STORE VARIABLE $items
-                
-                2.WithStatement:
-                PUSH PARAMETER $range
-                SEND $iterator TO COMPONENT
-                STORE VARIABLE $$iterator-1
-                
-                2.1.ConditionClause:
-                LOAD VARIABLE $$iterator-1
-                SEND $hasNext TO COMPONENT
-                JUMP TO 2.WithStatementDone ON FALSE
-                LOAD VARIABLE $$iterator-1
-                SEND $next TO COMPONENT
-                STORE VARIABLE $index
-                
-                2.1.1.EvaluateStatement:
-                LOAD VARIABLE $items
-                INVOKE $list
-                LOAD VARIABLE $target
-                LOAD VARIABLE $index
-                INVOKE $subcomponent WITH 2 ARGUMENTS
+                1.ThrowStatement:
+                INVOKE $catalog
+                PUSH LITERAL `$module`
+                PUSH LITERAL `/bali/abstractions/String/v1`
+                INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
-                SEND $addItem TO COMPONENT WITH ARGUMENTS
-                STORE VARIABLE $$result
-                
-                2.ConditionRepeat:
-                JUMP TO 2.1.ConditionClause
-                
-                2.WithStatementDone:
-                SKIP INSTRUCTION
-                
-                3.ReturnStatement:
-                LOAD VARIABLE $items
-                HANDLE RESULT
+                PUSH LITERAL `$method`
+                PUSH LITERAL `$items`
+                INVOKE $association WITH 2 ARGUMENTS
+                INVOKE $addItem WITH 2 ARGUMENTS
+                PUSH LITERAL `$exception`
+                PUSH LITERAL `$abstractMethod`
+                INVOKE $association WITH 2 ARGUMENTS
+                INVOKE $addItem WITH 2 ARGUMENTS
+                PUSH LITERAL `$text`
+                PUSH LITERAL `"An abstract method must be implemented by a subtype."`
+                INVOKE $association WITH 2 ARGUMENTS
+                INVOKE $addItem WITH 2 ARGUMENTS
+                HANDLE EXCEPTION
             "($mediatype: "application/basm")
             $bytecode: '
-                A04980023801C00380036003C00218156003C00480016002A04960056001
-                B07AB001C8018004000600006002E000
+                A01428032804B00BB0012805280BB00BB00128072808B00BB0012809280A
+                B00BB001E800
             '(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $addresses: [
-                "1.EvaluateStatement": 1
-                "2.WithStatement": 3
-                "2.1.ConditionClause": 6
-                "2.1.1.EvaluateStatement": 12
-                "2.ConditionRepeat": 20
-                "2.WithStatementDone": 21
-                "3.ReturnStatement": 22
+                "1.ThrowStatement": 1
             ]
             $parameters: [
                 $range
             ]
             $variables: [
-                $index
-                $items
-                $$iterator-1
-                $$result
                 $target
             ]($type: /bali/collections/Set/v1)
-            $messages: [
-                $addItem
-                $hasNext
-                $iterator
-                $next
-            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $iterator: [
             $description: "
@@ -348,7 +317,7 @@
                 HANDLE EXCEPTION
             "($mediatype: "application/basm")
             $bytecode: '
-                A01428032804B00BB00128052806B00BB00128072808B00BB0012809280A
+                A01428032804B00BB0012805280CB00BB00128072808B00BB0012809280A
                 B00BB001E800
             '(
                 $encoding: $base16
@@ -398,7 +367,7 @@
                 HANDLE EXCEPTION
             "($mediatype: "application/basm")
             $bytecode: '
-                A01428032804B00BB0012805280BB00BB00128072808B00BB0012809280A
+                A01428032804B00BB0012805280DB00BB00128072808B00BB0012809280A
                 B00BB001E800
             '(
                 $encoding: $base16
@@ -420,11 +389,13 @@
         $module
         /bali/abstractions/String/v1
         $method
-        $iterator
+        $item
         $exception
         $abstractMethod
         $text
         "An abstract method must be implemented by a subtype."
+        $items
+        $iterator
         $size
     ]
 ](

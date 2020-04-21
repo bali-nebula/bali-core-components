@@ -1,0 +1,15 @@
+[
+    $description: "
+        This class defines the methods for the messages that all angles support.
+    "($mediatype: "application/bsmd")
+    $parent: /bali/abstractions/Element/v1
+    $parameters: [:]
+    $constants: [:]
+](
+    $name: /bali/elements/Angle/v1
+    $type: /bali/types/Primitive/v1
+    $tag: #XTJ7438CYZX69LFCS5AX73PVH40MY8KQ
+    $version: v1
+    $permissions: /bali/permissions/public/v1
+    $previous: none
+)
