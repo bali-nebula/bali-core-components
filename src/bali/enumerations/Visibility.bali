@@ -1,10 +1,14 @@
 [
     $description: "
-        This ...
+        This enumeration defines the possible symbol values for the visibility of methods.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Component/v1
     $parameters: [:]
     $constants: [:]
+    $values: [
+        $private
+        $public
+    ]($type: /bali/collections/Set/v1($ItemType: /bali/elements/Symbol/v1))
 ](
     $name: /bali/enumerations/Visibility/v1
     $type: /bali/types/Enumeration/v1

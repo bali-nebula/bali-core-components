@@ -1,10 +1,15 @@
 [
     $description: "
-        This ...
+        This enumeration defines the possible symbol values for the access to attributes.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Component/v1
     $parameters: [:]
     $constants: [:]
+    $values: [
+        $readOnly
+        $readWrite
+        $writeOnly
+    ]($type: /bali/collections/Set/v1($ItemType: /bali/elements/Symbol/v1))
 ](
     $name: /bali/enumerations/Access/v1
     $type: /bali/types/Enumeration/v1
