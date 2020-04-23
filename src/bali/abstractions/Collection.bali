@@ -103,13 +103,13 @@
                 1.WithStatement:
                 PUSH PARAMETER $items
                 SEND $iterator TO COMPONENT
-                STORE VARIABLE $$iterator-1
+                STORE VARIABLE $iterator-2
                 
                 1.1.ConditionClause:
-                LOAD VARIABLE $$iterator-1
+                LOAD VARIABLE $iterator-2
                 SEND $hasNext TO COMPONENT
                 JUMP TO 1.WithStatementDone ON FALSE
-                LOAD VARIABLE $$iterator-1
+                LOAD VARIABLE $iterator-2
                 SEND $next TO COMPONENT
                 STORE VARIABLE $item
                 
@@ -119,7 +119,7 @@
                 LOAD VARIABLE $item
                 INVOKE $addItem WITH 2 ARGUMENTS
                 SEND $addItem TO COMPONENT WITH ARGUMENTS
-                STORE VARIABLE $$result
+                STORE VARIABLE $result-1
                 
                 1.ConditionRepeat:
                 JUMP TO 1.1.ConditionClause
@@ -151,8 +151,8 @@
             ]
             $variables: [
                 $item
-                $$iterator-1
-                $$result
+                $iterator-2
+                $result-1
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [
@@ -189,13 +189,13 @@
                 1.WithStatement:
                 PUSH PARAMETER $items
                 SEND $iterator TO COMPONENT
-                STORE VARIABLE $$iterator-1
+                STORE VARIABLE $iterator-2
                 
                 1.1.ConditionClause:
-                LOAD VARIABLE $$iterator-1
+                LOAD VARIABLE $iterator-2
                 SEND $hasNext TO COMPONENT
                 JUMP TO 1.WithStatementDone ON FALSE
-                LOAD VARIABLE $$iterator-1
+                LOAD VARIABLE $iterator-2
                 SEND $next TO COMPONENT
                 STORE VARIABLE $item
                 
@@ -251,7 +251,7 @@
             ]
             $variables: [
                 $item
-                $$iterator-1
+                $iterator-2
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [
@@ -288,13 +288,13 @@
                 1.WithStatement:
                 PUSH PARAMETER $items
                 SEND $iterator TO COMPONENT
-                STORE VARIABLE $$iterator-1
+                STORE VARIABLE $iterator-2
                 
                 1.1.ConditionClause:
-                LOAD VARIABLE $$iterator-1
+                LOAD VARIABLE $iterator-2
                 SEND $hasNext TO COMPONENT
                 JUMP TO 1.WithStatementDone ON FALSE
-                LOAD VARIABLE $$iterator-1
+                LOAD VARIABLE $iterator-2
                 SEND $next TO COMPONENT
                 STORE VARIABLE $item
                 
@@ -349,7 +349,7 @@
             ]
             $variables: [
                 $item
-                $$iterator-1
+                $iterator-2
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [
@@ -437,13 +437,13 @@
                 2.WithStatement:
                 LOAD VARIABLE $target
                 SEND $iterator TO COMPONENT
-                STORE VARIABLE $$iterator-1
+                STORE VARIABLE $iterator-2
                 
                 2.1.ConditionClause:
-                LOAD VARIABLE $$iterator-1
+                LOAD VARIABLE $iterator-2
                 SEND $hasNext TO COMPONENT
                 JUMP TO 2.WithStatementDone ON FALSE
-                LOAD VARIABLE $$iterator-1
+                LOAD VARIABLE $iterator-2
                 SEND $next TO COMPONENT
                 STORE VARIABLE $candidate
                 
@@ -504,7 +504,7 @@
             $variables: [
                 $candidate
                 $index
-                $$iterator-1
+                $iterator-2
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [
@@ -576,7 +576,7 @@
                 PUSH PARAMETER $index
                 INVOKE $addItem WITH 2 ARGUMENTS
                 SEND $toSlot TO COMPONENT WITH ARGUMENTS
-                STORE VARIABLE $$result
+                STORE VARIABLE $result-1
                 
                 3.ReturnStatement:
                 LOAD VARIABLE $iterator
@@ -597,7 +597,7 @@
             ]
             $variables: [
                 $iterator
-                $$result
+                $result-1
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [
@@ -636,13 +636,13 @@
                 2.WithStatement:
                 PUSH PARAMETER $range
                 SEND $iterator TO COMPONENT
-                STORE VARIABLE $$iterator-1
+                STORE VARIABLE $iterator-2
                 
                 2.1.ConditionClause:
-                LOAD VARIABLE $$iterator-1
+                LOAD VARIABLE $iterator-2
                 SEND $hasNext TO COMPONENT
                 JUMP TO 2.WithStatementDone ON FALSE
-                LOAD VARIABLE $$iterator-1
+                LOAD VARIABLE $iterator-2
                 SEND $next TO COMPONENT
                 STORE VARIABLE $index
                 
@@ -654,7 +654,7 @@
                 INVOKE $subcomponent WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 SEND $addItem TO COMPONENT WITH ARGUMENTS
-                STORE VARIABLE $$result
+                STORE VARIABLE $result-1
                 
                 2.ConditionRepeat:
                 JUMP TO 2.1.ConditionClause
@@ -688,8 +688,8 @@
             $variables: [
                 $index
                 $items
-                $$iterator-1
-                $$result
+                $iterator-2
+                $result-1
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [

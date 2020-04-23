@@ -3,6 +3,24 @@
         This class defines the methods for the messages that all binary strings support.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/String/v1($itemType: /bali/elements/Number/v1($range: 0..255))
+    $parameters: [
+        $encoding: [
+            $description: "
+                This parameter specifies the base encoding of the bytes in this type of binary
+                string.
+            "($mediatype: "application/bsmd")
+            $type: /bali/enumerations/Encoding/v1
+            $default: $base32
+        ]
+        $mediatype: [
+            $description: "
+                This parameter specifies the base encoding of the bytes in this type of binary
+                string.
+            "($mediatype: "application/bsmd")
+            $type: /bali/enumerations/Encoding/v1
+            $default: $base32
+        ]
+    ]
     $methods: [
         $item: [
             $description: "
@@ -140,7 +158,6 @@
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
     ]
-    $parameters: [:]
     $constants: [:]
     $literals: [ ]
 ](
