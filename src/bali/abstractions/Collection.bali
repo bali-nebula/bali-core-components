@@ -61,7 +61,7 @@
                 HANDLE EXCEPTION
             "($mediatype: "application/basm")
             $bytecode: '
-                A01428012802B00BB00128032804B00BB00128052806B00BB00128072808
+                A01428092804B00BB00128082802B00BB00128052801B00BB001280C2803
                 B00BB001E800
             '(
                 $encoding: $base16
@@ -70,13 +70,13 @@
             $addresses: [
                 "1.ThrowStatement": 1
             ]
-            $parameters: [
-                $item
-            ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $item
+            ]($type: /bali/collections/Set/v1)
         ]
         $addItems: [
             $description: "
@@ -100,7 +100,7 @@
             }($items: /bali/abstractions/Collection/v1($itemType: $itemType))
             $instructions: "
                 1.WithStatement:
-                PUSH PARAMETER $items
+                PUSH ARGUMENT $items
                 SEND $iterator TO COMPONENT
                 STORE VARIABLE $iterator-2
                 
@@ -145,9 +145,6 @@
                 "1.WithStatementDone": 17
                 "2.ReturnStatement": 18
             ]
-            $parameters: [
-                $items
-            ]
             $variables: [
                 $item
                 $iterator-2
@@ -159,6 +156,9 @@
                 $hasNext
                 $iterator
                 $next
+            ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $items
             ]($type: /bali/collections/Set/v1)
         ]
         $containsAll: [
@@ -186,7 +186,7 @@
             }($items: /bali/abstractions/Collection/v1($itemType: $itemType))
             $instructions: "
                 1.WithStatement:
-                PUSH PARAMETER $items
+                PUSH ARGUMENT $items
                 SEND $iterator TO COMPONENT
                 STORE VARIABLE $iterator-2
                 
@@ -229,7 +229,7 @@
             "($mediatype: "application/basm")
             $bytecode: '
                 3801C00380026002C00218166002C004800100006003A0496001B001C801
-                A84E18142809E000000000040000280AE000
+                A84E1814280DE000000000040000280EE000
             '(
                 $encoding: $base16
                 $mediatype: "application/bcod"
@@ -245,9 +245,6 @@
                 "1.WithStatementDone": 22
                 "2.ReturnStatement": 23
             ]
-            $parameters: [
-                $items
-            ]
             $variables: [
                 $item
                 $iterator-2
@@ -258,6 +255,9 @@
                 $hasNext
                 $iterator
                 $next
+            ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $items
             ]($type: /bali/collections/Set/v1)
         ]
         $containsAny: [
@@ -285,7 +285,7 @@
             }($items: /bali/abstractions/Collection/v1($itemType: $itemType))
             $instructions: "
                 1.WithStatement:
-                PUSH PARAMETER $items
+                PUSH ARGUMENT $items
                 SEND $iterator TO COMPONENT
                 STORE VARIABLE $iterator-2
                 
@@ -327,7 +327,7 @@
             "($mediatype: "application/basm")
             $bytecode: '
                 3801C00380026002C00218156002C004800100006003A0496001B001C801
-                1813280AE0000000000400002809E000
+                1813280EE000000000040000280DE000
             '(
                 $encoding: $base16
                 $mediatype: "application/bcod"
@@ -343,9 +343,6 @@
                 "1.WithStatementDone": 21
                 "2.ReturnStatement": 22
             ]
-            $parameters: [
-                $items
-            ]
             $variables: [
                 $item
                 $iterator-2
@@ -356,6 +353,9 @@
                 $hasNext
                 $iterator
                 $next
+            ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $items
             ]($type: /bali/collections/Set/v1)
         ]
         $containsItem: [
@@ -379,28 +379,28 @@
                 1.ReturnStatement:
                 LOAD VARIABLE $target
                 INVOKE $list
-                PUSH PARAMETER $item
+                PUSH ARGUMENT $item
                 INVOKE $addItem WITH 2 ARGUMENTS
                 SEND $index TO COMPONENT WITH ARGUMENTS
                 PUSH LITERAL `0`
                 INVOKE $isMore WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A0493801B001C8012809B03BE000'(
+            $bytecode: '6001A0493801B001C801280DB03BE000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [
-                $item
-            ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [
                 $index
+            ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $item
             ]($type: /bali/collections/Set/v1)
         ]
         $index: [
@@ -457,7 +457,7 @@
                 
                 2.1.2.1.ConditionClause:
                 LOAD VARIABLE $candidate
-                PUSH PARAMETER $item
+                PUSH ARGUMENT $item
                 INVOKE $areEqual WITH 2 ARGUMENTS
                 JUMP TO 2.1.2.IfStatementDone ON FALSE
                 
@@ -478,7 +478,7 @@
                 HANDLE RESULT
             "($mediatype: "application/basm")
             $bytecode: '
-                280980026004C00280036003C00118186003C00380016002280AB07B8002
+                280D80026004C00280036003C00118186003C00380016002280EB07B8002
                 000060013801B008181600180000000600006002E000
             '(
                 $encoding: $base16
@@ -497,9 +497,6 @@
                 "2.WithStatementDone": 24
                 "3.ReturnStatement": 25
             ]
-            $parameters: [
-                $item
-            ]
             $variables: [
                 $candidate
                 $index
@@ -510,6 +507,9 @@
                 $hasNext
                 $iterator
                 $next
+            ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $item
             ]($type: /bali/collections/Set/v1)
         ]
         $isEmpty: [
@@ -528,20 +528,20 @@
                 INVOKE $areEqual WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001C0012809B008E000'(
+            $bytecode: '6001C001280DB008E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [ ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [
                 $size
             ]($type: /bali/collections/Set/v1)
+            $arguments: [ ]($type: /bali/collections/Set/v1)
         ]
         $item: [
             $description: "
@@ -572,7 +572,7 @@
                 2.EvaluateStatement:
                 LOAD VARIABLE $iterator
                 INVOKE $list
-                PUSH PARAMETER $index
+                PUSH ARGUMENT $index
                 INVOKE $addItem WITH 2 ARGUMENTS
                 SEND $toSlot TO COMPONENT WITH ARGUMENTS
                 STORE VARIABLE $result-1
@@ -591,9 +591,6 @@
                 "2.EvaluateStatement": 4
                 "3.ReturnStatement": 10
             ]
-            $parameters: [
-                $index
-            ]
             $variables: [
                 $iterator
                 $result-1
@@ -603,6 +600,9 @@
                 $iterator
                 $previous
                 $toSlot
+            ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $index
             ]($type: /bali/collections/Set/v1)
         ]
         $items: [
@@ -650,7 +650,7 @@
                 HANDLE EXCEPTION
             "($mediatype: "application/basm")
             $bytecode: '
-                A01428012802B00BB0012803280BB00BB00128052806B00BB00128072808
+                A01428092804B00BB00128082806B00BB00128052801B00BB001280C2803
                 B00BB001E800
             '(
                 $encoding: $base16
@@ -659,13 +659,13 @@
             $addresses: [
                 "1.ThrowStatement": 1
             ]
-            $parameters: [
-                $range
-            ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $range
+            ]($type: /bali/collections/Set/v1)
         ]
         $iterator: [
             $description: "
@@ -703,7 +703,7 @@
                 HANDLE EXCEPTION
             "($mediatype: "application/basm")
             $bytecode: '
-                A01428012802B00BB0012803280CB00BB00128052806B00BB00128072808
+                A01428092804B00BB00128082807B00BB00128052801B00BB001280C2803
                 B00BB001E800
             '(
                 $encoding: $base16
@@ -712,11 +712,11 @@
             $addresses: [
                 "1.ThrowStatement": 1
             ]
-            $parameters: [ ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [ ]($type: /bali/collections/Set/v1)
         ]
         $removeAll: [
             $description: "
@@ -753,7 +753,7 @@
                 HANDLE EXCEPTION
             "($mediatype: "application/basm")
             $bytecode: '
-                A01428012802B00BB0012803280DB00BB00128052806B00BB00128072808
+                A01428092804B00BB0012808280AB00BB00128052801B00BB001280C2803
                 B00BB001E800
             '(
                 $encoding: $base16
@@ -762,11 +762,11 @@
             $addresses: [
                 "1.ThrowStatement": 1
             ]
-            $parameters: [ ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [ ]($type: /bali/collections/Set/v1)
         ]
         $size: [
             $description: "
@@ -803,7 +803,7 @@
                 HANDLE EXCEPTION
             "($mediatype: "application/basm")
             $bytecode: '
-                A01428012802B00BB0012803280EB00BB00128052806B00BB00128072808
+                A01428092804B00BB0012808280BB00BB00128052801B00BB001280C2803
                 B00BB001E800
             '(
                 $encoding: $base16
@@ -812,29 +812,29 @@
             $addresses: [
                 "1.ThrowStatement": 1
             ]
-            $parameters: [ ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [ ]($type: /bali/collections/Set/v1)
         ]
     ]
     $literals: [
-        $module
-        /bali/abstractions/Collection/v1
-        $method
-        $addItem
-        $exception
         $abstractMethod
-        $text
+        $addItem
         "An abstract method must be implemented by a subtype."
-        false
-        true
+        /bali/abstractions/Collection/v1
+        $exception
         $items
         $iterator
+        $method
+        $module
         $removeAll
         $size
-    ]
+        $text
+        false
+        true
+    ]($type: /bali/collections/Set/v1)
 ](
     $name: /bali/abstractions/Collection/v1
     $type: /bali/types/Primitive/v1($existence: $abstract)

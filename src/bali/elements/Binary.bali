@@ -43,7 +43,7 @@
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $index
+                PUSH ARGUMENT $index
                 INVOKE $item WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
@@ -54,13 +54,13 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [
-                $index
-            ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $index
+            ]($type: /bali/collections/Set/v1)
         ]
         $items: [
             $description: "
@@ -83,7 +83,7 @@
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $range
+                PUSH ARGUMENT $range
                 INVOKE $items WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
@@ -94,13 +94,13 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [
-                $range
-            ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $range
+            ]($type: /bali/collections/Set/v1)
         ]
         $iterator: [
             $description: "
@@ -124,11 +124,11 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [ ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [ ]($type: /bali/collections/Set/v1)
         ]
         $size: [
             $description: "
@@ -151,14 +151,14 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [ ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [ ]($type: /bali/collections/Set/v1)
         ]
     ]
-    $literals: [ ]
+    $literals: [ ]($type: /bali/collections/Set/v1)
 ](
     $name: /bali/elements/Binary/v1
     $type: /bali/types/Primitive/v1

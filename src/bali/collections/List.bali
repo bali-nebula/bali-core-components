@@ -33,7 +33,7 @@
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $item
+                PUSH ARGUMENT $item
                 INVOKE $addItem WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
@@ -44,13 +44,13 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [
-                $item
-            ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $item
+            ]($type: /bali/collections/Set/v1)
         ]
         $addItems: [
             $description: "
@@ -72,7 +72,7 @@
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $items
+                PUSH ARGUMENT $items
                 INVOKE $addItems WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
@@ -83,13 +83,13 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [
-                $items
-            ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $items
+            ]($type: /bali/collections/Set/v1)
         ]
         $containsAll: [
             $description: "
@@ -111,7 +111,7 @@
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $items
+                PUSH ARGUMENT $items
                 INVOKE $containsAll WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
@@ -122,13 +122,13 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [
-                $items
-            ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $items
+            ]($type: /bali/collections/Set/v1)
         ]
         $containsAny: [
             $description: "
@@ -150,7 +150,7 @@
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $items
+                PUSH ARGUMENT $items
                 INVOKE $containsAny WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
@@ -161,13 +161,13 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [
-                $items
-            ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $items
+            ]($type: /bali/collections/Set/v1)
         ]
         $containsItem: [
             $description: "
@@ -189,7 +189,7 @@
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $item
+                PUSH ARGUMENT $item
                 INVOKE $containsItem WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
@@ -200,13 +200,13 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [
-                $item
-            ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $item
+            ]($type: /bali/collections/Set/v1)
         ]
         $index: [
             $description: "
@@ -229,7 +229,7 @@
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $item
+                PUSH ARGUMENT $item
                 INVOKE $index WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
@@ -240,13 +240,13 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [
-                $item
-            ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $item
+            ]($type: /bali/collections/Set/v1)
         ]
         $insertItem: [
             $description: "
@@ -278,26 +278,26 @@
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $slot
-                PUSH PARAMETER $item
+                PUSH ARGUMENT $slot
+                PUSH ARGUMENT $item
                 INVOKE $insertItem WITH 3 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '600138013802B834E000'(
+            $bytecode: '600138023801B834E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [
-                $slot
-                $item
-            ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $item
+                $slot
+            ]($type: /bali/collections/Set/v1)
         ]
         $insertItems: [
             $description: "
@@ -329,26 +329,26 @@
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $slot
-                PUSH PARAMETER $items
+                PUSH ARGUMENT $slot
+                PUSH ARGUMENT $items
                 INVOKE $insertItems WITH 3 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '600138013802B835E000'(
+            $bytecode: '600138023801B835E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [
-                $slot
-                $items
-            ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $items
+                $slot
+            ]($type: /bali/collections/Set/v1)
         ]
         $isEmpty: [
             $description: "
@@ -371,11 +371,11 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [ ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [ ]($type: /bali/collections/Set/v1)
         ]
         $item: [
             $description: "
@@ -397,7 +397,7 @@
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $index
+                PUSH ARGUMENT $index
                 INVOKE $item WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
@@ -408,13 +408,13 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [
-                $index
-            ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $index
+            ]($type: /bali/collections/Set/v1)
         ]
         $items: [
             $description: "
@@ -437,7 +437,7 @@
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $range
+                PUSH ARGUMENT $range
                 INVOKE $items WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
@@ -448,13 +448,13 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [
-                $range
-            ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $range
+            ]($type: /bali/collections/Set/v1)
         ]
         $iterator: [
             $description: "
@@ -478,11 +478,11 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [ ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [ ]($type: /bali/collections/Set/v1)
         ]
         $removeAll: [
             $description: "
@@ -505,11 +505,11 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [ ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [ ]($type: /bali/collections/Set/v1)
         ]
         $removeItem: [
             $description: "
@@ -531,7 +531,7 @@
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $index
+                PUSH ARGUMENT $index
                 INVOKE $removeIndex WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
@@ -542,13 +542,13 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [
-                $index
-            ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $index
+            ]($type: /bali/collections/Set/v1)
         ]
         $removeItems: [
             $description: "
@@ -571,7 +571,7 @@
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $range
+                PUSH ARGUMENT $range
                 INVOKE $removeItems WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
@@ -582,13 +582,13 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [
-                $range
-            ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $range
+            ]($type: /bali/collections/Set/v1)
         ]
         $reverseItems: [
             $description: "
@@ -612,11 +612,11 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [ ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [ ]($type: /bali/collections/Set/v1)
         ]
         $setItem: [
             $description: "
@@ -648,8 +648,8 @@
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $index
-                PUSH PARAMETER $item
+                PUSH ARGUMENT $index
+                PUSH ARGUMENT $item
                 INVOKE $setItem WITH 3 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
@@ -660,14 +660,14 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [
-                $index
-                $item
-            ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $index
+                $item
+            ]($type: /bali/collections/Set/v1)
         ]
         $sortItems: [
             $description: "
@@ -691,11 +691,11 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [ ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [ ]($type: /bali/collections/Set/v1)
         ]
         $shuffleItems: [
             $description: "
@@ -719,11 +719,11 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [ ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [ ]($type: /bali/collections/Set/v1)
         ]
         $size: [
             $description: "
@@ -746,14 +746,14 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [ ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [ ]($type: /bali/collections/Set/v1)
         ]
     ]
-    $literals: [ ]
+    $literals: [ ]($type: /bali/collections/Set/v1)
 ](
     $name: /bali/collections/List/v1
     $type: /bali/types/Primitive/v1

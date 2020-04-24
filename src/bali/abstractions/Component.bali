@@ -80,7 +80,6 @@
                 "3.WhileStatementDone": 22
                 "4.ReturnStatement": 23
             ]
-            $parameters: [ ]
             $variables: [
                 $ancestry
                 $current
@@ -91,6 +90,7 @@
             $messages: [
                 $addItem
             ]($type: /bali/collections/Set/v1)
+            $arguments: [ ]($type: /bali/collections/Set/v1)
         ]
         $isA: [
             $description: "
@@ -135,7 +135,7 @@
                 
                 2.1.1.1.ConditionClause:
                 LOAD VARIABLE $current
-                PUSH PARAMETER $type
+                PUSH ARGUMENT $type
                 INVOKE $areEqual WITH 2 ARGUMENTS
                 JUMP TO 2.1.1.IfStatementDone ON FALSE
                 
@@ -165,8 +165,8 @@
                 HANDLE RESULT
             "($mediatype: "application/basm")
             $bytecode: '
-                6003A8858001000060011816000060013801B008180E2802E00000006001
-                2801B07A800278028001000500002803E000
+                6003A8858001000060011816000060013801B008180E2803E00000006001
+                2801B07A800278028001000500002802E000
             '(
                 $encoding: $base16
                 $mediatype: "application/bcod"
@@ -184,15 +184,15 @@
                 "2.WhileStatementDone": 22
                 "3.ReturnStatement": 23
             ]
-            $parameters: [
-                $type
-            ]
             $variables: [
                 $current
                 $location-2
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $type
+            ]($type: /bali/collections/Set/v1)
         ]
         $isParameterized: [
             $description: "
@@ -215,11 +215,11 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [ ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [ ]($type: /bali/collections/Set/v1)
         ]
         $parameter: [
             $description: "
@@ -241,7 +241,7 @@
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
-                PUSH PARAMETER $key
+                PUSH ARGUMENT $key
                 INVOKE $parameter WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
@@ -252,13 +252,13 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [
-                $key
-            ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $key
+            ]($type: /bali/collections/Set/v1)
         ]
         $parameters: [
             $description: "
@@ -282,11 +282,11 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [ ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [ ]($type: /bali/collections/Set/v1)
         ]
         $type: [
             $description: "
@@ -309,18 +309,18 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $parameters: [ ]
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [ ]($type: /bali/collections/Set/v1)
         ]
     ]
     $literals: [
         $parent
-        true
         false
-    ]
+        true
+    ]($type: /bali/collections/Set/v1)
 ](
     $name: /bali/abstractions/Component/v1
     $type: /bali/types/Primitive/v1($existence: $abstract)
