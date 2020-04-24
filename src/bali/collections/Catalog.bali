@@ -22,8 +22,6 @@
             $default: /bali/abstractions/Component/v1
         ]
     ]
-    $constants: [:]
-    $interfaces: [ ]
     $methods: [
         $addItem: [
             $description: "
@@ -720,16 +718,16 @@
                 ]
             ]
             $procedure: {
-                return value(target, key)
+                return keyValue(target, key)
             }($key: $keyType)
             $instructions: "
                 1.ReturnStatement:
                 LOAD VARIABLE $target
                 PUSH PARAMETER $key
-                INVOKE $value WITH 2 ARGUMENTS
+                INVOKE $keyValue WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '60013801B086E000'(
+            $bytecode: '60013801B045E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )

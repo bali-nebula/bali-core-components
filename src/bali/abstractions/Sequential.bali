@@ -12,7 +12,6 @@
             $type: /bali/elements/Name/v1
         ]
     ]
-    $constants: [:]
     $messages: [
         $index: [
             $description: "

@@ -13,7 +13,6 @@
             $default: $private
         ]
     ]
-    $constants: [:]
     $attributes: [
         $type: [
             $description: "
@@ -36,7 +35,6 @@
             $default: none
         ]
     ]
-    $events: [:]
 ](
     $name: /bali/aspects/Attribute/v1
     $type: /bali/types/Structure/v1

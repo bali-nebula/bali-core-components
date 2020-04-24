@@ -3,8 +3,6 @@
         This enumeration defines the possible symbol values for the access to attributes.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Component/v1
-    $parameters: [:]
-    $constants: [:]
     $values: [
         $readOnly
         $readWrite

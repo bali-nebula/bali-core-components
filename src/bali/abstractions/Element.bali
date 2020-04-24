@@ -4,9 +4,6 @@
         types support.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Component/v1
-    $parameters: [:]
-    $constants: [:]
-    $interfaces: [ ]
 ](
     $name: /bali/abstractions/Element/v1
     $type: /bali/types/Primitive/v1($existence: $abstract)

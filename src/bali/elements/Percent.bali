@@ -3,8 +3,6 @@
         This class defines the methods for the messages that all percents support.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Element/v1
-    $parameters: [:]
-    $constants: [:]
 ](
     $name: /bali/elements/Percent/v1
     $type: /bali/types/Primitive/v1

@@ -12,8 +12,6 @@
             $default: /bali/abstractions/Component/v1
         ]
     ]
-    $constants: [:]
-    $interfaces: [ ]
     $methods: [
         $addItem: [
             $description: "

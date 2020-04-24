@@ -3,8 +3,6 @@
         This abstract structure defines the attributes that all argument types support.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Aspect/v1
-    $parameters: [:]
-    $constants: [:]
     $attributes: [
         $type: [
             $description: "
@@ -20,7 +18,6 @@
             $default: none
         ]
     ]
-    $events: [:]
 ](
     $name: /bali/aspects/Argument/v1
     $type: /bali/types/Structure/v1

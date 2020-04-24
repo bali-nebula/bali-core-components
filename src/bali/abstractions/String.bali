@@ -12,7 +12,6 @@
             $type: /bali/elements/Name/v1
         ]
     ]
-    $constants: [:]
     $interfaces: [
         /bali/abstractions/Sequential/v1($itemType: $itemType)
     ]

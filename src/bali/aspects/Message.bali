@@ -13,7 +13,6 @@
             $default: $public
         ]
     ]
-    $constants: [:]
     $attributes: [
         $type: [
             $description: "
@@ -30,7 +29,6 @@
             $type: /bali/collection/Catalog/v1($itemType: /bali/aspects/Argument/v1)
         ]
     ]
-    $events: [:]
 ](
     $name: /bali/aspects/Message/v1
     $type: /bali/types/Structure/v1

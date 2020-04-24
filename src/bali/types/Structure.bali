@@ -13,7 +13,6 @@
             $default: $concrete
         ]
     ]
-    $constants: [:]
     $attributes: [
         $attributes: [
             $description: "
@@ -32,7 +31,6 @@
             $default: [:]
         ]
     ]
-    $events: [:]
 ](
     $name: /bali/types/Structure/v1
     $type: /bali/types/Structure/v1

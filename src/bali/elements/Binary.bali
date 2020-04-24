@@ -158,7 +158,6 @@
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
     ]
-    $constants: [:]
     $literals: [ ]
 ](
     $name: /bali/elements/Binary/v1

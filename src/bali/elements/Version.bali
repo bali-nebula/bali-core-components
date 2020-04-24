@@ -140,8 +140,6 @@
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
     ]
-    $parameters: [:]
-    $constants: [:]
     $literals: [ ]
 ](
     $name: /bali/elements/Version/v1

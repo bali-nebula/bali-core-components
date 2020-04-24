@@ -13,7 +13,6 @@
             $default: $concrete
         ]
     ]
-    $constants: [:]
     $attributes: [
         $interfaces: [
             $description: "
@@ -56,7 +55,6 @@
             $default: [:]
         ]
     ]
-    $events: [:]
 ](
     $name: /bali/types/Class/v1
     $type: /bali/types/Structure/v1

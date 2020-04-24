@@ -3,8 +3,6 @@
         This concrete structure defines the attributes that all enumerated types support.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Type/v1
-    $parameters: [:]
-    $constants: [:]
     $attributes: [
         $values: [
             $description: "
@@ -14,7 +12,6 @@
             $type: /bali/collections/Set/v1($itemType: /bali/elements/Symbol/v1)
         ]
     ]
-    $events: [:]
 ](
     $name: /bali/types/Enumeration/v1
     $type: /bali/types/Structure/v1

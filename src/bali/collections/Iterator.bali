@@ -12,8 +12,6 @@
             $type: /bali/elements/Name/v1
         ]
     ]
-    $constants: [:]
-    $interfaces: [ ]
     $methods: [
         $hasNext: [
             $description: "
