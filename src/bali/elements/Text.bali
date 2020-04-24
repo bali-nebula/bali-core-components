@@ -10,10 +10,10 @@
                 index.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Text/v1
-            $arguments: [
+            $parameters: [
                 $index: [
                     $description: "
-                        This argument specifies the index of the character to be returned from this
+                        This parameter specifies the index of the character to be returned from this
                         text string.
                     "($mediatype: "application/bsmd")
                     $type: /bali/elements/Number/v1
@@ -50,10 +50,10 @@
                 range.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Binary/v1
-            $arguments: [
+            $parameters: [
                 $range: [
                     $description: "
-                        This argument specifies the range of indices for the subset of this
+                        This parameter specifies the range of indices for the subset of this
                         text string to be returned.
                     "($mediatype: "application/bsmd")
                     $type: /bali/elements/Range/v1

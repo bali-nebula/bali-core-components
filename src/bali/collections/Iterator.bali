@@ -159,10 +159,10 @@
                 this iterator refers to.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Iterator/v1($itemType: $itemType)
-            $arguments: [
+            $parameters: [
                 $slot: [
                     $description: "
-                        This argument specifies the slot between the items in the sequence to which
+                        This parameter specifies the slot between the items in the sequence to which
                         the iterator should move.
                     "($mediatype: "application/bsmd")
                     $type: /bali/elements/Number/v1

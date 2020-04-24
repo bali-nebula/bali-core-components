@@ -28,10 +28,10 @@
                 index.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..255)
-            $arguments: [
+            $parameters: [
                 $index: [
                     $description: "
-                        This argument specifies the index of the byte to be returned from this
+                        This parameter specifies the index of the byte to be returned from this
                         binary string.
                     "($mediatype: "application/bsmd")
                     $type: /bali/elements/Number/v1
@@ -68,10 +68,10 @@
                 range.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Binary/v1
-            $arguments: [
+            $parameters: [
                 $range: [
                     $description: "
-                        This argument specifies the range of indices for the subset of this
+                        This parameter specifies the range of indices for the subset of this
                         binary string to be returned.
                     "($mediatype: "application/bsmd")
                     $type: /bali/elements/Range/v1

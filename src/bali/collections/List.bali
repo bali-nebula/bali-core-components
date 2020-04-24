@@ -19,10 +19,10 @@
                 updated list is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($itemType: $itemType)
-            $arguments: [
+            $parameters: [
                 $item: [
                     $description: "
-                        This argument specifies the item to be added to this list.
+                        This parameter specifies the item to be added to this list.
                     "($mediatype: "application/bsmd")
                     $type: $itemType
                 ]
@@ -58,10 +58,10 @@
                 list.  The updated list is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($itemType: $itemType)
-            $arguments: [
+            $parameters: [
                 $items: [
                     $description: "
-                        This argument specifies the items to be added to this list.
+                        This parameter specifies the items to be added to this list.
                     "($mediatype: "application/bsmd")
                     $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
@@ -97,10 +97,10 @@
                 specified items.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
-            $arguments: [
+            $parameters: [
                 $items: [
                     $description: "
-                        This argument specifies the items to be searched for in this list.
+                        This parameter specifies the items to be searched for in this list.
                     "($mediatype: "application/bsmd")
                     $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
@@ -136,10 +136,10 @@
                 specified items.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
-            $arguments: [
+            $parameters: [
                 $items: [
                     $description: "
-                        This argument specifies the items to be searched for in this list.
+                        This parameter specifies the items to be searched for in this list.
                     "($mediatype: "application/bsmd")
                     $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
@@ -175,10 +175,10 @@
                 item.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
-            $arguments: [
+            $parameters: [
                 $item: [
                     $description: "
-                        This argument specifies the item to be searched for in this list.
+                        This parameter specifies the item to be searched for in this list.
                     "($mediatype: "application/bsmd")
                     $type: $itemType
                 ]
@@ -214,10 +214,10 @@
                 or 0 if it is not found.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
-            $arguments: [
+            $parameters: [
                 $item: [
                     $description: "
-                        This argument specifies the item in this list for which the index
+                        This parameter specifies the item in this list for which the index
                         should be returned.
                     "($mediatype: "application/bsmd")
                     $type: $itemType
@@ -254,17 +254,17 @@
                 specified slot.  The updated list is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($itemType: $itemType)
-            $arguments: [
+            $parameters: [
                 $slot: [
                     $description: "
-                        This argument specifies the slot in this list where the item should be
+                        This parameter specifies the slot in this list where the item should be
                         inserted.
                     "($mediatype: "application/bsmd")
                     $type: /bali/elements/Number/v1
                 ]
                 $item: [
                     $description: "
-                        This argument specifies the item that should be inserted into this list.
+                        This parameter specifies the item that should be inserted into this list.
                     "($mediatype: "application/bsmd")
                     $type: $itemType
                 ]
@@ -305,17 +305,17 @@
                 list at the specified index.  The updated list is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($itemType: $itemType)
-            $arguments: [
+            $parameters: [
                 $slot: [
                     $description: "
-                        This argument specifies the slot in this list where the items should be
+                        This parameter specifies the slot in this list where the items should be
                         inserted.
                     "($mediatype: "application/bsmd")
                     $type: /bali/elements/Number/v1
                 ]
                 $items: [
                     $description: "
-                        This argument specifies the items that should be inserted into this list.
+                        This parameter specifies the items that should be inserted into this list.
                     "($mediatype: "application/bsmd")
                     $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
@@ -383,10 +383,10 @@
                 specified index.
             "($mediatype: "application/bsmd")
             $type: $itemType
-            $arguments: [
+            $parameters: [
                 $index: [
                     $description: "
-                        This argument specifies the index of the item in this list to be retrieved.
+                        This parameter specifies the index of the item in this list to be retrieved.
                     "($mediatype: "application/bsmd")
                     $type: /bali/elements/Number/v1
                 ]
@@ -422,10 +422,10 @@
                 specified range.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($itemType: $itemType)
-            $arguments: [
+            $parameters: [
                 $range: [
                     $description: "
-                        This argument specifies the range of indices of the items in this list to
+                        This parameter specifies the range of indices of the items in this list to
                         be retrieved.
                     "($mediatype: "application/bsmd")
                     $type: /bali/elements/Range/v1
@@ -517,10 +517,10 @@
                 index.  The updated list is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($itemType: $itemType)
-            $arguments: [
+            $parameters: [
                 $index: [
                     $description: "
-                        This argument specifies the index of the item in this list to be removed.
+                        This parameter specifies the index of the item in this list to be removed.
                     "($mediatype: "application/bsmd")
                     $type: /bali/elements/Number/v1
                 ]
@@ -556,10 +556,10 @@
                 index range.  The updated list is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($itemType: $itemType)
-            $arguments: [
+            $parameters: [
                 $range: [
                     $description: "
-                        This argument specifies the range of indices of the items in this list to
+                        This parameter specifies the range of indices of the items in this list to
                         be removed.
                     "($mediatype: "application/bsmd")
                     $type: /bali/elements/Range/v1
@@ -624,16 +624,16 @@
                 index.  The updated list is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($itemType: $itemType)
-            $arguments: [
+            $parameters: [
                 $index: [
                     $description: "
-                        This argument specifies the index in this list of the item to be set.
+                        This parameter specifies the index in this list of the item to be set.
                     "($mediatype: "application/bsmd")
                     $type: /bali/elements/Number/v1
                 ]
                 $item: [
                     $description: "
-                        This argument specifies the item that should replace the current item
+                        This parameter specifies the item that should replace the current item
                         in this list at the specified index.
                     "($mediatype: "application/bsmd")
                     $type: /bali/abstractions/Collection/v1($itemType: $itemType)

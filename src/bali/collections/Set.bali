@@ -19,10 +19,10 @@
                 updated set is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Set/v1($itemType: $itemType)
-            $arguments: [
+            $parameters: [
                 $item: [
                     $description: "
-                        This argument specifies the item to be added to this set.
+                        This parameter specifies the item to be added to this set.
                     "($mediatype: "application/bsmd")
                     $type: $itemType
                 ]
@@ -58,10 +58,10 @@
                 set.  The updated set is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Set/v1($itemType: $itemType)
-            $arguments: [
+            $parameters: [
                 $items: [
                     $description: "
-                        This argument specifies the items to be added to this set.
+                        This parameter specifies the items to be added to this set.
                     "($mediatype: "application/bsmd")
                     $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
@@ -97,10 +97,10 @@
                 specified items.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
-            $arguments: [
+            $parameters: [
                 $items: [
                     $description: "
-                        This argument specifies the items to be searched for in this set.
+                        This parameter specifies the items to be searched for in this set.
                     "($mediatype: "application/bsmd")
                     $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
@@ -136,10 +136,10 @@
                 specified items.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
-            $arguments: [
+            $parameters: [
                 $items: [
                     $description: "
-                        This argument specifies the items to be searched for in this set.
+                        This parameter specifies the items to be searched for in this set.
                     "($mediatype: "application/bsmd")
                     $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
@@ -175,10 +175,10 @@
                 item.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
-            $arguments: [
+            $parameters: [
                 $item: [
                     $description: "
-                        This argument specifies the item to be searched for in this set.
+                        This parameter specifies the item to be searched for in this set.
                     "($mediatype: "application/bsmd")
                     $type: $itemType
                 ]
@@ -214,10 +214,10 @@
                 or 0 if it is not found.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
-            $arguments: [
+            $parameters: [
                 $item: [
                     $description: "
-                        This argument specifies the item in this set for which the index
+                        This parameter specifies the item in this set for which the index
                         should be returned.
                     "($mediatype: "application/bsmd")
                     $type: $itemType
@@ -281,10 +281,10 @@
                 index.
             "($mediatype: "application/bsmd")
             $type: $itemType
-            $arguments: [
+            $parameters: [
                 $index: [
                     $description: "
-                        This argument specifies the index of the item in this set to be retrieved.
+                        This parameter specifies the index of the item in this set to be retrieved.
                     "($mediatype: "application/bsmd")
                     $type: /bali/elements/Number/v1
                 ]
@@ -320,10 +320,10 @@
                 specified range.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Set/v1($itemType: $itemType)
-            $arguments: [
+            $parameters: [
                 $range: [
                     $description: "
-                        This argument specifies the range of indices of the items in this set to
+                        This parameter specifies the range of indices of the items in this set to
                         be retrieved.
                     "($mediatype: "application/bsmd")
                     $type: /bali/elements/Range/v1
@@ -415,10 +415,10 @@
                 returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Set/v1($itemType: $itemType)
-            $arguments: [
+            $parameters: [
                 $item: [
                     $description: "
-                        This argument specifies the item to be removed from this set.
+                        This parameter specifies the item to be removed from this set.
                     "($mediatype: "application/bsmd")
                     $type: $itemType
                 ]
@@ -454,10 +454,10 @@
                 returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Set/v1($itemType: $itemType)
-            $arguments: [
+            $parameters: [
                 $items: [
                     $description: "
-                        This argument specifies the items to be removed from this set.
+                        This parameter specifies the items to be removed from this set.
                     "($mediatype: "application/bsmd")
                     $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]

@@ -32,10 +32,10 @@
                 $keyType: $keyType
                 $valueType: $valueType
             )
-            $arguments: [
+            $parameters: [
                 $item: [
                     $description: "
-                        This argument specifies the association to be added to this catalog.
+                        This parameter specifies the association to be added to this catalog.
                     "($mediatype: "application/bsmd")
                     $type: /bali/collections/Association/v1(
                         $keyType: $keyType
@@ -77,10 +77,10 @@
                 $keyType: $keyType
                 $valueType: $valueType
             )
-            $arguments: [
+            $parameters: [
                 $items: [
                     $description: "
-                        This argument specifies the associations to be added to this catalog.
+                        This parameter specifies the associations to be added to this catalog.
                     "($mediatype: "application/bsmd")
                     $type: /bali/collections/Catalog/v1(
                         $keyType: $keyType
@@ -119,10 +119,10 @@
                 specified associations.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
-            $arguments: [
+            $parameters: [
                 $items: [
                     $description: "
-                        This argument specifies the associations to be searched for in this catalog.
+                        This parameter specifies the associations to be searched for in this catalog.
                     "($mediatype: "application/bsmd")
                     $type: /bali/collections/Catalog/v1(
                         $keyType: $keyType
@@ -161,10 +161,10 @@
                 specified associations.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
-            $arguments: [
+            $parameters: [
                 $items: [
                     $description: "
-                        This argument specifies the associations to be searched for in this catalog.
+                        This parameter specifies the associations to be searched for in this catalog.
                     "($mediatype: "application/bsmd")
                     $type: /bali/collections/Catalog/v1(
                         $keyType: $keyType
@@ -203,10 +203,10 @@
                 association.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
-            $arguments: [
+            $parameters: [
                 $item: [
                     $description: "
-                        This argument specifies the association to be searched for in this catalog.
+                        This parameter specifies the association to be searched for in this catalog.
                     "($mediatype: "application/bsmd")
                     $type: /bali/collections/Association/v1(
                         $keyType: $keyType
@@ -245,10 +245,10 @@
                 or 0 if it is not found.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
-            $arguments: [
+            $parameters: [
                 $item: [
                     $description: "
-                        This argument specifies the association in the catalog for which the
+                        This parameter specifies the association in the catalog for which the
                         index should be retrieved.
                     "($mediatype: "application/bsmd")
                     $type: /bali/collections/Association/v1(
@@ -315,10 +315,10 @@
                 specified index.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Association/v1
-            $arguments: [
+            $parameters: [
                 $index: [
                     $description: "
-                        This argument specifies the index of the association to be retrieved from
+                        This parameter specifies the index of the association to be retrieved from
                         this catalog.
                     "($mediatype: "application/bsmd")
                     $type: /bali/elements/Number/v1
@@ -355,10 +355,10 @@
                 specified range.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Catalog/v1
-            $arguments: [
+            $parameters: [
                 $range: [
                     $description: "
-                        This argument specifies the range of indices for the associations to be
+                        This parameter specifies the range of indices for the associations to be
                         retrieved from this catalog.
                     "($mediatype: "application/bsmd")
                     $type: /bali/elements/Range/v1
@@ -484,10 +484,10 @@
                 $keyType: $keyType
                 $valueType: $valueType
             )
-            $arguments: [
+            $parameters: [
                 $key: [
                     $description: "
-                        This argument specifies the key in the catalog for the value to be
+                        This parameter specifies the key in the catalog for the value to be
                         removed.
                     "($mediatype: "application/bsmd")
                     $type: $keyType
@@ -527,10 +527,10 @@
                 $keyType: $keyType
                 $valueType: $valueType
             )
-            $arguments: [
+            $parameters: [
                 $keys: [
                     $description: "
-                        This argument specifies the list of keys in the catalog for the values
+                        This parameter specifies the list of keys in the catalog for the values
                         to be removed.
                     "($mediatype: "application/bsmd")
                     $type: /bali/collections/List/v1($itemType: $keyType)
@@ -600,16 +600,16 @@
                 $keyType: $keyType
                 $valueType: $valueType
             )
-            $arguments: [
+            $parameters: [
                 $key: [
                     $description: "
-                        This argument specifies the key in the catalog for the value to be set.
+                        This parameter specifies the key in the catalog for the value to be set.
                     "($mediatype: "application/bsmd")
                     $type: $keyType
                 ]
                 $value: [
                     $description: "
-                        This argument specifies the value in the catalog to be set.
+                        This parameter specifies the value in the catalog to be set.
                     "($mediatype: "application/bsmd")
                     $type: $valueType
                 ]
@@ -708,10 +708,10 @@
                 specified key.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Component/v1
-            $arguments: [
+            $parameters: [
                 $key: [
                     $description: "
-                        This argument specifies the key in the catalog for the value to be
+                        This parameter specifies the key in the catalog for the value to be
                         retrieved.
                     "($mediatype: "application/bsmd")
                     $type: $keyType
@@ -748,10 +748,10 @@
                 specified keys.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/List/v1($itemType: $valueType)
-            $arguments: [
+            $parameters: [
                 $keys: [
                     $description: "
-                        This argument specifies a list of keys in the catalog for the values to be
+                        This parameter specifies a list of keys in the catalog for the values to be
                         retrieved.
                     "($mediatype: "application/bsmd")
                     $type: /bali/collections/List/v1($itemType: $keyType)

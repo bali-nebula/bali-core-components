@@ -10,12 +10,12 @@
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Name/v1
         ]
-        $arguments: [
+        $parameters: [
             $description: "
-                A catalog of argument types that are expected to be passed each time this method
+                A catalog of parameter types that are expected to be passed each time this method
                 type is called.
             "($mediatype: "application/bsmd")
-            $type: /bali/collection/Catalog/v1($itemType: /bali/aspects/Argument/v1)
+            $type: /bali/collection/Catalog/v1($itemType: /bali/aspects/Parameter/v1)
         ]
         $procedure: [
             $description: "

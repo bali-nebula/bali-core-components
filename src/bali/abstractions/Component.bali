@@ -98,10 +98,10 @@
                 the specified named type.
             "($mediatype: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
-            $arguments: [
+            $parameters: [
                 $type: [
                     $description: "
-                        This argument specifies the name of the type to be searched for in this
+                        This parameter specifies the name of the type to be searched for in this
                         component's ancestry.
                     "($mediatype: "application/bsmd")
                     $type: /bali/elements/Name/v1
@@ -227,10 +227,10 @@
                 this component.
             "($mediatype: "application/bsmd")
             $type: /bali/abstractions/Component/v1
-            $arguments: [
+            $parameters: [
                 $key: [
                     $description: "
-                        This argument specifies the key for the parameter value to be returned.
+                        This parameter specifies the key for the parameter value to be returned.
                     "($mediatype: "application/bsmd")
                     $type: /bali/elements/Symbol/v1
                 ]
