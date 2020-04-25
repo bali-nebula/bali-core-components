@@ -35,7 +35,7 @@
                 INVOKE $key WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A845E000'(
+            $bytecode: '6001A847E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -62,7 +62,7 @@
                 INVOKE $value WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A88CE000'(
+            $bytecode: '6001A892E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )

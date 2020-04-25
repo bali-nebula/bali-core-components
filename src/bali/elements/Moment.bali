@@ -68,7 +68,7 @@
                 INVOKE $hour WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A832E000'(
+            $bytecode: '6001A833E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -95,7 +95,7 @@
                 INVOKE $millisecond WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A84EE000'(
+            $bytecode: '6001A850E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -122,7 +122,7 @@
                 INVOKE $minute WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A84FE000'(
+            $bytecode: '6001A852E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -149,7 +149,7 @@
                 INVOKE $month WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A850E000'(
+            $bytecode: '6001A854E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -177,7 +177,7 @@
                 INVOKE $second WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A875E000'(
+            $bytecode: '6001A87AE000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -204,7 +204,7 @@
                 INVOKE $year WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A88FE000'(
+            $bytecode: '6001A896E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )

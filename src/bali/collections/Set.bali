@@ -233,7 +233,7 @@
                 INVOKE $index WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '60013801B035E000'(
+            $bytecode: '60013801B037E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -262,7 +262,7 @@
                 INVOKE $isEmpty WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A83AE000'(
+            $bytecode: '6001A83CE000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -299,7 +299,7 @@
                 INVOKE $item WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '60013801B042E000'(
+            $bytecode: '60013801B044E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -339,7 +339,7 @@
                 INVOKE $items WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '60013801B043E000'(
+            $bytecode: '60013801B045E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -369,7 +369,7 @@
                 INVOKE $iterator WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A844E000'(
+            $bytecode: '6001A846E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -396,7 +396,7 @@
                 INVOKE $removeAll WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A868E000'(
+            $bytecode: '6001A86DE000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -433,7 +433,7 @@
                 INVOKE $removeItem WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '60013801B06BE000'(
+            $bytecode: '60013801B070E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -472,7 +472,7 @@
                 INVOKE $removeItems WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '60026001B06CE000'(
+            $bytecode: '60026001B071E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -502,7 +502,7 @@
                 INVOKE $size WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A87CE000'(
+            $bytecode: '6001A882E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )

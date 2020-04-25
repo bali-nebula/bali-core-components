@@ -63,8 +63,8 @@
                 HANDLE RESULT
             "($mediatype: "application/basm")
             $bytecode: '
-                A04B80016005A88B80020000600218166001A04B6002B001C80180046002
-                2801B080800378038002000700006001E000
+                A04D80016005A89180020000600218166001A04D6002B001C80180046002
+                2801B086800378038002000700006001E000
             '(
                 $encoding: $base16
                 $mediatype: "application/bcod"
@@ -165,8 +165,8 @@
                 HANDLE RESULT
             "($mediatype: "application/basm")
             $bytecode: '
-                6003A88B8001000060011816000060013801B008180E2803E00000006001
-                2801B080800278028001000500002802E000
+                6003A8918001000060011816000060013801B008180E2803E00000006001
+                2801B086800278028001000500002802E000
             '(
                 $encoding: $base16
                 $mediatype: "application/bcod"
@@ -208,7 +208,7 @@
                 INVOKE $isParameterized WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A83EE000'(
+            $bytecode: '6001A840E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -245,7 +245,7 @@
                 INVOKE $parameter WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '60013801B057E000'(
+            $bytecode: '60013801B05CE000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -275,7 +275,7 @@
                 INVOKE $parameters WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A858E000'(
+            $bytecode: '6001A85DE000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -302,7 +302,7 @@
                 INVOKE $type WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6001A88BE000'(
+            $bytecode: '6001A891E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
