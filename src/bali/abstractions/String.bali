@@ -91,7 +91,7 @@
                 HANDLE RESULT
             "($mediatype: "application/basm")
             $bytecode: '
-                280B80026004C00280036003C00118186003C00380016002280CB07B8002
+                280B80026004C00280036003C00118186003C00380016002280CB0818002
                 000060013801B008181600180000000600006002E000
             '(
                 $encoding: $base16
@@ -110,6 +110,9 @@
                 "2.WithStatementDone": 24
                 "3.ReturnStatement": 25
             ]
+            $arguments: [
+                $item
+            ]($type: /bali/collections/Set/v1)
             $variables: [
                 $candidate
                 $index
@@ -120,9 +123,6 @@
                 $hasNext
                 $iterator
                 $next
-            ]($type: /bali/collections/Set/v1)
-            $arguments: [
-                $item
             ]($type: /bali/collections/Set/v1)
         ]
         $isEmpty: [
@@ -148,13 +148,13 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
+            $arguments: [ ]($type: /bali/collections/Set/v1)
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [
                 $size
             ]($type: /bali/collections/Set/v1)
-            $arguments: [ ]($type: /bali/collections/Set/v1)
         ]
         $item: [
             $description: "
@@ -195,7 +195,7 @@
                 SEND $previous TO COMPONENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6003C00180016001A0493801B001C80380026001C002E000'(
+            $bytecode: '6003C00180016001A04B3801B001C80380026001C002E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -204,6 +204,9 @@
                 "2.EvaluateStatement": 4
                 "3.ReturnStatement": 10
             ]
+            $arguments: [
+                $index
+            ]($type: /bali/collections/Set/v1)
             $variables: [
                 $iterator
                 $result-1
@@ -213,9 +216,6 @@
                 $iterator
                 $previous
                 $toSlot
-            ]($type: /bali/collections/Set/v1)
-            $arguments: [
-                $index
             ]($type: /bali/collections/Set/v1)
         ]
         $items: [
@@ -272,13 +272,13 @@
             $addresses: [
                 "1.ThrowStatement": 1
             ]
+            $arguments: [
+                $range
+            ]($type: /bali/collections/Set/v1)
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
-            $arguments: [
-                $range
-            ]($type: /bali/collections/Set/v1)
         ]
         $iterator: [
             $description: "
@@ -325,11 +325,11 @@
             $addresses: [
                 "1.ThrowStatement": 1
             ]
+            $arguments: [ ]($type: /bali/collections/Set/v1)
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
-            $arguments: [ ]($type: /bali/collections/Set/v1)
         ]
         $size: [
             $description: "
@@ -375,11 +375,11 @@
             $addresses: [
                 "1.ThrowStatement": 1
             ]
+            $arguments: [ ]($type: /bali/collections/Set/v1)
             $variables: [
                 $target
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
-            $arguments: [ ]($type: /bali/collections/Set/v1)
         ]
     ]
     $literals: [
