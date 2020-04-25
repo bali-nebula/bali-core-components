@@ -3,6 +3,225 @@
         This class defines the methods for the messages that all durations support.
     "($mediatype: "application/bsmd")
     $parent: /bali/abstractions/Element/v1
+    $methods: [
+        $days: [
+            $description: "
+                This method returns from this duration the number of days.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Number/v1($range: 1..31)
+            $procedure: {
+                return days(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                INVOKE $days WITH 1 ARGUMENT
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '6001A820E000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $arguments: [ ]($type: /bali/collections/Set/v1)
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]
+        $hours: [
+            $description: "
+                This method returns from this duration the number of hours.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Number/v1($range: 0..23)
+            $procedure: {
+                return hours(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                INVOKE $hours WITH 1 ARGUMENT
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '6001A834E000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $arguments: [ ]($type: /bali/collections/Set/v1)
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]
+        $milliseconds: [
+            $description: "
+                This method returns from this duration the number of milliseconds.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Number/v1($range: 0..999)
+            $procedure: {
+                return milliseconds(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                INVOKE $milliseconds WITH 1 ARGUMENT
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '6001A851E000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $arguments: [ ]($type: /bali/collections/Set/v1)
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]
+        $minutes: [
+            $description: "
+                This method returns from this duration the number of minutes.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Number/v1($range: 0..59)
+            $procedure: {
+                return minutes(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                INVOKE $minutes WITH 1 ARGUMENT
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '6001A853E000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $arguments: [ ]($type: /bali/collections/Set/v1)
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]
+        $months: [
+            $description: "
+                This method returns from this duration the number of months.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Number/v1($range: 1..12)
+            $procedure: {
+                return months(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                INVOKE $months WITH 1 ARGUMENT
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '6001A855E000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $arguments: [ ]($type: /bali/collections/Set/v1)
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]
+        $seconds: [
+            $description: "
+                This method returns from this duration the number of seconds.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Number/v1($range: 0..60)
+            $procedure: {
+                return seconds(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                INVOKE $seconds WITH 1 ARGUMENT
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '6001A87BE000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $arguments: [ ]($type: /bali/collections/Set/v1)
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]
+        $weeks: [
+            $description: "
+                This method returns from this duration the number of weeks.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Number/v1
+            $procedure: {
+                return weeks(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                INVOKE $weeks WITH 1 ARGUMENT
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '6001A894E000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $arguments: [ ]($type: /bali/collections/Set/v1)
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]
+        $years: [
+            $description: "
+                This method returns from this duration the number of years.
+            "($mediatype: "application/bsmd")
+            $type: /bali/elements/Number/v1
+            $procedure: {
+                return years(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $target
+                INVOKE $years WITH 1 ARGUMENT
+                HANDLE RESULT
+            "($mediatype: "application/basm")
+            $bytecode: '6001A897E000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $arguments: [ ]($type: /bali/collections/Set/v1)
+            $variables: [
+                $target
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]
+    ]
+    $literals: [ ]($type: /bali/collections/Set/v1)
 ](
     $name: /bali/elements/Duration/v1
     $type: /bali/types/Primitive/v1
