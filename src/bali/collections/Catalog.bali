@@ -478,7 +478,7 @@
         $removeValue: [
             $description: "
                 This method removes from this catalog the value associated with the specified
-                key.
+                key.  The updated catalog is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
                 $keyType: $keyType
@@ -521,7 +521,7 @@
         $removeValues: [
             $description: "
                 This method removes from this catalog the values associated with the specified
-                keys.
+                keys.  The updated catalog is returned.
             "($mediatype: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
                 $keyType: $keyType
