@@ -111,7 +111,7 @@
                 STORE VARIABLE $item
                 
                 1.1.1.EvaluateStatement:
-                LOAD VARIABLE $target
+                PUSH CONSTANT $target
                 INVOKE $list
                 LOAD VARIABLE $item
                 INVOKE $addItem WITH 2 ARGUMENTS
@@ -125,7 +125,7 @@
                 SKIP INSTRUCTION
                 
                 2.ReturnStatement:
-                LOAD VARIABLE $target
+                PUSH CONSTANT $target
                 HANDLE RESULT
             "($mediatype: "application/basm")
             $addresses: [
@@ -137,8 +137,8 @@
                 "2.ReturnStatement": 18
             ]
             $bytecode: '
-                3801C00380026002C00218116002C00480016004A04D6001B001C8018003
-                000400006004E000
+                3801C00380026002C00218116002C00480013001A04D6001B001C8018003
+                000400003001E000
             '(
                 $encoding: $base16
                 $mediatype: "application/bcod"
@@ -150,7 +150,6 @@
                 $item
                 $iterator-2
                 $result-1
-                $target
             ]($type: /bali/collections/Set/v1)
             $messages: [
                 $addItem
@@ -200,7 +199,7 @@
                 SKIP INSTRUCTION
                 
                 1.1.1.1.ConditionClause:
-                LOAD VARIABLE $target
+                PUSH CONSTANT $target
                 INVOKE $list
                 LOAD VARIABLE $item
                 INVOKE $addItem WITH 2 ARGUMENTS
@@ -237,7 +236,7 @@
                 "2.ReturnStatement": 23
             ]
             $bytecode: '
-                3801C00380026002C00218166002C004800100006003A04D6001B001C801
+                3801C00380026002C00218166002C004800100003001A04D6001B001C801
                 A8581814280DE000000000040000280EE000
             '(
                 $encoding: $base16
@@ -249,7 +248,6 @@
             $variables: [
                 $item
                 $iterator-2
-                $target
             ]($type: /bali/collections/Set/v1)
             $messages: [
                 $containsItem
@@ -299,7 +297,7 @@
                 SKIP INSTRUCTION
                 
                 1.1.1.1.ConditionClause:
-                LOAD VARIABLE $target
+                PUSH CONSTANT $target
                 INVOKE $list
                 LOAD VARIABLE $item
                 INVOKE $addItem WITH 2 ARGUMENTS
@@ -335,7 +333,7 @@
                 "2.ReturnStatement": 22
             ]
             $bytecode: '
-                3801C00380026002C00218156002C004800100006003A04D6001B001C801
+                3801C00380026002C00218156002C004800100003001A04D6001B001C801
                 1813280EE000000000040000280DE000
             '(
                 $encoding: $base16
@@ -347,7 +345,6 @@
             $variables: [
                 $item
                 $iterator-2
-                $target
             ]($type: /bali/collections/Set/v1)
             $messages: [
                 $containsItem
@@ -375,7 +372,7 @@
             }($item: $itemType)
             $instructions: "
                 1.ReturnStatement:
-                LOAD VARIABLE $target
+                PUSH CONSTANT $target
                 INVOKE $list
                 PUSH ARGUMENT $item
                 INVOKE $addItem WITH 2 ARGUMENTS
@@ -387,16 +384,14 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '6001A04D3801B001C801280DB03FE000'(
+            $bytecode: '3001A04D3801B001C801280DB03FE000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [
                 $item
             ]($type: /bali/collections/Set/v1)
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
+            $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [
                 $index
             ]($type: /bali/collections/Set/v1)
@@ -432,7 +427,7 @@
                 STORE VARIABLE $index
                 
                 2.WithStatement:
-                LOAD VARIABLE $target
+                PUSH CONSTANT $target
                 SEND $iterator TO COMPONENT
                 STORE VARIABLE $iterator-2
                 
@@ -489,7 +484,7 @@
                 "3.ReturnStatement": 25
             ]
             $bytecode: '
-                280D80026004C00280036003C00118186003C00380016002280EB0878002
+                280D80023001C00280036003C00118186003C00380016002280EB0878002
                 000060013801B008181600180000000600006002E000
             '(
                 $encoding: $base16
@@ -502,7 +497,6 @@
                 $candidate
                 $index
                 $iterator-2
-                $target
             ]($type: /bali/collections/Set/v1)
             $messages: [
                 $hasNext
@@ -520,7 +514,7 @@
             }
             $instructions: "
                 1.ReturnStatement:
-                LOAD VARIABLE $target
+                PUSH CONSTANT $target
                 SEND $size TO COMPONENT
                 PUSH LITERAL `0`
                 INVOKE $areEqual WITH 2 ARGUMENTS
@@ -529,14 +523,12 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '6001C001280DB008E000'(
+            $bytecode: '3001C001280DB008E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [ ]($type: /bali/collections/Set/v1)
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
+            $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [
                 $size
             ]($type: /bali/collections/Set/v1)
@@ -563,7 +555,7 @@
             }($index: /bali/elements/Number/v1)
             $instructions: "
                 1.EvaluateStatement:
-                LOAD VARIABLE $target
+                PUSH CONSTANT $target
                 SEND $iterator TO COMPONENT
                 STORE VARIABLE $iterator
                 
@@ -585,7 +577,7 @@
                 "2.EvaluateStatement": 4
                 "3.ReturnStatement": 10
             ]
-            $bytecode: '6003C00180016001A04D3801B001C80380026001C002E000'(
+            $bytecode: '3001C00180016001A04D3801B001C80380026001C002E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
@@ -595,7 +587,6 @@
             $variables: [
                 $iterator
                 $result-1
-                $target
             ]($type: /bali/collections/Set/v1)
             $messages: [
                 $iterator
@@ -825,6 +816,9 @@
         false
         true
     ]($type: /bali/collections/Set/v1)
+    $constants: [
+        $target: none
+    ]
 ](
     $name: /bali/abstractions/Collection/v1
     $type: /bali/types/Primitive/v1($existence: $abstract)

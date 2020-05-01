@@ -42,7 +42,7 @@
             }($index: /bali/elements/Number/v1)
             $instructions: "
                 1.ReturnStatement:
-                LOAD VARIABLE $target
+                PUSH CONSTANT $target
                 PUSH ARGUMENT $index
                 INVOKE $item WITH 2 ARGUMENTS
                 HANDLE RESULT
@@ -50,16 +50,14 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '60013801B044E000'(
+            $bytecode: '30013801B044E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [
                 $index
             ]($type: /bali/collections/Set/v1)
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
+            $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $items: [
@@ -82,7 +80,7 @@
             }($range: /bali/elements/Range/v1)
             $instructions: "
                 1.ReturnStatement:
-                LOAD VARIABLE $target
+                PUSH CONSTANT $target
                 PUSH ARGUMENT $range
                 INVOKE $items WITH 2 ARGUMENTS
                 HANDLE RESULT
@@ -90,16 +88,14 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '60013801B045E000'(
+            $bytecode: '30013801B045E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [
                 $range
             ]($type: /bali/collections/Set/v1)
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
+            $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $iterator: [
@@ -113,21 +109,19 @@
             }
             $instructions: "
                 1.ReturnStatement:
-                LOAD VARIABLE $target
+                PUSH CONSTANT $target
                 INVOKE $iterator WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '6001A846E000'(
+            $bytecode: '3001A846E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [ ]($type: /bali/collections/Set/v1)
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
+            $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $size: [
@@ -140,25 +134,26 @@
             }
             $instructions: "
                 1.ReturnStatement:
-                LOAD VARIABLE $target
+                PUSH CONSTANT $target
                 INVOKE $size WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '6001A882E000'(
+            $bytecode: '3001A882E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [ ]($type: /bali/collections/Set/v1)
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
+            $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
     ]
     $literals: [ ]($type: /bali/collections/Set/v1)
+    $constants: [
+        $target: none
+    ]
 ](
     $name: /bali/elements/Binary/v1
     $type: /bali/types/Primitive/v1
