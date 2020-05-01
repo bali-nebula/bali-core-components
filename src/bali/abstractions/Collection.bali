@@ -60,6 +60,9 @@
                 INVOKE $addItem WITH 2 ARGUMENTS
                 HANDLE EXCEPTION
             "($mediatype: "application/basm")
+            $addresses: [
+                "1.ThrowStatement": 1
+            ]
             $bytecode: '
                 A01428092804B00BB00128082802B00BB00128052801B00BB001280C2803
                 B00BB001E800
@@ -67,15 +70,10 @@
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
-            $addresses: [
-                "1.ThrowStatement": 1
-            ]
             $arguments: [
                 $item
             ]($type: /bali/collections/Set/v1)
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
+            $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $addItems: [
@@ -130,13 +128,6 @@
                 LOAD VARIABLE $target
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '
-                3801C00380026002C00218116002C00480016004A04D6001B001C8018003
-                000400006004E000
-            '(
-                $encoding: $base16
-                $mediatype: "application/bcod"
-            )
             $addresses: [
                 "1.WithStatement": 1
                 "1.1.ConditionClause": 4
@@ -145,6 +136,13 @@
                 "1.WithStatementDone": 17
                 "2.ReturnStatement": 18
             ]
+            $bytecode: '
+                3801C00380026002C00218116002C00480016004A04D6001B001C8018003
+                000400006004E000
+            '(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
             $arguments: [
                 $items
             ]($type: /bali/collections/Set/v1)
@@ -227,13 +225,6 @@
                 PUSH LITERAL `true`
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '
-                3801C00380026002C00218166002C004800100006003A04D6001B001C801
-                A8581814280DE000000000040000280EE000
-            '(
-                $encoding: $base16
-                $mediatype: "application/bcod"
-            )
             $addresses: [
                 "1.WithStatement": 1
                 "1.1.ConditionClause": 4
@@ -245,6 +236,13 @@
                 "1.WithStatementDone": 22
                 "2.ReturnStatement": 23
             ]
+            $bytecode: '
+                3801C00380026002C00218166002C004800100006003A04D6001B001C801
+                A8581814280DE000000000040000280EE000
+            '(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
             $arguments: [
                 $items
             ]($type: /bali/collections/Set/v1)
@@ -325,13 +323,6 @@
                 PUSH LITERAL `false`
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '
-                3801C00380026002C00218156002C004800100006003A04D6001B001C801
-                1813280EE000000000040000280DE000
-            '(
-                $encoding: $base16
-                $mediatype: "application/bcod"
-            )
             $addresses: [
                 "1.WithStatement": 1
                 "1.1.ConditionClause": 4
@@ -343,6 +334,13 @@
                 "1.WithStatementDone": 21
                 "2.ReturnStatement": 22
             ]
+            $bytecode: '
+                3801C00380026002C00218156002C004800100006003A04D6001B001C801
+                1813280EE000000000040000280DE000
+            '(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
             $arguments: [
                 $items
             ]($type: /bali/collections/Set/v1)
@@ -386,13 +384,13 @@
                 INVOKE $isMore WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
             $bytecode: '6001A04D3801B001C801280DB03FE000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
             $arguments: [
                 $item
             ]($type: /bali/collections/Set/v1)
@@ -477,13 +475,6 @@
                 LOAD VARIABLE $index
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '
-                280D80026004C00280036003C00118186003C00380016002280EB0878002
-                000060013801B008181600180000000600006002E000
-            '(
-                $encoding: $base16
-                $mediatype: "application/bcod"
-            )
             $addresses: [
                 "1.EvaluateStatement": 1
                 "2.WithStatement": 3
@@ -497,6 +488,13 @@
                 "2.WithStatementDone": 24
                 "3.ReturnStatement": 25
             ]
+            $bytecode: '
+                280D80026004C00280036003C00118186003C00380016002280EB0878002
+                000060013801B008181600180000000600006002E000
+            '(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
             $arguments: [
                 $item
             ]($type: /bali/collections/Set/v1)
@@ -528,13 +526,13 @@
                 INVOKE $areEqual WITH 2 ARGUMENTS
                 HANDLE RESULT
             "($mediatype: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
             $bytecode: '6001C001280DB008E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
             $arguments: [ ]($type: /bali/collections/Set/v1)
             $variables: [
                 $target
@@ -582,15 +580,15 @@
                 SEND $previous TO COMPONENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
-            $bytecode: '6003C00180016001A04D3801B001C80380026001C002E000'(
-                $encoding: $base16
-                $mediatype: "application/bcod"
-            )
             $addresses: [
                 "1.EvaluateStatement": 1
                 "2.EvaluateStatement": 4
                 "3.ReturnStatement": 10
             ]
+            $bytecode: '6003C00180016001A04D3801B001C80380026001C002E000'(
+                $encoding: $base16
+                $mediatype: "application/bcod"
+            )
             $arguments: [
                 $index
             ]($type: /bali/collections/Set/v1)
@@ -649,6 +647,9 @@
                 INVOKE $addItem WITH 2 ARGUMENTS
                 HANDLE EXCEPTION
             "($mediatype: "application/basm")
+            $addresses: [
+                "1.ThrowStatement": 1
+            ]
             $bytecode: '
                 A01428092804B00BB00128082806B00BB00128052801B00BB001280C2803
                 B00BB001E800
@@ -656,15 +657,10 @@
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
-            $addresses: [
-                "1.ThrowStatement": 1
-            ]
             $arguments: [
                 $range
             ]($type: /bali/collections/Set/v1)
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
+            $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $iterator: [
@@ -702,6 +698,9 @@
                 INVOKE $addItem WITH 2 ARGUMENTS
                 HANDLE EXCEPTION
             "($mediatype: "application/basm")
+            $addresses: [
+                "1.ThrowStatement": 1
+            ]
             $bytecode: '
                 A01428092804B00BB00128082807B00BB00128052801B00BB001280C2803
                 B00BB001E800
@@ -709,13 +708,8 @@
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
-            $addresses: [
-                "1.ThrowStatement": 1
-            ]
             $arguments: [ ]($type: /bali/collections/Set/v1)
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
+            $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $removeAll: [
@@ -752,6 +746,9 @@
                 INVOKE $addItem WITH 2 ARGUMENTS
                 HANDLE EXCEPTION
             "($mediatype: "application/basm")
+            $addresses: [
+                "1.ThrowStatement": 1
+            ]
             $bytecode: '
                 A01428092804B00BB0012808280AB00BB00128052801B00BB001280C2803
                 B00BB001E800
@@ -759,13 +756,8 @@
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
-            $addresses: [
-                "1.ThrowStatement": 1
-            ]
             $arguments: [ ]($type: /bali/collections/Set/v1)
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
+            $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $size: [
@@ -802,6 +794,9 @@
                 INVOKE $addItem WITH 2 ARGUMENTS
                 HANDLE EXCEPTION
             "($mediatype: "application/basm")
+            $addresses: [
+                "1.ThrowStatement": 1
+            ]
             $bytecode: '
                 A01428092804B00BB0012808280BB00BB00128052801B00BB001280C2803
                 B00BB001E800
@@ -809,13 +804,8 @@
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
-            $addresses: [
-                "1.ThrowStatement": 1
-            ]
             $arguments: [ ]($type: /bali/collections/Set/v1)
-            $variables: [
-                $target
-            ]($type: /bali/collections/Set/v1)
+            $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
     ]
