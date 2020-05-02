@@ -25,7 +25,7 @@
                 STORE VARIABLE $ancestry
                 
                 2.EvaluateStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 INVOKE $type WITH 1 ARGUMENT
                 STORE VARIABLE $current
                 
@@ -74,13 +74,15 @@
                 "4.ReturnStatement": 23
             ]
             $bytecode: '
-                A04D80013001A89180020000600218166001A04D6002B001C80180046002
+                A04D80013801A89180020000600218166001A04D6002B001C80180046002
                 2801B086800378038002000700006001E000
             '(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
-            $arguments: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $target
+            ]
             $variables: [
                 $ancestry
                 $current
@@ -118,7 +120,7 @@
             }($type: /bali/elements/Name/v1)
             $instructions: "
                 1.EvaluateStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 INVOKE $type WITH 1 ARGUMENT
                 STORE VARIABLE $current
                 
@@ -177,15 +179,16 @@
                 "3.ReturnStatement": 23
             ]
             $bytecode: '
-                3001A8918001000060011816000060013801B008180E2803E00000006001
+                3801A8918001000060011816000060013802B008180E2803E00000006001
                 2801B086800278028001000500002802E000
             '(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [
+                $target
                 $type
-            ]($type: /bali/collections/Set/v1)
+            ]
             $variables: [
                 $current
                 $location-2
@@ -202,18 +205,20 @@
             }
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 INVOKE $isParameterized WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3001A840E000'(
+            $bytecode: '3801A840E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
-            $arguments: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $target
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -236,7 +241,7 @@
             }($key: /bali/elements/Symbol/v1)
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 PUSH ARGUMENT $key
                 INVOKE $parameter WITH 2 ARGUMENTS
                 HANDLE RESULT
@@ -244,13 +249,14 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '30013801B05CE000'(
+            $bytecode: '38013802B05CE000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [
+                $target
                 $key
-            ]($type: /bali/collections/Set/v1)
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -265,18 +271,20 @@
             }
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 INVOKE $parameters WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3001A85DE000'(
+            $bytecode: '3801A85DE000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
-            $arguments: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $target
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -290,18 +298,20 @@
             }
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 INVOKE $type WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3001A891E000'(
+            $bytecode: '3801A891E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
-            $arguments: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $target
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -311,9 +321,6 @@
         false
         true
     ]($type: /bali/collections/Set/v1)
-    $constants: [
-        $target: none
-    ]
 ](
     $name: /bali/abstractions/Component/v1
     $type: /bali/types/Primitive/v1($existence: $abstract)

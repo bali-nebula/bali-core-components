@@ -48,7 +48,7 @@
             }($item: /bali/collections/Association/v1($keyType: $keyType, $valueType: $valueType))
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 PUSH ARGUMENT $item
                 INVOKE $addItem WITH 2 ARGUMENTS
                 HANDLE RESULT
@@ -56,13 +56,14 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '30013801B001E000'(
+            $bytecode: '38013802B001E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [
+                $target
                 $item
-            ]($type: /bali/collections/Set/v1)
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -91,7 +92,7 @@
             }($items: /bali/collections/Catalog/v1($keyType: $keyType, $valueType: $valueType))
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 PUSH ARGUMENT $items
                 INVOKE $addItems WITH 2 ARGUMENTS
                 HANDLE RESULT
@@ -99,13 +100,14 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '30013801B002E000'(
+            $bytecode: '38013802B002E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [
+                $target
                 $items
-            ]($type: /bali/collections/Set/v1)
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -131,7 +133,7 @@
             }($items: /bali/collections/Catalog/v1($keyType: $keyType, $valueType: $valueType))
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 PUSH ARGUMENT $items
                 INVOKE $containsAll WITH 2 ARGUMENTS
                 HANDLE RESULT
@@ -139,13 +141,14 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '30013801B01BE000'(
+            $bytecode: '38013802B01BE000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [
+                $target
                 $items
-            ]($type: /bali/collections/Set/v1)
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -171,7 +174,7 @@
             }($items: /bali/collections/Catalog/v1($keyType: $keyType, $valueType: $valueType))
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 PUSH ARGUMENT $items
                 INVOKE $containsAny WITH 2 ARGUMENTS
                 HANDLE RESULT
@@ -179,13 +182,14 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '30013801B01CE000'(
+            $bytecode: '38013802B01CE000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [
+                $target
                 $items
-            ]($type: /bali/collections/Set/v1)
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -211,7 +215,7 @@
             }($item: /bali/collections/Association/v1($keyType: $keyType, $valueType: $valueType))
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 PUSH ARGUMENT $item
                 INVOKE $containsItem WITH 2 ARGUMENTS
                 HANDLE RESULT
@@ -219,13 +223,14 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '30013801B01DE000'(
+            $bytecode: '38013802B01DE000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [
+                $target
                 $item
-            ]($type: /bali/collections/Set/v1)
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -252,7 +257,7 @@
             }($item: /bali/collections/Association/v1($keyType: $keyType, $valueType: $valueType))
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 PUSH ARGUMENT $item
                 INVOKE $index WITH 2 ARGUMENTS
                 HANDLE RESULT
@@ -260,13 +265,14 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '30013801B037E000'(
+            $bytecode: '38013802B037E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [
+                $target
                 $item
-            ]($type: /bali/collections/Set/v1)
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -280,18 +286,20 @@
             }
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 INVOKE $isEmpty WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3001A83CE000'(
+            $bytecode: '3801A83CE000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
-            $arguments: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $target
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -315,7 +323,7 @@
             }($index: /bali/elements/Number/v1)
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 PUSH ARGUMENT $index
                 INVOKE $item WITH 2 ARGUMENTS
                 HANDLE RESULT
@@ -323,13 +331,14 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '30013801B044E000'(
+            $bytecode: '38013802B044E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [
+                $target
                 $index
-            ]($type: /bali/collections/Set/v1)
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -353,7 +362,7 @@
             }($range: /bali/collections/Range/v1)
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 PUSH ARGUMENT $range
                 INVOKE $items WITH 2 ARGUMENTS
                 HANDLE RESULT
@@ -361,13 +370,14 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '30013801B045E000'(
+            $bytecode: '38013802B045E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [
+                $target
                 $range
-            ]($type: /bali/collections/Set/v1)
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -382,18 +392,20 @@
             }
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 INVOKE $iterator WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3001A846E000'(
+            $bytecode: '3801A846E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
-            $arguments: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $target
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -408,18 +420,20 @@
             }
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 INVOKE $keys WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3001A848E000'(
+            $bytecode: '3801A848E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
-            $arguments: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $target
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -436,18 +450,20 @@
             }
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 INVOKE $removeAll WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3001A86DE000'(
+            $bytecode: '3801A86DE000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
-            $arguments: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $target
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -474,7 +490,7 @@
             }($key: $keyType)
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 PUSH ARGUMENT $key
                 INVOKE $removeValue WITH 2 ARGUMENTS
                 HANDLE RESULT
@@ -482,13 +498,14 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '30013801B074E000'(
+            $bytecode: '38013802B074E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [
+                $target
                 $key
-            ]($type: /bali/collections/Set/v1)
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -515,7 +532,7 @@
             }($keys: /bali/collections/List/v1($itemType: $keyType))
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 PUSH ARGUMENT $keys
                 INVOKE $removeValues WITH 2 ARGUMENTS
                 HANDLE RESULT
@@ -523,13 +540,14 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '30013801B075E000'(
+            $bytecode: '38013802B075E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [
+                $target
                 $keys
-            ]($type: /bali/collections/Set/v1)
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -546,18 +564,20 @@
             }
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 INVOKE $reverseItems WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3001A876E000'(
+            $bytecode: '3801A876E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
-            $arguments: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $target
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -592,7 +612,7 @@
             )
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 PUSH ARGUMENT $key
                 PUSH ARGUMENT $value
                 INVOKE $setValue WITH 3 ARGUMENTS
@@ -601,14 +621,15 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '300138013802B87FE000'(
+            $bytecode: '380138023803B87FE000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [
+                $target
                 $key
                 $value
-            ]($type: /bali/collections/Set/v1)
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -622,18 +643,20 @@
             }
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 INVOKE $size WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3001A882E000'(
+            $bytecode: '3801A882E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
-            $arguments: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $target
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -651,18 +674,20 @@
             }
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 INVOKE $sortItems WITH 1 ARGUMENT
                 HANDLE RESULT
             "($mediatype: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3001A883E000'(
+            $bytecode: '3801A883E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
-            $arguments: [ ]($type: /bali/collections/Set/v1)
+            $arguments: [
+                $target
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -686,7 +711,7 @@
             }($key: $keyType)
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 PUSH ARGUMENT $key
                 INVOKE $keyValue WITH 2 ARGUMENTS
                 HANDLE RESULT
@@ -694,13 +719,14 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '30013801B049E000'(
+            $bytecode: '38013802B049E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [
+                $target
                 $key
-            ]($type: /bali/collections/Set/v1)
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
@@ -724,7 +750,7 @@
             }($keys: /bali/collections/List/v1($itemType: $keyType))
             $instructions: "
                 1.ReturnStatement:
-                PUSH CONSTANT $target
+                PUSH ARGUMENT $target
                 PUSH ARGUMENT $keys
                 INVOKE $values WITH 2 ARGUMENTS
                 HANDLE RESULT
@@ -732,21 +758,19 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '30013801B093E000'(
+            $bytecode: '38013802B093E000'(
                 $encoding: $base16
                 $mediatype: "application/bcod"
             )
             $arguments: [
+                $target
                 $keys
-            ]($type: /bali/collections/Set/v1)
+            ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
     ]
     $literals: [ ]($type: /bali/collections/Set/v1)
-    $constants: [
-        $target: none
-    ]
 ](
     $name: /bali/collections/Catalog/v1
     $type: /bali/types/Primitive/v1
