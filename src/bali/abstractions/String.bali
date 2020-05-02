@@ -40,7 +40,7 @@
                     }
                 }
                 return index
-            }($item: $itemType)
+            }
             $instructions: "
                 1.EvaluateStatement:
                 PUSH LITERAL `0`
@@ -175,7 +175,7 @@
                 $iterator := target.iterator()
                 iterator.toSlot(index)
                 return iterator.previous()
-            }($index: /bali/elements/Number/v1)
+            }
             $instructions: "
                 1.EvaluateStatement:
                 PUSH ARGUMENT $target
@@ -240,7 +240,7 @@
                     $exception: $abstractMethod
                     $text: "An abstract method must be implemented by a subtype."
                 ]
-            }($range: /bali/elements/Range/v1)
+            }
             $instructions: "
                 1.ThrowStatement:
                 INVOKE $catalog

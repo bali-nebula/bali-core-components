@@ -45,7 +45,7 @@
             ]
             $procedure: {
                 return addItem(target, item)
-            }($item: /bali/collections/Association/v1($keyType: $keyType, $valueType: $valueType))
+            }
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
@@ -89,7 +89,7 @@
             ]
             $procedure: {
                 return addItems(target, items)
-            }($items: /bali/collections/Catalog/v1($keyType: $keyType, $valueType: $valueType))
+            }
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
@@ -130,7 +130,7 @@
             ]
             $procedure: {
                 return containsAll(target, items)
-            }($items: /bali/collections/Catalog/v1($keyType: $keyType, $valueType: $valueType))
+            }
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
@@ -171,7 +171,7 @@
             ]
             $procedure: {
                 return containsAny(target, items)
-            }($items: /bali/collections/Catalog/v1($keyType: $keyType, $valueType: $valueType))
+            }
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
@@ -212,7 +212,7 @@
             ]
             $procedure: {
                 return containsItem(target, item)
-            }($item: /bali/collections/Association/v1($keyType: $keyType, $valueType: $valueType))
+            }
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
@@ -254,7 +254,7 @@
             ]
             $procedure: {
                 return index(target, item)
-            }($item: /bali/collections/Association/v1($keyType: $keyType, $valueType: $valueType))
+            }
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
@@ -320,7 +320,7 @@
             ]
             $procedure: {
                 return item(target, index)
-            }($index: /bali/elements/Number/v1)
+            }
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
@@ -359,7 +359,7 @@
             ]
             $procedure: {
                 return items(target, range)
-            }($range: /bali/collections/Range/v1)
+            }
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
@@ -487,7 +487,7 @@
             ]
             $procedure: {
                 return removeValue(target, key)
-            }($key: $keyType)
+            }
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
@@ -529,7 +529,7 @@
             ]
             $procedure: {
                 return removeValues(target, keys)
-            }($keys: /bali/collections/List/v1($itemType: $keyType))
+            }
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
@@ -708,7 +708,7 @@
             ]
             $procedure: {
                 return keyValue(target, key)
-            }($key: $keyType)
+            }
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
@@ -747,7 +747,7 @@
             ]
             $procedure: {
                 return values(target, keys)
-            }($keys: /bali/collections/List/v1($itemType: $keyType))
+            }
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target

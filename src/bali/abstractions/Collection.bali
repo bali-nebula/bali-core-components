@@ -38,7 +38,7 @@
                     $exception: $abstractMethod
                     $text: "An abstract method must be implemented by a subtype."
                 ]
-            }($item: $itemType)
+            }
             $instructions: "
                 1.ThrowStatement:
                 INVOKE $catalog
@@ -96,7 +96,7 @@
                     target.addItem(item)
                 }
                 return target
-            }($items: /bali/abstractions/Collection/v1($itemType: $itemType))
+            }
             $instructions: "
                 1.WithStatement:
                 PUSH ARGUMENT $items
@@ -182,7 +182,7 @@
                     }
                 }
                 return true
-            }($items: /bali/abstractions/Collection/v1($itemType: $itemType))
+            }
             $instructions: "
                 1.WithStatement:
                 PUSH ARGUMENT $items
@@ -281,7 +281,7 @@
                     }
                 }
                 return false
-            }($items: /bali/abstractions/Collection/v1($itemType: $itemType))
+            }
             $instructions: "
                 1.WithStatement:
                 PUSH ARGUMENT $items
@@ -373,7 +373,7 @@
             ]
             $procedure: {
                 return target.index(item) > 0
-            }($item: $itemType)
+            }
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
@@ -425,7 +425,7 @@
                     }
                 }
                 return index
-            }($item: $itemType)
+            }
             $instructions: "
                 1.EvaluateStatement:
                 PUSH LITERAL `0`
@@ -560,7 +560,7 @@
                 $iterator := target.iterator()
                 iterator.toSlot(index)
                 return iterator.previous()
-            }($index: /bali/elements/Number/v1)
+            }
             $instructions: "
                 1.EvaluateStatement:
                 PUSH ARGUMENT $target
@@ -625,7 +625,7 @@
                     $exception: $abstractMethod
                     $text: "An abstract method must be implemented by a subtype."
                 ]
-            }($range: /bali/elements/Range/v1)
+            }
             $instructions: "
                 1.ThrowStatement:
                 INVOKE $catalog

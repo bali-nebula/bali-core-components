@@ -170,7 +170,7 @@
             ]
             $procedure: {
                 return toSlot(target, slot)
-            }($slot: /bali/elements/Number/v1)
+            }
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target

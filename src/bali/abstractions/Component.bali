@@ -117,7 +117,7 @@
                     $current := @(current[$parent])
                 }
                 return false
-            }($type: /bali/elements/Name/v1)
+            }
             $instructions: "
                 1.EvaluateStatement:
                 PUSH ARGUMENT $target
@@ -238,7 +238,7 @@
             ]
             $procedure: {
                 return parameter(target, key)
-            }($key: /bali/elements/Symbol/v1)
+            }
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target

@@ -39,7 +39,7 @@
             ]
             $procedure: {
                 return item(target, index)
-            }($index: /bali/elements/Number/v1)
+            }
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
@@ -78,7 +78,7 @@
             ]
             $procedure: {
                 return items(target, range)
-            }($range: /bali/elements/Range/v1)
+            }
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
