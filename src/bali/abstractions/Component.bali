@@ -1,14 +1,14 @@
 [
     $description: "
         This abstract primitive type defines the methods for the messages that all components support.
-    "($mediatype: "application/bsmd")
+    "($mediaType: "application/bsmd")
     $parent: none
     $methods: [
         $ancestry: [
             $description: "
                 This method returns a list of the type names of the ancestors for this type of
                 component.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/List/v1($itemType: /bali/elements/Name/v1)
             $procedure: {
                 $ancestry := [ ]
@@ -61,7 +61,7 @@
                 4.ReturnStatement:
                 LOAD VARIABLE $ancestry
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.EvaluateStatement": 1
                 "2.EvaluateStatement": 3
@@ -74,11 +74,11 @@
                 "4.ReturnStatement": 23
             ]
             $bytecode: '
-                A04D80013801A89180020000600218166001A04D6002B001C80180046002
-                2801B086800378038002000700006001E000
+                A04F80013801A89380020000600218166001A04F6002B001C80180046002
+                2801B088800378038002000700006001E000
             '(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -97,14 +97,14 @@
             $description: "
                 This method determines whether or not the ancestry of this component includes
                 the specified named type.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $parameters: [
                 $type: [
                     $description: "
                         This parameter specifies the name of the type to be searched for in this
                         component's ancestry.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/elements/Name/v1
                 ]
             ]
@@ -164,7 +164,7 @@
                 3.ReturnStatement:
                 PUSH LITERAL `false`
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.EvaluateStatement": 1
                 "2.WhileStatement": 4
@@ -179,11 +179,11 @@
                 "3.ReturnStatement": 23
             ]
             $bytecode: '
-                3801A8918001000060011816000060013802B008180E2803E00000006001
-                2801B086800278028001000500002802E000
+                3801A8938001000060011816000060013802B008180E2803E00000006001
+                2801B088800278028001000500002802E000
             '(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -198,7 +198,7 @@
         $isParameterized: [
             $description: "
                 This method determines whether or not this component is parameterized.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $procedure: {
                 return isParameterized(target)
@@ -208,13 +208,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $isParameterized WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A840E000'(
+            $bytecode: '3801A842E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -226,13 +226,13 @@
             $description: "
                 This method returns a catalog of any parameters that were used to parameterize
                 this component.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/abstractions/Component/v1
             $parameters: [
                 $key: [
                     $description: "
                         This parameter specifies the key for the parameter value to be returned.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/elements/Symbol/v1
                 ]
             ]
@@ -245,13 +245,13 @@
                 PUSH ARGUMENT $key
                 INVOKE $parameter WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B05CE000'(
+            $bytecode: '38013802B05EE000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -264,7 +264,7 @@
             $description: "
                 This method returns a catalog of any parameters that were used to parameterize
                 this component.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1
             $procedure: {
                 return parameters(target)
@@ -274,13 +274,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $parameters WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A85DE000'(
+            $bytecode: '3801A85FE000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -291,7 +291,7 @@
         $type: [
             $description: "
                 This method returns the name of the type of this component.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Name/v1
             $procedure: {
                 return type(target)
@@ -301,13 +301,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $type WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A891E000'(
+            $bytecode: '3801A893E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target

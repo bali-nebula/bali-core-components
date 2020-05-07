@@ -1,27 +1,27 @@
 [
     $description: "
         This class defines the methods for the messages that all moments support.
-    "($mediatype: "application/bsmd")
+    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Element/v1
     $parameters: [
         $city: [
             $description: "
                 This parameter specifies the city in which the moment occurred.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/enumerations/City/v1
             $default: $Greenwich
         ]
         $region: [
             $description: "
                 This parameter specifies the region in which the moment occurred.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/enumerations/Region/v1
             $default: $GreatBritain
         ]
         $country: [
             $description: "
                 This parameter specifies the country in which the moment occurred.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/enumerations/Country/v1
             $default: $UnitedKingdom
         ]
@@ -30,7 +30,7 @@
         $day: [
             $description: "
                 This method returns from this moment the day of the month.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 1..31)
             $procedure: {
                 return day(target)
@@ -40,13 +40,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $day WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A81FE000'(
+            $bytecode: '3801A821E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -57,7 +57,7 @@
         $hour: [
             $description: "
                 This method returns from this moment the hour of the day.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..23)
             $procedure: {
                 return hour(target)
@@ -67,13 +67,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $hour WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A833E000'(
+            $bytecode: '3801A835E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -84,7 +84,7 @@
         $millisecond: [
             $description: "
                 This method returns from this moment the millisecond of the second.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..999)
             $procedure: {
                 return millisecond(target)
@@ -94,13 +94,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $millisecond WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A850E000'(
+            $bytecode: '3801A852E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -111,7 +111,7 @@
         $minute: [
             $description: "
                 This method returns from this moment the minute of the hour.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..59)
             $procedure: {
                 return minute(target)
@@ -121,13 +121,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $minute WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A852E000'(
+            $bytecode: '3801A854E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -138,7 +138,7 @@
         $month: [
             $description: "
                 This method returns from this moment the month of the year.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 1..12)
             $procedure: {
                 return month(target)
@@ -148,13 +148,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $month WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A854E000'(
+            $bytecode: '3801A856E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -166,7 +166,7 @@
             $description: "
                 This method returns from this moment the second of the minute.  Note, the value
                 of 60 is allowed so that we can handle when a leap second is added to the clock.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..60)
             $procedure: {
                 return second(target)
@@ -176,13 +176,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $second WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A87AE000'(
+            $bytecode: '3801A87CE000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -193,7 +193,7 @@
         $year: [
             $description: "
                 This method returns from this moment the year.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Number/v1
             $procedure: {
                 return year(target)
@@ -203,13 +203,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $year WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A896E000'(
+            $bytecode: '3801A898E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target

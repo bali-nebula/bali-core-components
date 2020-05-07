@@ -1,7 +1,7 @@
 [
     $description: "
         This enumeration defines the possible symbol values for the granularity of probabilities.
-    "($mediatype: "application/bsmd")
+    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Component/v1
     $values: [
         $boolean

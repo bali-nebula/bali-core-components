@@ -1,35 +1,35 @@
 [
     $description: "
         This abstract structure defines the attributes that all method types support.
-    "($mediatype: "application/bsmd")
+    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Aspect/v1
     $attributes: [
         $type: [
             $description: "
                 This attribute defines the name of the type that is returned by the method.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Name/v1
         ]
         $parameters: [
             $description: "
                 A catalog of parameter types that are expected to be passed each time this method
                 type is called.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collection/Catalog/v1($itemType: /bali/aspects/Parameter/v1)
         ]
         $procedure: [
             $description: "
                 The procedure code defining what should be done each time the method is called.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/aspects/Procedure/v1
         ]
         $bytecode: [
             $description: "
                 The compiled bytecode corresponding to the procedure code.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Binary/v1(
                 $base: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
         ]
     ]

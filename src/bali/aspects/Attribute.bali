@@ -1,14 +1,14 @@
 [
     $description: "
         This abstract structure defines the attributes that all attribute types support.
-    "($mediatype: "application/bsmd")
+    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Aspect/v1
     $parameters: [
         $visibility: [
             $description: "
                 This parameter specifies whether or not this attribute type is visible outside
                 the scope of the containing type definition. By default it is not visible.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/enumerations/Visibility/v1
             $default: $private
         ]
@@ -17,20 +17,20 @@
         $type: [
             $description: "
                 This attribute defines the name of the type of the attribute.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Name/v1
         ]
         $access: [
             $description: "
                 The allowed access for an attribute of this type.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/enumerations/Access/v1
             $default: $readWrite
         ]
         $default: [
             $description: "
                 The default value for an attribute of this type.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/abstractions/Component/v1
             $default: none
         ]

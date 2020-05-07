@@ -2,7 +2,7 @@
     $description: "
         This concrete primitive type defines the methods for the messages that all procedure
         types support.
-    "($mediatype: "application/bsmd")
+    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Component/v1
 ](
     $name: /bali/aspects/Procedure/v1

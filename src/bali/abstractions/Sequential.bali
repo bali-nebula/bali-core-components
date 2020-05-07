@@ -1,14 +1,14 @@
 [
     $description: "
         This interface defines the messages that all components that are sequential support.
-    "($mediatype: "application/bsmd")
+    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Component/v1
     $parameters: [
         $itemType: [
             $description: "
                 This parameter defines the type of items that make up a sequential component of
                 this type.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Name/v1
         ]
     ]
@@ -17,14 +17,14 @@
             $description: "
                 This method returns the index of the specified item from this sequential
                 component, or 0 if it is not found.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
             $parameters: [
                 $item: [
                     $description: "
                         This parameter specifies the item in the sequential component for which
                         the index should be returned.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: $itemType
                 ]
             ]
@@ -32,21 +32,21 @@
         $isEmpty: [
             $description: "
                 This method determines whether or not this sequential component is empty.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
         ]
         $item: [
             $description: "
                 This method returns from this sequential component the item corresponding to
                 the specified index.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: $itemType
             $parameters: [
                 $index: [
                     $description: "
                         This parameter specifies the index of the item to be returned from this
                         sequential component.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/elements/Number/v1
                 ]
             ]
@@ -55,14 +55,14 @@
             $description: "
                 This method returns from this sequential component the subset of items in the
                 specified range.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/abstractions/Sequential/v1($itemType: $itemType)
             $parameters: [
                 $range: [
                     $description: "
                         This parameter specifies the range of indices for the items to be returned
                         from this sequential component.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/elements/Range/v1
                 ]
             ]
@@ -71,14 +71,14 @@
             $description: "
                 This method returns an iterator that can be used to visit, in order, each item
                 in this sequential component.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Iterator/v1($itemType: $itemType)
         ]
         $size: [
             $description: "
                 This message causes the target component to return the number of items that
                 are in the sequential component.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
         ]
     ]

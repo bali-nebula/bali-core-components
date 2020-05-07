@@ -1,7 +1,7 @@
 [
     $description: "
         This enumeration defines the possible symbol values for the visibility of methods.
-    "($mediatype: "application/bsmd")
+    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Component/v1
     $values: [
         $private

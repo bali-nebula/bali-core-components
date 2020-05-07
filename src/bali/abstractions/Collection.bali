@@ -2,13 +2,13 @@
     $description: "
         This abstract primitive type defines the methods for the messages that all collection
         types support.
-    "($mediatype: "application/bsmd")
+    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Component/v1
     $parameters: [
         $itemType: [
             $description: "
                 This parameter specifies the type of items that a collection of this type supports.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Name/v1
             $default: /bali/abstractions/Component/v1
         ]
@@ -21,13 +21,13 @@
             $description: "
                 This method attempts to add the specified item to this collection.  The updated
                 collection is returned.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/abstractions/Collection/v1($itemType: $itemType)
             $parameters: [
                 $item: [
                     $description: "
                         This parameter specifies the item to be added to this collection.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: $itemType
                 ]
             ]
@@ -59,7 +59,7 @@
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 HANDLE EXCEPTION
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ThrowStatement": 1
             ]
@@ -68,7 +68,7 @@
                 B00BB001E800
             '(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -81,13 +81,13 @@
             $description: "
                 This method attempts to add the specified sequence of items to this collection.
                 The updated collection is returned.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/abstractions/Collection/v1($itemType: $itemType)
             $parameters: [
                 $items: [
                     $description: "
                         This parameter specifies the collection of items to be added to this collection.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
             ]
@@ -128,7 +128,7 @@
                 2.ReturnStatement:
                 PUSH ARGUMENT $target
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.WithStatement": 1
                 "1.1.ConditionClause": 4
@@ -138,11 +138,11 @@
                 "2.ReturnStatement": 18
             ]
             $bytecode: '
-                3802C00380026002C00218116002C00480013801A04D6001B001C8018003
+                3802C00380026002C00218116002C00480013801A04F6001B001C8018003
                 000400003801E000
             '(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -164,14 +164,14 @@
             $description: "
                 This method determines whether or not this collection contains all of the
                 specified items.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $parameters: [
                 $items: [
                     $description: "
                         This parameter specifies the collection of items to be searched for in this
                         collection.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
             ]
@@ -225,7 +225,7 @@
                 2.ReturnStatement:
                 PUSH LITERAL `true`
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.WithStatement": 1
                 "1.1.ConditionClause": 4
@@ -238,11 +238,11 @@
                 "2.ReturnStatement": 23
             ]
             $bytecode: '
-                3802C00380026002C00218166002C004800100003801A04D6001B001C801
-                A8581814280DE000000000040000280EE000
+                3802C00380026002C00218166002C004800100003801A04F6001B001C801
+                A85A1814280DE000000000040000280EE000
             '(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -263,14 +263,14 @@
             $description: "
                 This method determines whether or not this collection contains any of the
                 specified items.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $parameters: [
                 $items: [
                     $description: "
                         This parameter specifies the collection of items to be searched for in this
                         collection.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
             ]
@@ -323,7 +323,7 @@
                 2.ReturnStatement:
                 PUSH LITERAL `false`
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.WithStatement": 1
                 "1.1.ConditionClause": 4
@@ -336,11 +336,11 @@
                 "2.ReturnStatement": 22
             ]
             $bytecode: '
-                3802C00380026002C00218156002C004800100003801A04D6001B001C801
+                3802C00380026002C00218156002C004800100003801A04F6001B001C801
                 1813280EE000000000040000280DE000
             '(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -361,13 +361,13 @@
             $description: "
                 This method determines whether or not this collection contains the specified
                 item.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $parameters: [
                 $item: [
                     $description: "
                         This parameter specifies the item to be searched for in this collection.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: $itemType
                 ]
             ]
@@ -384,13 +384,13 @@
                 PUSH LITERAL `0`
                 INVOKE $isMore WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A04D3802B001C801280DB03FE000'(
+            $bytecode: '3801A04F3802B001C801280DB041E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -405,14 +405,14 @@
             $description: "
                 This method returns the index of the specified item from this collection, or 0
                 if it is not found.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
             $parameters: [
                 $item: [
                     $description: "
                         This parameter specifies the item in the collection for which the index
                         should be returned.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: $itemType
                 ]
             ]
@@ -474,7 +474,7 @@
                 3.ReturnStatement:
                 LOAD VARIABLE $index
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.EvaluateStatement": 1
                 "2.WithStatement": 3
@@ -489,11 +489,11 @@
                 "3.ReturnStatement": 25
             ]
             $bytecode: '
-                280D80023801C00280036003C00118186003C00380016002280EB0878002
+                280D80023801C00280036003C00118186003C00380016002280EB0898002
                 000060013802B008181600180000000600006002E000
             '(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -513,7 +513,7 @@
         $isEmpty: [
             $description: "
                 This method determines whether or not this collection is empty.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $procedure: {
                 return target.size() = 0
@@ -525,13 +525,13 @@
                 PUSH LITERAL `0`
                 INVOKE $areEqual WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
             $bytecode: '3801C001280DB008E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -545,14 +545,14 @@
             $description: "
                 This method returns from this collection the item corresponding to the specified
                 index.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: $itemType
             $parameters: [
                 $index: [
                     $description: "
                         This parameter specifies the index of the item to be returned from this
                         collection.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/elements/Number/v1
                 ]
             ]
@@ -579,15 +579,15 @@
                 LOAD VARIABLE $iterator
                 SEND $previous TO COMPONENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.EvaluateStatement": 1
                 "2.EvaluateStatement": 4
                 "3.ReturnStatement": 10
             ]
-            $bytecode: '3801C00180016001A04D3802B001C80380026001C002E000'(
+            $bytecode: '3801C00180016001A04F3802B001C80380026001C002E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -607,14 +607,14 @@
             $description: "
                 This method returns from this collection the subset of items in the specified
                 range.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/abstractions/Collection/v1($itemType: $itemType)
             $parameters: [
                 $range: [
                     $description: "
                         This parameter specifies the range of indices for the items to be returned
                         from this collection.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/elements/Range/v1
                 ]
             ]
@@ -646,7 +646,7 @@
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 HANDLE EXCEPTION
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ThrowStatement": 1
             ]
@@ -655,7 +655,7 @@
                 B00BB001E800
             '(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -668,7 +668,7 @@
             $description: "
                 This method returns an iterator that can be used to visit, in order, each item
                 in this collection.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Iterator/v1($itemType: $itemType)
             $procedure: {
                 throw [
@@ -698,7 +698,7 @@
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 HANDLE EXCEPTION
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ThrowStatement": 1
             ]
@@ -707,7 +707,7 @@
                 B00BB001E800
             '(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -718,7 +718,7 @@
         $removeAll: [
             $description: "
                 This method removes all the items from this collection.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/abstractions/Collection/v1($itemType: $itemType)
             $procedure: {
                 throw [
@@ -748,7 +748,7 @@
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 HANDLE EXCEPTION
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ThrowStatement": 1
             ]
@@ -757,7 +757,7 @@
                 B00BB001E800
             '(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -768,7 +768,7 @@
         $size: [
             $description: "
                 This method returns the number of items contained in this collection.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
             $procedure: {
                 throw [
@@ -798,7 +798,7 @@
                 INVOKE $association WITH 2 ARGUMENTS
                 INVOKE $addItem WITH 2 ARGUMENTS
                 HANDLE EXCEPTION
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ThrowStatement": 1
             ]
@@ -807,7 +807,7 @@
                 B00BB001E800
             '(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target

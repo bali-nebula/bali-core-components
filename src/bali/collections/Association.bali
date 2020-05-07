@@ -2,21 +2,21 @@
     $description: "
         This concrete primitive type defines the methods for the messages that all associations
         support.
-    "($mediatype: "application/bsmd")
+    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Component/v1
     $parameters: [
         $keyType: [
             $description: "
                 This parameter specifies the name of the type for the key attribute of this
                 association.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Name/v1
         ]
         $valueType: [
             $description: "
                 This parameter specifies the name of the type for the value attribute of this
                 association.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Name/v1
         ]
     ]
@@ -24,7 +24,7 @@
         $key: [
             $description: "
                 This method retrieves the key attribute from this association.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: $keyType
             $procedure: {
                 return key(target)
@@ -34,13 +34,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $key WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A847E000'(
+            $bytecode: '3801A849E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -51,7 +51,7 @@
         $value: [
             $description: "
                 This method retrieves the value attribute from this association.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: $valueType
             $procedure: {
                 return value(target)
@@ -61,13 +61,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $value WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A892E000'(
+            $bytecode: '3801A894E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target

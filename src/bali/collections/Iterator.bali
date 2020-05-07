@@ -2,13 +2,13 @@
     $description: "
         This concrete primitive type defines the methods for the messages that all iterators
         support.
-    "($mediatype: "application/bsmd")
+    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Component/v1
     $parameters: [
         $itemType: [
             $description: "
                 This parameter specifies the type of items that an iterator of this type supports.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Name/v1
         ]
     ]
@@ -17,7 +17,7 @@
             $description: "
                 This method determines whether or not there is an item following the slot
                 between the items in the sequence that this iterator refers to.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $procedure: {
                 return hasNext(target)
@@ -27,13 +27,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $hasNext WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A830E000'(
+            $bytecode: '3801A832E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -45,7 +45,7 @@
             $description: "
                 This method determines whether or not there is an item preceding the slot
                 between the items in the sequence that this iterator refers to.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $procedure: {
                 return hasPrevious(target)
@@ -55,13 +55,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $hasPrevious WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A831E000'(
+            $bytecode: '3801A833E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -73,7 +73,7 @@
             $description: "
                 This method retrieves the next item in the sequence that this iterator
                 refers to.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: $itemType
             $procedure: {
                 return next(target)
@@ -83,13 +83,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $next WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A856E000'(
+            $bytecode: '3801A858E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -101,7 +101,7 @@
             $description: "
                 This method retrieves the previous item in the sequence that this iterator
                 refers to.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: $itemType
             $procedure: {
                 return previous(target)
@@ -111,13 +111,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $previous WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A861E000'(
+            $bytecode: '3801A863E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -129,7 +129,7 @@
             $description: "
                 This method moves this iterator to the slot following the last item in the
                 sequence that this iterator refers to.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Iterator/v1($itemType: $itemType)
             $procedure: {
                 return toEnd(target)
@@ -139,13 +139,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $toEnd WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A88CE000'(
+            $bytecode: '3801A88EE000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -157,14 +157,14 @@
             $description: "
                 This method moves this iterator to the specified slot in the sequence that
                 this iterator refers to.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Iterator/v1($itemType: $itemType)
             $parameters: [
                 $slot: [
                     $description: "
                         This parameter specifies the slot between the items in the sequence to which
                         the iterator should move.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/elements/Number/v1
                 ]
             ]
@@ -177,13 +177,13 @@
                 PUSH ARGUMENT $slot
                 INVOKE $toSlot WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B08EE000'(
+            $bytecode: '38013802B090E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -196,7 +196,7 @@
             $description: "
                 This method moves this iterator to the slot preceding the first item in the
                 sequence that this iterator refers to.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Iterator/v1($itemType: $itemType)
             $procedure: {
                 return toStart(target)
@@ -206,13 +206,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $toStart WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A88FE000'(
+            $bytecode: '3801A891E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target

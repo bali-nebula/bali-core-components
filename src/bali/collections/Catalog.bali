@@ -2,14 +2,14 @@
     $description: "
         This concrete primitive type defines the methods for the messages that all catalogs
         support.
-    "($mediatype: "application/bsmd")
+    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Collection/v1($itemType: /bali/collections/Association($keyType: $keyType, $valueType: $valueType))
     $parameters: [
         $keyType: [
             $description: "
                 This parameter specifies the name of the type for each key managed by this type of
                 catalog.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Name/v1
             $default: /bali/elements/Symbol/v1
         ]
@@ -17,7 +17,7 @@
             $description: "
                 This parameter specifies the name of the type for each value managed by this type of
                 catalog.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Name/v1
             $default: /bali/abstractions/Component/v1
         ]
@@ -27,7 +27,7 @@
             $description: "
                 This method attempts to add the specified association to this catalog.  The
                 updated catalog is returned.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
                 $keyType: $keyType
                 $valueType: $valueType
@@ -36,7 +36,7 @@
                 $item: [
                     $description: "
                         This parameter specifies the association to be added to this catalog.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/collections/Association/v1(
                         $keyType: $keyType
                         $valueType: $valueType
@@ -52,13 +52,13 @@
                 PUSH ARGUMENT $item
                 INVOKE $addItem WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
             $bytecode: '38013802B001E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -71,7 +71,7 @@
             $description: "
                 This method attempts to add the specified associations to this catalog.  The
                 updated catalog is returned.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
                 $keyType: $keyType
                 $valueType: $valueType
@@ -80,7 +80,7 @@
                 $items: [
                     $description: "
                         This parameter specifies the associations to be added to this catalog.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/collections/Catalog/v1(
                         $keyType: $keyType
                         $valueType: $valueType
@@ -96,13 +96,13 @@
                 PUSH ARGUMENT $items
                 INVOKE $addItems WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
             $bytecode: '38013802B002E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -115,13 +115,13 @@
             $description: "
                 This method determines whether or not this catalog contains all of the
                 specified associations.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $parameters: [
                 $items: [
                     $description: "
                         This parameter specifies the associations to be searched for in this catalog.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/collections/Catalog/v1(
                         $keyType: $keyType
                         $valueType: $valueType
@@ -137,13 +137,13 @@
                 PUSH ARGUMENT $items
                 INVOKE $containsAll WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B01BE000'(
+            $bytecode: '38013802B01DE000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -156,13 +156,13 @@
             $description: "
                 This method determines whether or not this catalog contains any of the
                 specified associations.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $parameters: [
                 $items: [
                     $description: "
                         This parameter specifies the associations to be searched for in this catalog.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/collections/Catalog/v1(
                         $keyType: $keyType
                         $valueType: $valueType
@@ -178,13 +178,13 @@
                 PUSH ARGUMENT $items
                 INVOKE $containsAny WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B01CE000'(
+            $bytecode: '38013802B01EE000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -197,13 +197,13 @@
             $description: "
                 This method determines whether or not this catalog contains the specified
                 association.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $parameters: [
                 $item: [
                     $description: "
                         This parameter specifies the association to be searched for in this catalog.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/collections/Association/v1(
                         $keyType: $keyType
                         $valueType: $valueType
@@ -219,13 +219,13 @@
                 PUSH ARGUMENT $item
                 INVOKE $containsItem WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B01DE000'(
+            $bytecode: '38013802B01FE000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -238,14 +238,14 @@
             $description: "
                 This method returns the index of the specified association from this catalog,
                 or 0 if it is not found.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
             $parameters: [
                 $item: [
                     $description: "
                         This parameter specifies the association in the catalog for which the
                         index should be retrieved.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/collections/Association/v1(
                         $keyType: $keyType
                         $valueType: $valueType
@@ -261,13 +261,13 @@
                 PUSH ARGUMENT $item
                 INVOKE $index WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B037E000'(
+            $bytecode: '38013802B039E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -279,7 +279,7 @@
         $isEmpty: [
             $description: "
                 This method determines whether or not this catalog is empty.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $procedure: {
                 return isEmpty(target)
@@ -289,13 +289,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $isEmpty WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A83CE000'(
+            $bytecode: '3801A83EE000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -307,14 +307,14 @@
             $description: "
                 This method returns from this catalog the association corresponding to the
                 specified index.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Association/v1
             $parameters: [
                 $index: [
                     $description: "
                         This parameter specifies the index of the association to be retrieved from
                         this catalog.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/elements/Number/v1
                 ]
             ]
@@ -327,13 +327,13 @@
                 PUSH ARGUMENT $index
                 INVOKE $item WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B044E000'(
+            $bytecode: '38013802B046E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -346,14 +346,14 @@
             $description: "
                 This method returns from this catalog the subset of associations in the
                 specified range.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1
             $parameters: [
                 $range: [
                     $description: "
                         This parameter specifies the range of indices for the associations to be
                         retrieved from this catalog.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/elements/Range/v1
                 ]
             ]
@@ -366,13 +366,13 @@
                 PUSH ARGUMENT $range
                 INVOKE $items WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B045E000'(
+            $bytecode: '38013802B047E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -385,7 +385,7 @@
             $description: "
                 This method returns an iterator that can be used to visit, in order, each
                 association in this catalog.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Iterator/v1
             $procedure: {
                 return iterator(target)
@@ -395,13 +395,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $iterator WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A846E000'(
+            $bytecode: '3801A848E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -413,7 +413,7 @@
             $description: "
                 This method returns from this catalog a list containing the keys in the
                 same order as they are in the catalog.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/List/v1
             $procedure: {
                 return keys(target)
@@ -423,13 +423,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $keys WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A848E000'(
+            $bytecode: '3801A84AE000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -440,7 +440,7 @@
         $removeAll: [
             $description: "
                 This method removes all associations from this catalog.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
                 $keyType: $keyType
                 $valueType: $valueType
@@ -453,13 +453,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $removeAll WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A86DE000'(
+            $bytecode: '3801A86FE000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -471,7 +471,7 @@
             $description: "
                 This method removes from this catalog the value associated with the specified
                 key.  The updated catalog is returned.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
                 $keyType: $keyType
                 $valueType: $valueType
@@ -481,7 +481,7 @@
                     $description: "
                         This parameter specifies the key in the catalog for the value to be
                         removed.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: $keyType
                 ]
             ]
@@ -494,13 +494,13 @@
                 PUSH ARGUMENT $key
                 INVOKE $removeValue WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B074E000'(
+            $bytecode: '38013802B076E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -513,7 +513,7 @@
             $description: "
                 This method removes from this catalog the values associated with the specified
                 keys.  The updated catalog is returned.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
                 $keyType: $keyType
                 $valueType: $valueType
@@ -523,7 +523,7 @@
                     $description: "
                         This parameter specifies the list of keys in the catalog for the values
                         to be removed.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/collections/List/v1($itemType: $keyType)
                 ]
             ]
@@ -536,13 +536,13 @@
                 PUSH ARGUMENT $keys
                 INVOKE $removeValues WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B075E000'(
+            $bytecode: '38013802B077E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -554,7 +554,7 @@
         $reverseItems: [
             $description: "
                 This method reverses the order of the associations contained in this catalog.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
                 $keyType: $keyType
                 $valueType: $valueType
@@ -567,13 +567,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $reverseItems WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A876E000'(
+            $bytecode: '3801A878E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -585,7 +585,7 @@
             $description: "
                 This method associates in this catalog the specified key with the specified
                 value.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
                 $keyType: $keyType
                 $valueType: $valueType
@@ -594,13 +594,13 @@
                 $key: [
                     $description: "
                         This parameter specifies the key in the catalog for the value to be set.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: $keyType
                 ]
                 $value: [
                     $description: "
                         This parameter specifies the value in the catalog to be set.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: $valueType
                 ]
             ]
@@ -617,13 +617,13 @@
                 PUSH ARGUMENT $value
                 INVOKE $setValue WITH 3 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '380138023803B87FE000'(
+            $bytecode: '380138023803B881E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -636,7 +636,7 @@
         $size: [
             $description: "
                 This method returns the number of associations contained in this catalog.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
             $procedure: {
                 return size(target)
@@ -646,13 +646,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $size WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A882E000'(
+            $bytecode: '3801A884E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -664,7 +664,7 @@
             $description: "
                 This method orders the associations contained in this catalog in their
                 natural order by key.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
                 $keyType: $keyType
                 $valueType: $valueType
@@ -677,13 +677,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $sortItems WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A883E000'(
+            $bytecode: '3801A885E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -695,14 +695,14 @@
             $description: "
                 This method returns from this catalog the value corresponding to the
                 specified key.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/abstractions/Component/v1
             $parameters: [
                 $key: [
                     $description: "
                         This parameter specifies the key in the catalog for the value to be
                         retrieved.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: $keyType
                 ]
             ]
@@ -715,13 +715,13 @@
                 PUSH ARGUMENT $key
                 INVOKE $keyValue WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B049E000'(
+            $bytecode: '38013802B04BE000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -734,14 +734,14 @@
             $description: "
                 This method returns from this catalog a list of the values corresponding to the
                 specified keys.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/List/v1($itemType: $valueType)
             $parameters: [
                 $keys: [
                     $description: "
                         This parameter specifies a list of keys in the catalog for the values to be
                         retrieved.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/collections/List/v1($itemType: $keyType)
                 ]
             ]
@@ -754,13 +754,13 @@
                 PUSH ARGUMENT $keys
                 INVOKE $values WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B093E000'(
+            $bytecode: '38013802B095E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target

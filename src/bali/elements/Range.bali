@@ -1,21 +1,21 @@
 [
     $description: "
         This class defines the methods for the messages that all ranges support.
-    "($mediatype: "application/bsmd")
+    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/String/v1($itemType: /bali/elements/Number/v1)
     $methods: [
         $item: [
             $description: "
                 This method returns from this range the number corresponding to the specified
                 index.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Number/v1
             $parameters: [
                 $index: [
                     $description: "
                         This parameter specifies the index of the number to be returned from this
                         range.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/elements/Number/v1
                 ]
             ]
@@ -28,13 +28,13 @@
                 PUSH ARGUMENT $index
                 INVOKE $item WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B044E000'(
+            $bytecode: '38013802B046E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -47,14 +47,14 @@
             $description: "
                 This method returns from this range the subset of numbers in the specified
                 range.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Binary/v1
             $parameters: [
                 $range: [
                     $description: "
                         This parameter specifies the range of indices for the subset of this
                         range to be returned.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/elements/Range/v1
                 ]
             ]
@@ -67,13 +67,13 @@
                 PUSH ARGUMENT $range
                 INVOKE $items WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B045E000'(
+            $bytecode: '38013802B047E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -86,7 +86,7 @@
             $description: "
                 This method returns an iterator that can be used to visit, in order, each number
                 in this range.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Iterator/v1($itemType: /bali/elements/Number/v1)
             $procedure: {
                 return iterator(target)
@@ -96,13 +96,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $iterator WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A846E000'(
+            $bytecode: '3801A848E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -113,7 +113,7 @@
         $size: [
             $description: "
                 This method returns the number of numbers contained in this range.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
             $procedure: {
                 return size(target)
@@ -123,13 +123,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $size WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A882E000'(
+            $bytecode: '3801A884E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target

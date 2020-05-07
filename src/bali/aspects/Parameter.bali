@@ -1,19 +1,19 @@
 [
     $description: "
         This abstract structure defines the attributes that all parameter types support.
-    "($mediatype: "application/bsmd")
+    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Aspect/v1
     $attributes: [
         $type: [
             $description: "
                 This attribute defines the name of the type of the parameter.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Name/v1
         ]
         $default: [
             $description: "
                 The default value for a parameter of this type.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/abstractions/Component/v1
             $default: none
         ]

@@ -1,14 +1,14 @@
 [
     $description: "
         This concrete structure defines the attributes that all structure types support.
-    "($mediatype: "application/bsmd")
+    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Type/v1($existence: $existence)
     $parameters: [
         $existence: [
             $description: "
                 This parameter specifies whether or not this structure type is abstract. An abstract
                 structure type cannot be instantiated whereas a concrete structure type can be.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/enumerations/Existence/v1
             $default: $concrete
         ]
@@ -18,7 +18,7 @@
             $description: "
                 This attribute is a catalog of all the attributes that instances of this structure
                 type will have.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1)
             $default: [:]
         ]
@@ -26,7 +26,7 @@
             $description: "
                 This attribute is a catalog of all the event types that instances of this structure
                 type are capable of publishing.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Event/v1)
             $default: [:]
         ]

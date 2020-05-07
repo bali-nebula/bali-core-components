@@ -2,7 +2,7 @@
     $description: "
         This abstract primitive type defines the methods for the messages that all elemental
         types support.
-    "($mediatype: "application/bsmd")
+    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Component/v1
 ](
     $name: /bali/abstractions/Element/v1

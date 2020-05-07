@@ -1,29 +1,29 @@
 [
     $description: "
         This abstract structure defines the attributes that all event handler types support.
-    "($mediatype: "application/bsmd")
+    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Aspect/v1
     $attributes: [
         $tag: [
             $description: "
                 The unique tag for the type of event that triggers this handler.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Tag/v1
         ]
         $procedure: [
             $description: "
                 The procedure code defining what should be done each time a matching event is
                 published.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/aspects/Procedure/v1
         ]
         $bytecode: [
             $description: "
                 The compiled bytecode corresponding to the procedure code.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Binary/v1(
                 $base: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
         ]
     ]

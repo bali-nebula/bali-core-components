@@ -1,13 +1,13 @@
 [
     $description: "
         This class defines the methods for the messages that all queues support.
-    "($mediatype: "application/bsmd")
+    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Collection/v1($itemType: $itemType)
     $parameters: [
         $itemType: [
             $description: "
                 This parameter specifies the name of the type for each item managed by this queue.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Name/v1
             $default: /bali/abstractions/Component/v1
         ]
@@ -17,13 +17,13 @@
             $description: "
                 This method attempts to add the specified item to this queue.  The
                 updated queue is returned.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Queue/v1($itemType: $itemType)
             $parameters: [
                 $item: [
                     $description: "
                         This parameter specifies the item to be added to this queue.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: $itemType
                 ]
             ]
@@ -36,13 +36,13 @@
                 PUSH ARGUMENT $item
                 INVOKE $addItem WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
             $bytecode: '38013802B001E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -55,13 +55,13 @@
             $description: "
                 This method attempts to add the specified sequence of items to this
                 queue.  The updated queue is returned.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Queue/v1($itemType: $itemType)
             $parameters: [
                 $items: [
                     $description: "
                         This parameter specifies the items to be added to this queue.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
             ]
@@ -74,13 +74,13 @@
                 PUSH ARGUMENT $items
                 INVOKE $addItems WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
             $bytecode: '38013802B002E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -93,13 +93,13 @@
             $description: "
                 This method determines whether or not this queue contains all of the
                 specified items.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $parameters: [
                 $items: [
                     $description: "
                         This parameter specifies the items to be searched for in this queue.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
             ]
@@ -112,13 +112,13 @@
                 PUSH ARGUMENT $items
                 INVOKE $containsAll WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B01BE000'(
+            $bytecode: '38013802B01DE000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -131,13 +131,13 @@
             $description: "
                 This method determines whether or not this queue contains any of the
                 specified items.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $parameters: [
                 $items: [
                     $description: "
                         This parameter specifies the items to be searched for in this queue.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/abstractions/Collection/v1($itemType: $itemType)
                 ]
             ]
@@ -150,13 +150,13 @@
                 PUSH ARGUMENT $items
                 INVOKE $containsAny WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B01CE000'(
+            $bytecode: '38013802B01EE000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -169,13 +169,13 @@
             $description: "
                 This method determines whether or not this queue contains the specified
                 item.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $parameters: [
                 $item: [
                     $description: "
                         This parameter specifies the item to be searched for in this queue.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: $itemType
                 ]
             ]
@@ -188,13 +188,13 @@
                 PUSH ARGUMENT $item
                 INVOKE $containsItem WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B01DE000'(
+            $bytecode: '38013802B01FE000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -206,7 +206,7 @@
         $head: [
             $description: "
                 This method returns from this queue the head item.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: $itemType
             $procedure: {
                 return head(target)
@@ -216,13 +216,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $head WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A832E000'(
+            $bytecode: '3801A834E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -234,14 +234,14 @@
             $description: "
                 This method returns the index of the specified item from this queue,
                 or 0 if it is not found.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
             $parameters: [
                 $item: [
                     $description: "
                         This parameter specifies the item in this queue for which the index
                         should be returned.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: $itemType
                 ]
             ]
@@ -254,13 +254,13 @@
                 PUSH ARGUMENT $item
                 INVOKE $index WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B037E000'(
+            $bytecode: '38013802B039E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -272,7 +272,7 @@
         $isEmpty: [
             $description: "
                 This method determines whether or not this queue is empty.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Probability/v1($granularity: $boolean)
             $procedure: {
                 return isEmpty(target)
@@ -282,13 +282,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $isEmpty WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A83CE000'(
+            $bytecode: '3801A83EE000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -300,13 +300,13 @@
             $description: "
                 This method returns from this queue the item corresponding to the specified
                 index.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: $itemType
             $parameters: [
                 $index: [
                     $description: "
                         This parameter specifies the index of the item in this queue to be retrieved.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/elements/Number/v1
                 ]
             ]
@@ -319,13 +319,13 @@
                 PUSH ARGUMENT $index
                 INVOKE $item WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B044E000'(
+            $bytecode: '38013802B046E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -338,14 +338,14 @@
             $description: "
                 This method returns from this queue the subset of items in the
                 specified range.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Queue/v1($itemType: $itemType)
             $parameters: [
                 $range: [
                     $description: "
                         This parameter specifies the range of indices of the items in this queue to
                         be retrieved.
-                    "($mediatype: "application/bsmd")
+                    "($mediaType: "application/bsmd")
                     $type: /bali/elements/Range/v1
                 ]
             ]
@@ -358,13 +358,13 @@
                 PUSH ARGUMENT $range
                 INVOKE $items WITH 2 ARGUMENTS
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B045E000'(
+            $bytecode: '38013802B047E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -377,7 +377,7 @@
             $description: "
                 This method returns an iterator that can be used to visit, in order, each
                 item in this queue.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Iterator/v1($itemType: $itemType)
             $procedure: {
                 return iterator(target)
@@ -387,13 +387,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $iterator WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A846E000'(
+            $bytecode: '3801A848E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -404,7 +404,7 @@
         $removeAll: [
             $description: "
                 This method removes all items from this queue.  The updated queue is returned.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/collections/Queue/v1($itemType: $itemType)
             $procedure: {
                 return removeAll(target)
@@ -414,13 +414,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $removeAll WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A86DE000'(
+            $bytecode: '3801A86FE000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -431,7 +431,7 @@
         $removeItem: [
             $description: "
                 This method removes and returns from this queue the head item.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: $itemType
             $procedure: {
                 return removeHead(target)
@@ -441,13 +441,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $removeHead WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A86EE000'(
+            $bytecode: '3801A870E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
@@ -458,7 +458,7 @@
         $size: [
             $description: "
                 This method returns the number of items contained in this queue.
-            "($mediatype: "application/bsmd")
+            "($mediaType: "application/bsmd")
             $type: /bali/elements/Number/v1($range: 0..)
             $procedure: {
                 return size(target)
@@ -468,13 +468,13 @@
                 PUSH ARGUMENT $target
                 INVOKE $size WITH 1 ARGUMENT
                 HANDLE RESULT
-            "($mediatype: "application/basm")
+            "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A882E000'(
+            $bytecode: '3801A884E000'(
                 $encoding: $base16
-                $mediatype: "application/bcod"
+                $mediaType: "application/bcod"
             )
             $arguments: [
                 $target

@@ -1,7 +1,7 @@
 [
     $description: "
         This class defines the methods for the messages that all patterns support.
-    "($mediatype: "application/bsmd")
+    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Element/v1
 ](
     $name: /bali/elements/Pattern/v1
