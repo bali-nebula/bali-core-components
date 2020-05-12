@@ -64,7 +64,7 @@
                 "1.ThrowStatement": 1
             ]
             $bytecode: '
-                A01428092804B00BB00128082802B00BB00128052801B00BB001280C2803
+                A014280A2801B00BB00128092805B00BB00128062804B00BB001280D280E
                 B00BB001E800
             '(
                 $encoding: $base16
@@ -239,7 +239,7 @@
             ]
             $bytecode: '
                 3802C00380026002C00218166002C004800100003801A04F6001B001C801
-                A85A1814280DE000000000040000280EE000
+                A85A18142802E0000000000400002803E000
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -337,7 +337,7 @@
             ]
             $bytecode: '
                 3802C00380026002C00218156002C004800100003801A04F6001B001C801
-                1813280EE000000000040000280DE000
+                18132803E0000000000400002802E000
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -388,7 +388,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A04F3802B001C801280DB041E000'(
+            $bytecode: '3801A04F3802B001C8012802B041E000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -489,7 +489,7 @@
                 "3.ReturnStatement": 25
             ]
             $bytecode: '
-                280D80023801C00280036003C00118186003C00380016002280EB0898002
+                280280023801C00280036003C00118186003C003800160022803B0898002
                 000060013802B008181600180000000600006002E000
             '(
                 $encoding: $base16
@@ -529,7 +529,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C001280DB008E000'(
+            $bytecode: '3801C0012802B008E000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -651,7 +651,7 @@
                 "1.ThrowStatement": 1
             ]
             $bytecode: '
-                A01428092804B00BB00128082806B00BB00128052801B00BB001280C2803
+                A014280A2801B00BB00128092807B00BB00128062804B00BB001280D280E
                 B00BB001E800
             '(
                 $encoding: $base16
@@ -703,7 +703,7 @@
                 "1.ThrowStatement": 1
             ]
             $bytecode: '
-                A01428092804B00BB00128082807B00BB00128052801B00BB001280C2803
+                A014280A2801B00BB00128092808B00BB00128062804B00BB001280D280E
                 B00BB001E800
             '(
                 $encoding: $base16
@@ -753,7 +753,7 @@
                 "1.ThrowStatement": 1
             ]
             $bytecode: '
-                A01428092804B00BB0012808280AB00BB00128052801B00BB001280C2803
+                A014280A2801B00BB0012809280BB00BB00128062804B00BB001280D280E
                 B00BB001E800
             '(
                 $encoding: $base16
@@ -803,7 +803,7 @@
                 "1.ThrowStatement": 1
             ]
             $bytecode: '
-                A01428092804B00BB0012808280BB00BB00128052801B00BB001280C2803
+                A014280A2801B00BB0012809280CB00BB00128062804B00BB001280D280E
                 B00BB001E800
             '(
                 $encoding: $base16
@@ -817,10 +817,11 @@
         ]
     ]
     $literals: [
+        /bali/abstractions/Collection/v1
+        false
+        true
         $abstractMethod
         $addItem
-        "An abstract method must be implemented by a subtype."
-        /bali/abstractions/Collection/v1
         $exception
         $items
         $iterator
@@ -829,8 +830,7 @@
         $removeAll
         $size
         $text
-        false
-        true
+        "An abstract method must be implemented by a subtype."
     ]($type: /bali/collections/Set/v1)
 ](
     $name: /bali/abstractions/Collection/v1

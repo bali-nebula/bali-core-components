@@ -104,7 +104,7 @@
                 "3.ReturnStatement": 25
             ]
             $bytecode: '
-                280B80023801C00280036003C00118186003C00380016002280CB0898002
+                280280023801C00280036003C00118186003C003800160022803B0898002
                 000060013802B008181600180000000600006002E000
             '(
                 $encoding: $base16
@@ -144,7 +144,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C001280BB008E000'(
+            $bytecode: '3801C0012802B008E000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -266,7 +266,7 @@
                 "1.ThrowStatement": 1
             ]
             $bytecode: '
-                A01428082803B00BB00128072805B00BB00128042801B00BB001280A2802
+                A01428092801B00BB00128082806B00BB00128052804B00BB001280B280C
                 B00BB001E800
             '(
                 $encoding: $base16
@@ -318,7 +318,7 @@
                 "1.ThrowStatement": 1
             ]
             $bytecode: '
-                A01428082803B00BB00128072806B00BB00128042801B00BB001280A2802
+                A01428092801B00BB00128082807B00BB00128052804B00BB001280B280C
                 B00BB001E800
             '(
                 $encoding: $base16
@@ -368,7 +368,7 @@
                 "1.ThrowStatement": 1
             ]
             $bytecode: '
-                A01428082803B00BB00128072809B00BB00128042801B00BB001280A2802
+                A01428092801B00BB0012808280AB00BB00128052804B00BB001280B280C
                 B00BB001E800
             '(
                 $encoding: $base16
@@ -382,9 +382,10 @@
         ]
     ]
     $literals: [
-        $abstractMethod
-        "An abstract method must be implemented by a subtype."
         /bali/abstractions/String/v1
+        0
+        1
+        $abstractMethod
         $exception
         $items
         $iterator
@@ -392,8 +393,7 @@
         $module
         $size
         $text
-        0
-        1
+        "An abstract method must be implemented by a subtype."
     ]($type: /bali/collections/Set/v1)
 ](
     $name: /bali/abstractions/String/v1

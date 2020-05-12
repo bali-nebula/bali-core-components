@@ -26,7 +26,7 @@
     "mocha": "^7.1.2"
   },
   "dependencies": {
-    "bali-component-framework": "^2.18.0",
+    "bali-component-framework": "^2.18.1",
     "bali-type-compiler": "file:../js-bali-type-compiler"
   }
 }
