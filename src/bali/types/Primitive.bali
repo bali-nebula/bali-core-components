@@ -1,6 +1,6 @@
 [
     $description: "
-        This concrete model defines the attributes that all primitive types support.
+        This concrete composite defines the attributes that all primitive types support.
     "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Type/v1($existence: $existence)
     $parameters: [
@@ -34,7 +34,7 @@
     ]
 ](
     $name: /bali/types/Primitive/v1
-    $type: /bali/types/Model/v1
+    $type: /bali/types/Composite/v1
     $tag: #X8QJKYSF9WNND6M9VQS0HGB0PAMR6WQV
     $version: v1
     $permissions: /bali/permissions/public/v1

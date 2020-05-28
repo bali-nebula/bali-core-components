@@ -1,6 +1,6 @@
 [
     $description: "
-        This concrete model defines the attributes that all enumerated types support.
+        This concrete composite defines the attributes that all enumerated types support.
     "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Type/v1
     $attributes: [
@@ -14,7 +14,7 @@
     ]
 ](
     $name: /bali/types/Enumeration/v1
-    $type: /bali/types/Model/v1
+    $type: /bali/types/Composite/v1
     $tag: #D66V8C9QZH466FDN75170CMTN1ABGTFH
     $version: v1
     $permissions: /bali/permissions/public/v1

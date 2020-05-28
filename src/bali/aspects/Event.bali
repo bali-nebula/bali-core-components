@@ -1,6 +1,6 @@
 [
     $description: "
-        This abstract model defines the attributes that all event types support.
+        This abstract composite defines the attributes that all event types support.
     "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Aspect/v1
     $attributes: [
@@ -19,7 +19,7 @@
     ]
 ](
     $name: /bali/aspects/Event/v1
-    $type: /bali/types/Model/v1
+    $type: /bali/types/Composite/v1
     $tag: #AXZ0LD0P2A5JL83LLP62H37LPWJVBQBK
     $version: v1
     $permissions: /bali/permissions/public/v1
