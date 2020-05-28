@@ -1,6 +1,6 @@
 [
     $description: "
-        This abstract structure defines the attributes that all message types support.
+        This abstract model defines the attributes that all message types support.
     "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Aspect/v1
     $parameters: [
@@ -31,7 +31,7 @@
     ]
 ](
     $name: /bali/aspects/Message/v1
-    $type: /bali/types/Structure/v1
+    $type: /bali/types/Model/v1
     $tag: #AJK59A8951P20ATHT8QNGXZVHGW0WXC8
     $version: v1
     $permissions: /bali/permissions/public/v1

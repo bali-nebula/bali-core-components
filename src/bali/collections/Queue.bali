@@ -34,13 +34,13 @@
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
                 PUSH ARGUMENT $item
-                INVOKE $addItem WITH 2 ARGUMENTS
-                HANDLE RESULT
+                CALL $addItem WITH 2 ARGUMENTS
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B001E000'(
+            $bytecode: '38013802D0015000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -72,13 +72,13 @@
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
                 PUSH ARGUMENT $items
-                INVOKE $addItems WITH 2 ARGUMENTS
-                HANDLE RESULT
+                CALL $addItems WITH 2 ARGUMENTS
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B002E000'(
+            $bytecode: '38013802D0025000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -110,13 +110,13 @@
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
                 PUSH ARGUMENT $items
-                INVOKE $containsAll WITH 2 ARGUMENTS
-                HANDLE RESULT
+                CALL $containsAll WITH 2 ARGUMENTS
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B01DE000'(
+            $bytecode: '38013802D01E5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -148,13 +148,13 @@
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
                 PUSH ARGUMENT $items
-                INVOKE $containsAny WITH 2 ARGUMENTS
-                HANDLE RESULT
+                CALL $containsAny WITH 2 ARGUMENTS
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B01EE000'(
+            $bytecode: '38013802D01F5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -186,13 +186,13 @@
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
                 PUSH ARGUMENT $item
-                INVOKE $containsItem WITH 2 ARGUMENTS
-                HANDLE RESULT
+                CALL $containsItem WITH 2 ARGUMENTS
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B01FE000'(
+            $bytecode: '38013802D0205000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -214,13 +214,13 @@
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
-                INVOKE $head WITH 1 ARGUMENT
-                HANDLE RESULT
+                CALL $head WITH 1 ARGUMENT
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A834E000'(
+            $bytecode: '3801C8355000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -252,13 +252,13 @@
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
                 PUSH ARGUMENT $item
-                INVOKE $index WITH 2 ARGUMENTS
-                HANDLE RESULT
+                CALL $index WITH 2 ARGUMENTS
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B039E000'(
+            $bytecode: '38013802D03A5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -280,13 +280,13 @@
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
-                INVOKE $isEmpty WITH 1 ARGUMENT
-                HANDLE RESULT
+                CALL $isEmpty WITH 1 ARGUMENT
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A83EE000'(
+            $bytecode: '3801C8405000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -317,13 +317,13 @@
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
                 PUSH ARGUMENT $index
-                INVOKE $item WITH 2 ARGUMENTS
-                HANDLE RESULT
+                CALL $item WITH 2 ARGUMENTS
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B046E000'(
+            $bytecode: '38013802D0485000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -356,13 +356,13 @@
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
                 PUSH ARGUMENT $range
-                INVOKE $items WITH 2 ARGUMENTS
-                HANDLE RESULT
+                CALL $items WITH 2 ARGUMENTS
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38013802B047E000'(
+            $bytecode: '38013802D0495000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -385,13 +385,13 @@
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
-                INVOKE $iterator WITH 1 ARGUMENT
-                HANDLE RESULT
+                CALL $iterator WITH 1 ARGUMENT
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A848E000'(
+            $bytecode: '3801C84A5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -412,13 +412,13 @@
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
-                INVOKE $removeAll WITH 1 ARGUMENT
-                HANDLE RESULT
+                CALL $removeAll WITH 1 ARGUMENT
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A86FE000'(
+            $bytecode: '3801C8715000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -439,13 +439,13 @@
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
-                INVOKE $removeHead WITH 1 ARGUMENT
-                HANDLE RESULT
+                CALL $removeHead WITH 1 ARGUMENT
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A870E000'(
+            $bytecode: '3801C8725000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -466,13 +466,13 @@
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
-                INVOKE $size WITH 1 ARGUMENT
-                HANDLE RESULT
+                CALL $size WITH 1 ARGUMENT
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A884E000'(
+            $bytecode: '3801C8875000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )

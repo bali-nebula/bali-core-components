@@ -1,6 +1,6 @@
 [
     $description: "
-        This abstract structure defines the attributes that all event handler types support.
+        This abstract model defines the attributes that all event handler types support.
     "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Aspect/v1
     $attributes: [
@@ -29,7 +29,7 @@
     ]
 ](
     $name: /bali/aspects/Handler/v1
-    $type: /bali/types/Structure/v1
+    $type: /bali/types/Model/v1
     $tag: #5HFQ80TF9F5ZTA7LKAQ9D5JSYS2K9HFN
     $version: v1
     $permissions: /bali/permissions/public/v1

@@ -1,6 +1,6 @@
 [
     $description: "
-        This concrete structure defines the attributes that all class types support.
+        This concrete model defines the attributes that all class types support.
     "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Type/v1($existence: $existence)
     $parameters: [
@@ -57,7 +57,7 @@
     ]
 ](
     $name: /bali/types/Class/v1
-    $type: /bali/types/Structure/v1
+    $type: /bali/types/Model/v1
     $tag: #KG116GVDPP9QHW2XTM13B6J903PFN6YW
     $version: v1
     $permissions: /bali/permissions/public/v1

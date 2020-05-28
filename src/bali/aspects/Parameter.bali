@@ -1,6 +1,6 @@
 [
     $description: "
-        This abstract structure defines the attributes that all parameter types support.
+        This abstract model defines the attributes that all parameter types support.
     "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Aspect/v1
     $attributes: [
@@ -20,7 +20,7 @@
     ]
 ](
     $name: /bali/aspects/Parameter/v1
-    $type: /bali/types/Structure/v1
+    $type: /bali/types/Model/v1
     $tag: #SX6DQ19X6QAK6PBZF836PYWKSZWH8VTH
     $version: v1
     $permissions: /bali/permissions/public/v1

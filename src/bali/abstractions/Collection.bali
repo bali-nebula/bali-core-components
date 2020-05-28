@@ -41,31 +41,35 @@
             }
             $instructions: "
                 1.ThrowStatement:
-                INVOKE $catalog
+                CALL $catalog
+                ---- Add an item to the catalog.
                 PUSH LITERAL `$module`
                 PUSH LITERAL `/bali/abstractions/Collection/v1`
-                INVOKE $association WITH 2 ARGUMENTS
-                INVOKE $addItem WITH 2 ARGUMENTS
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                ---- Add another item to the catalog.
                 PUSH LITERAL `$method`
                 PUSH LITERAL `$addItem`
-                INVOKE $association WITH 2 ARGUMENTS
-                INVOKE $addItem WITH 2 ARGUMENTS
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                ---- Add another item to the catalog.
                 PUSH LITERAL `$exception`
                 PUSH LITERAL `$abstractMethod`
-                INVOKE $association WITH 2 ARGUMENTS
-                INVOKE $addItem WITH 2 ARGUMENTS
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                ---- Add another item to the catalog.
                 PUSH LITERAL `$text`
                 PUSH LITERAL `"An abstract method must be implemented by a subtype."`
-                INVOKE $association WITH 2 ARGUMENTS
-                INVOKE $addItem WITH 2 ARGUMENTS
-                HANDLE EXCEPTION
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                PULL EXCEPTION
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ThrowStatement": 1
             ]
             $bytecode: '
-                A014280A2801B00BB00128092805B00BB00128062804B00BB001280D280E
-                B00BB001E800
+                C014280A2801D00BD00128092805D00BD00128062804D00BD001280D280E
+                D00BD0015800
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -101,7 +105,7 @@
                 1.WithStatement:
                 PUSH ARGUMENT $items
                 SEND $iterator TO COMPONENT
-                STORE VARIABLE $iterator-2
+                SAVE VARIABLE $iterator-2
                 
                 1.1.ConditionClause:
                 LOAD VARIABLE $iterator-2
@@ -109,15 +113,17 @@
                 JUMP TO 1.WithStatementDone ON FALSE
                 LOAD VARIABLE $iterator-2
                 SEND $next TO COMPONENT
-                STORE VARIABLE $item
+                SAVE VARIABLE $item
                 
                 1.1.1.EvaluateStatement:
                 PUSH ARGUMENT $target
-                INVOKE $list
+                ---- Place a list of the message arguments on the stack.
+                CALL $list
                 LOAD VARIABLE $item
-                INVOKE $addItem WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                ---- Send the message with its arguments to the recipient.
                 SEND $addItem TO COMPONENT WITH ARGUMENTS
-                STORE VARIABLE $result-1
+                SAVE VARIABLE $result-1
                 
                 1.ConditionRepeat:
                 JUMP TO 1.1.ConditionClause
@@ -127,7 +133,7 @@
                 
                 2.ReturnStatement:
                 PUSH ARGUMENT $target
-                HANDLE RESULT
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.WithStatement": 1
@@ -138,8 +144,8 @@
                 "2.ReturnStatement": 18
             ]
             $bytecode: '
-                3802C00380026002C00218116002C00480013801A04F6001B001C8018003
-                000400003801E000
+                3802E00380026002E00218116002E00480013801C0516001D001E8018003
+                0004000038015000
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -187,7 +193,7 @@
                 1.WithStatement:
                 PUSH ARGUMENT $items
                 SEND $iterator TO COMPONENT
-                STORE VARIABLE $iterator-2
+                SAVE VARIABLE $iterator-2
                 
                 1.1.ConditionClause:
                 LOAD VARIABLE $iterator-2
@@ -195,23 +201,25 @@
                 JUMP TO 1.WithStatementDone ON FALSE
                 LOAD VARIABLE $iterator-2
                 SEND $next TO COMPONENT
-                STORE VARIABLE $item
+                SAVE VARIABLE $item
                 
                 1.1.1.IfStatement:
                 SKIP INSTRUCTION
                 
                 1.1.1.1.ConditionClause:
                 PUSH ARGUMENT $target
-                INVOKE $list
+                ---- Place a list of the message arguments on the stack.
+                CALL $list
                 LOAD VARIABLE $item
-                INVOKE $addItem WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                ---- Send the message with its arguments to the recipient.
                 SEND $containsItem TO COMPONENT WITH ARGUMENTS
-                INVOKE $not WITH 1 ARGUMENT
+                CALL $not WITH 1 ARGUMENT
                 JUMP TO 1.1.1.IfStatementDone ON FALSE
                 
                 1.1.1.1.1.ReturnStatement:
                 PUSH LITERAL `false`
-                HANDLE RESULT
+                PULL RESULT
                 
                 1.1.1.IfStatementDone:
                 SKIP INSTRUCTION
@@ -224,7 +232,7 @@
                 
                 2.ReturnStatement:
                 PUSH LITERAL `true`
-                HANDLE RESULT
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.WithStatement": 1
@@ -238,8 +246,8 @@
                 "2.ReturnStatement": 23
             ]
             $bytecode: '
-                3802C00380026002C00218166002C004800100003801A04F6001B001C801
-                A85A18142802E0000000000400002803E000
+                3802E00380026002E00218166002E004800100003801C0516001D001E801
+                C85C18142802500000000004000028035000
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -286,7 +294,7 @@
                 1.WithStatement:
                 PUSH ARGUMENT $items
                 SEND $iterator TO COMPONENT
-                STORE VARIABLE $iterator-2
+                SAVE VARIABLE $iterator-2
                 
                 1.1.ConditionClause:
                 LOAD VARIABLE $iterator-2
@@ -294,22 +302,24 @@
                 JUMP TO 1.WithStatementDone ON FALSE
                 LOAD VARIABLE $iterator-2
                 SEND $next TO COMPONENT
-                STORE VARIABLE $item
+                SAVE VARIABLE $item
                 
                 1.1.1.IfStatement:
                 SKIP INSTRUCTION
                 
                 1.1.1.1.ConditionClause:
                 PUSH ARGUMENT $target
-                INVOKE $list
+                ---- Place a list of the message arguments on the stack.
+                CALL $list
                 LOAD VARIABLE $item
-                INVOKE $addItem WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                ---- Send the message with its arguments to the recipient.
                 SEND $containsItem TO COMPONENT WITH ARGUMENTS
                 JUMP TO 1.1.1.IfStatementDone ON FALSE
                 
                 1.1.1.1.1.ReturnStatement:
                 PUSH LITERAL `true`
-                HANDLE RESULT
+                PULL RESULT
                 
                 1.1.1.IfStatementDone:
                 SKIP INSTRUCTION
@@ -322,7 +332,7 @@
                 
                 2.ReturnStatement:
                 PUSH LITERAL `false`
-                HANDLE RESULT
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.WithStatement": 1
@@ -336,8 +346,8 @@
                 "2.ReturnStatement": 22
             ]
             $bytecode: '
-                3802C00380026002C00218156002C004800100003801A04F6001B001C801
-                18132803E0000000000400002802E000
+                3802E00380026002E00218156002E004800100003801C0516001D001E801
+                18132803500000000004000028025000
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -377,18 +387,20 @@
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
-                INVOKE $list
+                ---- Place a list of the message arguments on the stack.
+                CALL $list
                 PUSH ARGUMENT $item
-                INVOKE $addItem WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                ---- Send the message with its arguments to the recipient.
                 SEND $index TO COMPONENT WITH ARGUMENTS
                 PUSH LITERAL `0`
-                INVOKE $isMore WITH 2 ARGUMENTS
-                HANDLE RESULT
+                CALL $isMore WITH 2 ARGUMENTS
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801A04F3802B001C8012802B041E000'(
+            $bytecode: '3801C0513802D001E8012802D0435000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -429,12 +441,12 @@
             $instructions: "
                 1.EvaluateStatement:
                 PUSH LITERAL `0`
-                STORE VARIABLE $index
+                SAVE VARIABLE $index
                 
                 2.WithStatement:
                 PUSH ARGUMENT $target
                 SEND $iterator TO COMPONENT
-                STORE VARIABLE $iterator-2
+                SAVE VARIABLE $iterator-2
                 
                 2.1.ConditionClause:
                 LOAD VARIABLE $iterator-2
@@ -442,13 +454,13 @@
                 JUMP TO 2.WithStatementDone ON FALSE
                 LOAD VARIABLE $iterator-2
                 SEND $next TO COMPONENT
-                STORE VARIABLE $candidate
+                SAVE VARIABLE $candidate
                 
                 2.1.1.EvaluateStatement:
                 LOAD VARIABLE $index
                 PUSH LITERAL `1`
-                INVOKE $sum WITH 2 ARGUMENTS
-                STORE VARIABLE $index
+                CALL $sum WITH 2 ARGUMENTS
+                SAVE VARIABLE $index
                 
                 2.1.2.IfStatement:
                 SKIP INSTRUCTION
@@ -456,7 +468,7 @@
                 2.1.2.1.ConditionClause:
                 LOAD VARIABLE $candidate
                 PUSH ARGUMENT $item
-                INVOKE $areEqual WITH 2 ARGUMENTS
+                CALL $areEqual WITH 2 ARGUMENTS
                 JUMP TO 2.1.2.IfStatementDone ON FALSE
                 
                 2.1.2.1.1.BreakStatement:
@@ -473,7 +485,7 @@
                 
                 3.ReturnStatement:
                 LOAD VARIABLE $index
-                HANDLE RESULT
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.EvaluateStatement": 1
@@ -489,8 +501,8 @@
                 "3.ReturnStatement": 25
             ]
             $bytecode: '
-                280280023801C00280036003C00118186003C003800160022803B0898002
-                000060013802B008181600180000000600006002E000
+                280280023801E00280036003E00118186003E003800160022803D08C8002
+                000060013802D0081816001800000006000060025000
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -523,13 +535,13 @@
                 PUSH ARGUMENT $target
                 SEND $size TO COMPONENT
                 PUSH LITERAL `0`
-                INVOKE $areEqual WITH 2 ARGUMENTS
-                HANDLE RESULT
+                CALL $areEqual WITH 2 ARGUMENTS
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C0012802B008E000'(
+            $bytecode: '3801E0012802D0085000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -565,27 +577,29 @@
                 1.EvaluateStatement:
                 PUSH ARGUMENT $target
                 SEND $iterator TO COMPONENT
-                STORE VARIABLE $iterator
+                SAVE VARIABLE $iterator
                 
                 2.EvaluateStatement:
                 LOAD VARIABLE $iterator
-                INVOKE $list
+                ---- Place a list of the message arguments on the stack.
+                CALL $list
                 PUSH ARGUMENT $index
-                INVOKE $addItem WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                ---- Send the message with its arguments to the recipient.
                 SEND $toSlot TO COMPONENT WITH ARGUMENTS
-                STORE VARIABLE $result-1
+                SAVE VARIABLE $result-1
                 
                 3.ReturnStatement:
                 LOAD VARIABLE $iterator
                 SEND $previous TO COMPONENT
-                HANDLE RESULT
+                PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.EvaluateStatement": 1
                 "2.EvaluateStatement": 4
                 "3.ReturnStatement": 10
             ]
-            $bytecode: '3801C00180016001A04F3802B001C80380026001C002E000'(
+            $bytecode: '3801E00180016001C0513802D001E80380026001E0025000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -628,31 +642,35 @@
             }
             $instructions: "
                 1.ThrowStatement:
-                INVOKE $catalog
+                CALL $catalog
+                ---- Add an item to the catalog.
                 PUSH LITERAL `$module`
                 PUSH LITERAL `/bali/abstractions/Collection/v1`
-                INVOKE $association WITH 2 ARGUMENTS
-                INVOKE $addItem WITH 2 ARGUMENTS
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                ---- Add another item to the catalog.
                 PUSH LITERAL `$method`
                 PUSH LITERAL `$items`
-                INVOKE $association WITH 2 ARGUMENTS
-                INVOKE $addItem WITH 2 ARGUMENTS
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                ---- Add another item to the catalog.
                 PUSH LITERAL `$exception`
                 PUSH LITERAL `$abstractMethod`
-                INVOKE $association WITH 2 ARGUMENTS
-                INVOKE $addItem WITH 2 ARGUMENTS
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                ---- Add another item to the catalog.
                 PUSH LITERAL `$text`
                 PUSH LITERAL `"An abstract method must be implemented by a subtype."`
-                INVOKE $association WITH 2 ARGUMENTS
-                INVOKE $addItem WITH 2 ARGUMENTS
-                HANDLE EXCEPTION
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                PULL EXCEPTION
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ThrowStatement": 1
             ]
             $bytecode: '
-                A014280A2801B00BB00128092807B00BB00128062804B00BB001280D280E
-                B00BB001E800
+                C014280A2801D00BD00128092807D00BD00128062804D00BD001280D280E
+                D00BD0015800
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -680,31 +698,35 @@
             }
             $instructions: "
                 1.ThrowStatement:
-                INVOKE $catalog
+                CALL $catalog
+                ---- Add an item to the catalog.
                 PUSH LITERAL `$module`
                 PUSH LITERAL `/bali/abstractions/Collection/v1`
-                INVOKE $association WITH 2 ARGUMENTS
-                INVOKE $addItem WITH 2 ARGUMENTS
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                ---- Add another item to the catalog.
                 PUSH LITERAL `$method`
                 PUSH LITERAL `$iterator`
-                INVOKE $association WITH 2 ARGUMENTS
-                INVOKE $addItem WITH 2 ARGUMENTS
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                ---- Add another item to the catalog.
                 PUSH LITERAL `$exception`
                 PUSH LITERAL `$abstractMethod`
-                INVOKE $association WITH 2 ARGUMENTS
-                INVOKE $addItem WITH 2 ARGUMENTS
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                ---- Add another item to the catalog.
                 PUSH LITERAL `$text`
                 PUSH LITERAL `"An abstract method must be implemented by a subtype."`
-                INVOKE $association WITH 2 ARGUMENTS
-                INVOKE $addItem WITH 2 ARGUMENTS
-                HANDLE EXCEPTION
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                PULL EXCEPTION
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ThrowStatement": 1
             ]
             $bytecode: '
-                A014280A2801B00BB00128092808B00BB00128062804B00BB001280D280E
-                B00BB001E800
+                C014280A2801D00BD00128092808D00BD00128062804D00BD001280D280E
+                D00BD0015800
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -730,31 +752,35 @@
             }
             $instructions: "
                 1.ThrowStatement:
-                INVOKE $catalog
+                CALL $catalog
+                ---- Add an item to the catalog.
                 PUSH LITERAL `$module`
                 PUSH LITERAL `/bali/abstractions/Collection/v1`
-                INVOKE $association WITH 2 ARGUMENTS
-                INVOKE $addItem WITH 2 ARGUMENTS
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                ---- Add another item to the catalog.
                 PUSH LITERAL `$method`
                 PUSH LITERAL `$removeAll`
-                INVOKE $association WITH 2 ARGUMENTS
-                INVOKE $addItem WITH 2 ARGUMENTS
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                ---- Add another item to the catalog.
                 PUSH LITERAL `$exception`
                 PUSH LITERAL `$abstractMethod`
-                INVOKE $association WITH 2 ARGUMENTS
-                INVOKE $addItem WITH 2 ARGUMENTS
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                ---- Add another item to the catalog.
                 PUSH LITERAL `$text`
                 PUSH LITERAL `"An abstract method must be implemented by a subtype."`
-                INVOKE $association WITH 2 ARGUMENTS
-                INVOKE $addItem WITH 2 ARGUMENTS
-                HANDLE EXCEPTION
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                PULL EXCEPTION
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ThrowStatement": 1
             ]
             $bytecode: '
-                A014280A2801B00BB0012809280BB00BB00128062804B00BB001280D280E
-                B00BB001E800
+                C014280A2801D00BD0012809280BD00BD00128062804D00BD001280D280E
+                D00BD0015800
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -780,31 +806,35 @@
             }
             $instructions: "
                 1.ThrowStatement:
-                INVOKE $catalog
+                CALL $catalog
+                ---- Add an item to the catalog.
                 PUSH LITERAL `$module`
                 PUSH LITERAL `/bali/abstractions/Collection/v1`
-                INVOKE $association WITH 2 ARGUMENTS
-                INVOKE $addItem WITH 2 ARGUMENTS
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                ---- Add another item to the catalog.
                 PUSH LITERAL `$method`
                 PUSH LITERAL `$size`
-                INVOKE $association WITH 2 ARGUMENTS
-                INVOKE $addItem WITH 2 ARGUMENTS
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                ---- Add another item to the catalog.
                 PUSH LITERAL `$exception`
                 PUSH LITERAL `$abstractMethod`
-                INVOKE $association WITH 2 ARGUMENTS
-                INVOKE $addItem WITH 2 ARGUMENTS
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                ---- Add another item to the catalog.
                 PUSH LITERAL `$text`
                 PUSH LITERAL `"An abstract method must be implemented by a subtype."`
-                INVOKE $association WITH 2 ARGUMENTS
-                INVOKE $addItem WITH 2 ARGUMENTS
-                HANDLE EXCEPTION
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                PULL EXCEPTION
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ThrowStatement": 1
             ]
             $bytecode: '
-                A014280A2801B00BB0012809280CB00BB00128062804B00BB001280D280E
-                B00BB001E800
+                C014280A2801D00BD0012809280CD00BD00128062804D00BD001280D280E
+                D00BD0015800
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
