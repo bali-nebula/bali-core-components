@@ -459,7 +459,7 @@
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
-                LOAD VARIABLE $range
+                LOAD REGISTER $range
                 CALL $removeItems WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
