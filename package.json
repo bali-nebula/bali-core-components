@@ -27,6 +27,6 @@
   },
   "dependencies": {
     "bali-component-framework": "^2.22.2",
-    "bali-type-compiler": "file:../js-bali-type-compiler"
+    "bali-type-compiler": "^2.0.0"
   }
 }

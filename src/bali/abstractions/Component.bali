@@ -50,8 +50,8 @@
                 LOAD REGISTER $current
                 PUSH LITERAL `$parent`
                 CALL $subcomponent WITH 2 ARGUMENTS
-                SAVE REGISTER $name-2
-                LOAD CONTRACT $name-2
+                SAVE REGISTER $nameOrCitation-2
+                LOAD DOCUMENT $nameOrCitation-2
                 SAVE REGISTER $current
                 
                 3.ConditionRepeat:
@@ -77,7 +77,7 @@
             ]
             $bytecode: '
                 C05180013801C89680020000600218166001C0516002D001E80180046002
-                2803D08B8003700380020007000060015000
+                2803D08B8003680380020007000060015000
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -88,7 +88,7 @@
             $variables: [
                 $ancestry
                 $current
-                $name-2
+                $nameOrCitation-2
                 $result-1
             ]($type: /bali/collections/Set/v1)
             $messages: [
@@ -153,8 +153,8 @@
                 LOAD REGISTER $current
                 PUSH LITERAL `$parent`
                 CALL $subcomponent WITH 2 ARGUMENTS
-                SAVE REGISTER $name-2
-                LOAD CONTRACT $name-2
+                SAVE REGISTER $nameOrCitation-2
+                LOAD DOCUMENT $nameOrCitation-2
                 SAVE REGISTER $current
                 
                 2.ConditionRepeat:
@@ -182,7 +182,7 @@
             ]
             $bytecode: '
                 3801C8968001000060011816000060013802D008180E2802500000006001
-                2803D08B8002700280010005000028015000
+                2803D08B8002680280010005000028015000
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -193,7 +193,7 @@
             ]
             $variables: [
                 $current
-                $name-2
+                $nameOrCitation-2
             ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]
