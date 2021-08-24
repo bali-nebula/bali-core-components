@@ -42,22 +42,22 @@
             $instructions: "
                 1.ThrowStatement:
                 CALL $catalog
-                ---- Add an item to the catalog.
+                NOTE --Add an item to the catalog.
                 PUSH LITERAL `$module`
                 PUSH LITERAL `/bali/abstractions/Collection/v1`
                 CALL $association WITH 2 ARGUMENTS
                 CALL $addItem WITH 2 ARGUMENTS
-                ---- Add another item to the catalog.
+                NOTE --Add another item to the catalog.
                 PUSH LITERAL `$method`
                 PUSH LITERAL `$addItem`
                 CALL $association WITH 2 ARGUMENTS
                 CALL $addItem WITH 2 ARGUMENTS
-                ---- Add another item to the catalog.
+                NOTE --Add another item to the catalog.
                 PUSH LITERAL `$exception`
                 PUSH LITERAL `$abstractMethod`
                 CALL $association WITH 2 ARGUMENTS
                 CALL $addItem WITH 2 ARGUMENTS
-                ---- Add another item to the catalog.
+                NOTE --Add another item to the catalog.
                 PUSH LITERAL `$text`
                 PUSH LITERAL `"An abstract method must be implemented by a subtype."`
                 CALL $association WITH 2 ARGUMENTS
@@ -68,8 +68,8 @@
                 "1.ThrowStatement": 1
             ]
             $bytecode: '
-                C014280A2801D00BD00128092805D00BD00128062804D00BD001280D280E
-                D00BD0015800
+                C015280C2803D00AD001280B2807D00AD00128082806D00AD001280F2810
+                D00AD0015800
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -105,31 +105,31 @@
                 1.WithStatement:
                 PUSH ARGUMENT $items
                 SEND $iterator TO COMPONENT
-                SAVE REGISTER $iterator-2
+                SAVE VARIABLE $iterator-2
                 
                 1.1.ConditionClause:
-                LOAD REGISTER $iterator-2
+                LOAD VARIABLE $iterator-2
                 SEND $hasNext TO COMPONENT
                 JUMP TO 1.WithStatementDone ON FALSE
-                LOAD REGISTER $iterator-2
+                LOAD VARIABLE $iterator-2
                 SEND $next TO COMPONENT
-                SAVE REGISTER $item
+                SAVE VARIABLE $item
                 
                 1.1.1.EvaluateStatement:
                 PUSH ARGUMENT $target
-                ---- Place a list of the message arguments on the stack.
+                NOTE --Place a list of the message arguments on the stack.
                 CALL $list
-                LOAD REGISTER $item
+                LOAD VARIABLE $item
                 CALL $addItem WITH 2 ARGUMENTS
-                ---- Send the message with its arguments to the recipient.
+                NOTE --Send the message with its arguments to the recipient.
                 SEND $addItem TO COMPONENT WITH ARGUMENTS
-                SAVE REGISTER $result-1
+                SAVE VARIABLE $result-1
                 
                 1.ConditionRepeat:
                 JUMP TO 1.1.ConditionClause
                 
                 1.WithStatementDone:
-                SKIP INSTRUCTION
+                JUMP TO NEXT INSTRUCTION
                 
                 2.ReturnStatement:
                 PUSH ARGUMENT $target
@@ -144,7 +144,7 @@
                 "2.ReturnStatement": 18
             ]
             $bytecode: '
-                3802E00380026002E00218116002E00480013801C0516001D001E8018003
+                3802E00380026002E00218116002E00480013801C0546001D001E8018003
                 0004000038015000
             '(
                 $encoding: $base16
@@ -193,26 +193,26 @@
                 1.WithStatement:
                 PUSH ARGUMENT $items
                 SEND $iterator TO COMPONENT
-                SAVE REGISTER $iterator-2
+                SAVE VARIABLE $iterator-2
                 
                 1.1.ConditionClause:
-                LOAD REGISTER $iterator-2
+                LOAD VARIABLE $iterator-2
                 SEND $hasNext TO COMPONENT
                 JUMP TO 1.WithStatementDone ON FALSE
-                LOAD REGISTER $iterator-2
+                LOAD VARIABLE $iterator-2
                 SEND $next TO COMPONENT
-                SAVE REGISTER $item
+                SAVE VARIABLE $item
                 
                 1.1.1.IfStatement:
-                SKIP INSTRUCTION
+                JUMP TO NEXT INSTRUCTION
                 
                 1.1.1.1.ConditionClause:
                 PUSH ARGUMENT $target
-                ---- Place a list of the message arguments on the stack.
+                NOTE --Place a list of the message arguments on the stack.
                 CALL $list
-                LOAD REGISTER $item
+                LOAD VARIABLE $item
                 CALL $addItem WITH 2 ARGUMENTS
-                ---- Send the message with its arguments to the recipient.
+                NOTE --Send the message with its arguments to the recipient.
                 SEND $containsItem TO COMPONENT WITH ARGUMENTS
                 CALL $not WITH 1 ARGUMENT
                 JUMP TO 1.1.1.IfStatementDone ON FALSE
@@ -222,13 +222,13 @@
                 PULL RESULT
                 
                 1.1.1.IfStatementDone:
-                SKIP INSTRUCTION
+                JUMP TO NEXT INSTRUCTION
                 
                 1.ConditionRepeat:
                 JUMP TO 1.1.ConditionClause
                 
                 1.WithStatementDone:
-                SKIP INSTRUCTION
+                JUMP TO NEXT INSTRUCTION
                 
                 2.ReturnStatement:
                 PUSH LITERAL `true`
@@ -246,8 +246,8 @@
                 "2.ReturnStatement": 23
             ]
             $bytecode: '
-                3802E00380026002E00218166002E004800100003801C0516001D001E801
-                C85C18142802500000000004000028035000
+                3802E00380026002E00218166002E004800100003801C0546001D001E801
+                C86018142801500000000004000028025000
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -294,26 +294,26 @@
                 1.WithStatement:
                 PUSH ARGUMENT $items
                 SEND $iterator TO COMPONENT
-                SAVE REGISTER $iterator-2
+                SAVE VARIABLE $iterator-2
                 
                 1.1.ConditionClause:
-                LOAD REGISTER $iterator-2
+                LOAD VARIABLE $iterator-2
                 SEND $hasNext TO COMPONENT
                 JUMP TO 1.WithStatementDone ON FALSE
-                LOAD REGISTER $iterator-2
+                LOAD VARIABLE $iterator-2
                 SEND $next TO COMPONENT
-                SAVE REGISTER $item
+                SAVE VARIABLE $item
                 
                 1.1.1.IfStatement:
-                SKIP INSTRUCTION
+                JUMP TO NEXT INSTRUCTION
                 
                 1.1.1.1.ConditionClause:
                 PUSH ARGUMENT $target
-                ---- Place a list of the message arguments on the stack.
+                NOTE --Place a list of the message arguments on the stack.
                 CALL $list
-                LOAD REGISTER $item
+                LOAD VARIABLE $item
                 CALL $addItem WITH 2 ARGUMENTS
-                ---- Send the message with its arguments to the recipient.
+                NOTE --Send the message with its arguments to the recipient.
                 SEND $containsItem TO COMPONENT WITH ARGUMENTS
                 JUMP TO 1.1.1.IfStatementDone ON FALSE
                 
@@ -322,13 +322,13 @@
                 PULL RESULT
                 
                 1.1.1.IfStatementDone:
-                SKIP INSTRUCTION
+                JUMP TO NEXT INSTRUCTION
                 
                 1.ConditionRepeat:
                 JUMP TO 1.1.ConditionClause
                 
                 1.WithStatementDone:
-                SKIP INSTRUCTION
+                JUMP TO NEXT INSTRUCTION
                 
                 2.ReturnStatement:
                 PUSH LITERAL `false`
@@ -346,8 +346,8 @@
                 "2.ReturnStatement": 22
             ]
             $bytecode: '
-                3802E00380026002E00218156002E004800100003801C0516001D001E801
-                18132803500000000004000028025000
+                3802E00380026002E00218156002E004800100003801C0546001D001E801
+                18132802500000000004000028015000
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -387,11 +387,11 @@
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
-                ---- Place a list of the message arguments on the stack.
+                NOTE --Place a list of the message arguments on the stack.
                 CALL $list
                 PUSH ARGUMENT $item
                 CALL $addItem WITH 2 ARGUMENTS
-                ---- Send the message with its arguments to the recipient.
+                NOTE --Send the message with its arguments to the recipient.
                 SEND $index TO COMPONENT WITH ARGUMENTS
                 PUSH LITERAL `0`
                 CALL $isMore WITH 2 ARGUMENTS
@@ -400,7 +400,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C0513802D001E8012802D0435000'(
+            $bytecode: '3801C0543802D001E8012801D0465000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -441,32 +441,32 @@
             $instructions: "
                 1.EvaluateStatement:
                 PUSH LITERAL `0`
-                SAVE REGISTER $index
+                SAVE VARIABLE $index
                 
                 2.WithStatement:
                 PUSH ARGUMENT $target
                 SEND $iterator TO COMPONENT
-                SAVE REGISTER $iterator-2
+                SAVE VARIABLE $iterator-2
                 
                 2.1.ConditionClause:
-                LOAD REGISTER $iterator-2
+                LOAD VARIABLE $iterator-2
                 SEND $hasNext TO COMPONENT
                 JUMP TO 2.WithStatementDone ON FALSE
-                LOAD REGISTER $iterator-2
+                LOAD VARIABLE $iterator-2
                 SEND $next TO COMPONENT
-                SAVE REGISTER $candidate
+                SAVE VARIABLE $candidate
                 
                 2.1.1.EvaluateStatement:
-                LOAD REGISTER $index
+                LOAD VARIABLE $index
                 PUSH LITERAL `1`
                 CALL $sum WITH 2 ARGUMENTS
-                SAVE REGISTER $index
+                SAVE VARIABLE $index
                 
                 2.1.2.IfStatement:
-                SKIP INSTRUCTION
+                JUMP TO NEXT INSTRUCTION
                 
                 2.1.2.1.ConditionClause:
-                LOAD REGISTER $candidate
+                LOAD VARIABLE $candidate
                 PUSH ARGUMENT $item
                 CALL $areEqual WITH 2 ARGUMENTS
                 JUMP TO 2.1.2.IfStatementDone ON FALSE
@@ -475,16 +475,16 @@
                 JUMP TO 2.WithStatementDone
                 
                 2.1.2.IfStatementDone:
-                SKIP INSTRUCTION
+                JUMP TO NEXT INSTRUCTION
                 
                 2.ConditionRepeat:
                 JUMP TO 2.1.ConditionClause
                 
                 2.WithStatementDone:
-                SKIP INSTRUCTION
+                JUMP TO NEXT INSTRUCTION
                 
                 3.ReturnStatement:
-                LOAD REGISTER $index
+                LOAD VARIABLE $index
                 PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
@@ -501,7 +501,7 @@
                 "3.ReturnStatement": 25
             ]
             $bytecode: '
-                280280023801E00280036003E00118186003E003800160022803D08C8002
+                280180023801E00280036003E00118186003E003800160022802D08B8002
                 000060013802D0081816001800000006000060025000
             '(
                 $encoding: $base16
@@ -541,7 +541,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801E0012802D0085000'(
+            $bytecode: '3801E0012801D0085000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -577,20 +577,20 @@
                 1.EvaluateStatement:
                 PUSH ARGUMENT $target
                 SEND $iterator TO COMPONENT
-                SAVE REGISTER $iterator
+                SAVE VARIABLE $iterator
                 
                 2.EvaluateStatement:
-                LOAD REGISTER $iterator
-                ---- Place a list of the message arguments on the stack.
+                LOAD VARIABLE $iterator
+                NOTE --Place a list of the message arguments on the stack.
                 CALL $list
                 PUSH ARGUMENT $index
                 CALL $addItem WITH 2 ARGUMENTS
-                ---- Send the message with its arguments to the recipient.
+                NOTE --Send the message with its arguments to the recipient.
                 SEND $toSlot TO COMPONENT WITH ARGUMENTS
-                SAVE REGISTER $result-1
+                SAVE VARIABLE $result-1
                 
                 3.ReturnStatement:
-                LOAD REGISTER $iterator
+                LOAD VARIABLE $iterator
                 SEND $previous TO COMPONENT
                 PULL RESULT
             "($mediaType: "application/basm")
@@ -599,7 +599,7 @@
                 "2.EvaluateStatement": 4
                 "3.ReturnStatement": 10
             ]
-            $bytecode: '3801E00180016001C0513802D001E80380026001E0025000'(
+            $bytecode: '3801E00180016001C0543802D001E80380026001E0025000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -643,22 +643,22 @@
             $instructions: "
                 1.ThrowStatement:
                 CALL $catalog
-                ---- Add an item to the catalog.
+                NOTE --Add an item to the catalog.
                 PUSH LITERAL `$module`
                 PUSH LITERAL `/bali/abstractions/Collection/v1`
                 CALL $association WITH 2 ARGUMENTS
                 CALL $addItem WITH 2 ARGUMENTS
-                ---- Add another item to the catalog.
+                NOTE --Add another item to the catalog.
                 PUSH LITERAL `$method`
                 PUSH LITERAL `$items`
                 CALL $association WITH 2 ARGUMENTS
                 CALL $addItem WITH 2 ARGUMENTS
-                ---- Add another item to the catalog.
+                NOTE --Add another item to the catalog.
                 PUSH LITERAL `$exception`
                 PUSH LITERAL `$abstractMethod`
                 CALL $association WITH 2 ARGUMENTS
                 CALL $addItem WITH 2 ARGUMENTS
-                ---- Add another item to the catalog.
+                NOTE --Add another item to the catalog.
                 PUSH LITERAL `$text`
                 PUSH LITERAL `"An abstract method must be implemented by a subtype."`
                 CALL $association WITH 2 ARGUMENTS
@@ -669,8 +669,8 @@
                 "1.ThrowStatement": 1
             ]
             $bytecode: '
-                C014280A2801D00BD00128092807D00BD00128062804D00BD001280D280E
-                D00BD0015800
+                C015280C2803D00AD001280B2809D00AD00128082806D00AD001280F2810
+                D00AD0015800
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -699,22 +699,22 @@
             $instructions: "
                 1.ThrowStatement:
                 CALL $catalog
-                ---- Add an item to the catalog.
+                NOTE --Add an item to the catalog.
                 PUSH LITERAL `$module`
                 PUSH LITERAL `/bali/abstractions/Collection/v1`
                 CALL $association WITH 2 ARGUMENTS
                 CALL $addItem WITH 2 ARGUMENTS
-                ---- Add another item to the catalog.
+                NOTE --Add another item to the catalog.
                 PUSH LITERAL `$method`
                 PUSH LITERAL `$iterator`
                 CALL $association WITH 2 ARGUMENTS
                 CALL $addItem WITH 2 ARGUMENTS
-                ---- Add another item to the catalog.
+                NOTE --Add another item to the catalog.
                 PUSH LITERAL `$exception`
                 PUSH LITERAL `$abstractMethod`
                 CALL $association WITH 2 ARGUMENTS
                 CALL $addItem WITH 2 ARGUMENTS
-                ---- Add another item to the catalog.
+                NOTE --Add another item to the catalog.
                 PUSH LITERAL `$text`
                 PUSH LITERAL `"An abstract method must be implemented by a subtype."`
                 CALL $association WITH 2 ARGUMENTS
@@ -725,8 +725,8 @@
                 "1.ThrowStatement": 1
             ]
             $bytecode: '
-                C014280A2801D00BD00128092808D00BD00128062804D00BD001280D280E
-                D00BD0015800
+                C015280C2803D00AD001280B280AD00AD00128082806D00AD001280F2810
+                D00AD0015800
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -753,22 +753,22 @@
             $instructions: "
                 1.ThrowStatement:
                 CALL $catalog
-                ---- Add an item to the catalog.
+                NOTE --Add an item to the catalog.
                 PUSH LITERAL `$module`
                 PUSH LITERAL `/bali/abstractions/Collection/v1`
                 CALL $association WITH 2 ARGUMENTS
                 CALL $addItem WITH 2 ARGUMENTS
-                ---- Add another item to the catalog.
+                NOTE --Add another item to the catalog.
                 PUSH LITERAL `$method`
                 PUSH LITERAL `$removeAll`
                 CALL $association WITH 2 ARGUMENTS
                 CALL $addItem WITH 2 ARGUMENTS
-                ---- Add another item to the catalog.
+                NOTE --Add another item to the catalog.
                 PUSH LITERAL `$exception`
                 PUSH LITERAL `$abstractMethod`
                 CALL $association WITH 2 ARGUMENTS
                 CALL $addItem WITH 2 ARGUMENTS
-                ---- Add another item to the catalog.
+                NOTE --Add another item to the catalog.
                 PUSH LITERAL `$text`
                 PUSH LITERAL `"An abstract method must be implemented by a subtype."`
                 CALL $association WITH 2 ARGUMENTS
@@ -779,8 +779,8 @@
                 "1.ThrowStatement": 1
             ]
             $bytecode: '
-                C014280A2801D00BD0012809280BD00BD00128062804D00BD001280D280E
-                D00BD0015800
+                C015280C2803D00AD001280B280DD00AD00128082806D00AD001280F2810
+                D00AD0015800
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -807,22 +807,22 @@
             $instructions: "
                 1.ThrowStatement:
                 CALL $catalog
-                ---- Add an item to the catalog.
+                NOTE --Add an item to the catalog.
                 PUSH LITERAL `$module`
                 PUSH LITERAL `/bali/abstractions/Collection/v1`
                 CALL $association WITH 2 ARGUMENTS
                 CALL $addItem WITH 2 ARGUMENTS
-                ---- Add another item to the catalog.
+                NOTE --Add another item to the catalog.
                 PUSH LITERAL `$method`
                 PUSH LITERAL `$size`
                 CALL $association WITH 2 ARGUMENTS
                 CALL $addItem WITH 2 ARGUMENTS
-                ---- Add another item to the catalog.
+                NOTE --Add another item to the catalog.
                 PUSH LITERAL `$exception`
                 PUSH LITERAL `$abstractMethod`
                 CALL $association WITH 2 ARGUMENTS
                 CALL $addItem WITH 2 ARGUMENTS
-                ---- Add another item to the catalog.
+                NOTE --Add another item to the catalog.
                 PUSH LITERAL `$text`
                 PUSH LITERAL `"An abstract method must be implemented by a subtype."`
                 CALL $association WITH 2 ARGUMENTS
@@ -833,8 +833,8 @@
                 "1.ThrowStatement": 1
             ]
             $bytecode: '
-                C014280A2801D00BD0012809280CD00BD00128062804D00BD001280D280E
-                D00BD0015800
+                C015280C2803D00AD001280B280ED00AD00128082806D00AD001280F2810
+                D00AD0015800
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -847,9 +847,11 @@
         ]
     ]
     $literals: [
-        /bali/abstractions/Collection/v1
         false
         true
+        /bali/abstractions/Collection/v1
+        0
+        1
         $abstractMethod
         $addItem
         $exception
