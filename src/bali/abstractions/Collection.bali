@@ -400,7 +400,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C0543802D001E8012801D0465000'(
+            $bytecode: '3801C0543802D001E8012804D0465000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -431,7 +431,7 @@
             $procedure: {
                 $index := 0
                 with each $candidate in target do {
-                    $index := index + 1
+                    $index += 1
                     if candidate = item then {
                         break loop
                     }
@@ -501,7 +501,7 @@
                 "3.ReturnStatement": 25
             ]
             $bytecode: '
-                280180023801E00280036003E00118186003E003800160022802D08B8002
+                280480023801E00280036003E00118186003E003800160022805D08B8002
                 000060013802D0081816001800000006000060025000
             '(
                 $encoding: $base16
@@ -541,7 +541,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801E0012801D0085000'(
+            $bytecode: '3801E0012804D0085000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
