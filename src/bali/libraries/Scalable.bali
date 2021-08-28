@@ -15,7 +15,7 @@
                         This parameter specifies the scalable component to be inverted.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Scalable/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
             $type: /bali/libraries/Scalable/v1
         ]($type: /bali/aspects/Function/v1)
@@ -29,13 +29,13 @@
                         This parameter specifies the scalable component to be added to.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Scalable/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
                 $second: [
                     $description: "
                         This parameter specifies the scalable component to be added to the first component.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Scalable/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
             $type: /bali/libraries/Scalable/v1
         ]($type: /bali/aspects/Function/v1)
@@ -49,13 +49,13 @@
                         This parameter specifies the scalable component to be subtracted from.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Scalable/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
                 $second: [
                     $description: "
                         This parameter specifies the scalable component to be subtracted from the first component.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Scalable/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
             $type: /bali/libraries/Scalable/v1
         ]($type: /bali/aspects/Function/v1)
@@ -69,13 +69,13 @@
                         This parameter specifies the scalable component to be scaled.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Scalable/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
                 $factor: [
                     $description: "
                         This parameter specifies the numeric factor by which the component is scaled.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/elements/Number/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                    $type: /bali/interfaces/Continuous/v1
+                ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
             $type: /bali/libraries/Scalable/v1
         ]($type: /bali/aspects/Function/v1)

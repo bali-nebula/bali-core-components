@@ -15,7 +15,7 @@
                         This parameter specifies the numerical component to be inverted.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
             $type: /bali/libraries/Numerical/v1
         ]($type: /bali/aspects/Function/v1)
@@ -29,7 +29,7 @@
                         This parameter specifies the numerical component to be conjugated.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
             $type: /bali/libraries/Numerical/v1
         ]($type: /bali/aspects/Function/v1)
@@ -43,7 +43,7 @@
                         This parameter specifies the numerical component to be factoralized.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
             $type: /bali/libraries/Numerical/v1
         ]($type: /bali/aspects/Function/v1)
@@ -57,13 +57,13 @@
                         This parameter specifies the first numerical component to be multiplied.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
                 $second: [
                     $description: "
                         This parameter specifies the second numerical component to be multiplied.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
             $type: /bali/libraries/Numerical/v1
         ]($type: /bali/aspects/Function/v1)
@@ -77,13 +77,13 @@
                         This parameter specifies the numerical component to be divided.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
                 $divisor: [
                     $description: "
                         This parameter specifies the numerical component to be divided by.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
             $type: /bali/libraries/Numerical/v1
         ]($type: /bali/aspects/Function/v1)
@@ -98,13 +98,13 @@
                         This parameter specifies the numerical component to be divided.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
                 $divisor: [
                     $description: "
                         This parameter specifies the numerical component to be divided by.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
             $type: /bali/libraries/Numerical/v1
         ]($type: /bali/aspects/Function/v1)
@@ -118,13 +118,13 @@
                         This parameter specifies the base component to be raised to an exponential.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
                 $exponent: [
                     $description: "
                         This parameter specifies the exponent to raise the base component to.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
             $type: /bali/libraries/Numerical/v1
         ]($type: /bali/aspects/Function/v1)
@@ -138,13 +138,13 @@
                         This parameter specifies the base component for the logarithm.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
                 $value: [
                     $description: "
                         This parameter specifies the value of the base raised to the exponent.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
             $type: /bali/libraries/Numerical/v1
         ]($type: /bali/aspects/Function/v1)

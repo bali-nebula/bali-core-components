@@ -15,7 +15,7 @@
                         This parameter specifies the logical component to be inverted.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Logical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
             $type: /bali/libraries/Logical/v1
         ]($type: /bali/aspects/Function/v1)
@@ -30,13 +30,13 @@
                         This parameter specifies the first logical component to be operated on.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Logical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
                 $second: [
                     $description: "
                         This parameter specifies the second logical component to be operated on.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Logical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
             $type: /bali/libraries/Logical/v1
         ]($type: /bali/aspects/Function/v1)
@@ -51,13 +51,13 @@
                         This parameter specifies the first logical component to be operated on.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Logical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
                 $second: [
                     $description: "
                         This parameter specifies the second logical component to be operated on.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Logical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
             $type: /bali/libraries/Logical/v1
         ]($type: /bali/aspects/Function/v1)
@@ -72,13 +72,13 @@
                         This parameter specifies the first logical component to be operated on.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Logical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
                 $second: [
                     $description: "
                         This parameter specifies the second logical component to be operated on.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Logical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
             $type: /bali/libraries/Logical/v1
         ]($type: /bali/aspects/Function/v1)
@@ -93,13 +93,13 @@
                         This parameter specifies the first logical component to be operated on.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Logical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
                 $second: [
                     $description: "
                         This parameter specifies the second logical component to be operated on.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Logical/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
             $type: /bali/libraries/Logical/v1
         ]($type: /bali/aspects/Function/v1)

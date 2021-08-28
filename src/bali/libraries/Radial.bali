@@ -15,7 +15,7 @@
                         This parameter specifies the radial component to be conjugated.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Radial/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
             $type: /bali/libraries/Radial/v1
         ]($type: /bali/aspects/Function/v1)
@@ -29,13 +29,13 @@
                         This parameter specifies the first radial component to be multiplied.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Radial/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
                 $second: [
                     $description: "
                         This parameter specifies the second radial component to be multiplied.
                     "($mediaType: "application/bsmd")
                     $type: /bali/libraries/Radial/v1
-                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
             $type: /bali/libraries/Radial/v1
         ]($type: /bali/aspects/Function/v1)
