@@ -22,12 +22,12 @@ describe('Bali Nebula™ Type Compilation', function() {
     for (var i = 0; i < directories.length; i++) {
         const name = directories[i];
         const directory = folder + name + '/';
-        describe('Compile the ' + name + ' definitions.', function() {
+        describe('Compile the ' + name + '.', function() {
             const files = fs.readdirSync(directory);
             for (var j = 0; j < files.length; j++) {
                 const file = files[j];
                 const prefix = file.split('.').slice(0, 1);
-                it('should compile the ' + prefix + ' name', function() {
+                it('should compile the ' + prefix + ' type.', function() {
 
                     // read in the source code
                     var filename = directory + prefix + '.bali';

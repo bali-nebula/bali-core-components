@@ -1,0 +1,49 @@
+[
+    $parent: /bali/libraries/Scalable/v1
+    $description: "
+        This library defines the functions that operate on /radial/ components. The functions support
+        the standard trigonometric operations.
+    "($mediaType: "application/bsmd")
+    $functions: [
+        $Conjugate: [
+            $description: "
+                This function returns the /conjugate/ of the specified radial component.
+            "($mediaType: "application/bsmd")
+            $parameters: [
+                $radial: [
+                    $description: "
+                        This parameter specifies the radial component to be conjugated.
+                    "($mediaType: "application/bsmd")
+                    $type: /bali/libraries/Radial/v1
+                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            $type: /bali/libraries/Radial/v1
+        ]($type: /bali/aspects/Function/v1)
+        $Arctangent: [
+            $description: "
+                This function returns the /inverse tangent/ of the specified numerical components.
+            "($mediaType: "application/bsmd")
+            $parameters: [
+                $first: [
+                    $description: "
+                        This parameter specifies the first radial component to be multiplied.
+                    "($mediaType: "application/bsmd")
+                    $type: /bali/libraries/Radial/v1
+                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                $second: [
+                    $description: "
+                        This parameter specifies the second radial component to be multiplied.
+                    "($mediaType: "application/bsmd")
+                    $type: /bali/libraries/Radial/v1
+                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            $type: /bali/libraries/Radial/v1
+        ]($type: /bali/aspects/Function/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Function/v1))
+](
+    $type: /bali/types/Library/v1
+    $tag: #5MM6AXNXR6WCN410NR8197N6KP2DH60M
+    $version: v1
+    $permissions: /bali/permissions/public/v1
+    $previous: none
+)

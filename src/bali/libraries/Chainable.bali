@@ -1,0 +1,35 @@
+[
+    $parent: /bali/abstractions/Component/v1
+    $description: "
+        This library defines the functions that operate on components that can be /chained/ together.
+    "($mediaType: "application/bsmd")
+    $functions: [
+        $Concatenation: [
+            $description: "
+                This function returns the concatenation of the two specified chainable components.
+            "($mediaType: "application/bsmd")
+            $parameters: [
+                $first: [
+                    $description: "
+                        This parameter specifies the chainable component to be concatenated with.
+                    "($mediaType: "application/bsmd")
+                    $type: /bali/libraries/Chainable/v1
+                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                $second: [
+                    $description: "
+                        This parameter specifies the chainable component to be concatenated with the
+                        first component.
+                    "($mediaType: "application/bsmd")
+                    $type: /bali/libraries/Chainable/v1
+                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            $type: /bali/libraries/Chainable/v1
+        ]($type: /bali/aspects/Function/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Function/v1))
+](
+    $type: /bali/types/Library/v1
+    $tag: #5PXW70VDZN814XSMNBZSKBKXDHX331NG
+    $version: v1
+    $permissions: /bali/permissions/public/v1
+    $previous: none
+)

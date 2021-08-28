@@ -1,0 +1,113 @@
+[
+    $parent: /bali/abstractions/Component/v1
+    $description: "
+        This library defines the functions that operate on /logical/ components. The functions support
+        the standard boolean operations.
+    "($mediaType: "application/bsmd")
+    $functions: [
+        $Not: [
+            $description: "
+                This function returns the logical /inverse/ (NOT) of the specified logical component.
+            "($mediaType: "application/bsmd")
+            $parameters: [
+                $logical: [
+                    $description: "
+                        This parameter specifies the logical component to be inverted.
+                    "($mediaType: "application/bsmd")
+                    $type: /bali/libraries/Logical/v1
+                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            $type: /bali/libraries/Logical/v1
+        ]($type: /bali/aspects/Function/v1)
+        $And: [
+            $description: "
+                This function returns the logical /conjunction/ (AND) of the two specified logical
+                components.
+            "($mediaType: "application/bsmd")
+            $parameters: [
+                $first: [
+                    $description: "
+                        This parameter specifies the first logical component to be operated on.
+                    "($mediaType: "application/bsmd")
+                    $type: /bali/libraries/Logical/v1
+                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                $second: [
+                    $description: "
+                        This parameter specifies the second logical component to be operated on.
+                    "($mediaType: "application/bsmd")
+                    $type: /bali/libraries/Logical/v1
+                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            $type: /bali/libraries/Logical/v1
+        ]($type: /bali/aspects/Function/v1)
+        $Sans: [
+            $description: "
+                This function returns the logical /material nonimplication/ (SANS) of the two
+                specified logical components.
+            "($mediaType: "application/bsmd")
+            $parameters: [
+                $first: [
+                    $description: "
+                        This parameter specifies the first logical component to be operated on.
+                    "($mediaType: "application/bsmd")
+                    $type: /bali/libraries/Logical/v1
+                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                $second: [
+                    $description: "
+                        This parameter specifies the second logical component to be operated on.
+                    "($mediaType: "application/bsmd")
+                    $type: /bali/libraries/Logical/v1
+                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            $type: /bali/libraries/Logical/v1
+        ]($type: /bali/aspects/Function/v1)
+        $Or: [
+            $description: "
+                This function returns the logical /disjunction/ (OR) of the two specified logical
+                components.
+            "($mediaType: "application/bsmd")
+            $parameters: [
+                $first: [
+                    $description: "
+                        This parameter specifies the first logical component to be operated on.
+                    "($mediaType: "application/bsmd")
+                    $type: /bali/libraries/Logical/v1
+                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                $second: [
+                    $description: "
+                        This parameter specifies the second logical component to be operated on.
+                    "($mediaType: "application/bsmd")
+                    $type: /bali/libraries/Logical/v1
+                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            $type: /bali/libraries/Logical/v1
+        ]($type: /bali/aspects/Function/v1)
+        $Xor: [
+            $description: "
+                This function returns the logical /exclusive disjunction/ (XOR) of the two specified
+                logical components.
+            "($mediaType: "application/bsmd")
+            $parameters: [
+                $first: [
+                    $description: "
+                        This parameter specifies the first logical component to be operated on.
+                    "($mediaType: "application/bsmd")
+                    $type: /bali/libraries/Logical/v1
+                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+                $second: [
+                    $description: "
+                        This parameter specifies the second logical component to be operated on.
+                    "($mediaType: "application/bsmd")
+                    $type: /bali/libraries/Logical/v1
+                ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            $type: /bali/libraries/Logical/v1
+        ]($type: /bali/aspects/Function/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Function/v1))
+](
+    $type: /bali/types/Library/v1
+    $tag: #KL1GM9LWDVQ88P98F9L3R934NKB94K8W
+    $version: v1
+    $permissions: /bali/permissions/public/v1
+    $previous: none
+)
