@@ -1,18 +1,11 @@
 [
     $parent: /bali/abstractions/Component/v1
     $description: "
-        This interface defines the messages that can be processed by components that are instances of
-        a type that supports this interface. It also defines the types of events that may be published
-        during the processing of one of the messages.
+        This interface defines the messages that can be processed by components that are able to
+        reflect on themselves.  It also defines the types of events that may be published during
+        the processing of the messages.
     "($mediaType: "application/bsmd")
     $messages: [
-        $ancestry: [
-            $description: "
-                This message returns a sequence containing the names of the types in the ancestry for this
-                component.
-            "($mediaType: "application/bsmd")
-            $type: /bali/interfaces/Sequential/v1($itemType: /bali/elements/Name/v1)
-        ]($type: /bali/aspects/Message/v1)
         $isType: [
             $description: "
                 This message determines whether or not this component is of the specified type.
@@ -32,6 +25,13 @@
                 This message returns the name of the type of this component.
             "($mediaType: "application/bsmd")
             $type: /bali/elements/Name/v1
+        ]($type: /bali/aspects/Message/v1)
+        $ancestry: [
+            $description: "
+                This message returns a sequence containing the names of the types in the ancestry
+                for this component.
+            "($mediaType: "application/bsmd")
+            $type: /bali/interfaces/Sequential/v1($itemType: /bali/elements/Name/v1)
         ]($type: /bali/aspects/Message/v1)
         $isParameterized: [
             $description: "
@@ -59,7 +59,7 @@
                 This message returns a structure containing the key-value pairs for each parameter
                 associated with this component.
             "($mediaType: "application/bsmd")
-            $type: /bali/interfaces/Structural/v1($keyType: /bali/elements/Symbol/v1)
+            $type: /bali/interfaces/Structural/v1
         ]($type: /bali/aspects/Message/v1)
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1))
 ](
