@@ -1,0 +1,104 @@
+[
+    $parent: /bali/abstractions/Component/v1
+    $description: "
+        This interface defines the messages that can be processed by components that are structural
+        in nature. It also defines the types of events that may be published during the processing
+        of the messages.
+    "($mediaType: "application/bsmd")
+    $parameters: [
+        $keyType: [
+            $description: "
+                This parameter specifies the name of the type of the keys that are associated with
+                the attribute values that are make up the structural component.
+            "($mediaType: "application/bsmd")
+            $type: /bali/elements/Name/v1
+            $default: /bali/elements/Symbol/v1
+        ]($type: /bali/aspects/Parameter/v1)
+        $valueType: [
+            $description: "
+                This parameter specifies the name of the type of the attribute values that are
+                associated with the keys that are make up the structural component.
+            "($mediaType: "application/bsmd")
+            $type: /bali/elements/Name/v1
+            $default: /bali/abstractions/Component/v1
+        ]($type: /bali/aspects/Parameter/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+    $messages: [
+        $attribute: [
+            $description: "
+                This message returns the attribute value associated with the specified key, or `none`
+                if the specified key is not part of this structural component.
+            "($mediaType: "application/bsmd")
+            $parameters: [
+                $key: [
+                    $description: "
+                        This parameter specifies the key for the desired attribute value.
+                    "($mediaType: "application/bsmd")
+                    $type: $keyType
+                ]($type: /bali/aspects/Parameter/v1)
+            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            $type: $valueType
+        ]($type: /bali/aspects/Message/v1)
+        $setAttribute: [
+            $description: "
+                This message sets the attribute associated with the specified key to the
+                specified value. The previous value of that attribute is returned, or `none`
+                if no previous value existed.
+            "($mediaType: "application/bsmd")
+            $parameters: [
+                $key: [
+                    $description: "
+                        This parameter specifies the key for the attribute to be set.
+                    "($mediaType: "application/bsmd")
+                    $type: $keyType
+                ]($type: /bali/aspects/Parameter/v1)
+                $value: [
+                    $description: "
+                        This parameter specifies the new value for the attribute associated
+                        with the specified key.
+                    "($mediaType: "application/bsmd")
+                    $type: $valueType
+                ]($type: /bali/aspects/Parameter/v1)
+            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            $type: $valueType
+        ]($type: /bali/aspects/Message/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1))
+    $events: [
+        $AttributeUpdated: [
+            $description: "
+                This event is published each time the value of an attribute of a structural
+                component is updated.
+            "($mediaType: "application/bsmd")
+            $tag: #D470VWQRD2MAR5WFKL58AJ9BGL42GNJD
+            $attributes: [
+                $key: [
+                    $description: "
+                        This event attribute provides the key for the attribute that was updated.
+                    "($mediaType: "application/bsmd")
+                    $access: $readOnly
+                    $type: /bali/elements/Symbol/v1
+                ]($type: /bali/aspects/Attribute/v1($visibility: $public))
+                $oldValue: [
+                    $description: "
+                        This event attribute provides the old value of the attribute that was updated.
+                    "($mediaType: "application/bsmd")
+                    $access: $readOnly
+                    $type: /bali/abstractions/Component/v1
+                ]($type: /bali/aspects/Attribute/v1($visibility: $public))
+                $newValue: [
+                    $description: "
+                        This event attribute provides the new value of the attribute that was updated.
+                    "($mediaType: "application/bsmd")
+                    $access: $readOnly
+                    $type: /bali/abstractions/Component/v1
+                ]($type: /bali/aspects/Attribute/v1($visibility: $public))
+            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1($visibility: $public)))
+        ]($type: /bali/aspects/Event/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Event/v1))
+](
+    $type: /bali/types/Interface/v1
+    $tag: #6LM2XZ0B4WXDNS5084Q7VK369Q5H844Y
+    $version: v1
+    $permissions: /bali/permissions/public/v1
+    $previous: none
+)
