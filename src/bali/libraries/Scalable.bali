@@ -9,6 +9,7 @@
             $description: "
                 This function returns the arithmetic inverse of the specified scalable component.
             "($mediaType: "application/bsmd")
+            $type: /bali/libraries/Scalable/v1
             $parameters: [
                 $scalable: [
                     $description: "
@@ -17,12 +18,12 @@
                     $type: /bali/libraries/Scalable/v1
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/libraries/Scalable/v1
         ]($type: /bali/aspects/Function/v1)
         $Sum: [
             $description: "
                 This function returns the arithmetic sum of the specified scalable components.
             "($mediaType: "application/bsmd")
+            $type: /bali/libraries/Scalable/v1
             $parameters: [
                 $first: [
                     $description: "
@@ -37,12 +38,12 @@
                     $type: /bali/libraries/Scalable/v1
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/libraries/Scalable/v1
         ]($type: /bali/aspects/Function/v1)
         $Difference: [
             $description: "
                 This function returns the arithmetic difference of the specified scalable components.
             "($mediaType: "application/bsmd")
+            $type: /bali/libraries/Scalable/v1
             $parameters: [
                 $first: [
                     $description: "
@@ -57,12 +58,12 @@
                     $type: /bali/libraries/Scalable/v1
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/libraries/Scalable/v1
         ]($type: /bali/aspects/Function/v1)
         $Scaled: [
             $description: "
                 This function returns the specified scalable component scaled by the specified factor.
             "($mediaType: "application/bsmd")
+            $type: /bali/libraries/Scalable/v1
             $parameters: [
                 $scalable: [
                     $description: "
@@ -77,7 +78,6 @@
                     $type: /bali/interfaces/Continuous/v1
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/libraries/Scalable/v1
         ]($type: /bali/aspects/Function/v1)
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Function/v1))
 ](

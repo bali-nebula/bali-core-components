@@ -30,8 +30,7 @@
         ]
     ]
 ](
-    $name: /bali/aspects/Message/v1
-    $type: /bali/types/Composite/v1
+    $type: /bali/types/Structure/v1
     $tag: #AJK59A8951P20ATHT8QNGXZVHGW0WXC8
     $version: v1
     $permissions: /bali/permissions/public/v1

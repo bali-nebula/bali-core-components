@@ -29,6 +29,7 @@
                 This message returns the attribute value associated with the specified key, or `none`
                 if the specified key is not part of this structural component.
             "($mediaType: "application/bsmd")
+            $type: $valueType
             $parameters: [
                 $key: [
                     $description: "
@@ -37,7 +38,6 @@
                     $type: $keyType
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: $valueType
         ]($type: /bali/aspects/Message/v1)
         $setAttribute: [
             $description: "
@@ -45,6 +45,7 @@
                 specified value. The previous value of that attribute is returned, or `none`
                 if no previous value existed.
             "($mediaType: "application/bsmd")
+            $type: $valueType
             $parameters: [
                 $key: [
                     $description: "
@@ -60,7 +61,6 @@
                     $type: $valueType
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: $valueType
         ]($type: /bali/aspects/Message/v1)
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1))
     $events: [

@@ -28,6 +28,7 @@
                 This message determines whether or not this sequential component contains the
                 specified item.
             "($mediaType: "application/bsmd")
+            $type: /bali/elements/Boolean/v1
             $parameters: [
                 $item: [
                     $description: "
@@ -36,7 +37,6 @@
                     $type: $itemType
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/elements/Boolean/v1
         ]($type: /bali/aspects/Message/v1)
         $size: [
             $description: "
@@ -50,6 +50,7 @@
                 This message returns the index of the specified item in this sequential component,
                 or `0` if the sequential component does not contain the specified item.
             "($mediaType: "application/bsmd")
+            $type: /bali/interfaces/Discrete/v1($range: 0..<)
             $parameters: [
                 $item: [
                     $description: "
@@ -58,13 +59,13 @@
                     $type: $itemType
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/interfaces/Discrete/v1($range: 0..<)
         ]($type: /bali/aspects/Message/v1)
         $item: [
             $description: "
                 This message returns the item corresponding to the specified index in this sequential
                 component, or `none` if the specified index does exist within the sequential component.
             "($mediaType: "application/bsmd")
+            $type: $itemType
             $parameters: [
                 $index: [
                     $description: "
@@ -73,13 +74,13 @@
                     $type: /bali/interfaces/Discrete/v1
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: $itemType
         ]($type: /bali/aspects/Message/v1)
         $items: [
             $description: "
                 This message returns a new sequential component containing the items in the specified
                 range from this sequential component.
             "($mediaType: "application/bsmd")
+            $type: /bali/interfaces/Sequential($itemType: $itemType)
             $parameters: [
                 $range: [
                     $description: "
@@ -88,7 +89,6 @@
                     $type: /bali/composites/Range/v1($itemType: /bali/interfaces/Discrete/v1)
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/interfaces/Sequential($itemType: $itemType)
         ]($type: /bali/aspects/Message/v1)
         $iterator: [
             $description: "

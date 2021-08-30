@@ -22,6 +22,7 @@
                 component to compare the items. If no comparator component is specified a _natural_
                 comparator implementing numeric and alphabetical ordering is used.
             "($mediaType: "application/bsmd")
+            $type: /bali/interfaces/Sortable/v1($itemType: $itemType)
             $parameters: [
                 $comparator: [
                     $description: "
@@ -31,7 +32,6 @@
                     $type: /bali/abstractions/Comparator/v1($itemType: $itemType)
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/interfaces/Sortable/v1($itemType: $itemType)
         ]($type: /bali/aspects/Message/v1)
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1))
     $events: [

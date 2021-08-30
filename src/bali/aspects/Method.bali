@@ -34,8 +34,7 @@
         ]
     ]
 ](
-    $name: /bali/aspects/Method/v1
-    $type: /bali/types/Composite/v1
+    $type: /bali/types/Structure/v1
     $tag: #N8M08QK85MZWA8KJGV8SBFHJWRBV8JFC
     $version: v1
     $permissions: /bali/permissions/public/v1

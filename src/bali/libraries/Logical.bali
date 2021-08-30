@@ -9,6 +9,7 @@
             $description: "
                 This function returns the logical /inverse/ (NOT) of the specified logical component.
             "($mediaType: "application/bsmd")
+            $type: /bali/libraries/Logical/v1
             $parameters: [
                 $logical: [
                     $description: "
@@ -17,13 +18,13 @@
                     $type: /bali/libraries/Logical/v1
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/libraries/Logical/v1
         ]($type: /bali/aspects/Function/v1)
         $And: [
             $description: "
                 This function returns the logical /conjunction/ (AND) of the two specified logical
                 components.
             "($mediaType: "application/bsmd")
+            $type: /bali/libraries/Logical/v1
             $parameters: [
                 $first: [
                     $description: "
@@ -38,13 +39,13 @@
                     $type: /bali/libraries/Logical/v1
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/libraries/Logical/v1
         ]($type: /bali/aspects/Function/v1)
         $Sans: [
             $description: "
                 This function returns the logical /material nonimplication/ (SANS) of the two
                 specified logical components.
             "($mediaType: "application/bsmd")
+            $type: /bali/libraries/Logical/v1
             $parameters: [
                 $first: [
                     $description: "
@@ -59,13 +60,13 @@
                     $type: /bali/libraries/Logical/v1
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/libraries/Logical/v1
         ]($type: /bali/aspects/Function/v1)
         $Or: [
             $description: "
                 This function returns the logical /disjunction/ (OR) of the two specified logical
                 components.
             "($mediaType: "application/bsmd")
+            $type: /bali/libraries/Logical/v1
             $parameters: [
                 $first: [
                     $description: "
@@ -80,13 +81,13 @@
                     $type: /bali/libraries/Logical/v1
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/libraries/Logical/v1
         ]($type: /bali/aspects/Function/v1)
         $Xor: [
             $description: "
                 This function returns the logical /exclusive disjunction/ (XOR) of the two specified
                 logical components.
             "($mediaType: "application/bsmd")
+            $type: /bali/libraries/Logical/v1
             $parameters: [
                 $first: [
                     $description: "
@@ -101,7 +102,6 @@
                     $type: /bali/libraries/Logical/v1
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/libraries/Logical/v1
         ]($type: /bali/aspects/Function/v1)
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Function/v1))
 ](

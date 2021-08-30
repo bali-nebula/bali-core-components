@@ -10,6 +10,7 @@
             $description: "
                 This message determines whether or not this component is of the specified type.
             "($mediaType: "application/bsmd")
+            $type: /bali/elements/Boolean/v1
             $parameters: [
                 $type: [
                     $description: "
@@ -18,7 +19,6 @@
                     $type: /bali/entities/Name/v1
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/elements/Boolean/v1
         ]($type: /bali/aspects/Message/v1)
         $type: [
             $description: "
@@ -44,6 +44,7 @@
                 This message returns the parameter value associated with the specified key, or
                 `none` if there is no parameter with the specified key.
             "($mediaType: "application/bsmd")
+            $type: /bali/elements/Boolean/v1
             $parameters: [
                 $key: [
                     $description: "
@@ -52,7 +53,6 @@
                     $type: /bali/entities/Symbol/v1
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/elements/Boolean/v1
         ]($type: /bali/aspects/Message/v1)
         $parameters: [
             $description: "

@@ -9,6 +9,7 @@
             $description: "
                 This function returns the /reciprocal/ of the specified numerical component.
             "($mediaType: "application/bsmd")
+            $type: /bali/libraries/Numerical/v1
             $parameters: [
                 $numerical: [
                     $description: "
@@ -17,12 +18,12 @@
                     $type: /bali/libraries/Numerical/v1
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/libraries/Numerical/v1
         ]($type: /bali/aspects/Function/v1)
         $Conjugate: [
             $description: "
                 This function returns the complex /conjugate/ of the specified numerical component.
             "($mediaType: "application/bsmd")
+            $type: /bali/libraries/Numerical/v1
             $parameters: [
                 $numerical: [
                     $description: "
@@ -31,12 +32,12 @@
                     $type: /bali/libraries/Numerical/v1
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/libraries/Numerical/v1
         ]($type: /bali/aspects/Function/v1)
         $Factorial: [
             $description: "
                 This function returns the /factorial/ of the specified numerical component.
             "($mediaType: "application/bsmd")
+            $type: /bali/libraries/Numerical/v1
             $parameters: [
                 $numerical: [
                     $description: "
@@ -45,12 +46,12 @@
                     $type: /bali/libraries/Numerical/v1
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/libraries/Numerical/v1
         ]($type: /bali/aspects/Function/v1)
         $Product: [
             $description: "
                 This function returns the /product/ of the two specified numerical components.
             "($mediaType: "application/bsmd")
+            $type: /bali/libraries/Numerical/v1
             $parameters: [
                 $first: [
                     $description: "
@@ -65,12 +66,12 @@
                     $type: /bali/libraries/Numerical/v1
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/libraries/Numerical/v1
         ]($type: /bali/aspects/Function/v1)
         $Quotient: [
             $description: "
                 This function returns the /quotient/ of the two specified numerical components.
             "($mediaType: "application/bsmd")
+            $type: /bali/libraries/Numerical/v1
             $parameters: [
                 $dividend: [
                     $description: "
@@ -85,13 +86,13 @@
                     $type: /bali/libraries/Numerical/v1
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/libraries/Numerical/v1
         ]($type: /bali/aspects/Function/v1)
         $Remainder: [
             $description: "
                 This function returns the /remainder/ of the quotient of the two specified
                 numerical components.
             "($mediaType: "application/bsmd")
+            $type: /bali/libraries/Numerical/v1
             $parameters: [
                 $dividend: [
                     $description: "
@@ -106,12 +107,12 @@
                     $type: /bali/libraries/Numerical/v1
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/libraries/Numerical/v1
         ]($type: /bali/aspects/Function/v1)
         $Exponential: [
             $description: "
                 This function returns the /exponential/ of the two specified numerical components.
             "($mediaType: "application/bsmd")
+            $type: /bali/libraries/Numerical/v1
             $parameters: [
                 $base: [
                     $description: "
@@ -126,12 +127,12 @@
                     $type: /bali/libraries/Numerical/v1
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/libraries/Numerical/v1
         ]($type: /bali/aspects/Function/v1)
         $Logarithm: [
             $description: "
                 This function returns the /logarithm/ of the two specified numerical components.
             "($mediaType: "application/bsmd")
+            $type: /bali/libraries/Numerical/v1
             $parameters: [
                 $base: [
                     $description: "
@@ -146,7 +147,6 @@
                     $type: /bali/libraries/Numerical/v1
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-            $type: /bali/libraries/Numerical/v1
         ]($type: /bali/aspects/Function/v1)
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Function/v1))
 ](
