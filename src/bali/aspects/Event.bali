@@ -1,25 +1,25 @@
 [
-    $description: "
-        This abstract composite defines the attributes that all event types support.
-    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Aspect/v1
+    $description: "
+        This concrete structure defines the attributes that all event aspects support.
+    "($mediaType: "application/bsmd")
     $attributes: [
-        $type: [
-            $description: "
-                This attribute defines the name of the type of the event.
-            "($mediaType: "application/bsmd")
-            $type: /bali/elements/Name/v1
-        ]
         $tag: [
             $description: "
-                The unique tag for this type of event.
+                This attribute defines the unique tag for this type of event.
             "($mediaType: "application/bsmd")
             $type: /bali/elements/Tag/v1
-        ]
-    ]
+        ]($type: /bali/aspects/Attribute/v1($visibility: $public))
+        $attributes: [
+            $description: "
+                This attribute defines the attributes that included in this type of event.
+            "($mediaType: "application/bsmd")
+            $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1($visibility: $public))
+        ]($type: /bali/aspects/Attribute/v1($visibility: $public))
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1($visibility: $public)))
 ](
     $type: /bali/types/Structure/v1
-    $tag: #AXZ0LD0P2A5JL83LLP62H37LPWJVBQBK
+    $tag: #Y42TAVXBCXK23HSYNCAN5XSDHSFRCS0G
     $version: v1
     $permissions: /bali/permissions/public/v1
     $previous: none

@@ -1,35 +1,28 @@
 [
-    $description: "
-        This abstract composite defines the attributes that all event handler types support.
-    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Aspect/v1
+    $description: "
+        This concrete structure defines the attributes that all event handler aspects support.
+    "($mediaType: "application/bsmd")
     $attributes: [
         $tag: [
             $description: "
-                The unique tag for the type of event that triggers this handler.
+                This attribute defines the unique tag for the type of event that this handler
+                is interested in.
             "($mediaType: "application/bsmd")
             $type: /bali/elements/Tag/v1
-        ]
-        $procedure: [
+        ]($type: /bali/aspects/Attribute/v1($visibility: $public))
+        $parameters: [
             $description: "
-                The procedure code defining what should be done each time a matching event is
-                published.
+                This attribute defines the parameters that are expected to be passed into
+                the event handler. They map to the attributes defined in the event type.
             "($mediaType: "application/bsmd")
-            $type: /bali/aspects/Procedure/v1
-        ]
-        $bytecode: [
-            $description: "
-                The compiled bytecode corresponding to the procedure code.
-            "($mediaType: "application/bsmd")
-            $type: /bali/elements/Binary/v1(
-                $base: $base16
-                $mediaType: "application/bcod"
-            )
-        ]
-    ]
+            $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1)
+            $default: [:]
+        ]($type: /bali/aspects/Attribute/v1($visibility: $public))
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1($visibility: $public)))
 ](
     $type: /bali/types/Structure/v1
-    $tag: #5HFQ80TF9F5ZTA7LKAQ9D5JSYS2K9HFN
+    $tag: #NRR838WCDW6AXQJDQFNSRVHA4DWXTHVH
     $version: v1
     $permissions: /bali/permissions/public/v1
     $previous: none
