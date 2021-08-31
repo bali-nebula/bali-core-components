@@ -1,16 +1,15 @@
 [
     $description: "
-        This enumeration defines the possible symbol values for the visibility of methods.
+        This enumeration type defines the visibility that another procedure has into a
+        specific aspect of a type definition.
     "($mediaType: "application/bsmd")
-    $parent: /bali/abstractions/Component/v1
     $values: [
         $private
         $public
     ]($type: /bali/collections/Set/v1($itemType: /bali/elements/Symbol/v1))
 ](
-    $name: /bali/enumerations/Visibility/v1
     $type: /bali/types/Enumeration/v1
-    $tag: #GM1MDJDLJ2M7JK59QHXPBKWP6YSDQ66N
+    $tag: #SGZM553DHTX878NFXPH0JA7JW6L4FRCL
     $version: v1
     $permissions: /bali/permissions/public/v1
     $previous: none

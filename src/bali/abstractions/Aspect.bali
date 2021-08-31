@@ -2,7 +2,6 @@
     $description: "
         This abstract composite defines the attributes that all aspect types support.
     "($mediaType: "application/bsmd")
-    $parent: /bali/abstractions/Component/v1
     $attributes: [
         $description: [
             $description: "

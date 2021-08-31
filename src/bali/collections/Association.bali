@@ -3,7 +3,6 @@
         This concrete primitive type defines the methods for the messages that all associations
         support.
     "($mediaType: "application/bsmd")
-    $parent: /bali/abstractions/Component/v1
     $parameters: [
         $keyType: [
             $description: "

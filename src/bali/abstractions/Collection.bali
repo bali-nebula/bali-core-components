@@ -3,7 +3,6 @@
         This abstract primitive type defines the methods for the messages that all collection
         types support.
     "($mediaType: "application/bsmd")
-    $parent: /bali/abstractions/Component/v1
     $parameters: [
         $itemType: [
             $description: "

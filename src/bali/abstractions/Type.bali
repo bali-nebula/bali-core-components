@@ -2,7 +2,6 @@
     $description: "
         This abstract composite defines the attributes that all type components support.
     "($mediaType: "application/bsmd")
-    $parent: /bali/abstractions/Component/v1
     $parameters: [
         $existence: [
             $description: "

@@ -2,7 +2,6 @@
     $description: "
         This interface defines the messages that all components that are sequential support.
     "($mediaType: "application/bsmd")
-    $parent: /bali/abstractions/Component/v1
     $parameters: [
         $itemType: [
             $description: "

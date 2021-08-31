@@ -1,5 +1,4 @@
 [
-    $parent: /bali/abstractions/Component/v1
     $description: "
         This interface defines the messages that can be processed by collections that are sortable.
         It also defines the types of events that may be published during the processing of the

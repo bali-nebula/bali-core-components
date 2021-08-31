@@ -1,17 +1,16 @@
 [
     $description: "
-        This enumeration defines the possible symbol values for the access to attributes.
+        This enumeration type defines the kind of access that another procedure has to a
+        specific aspect of a type definition.
     "($mediaType: "application/bsmd")
-    $parent: /bali/abstractions/Component/v1
     $values: [
         $readOnly
         $readWrite
         $writeOnly
     ]($type: /bali/collections/Set/v1($itemType: /bali/elements/Symbol/v1))
 ](
-    $name: /bali/enumerations/Access/v1
     $type: /bali/types/Enumeration/v1
-    $tag: #7GFR52ZQ4JPY83XC95XHM8RWTN164V21
+    $tag: #AHA3284510YLG63T688GKZMDL8FBJ123
     $version: v1
     $permissions: /bali/permissions/public/v1
     $previous: none

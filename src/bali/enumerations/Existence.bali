@@ -1,16 +1,16 @@
 [
     $description: "
-        This enumeration defines the possible symbol values for the existence of instances.
+        This enumeration type defines whether or not an instance of a type can be created. If
+        it is a _concrete_ type then instances can be created, if it is an _abstract_ type then
+        they cannot.
     "($mediaType: "application/bsmd")
-    $parent: /bali/abstractions/Component/v1
     $values: [
         $abstract
         $concrete
     ]($type: /bali/collections/Set/v1($itemType: /bali/elements/Symbol/v1))
 ](
-    $name: /bali/enumerations/Existence/v1
     $type: /bali/types/Enumeration/v1
-    $tag: #002QN395XFDHJFPKSRWACFX3FJDZVZ3S
+    $tag: #BX1W38QCFRRP2ZZ50230NBDSYLPKPJAT
     $version: v1
     $permissions: /bali/permissions/public/v1
     $previous: none

@@ -1,5 +1,4 @@
 [
-    $parent: /bali/abstractions/Component/v1
     $description: "
         This library defines the functions that operate on /scalable/ components. A scalable component is
         a component whose value can be inverted, incremented, decremented or scaled.
