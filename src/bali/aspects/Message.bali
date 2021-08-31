@@ -1,37 +1,37 @@
 [
-    $description: "
-        This abstract composite defines the attributes that all message types support.
-    "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Aspect/v1
+    $description: "
+        This concrete structure defines the attributes that all message aspects support.
+    "($mediaType: "application/bsmd")
     $parameters: [
         $visibility: [
             $description: "
-                This parameter specifies whether or not this message type is visible outside
-                the scope of the containing type definition. By default it is visible.
+                This parameter specifies the visibility of the message outside of the type
+                definition in which it is defined.
             "($mediaType: "application/bsmd")
             $type: /bali/enumerations/Visibility/v1
             $default: $public
-        ]
-    ]
+        ]($type: /bali/aspects/Parameter/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
     $attributes: [
         $type: [
             $description: "
-                This attribute defines the name of the type that is returned by the method
-                that implements this message type.
+                This attribute defines the name of the type of the response to the message.
             "($mediaType: "application/bsmd")
             $type: /bali/elements/Name/v1
-        ]
+        ]($type: /bali/aspects/Attribute/v1($visibility: $public))
         $parameters: [
             $description: "
-                A catalog of parameter types that are expected to be passed each time this message
-                type is sent.
+                This attribute defines the parameters that are expected to be passed with
+                the message.
             "($mediaType: "application/bsmd")
-            $type: /bali/collection/Catalog/v1($itemType: /bali/aspects/Parameter/v1)
-        ]
-    ]
+            $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1)
+            $default: [:]
+        ]($type: /bali/aspects/Attribute/v1($visibility: $public))
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1($visibility: $public)))
 ](
     $type: /bali/types/Structure/v1
-    $tag: #AJK59A8951P20ATHT8QNGXZVHGW0WXC8
+    $tag: #74V68M5W2RATJJGZYTQ05Q8JATK5P0D2
     $version: v1
     $permissions: /bali/permissions/public/v1
     $previous: none

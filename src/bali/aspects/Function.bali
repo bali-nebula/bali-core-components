@@ -1,26 +1,27 @@
 [
     $parent: /bali/abstractions/Aspect/v1
     $description: "
-        This concrete structure defines the attributes that all parameter aspects support.
+        This concrete structure defines the attributes that all function aspects support.
     "($mediaType: "application/bsmd")
     $attributes: [
         $type: [
             $description: "
-                This attribute defines the name of the type of the parameter.
+                This attribute defines the name of the type of the response to the function.
             "($mediaType: "application/bsmd")
             $type: /bali/elements/Name/v1
         ]($type: /bali/aspects/Attribute/v1($visibility: $public))
-        $default: [
+        $parameters: [
             $description: "
-                This attribute defines the default value for a parameter of this type.
+                This attribute defines the parameters that are expected to be passed into
+                the function.
             "($mediaType: "application/bsmd")
-            $type: /bali/abstractions/Component/v1
-            $default: none
+            $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1)
+            $default: [:]
         ]($type: /bali/aspects/Attribute/v1($visibility: $public))
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1($visibility: $public)))
 ](
     $type: /bali/types/Structure/v1
-    $tag: #SX6DQ19X6QAK6PBZF836PYWKSZWH8VTH
+    $tag: #A40F0SH4TMANL9CCBK9W53GDHH8Q6QD5
     $version: v1
     $permissions: /bali/permissions/public/v1
     $previous: none
