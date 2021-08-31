@@ -1,41 +1,73 @@
 [
+    $parent: /bali/abstractions/Type/v1
     $description: "
-        This concrete composite defines the attributes that all primitive types support.
+        This concrete structure defines the attributes that all primitive types support. Primitive
+        types by definition have no attributes.
     "($mediaType: "application/bsmd")
-    $parent: /bali/abstractions/Type/v1($existence: $existence)
     $parameters: [
         $existence: [
             $description: "
-                This parameter specifies whether or not this primitive type is abstract. An
-                abstract primitive type cannot be instantiated whereas a concrete primitive
-                type can be.
+                This parameter specifies whether or not an instance of this type may be created.
+                A _concrete_ type may be instantiated but an _abstract_ type cannot.
             "($mediaType: "application/bsmd")
             $type: /bali/enumerations/Existence/v1
             $default: $concrete
-        ]
-    ]
+        ]($type: /bali/aspects/Parameter/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
     $attributes: [
+        $libraries: [
+            $description: "
+                This attribute defines the set of function libraries that are implemented by the
+                primitive type.
+            "($mediaType: "application/bsmd")
+            $type: /bali/collections/Set/v1($itemType: /bali/elements/Name/v1)
+            $default: [ ]($type: /bali/collections/Set/v1($itemType: /bali/elements/Name/v1))
+        ]($type: /bali/aspects/Attribute/v1($visibility: $public))
         $interfaces: [
             $description: "
-                This attribute is a list of all the interfaces that instances of this primitive
-                type support.
+                This attribute defines the set of message interfaces that are implemented by the
+                primitive type.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/List/v1($itemType: /bali/types/Interface/v1)
-            $default: [ ]
-        ]
+            $type: /bali/collections/Set/v1($itemType: /bali/elements/Name/v1)
+            $default: [ ]($type: /bali/collections/Set/v1($itemType: /bali/elements/Name/v1))
+        ]($type: /bali/aspects/Attribute/v1($visibility: $public))
+        $constants: [
+            $description: "
+                This attribute defines the catalog of constants defined by the primitive type.
+            "($mediaType: "application/bsmd")
+            $type: /bali/collections/Catalog/v1
+            $default: [:]
+        ]($type: /bali/aspects/Attribute/v1($visibility: $public))
+        $functions: [
+            $description: "
+                This attribute defines the catalog of functions defined by the primitive type. This
+                catalog of functions does not include any functions defined in libraries that are
+                implemented by the primitive type.
+            "($mediaType: "application/bsmd")
+            $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Function/v1)
+            $default: [:]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Function/v1))
+        ]($type: /bali/aspects/Attribute/v1($visibility: $public))
+        $messages: [
+            $description: "
+                This attribute defines the catalog of messages defined by the primitive type. This
+                catalog of messages does not include any messages defined in interfaces that are
+                implemented by the primitive type.
+            "($mediaType: "application/bsmd")
+            $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1)
+            $default: [:]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1))
+        ]($type: /bali/aspects/Attribute/v1($visibility: $public))
         $methods: [
             $description: "
-                This attribute is a catalog of all the messages and corresponding methods
-                that instances of this primitive type support.
+                This attribute defines the catalog of all methods implemented by the primitive type.
+                The methods provide the implementations of all functions and messages defined by the
+                primitive type and any libraries and interfaces it supports.
             "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Method/v1)
-            $default: [:]
-        ]
-    ]
+        ]($type: /bali/aspects/Attribute/v1($visibility: $public))
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1($visibility: $public)))
 ](
-    $name: /bali/types/Primitive/v1
-    $type: /bali/types/Composite/v1
-    $tag: #X8QJKYSF9WNND6M9VQS0HGB0PAMR6WQV
+    $type: /bali/types/Structure/v1
+    $tag: #5YPQRC2K0GGVQMQFS1KW30SKM2JNBC2W
     $version: v1
     $permissions: /bali/permissions/public/v1
     $previous: none

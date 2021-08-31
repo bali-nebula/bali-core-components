@@ -26,7 +26,7 @@
                 the message.
             "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1)
-            $default: [:]
+            $default: [:]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
         ]($type: /bali/aspects/Attribute/v1($visibility: $public))
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1($visibility: $public)))
 ](

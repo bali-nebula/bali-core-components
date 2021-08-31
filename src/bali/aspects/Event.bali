@@ -12,7 +12,7 @@
         ]($type: /bali/aspects/Attribute/v1($visibility: $public))
         $attributes: [
             $description: "
-                This attribute defines the attributes that included in this type of event.
+                This attribute defines the attributes that are defined by this type of event.
             "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1($visibility: $public))
         ]($type: /bali/aspects/Attribute/v1($visibility: $public))
