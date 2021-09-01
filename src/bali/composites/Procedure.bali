@@ -1,0 +1,248 @@
+[
+    $parent: /bali/abstractions/Composite/v1
+    $description: "
+        This primitive type defines the messages that a procedure component can respond to. It
+        also provides a compiled method implementation for each message.
+    "($mediaType: "application/bsmd")
+    $messages: [
+        $code: [
+            $description: "
+                This message returns the node component defining the code for the procedure.
+            "($mediaType: "application/bsmd")
+            $type: /bali/composites/Node/v1
+        ]($type: /bali/aspects/Message/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1))
+    $methods: [
+        $accept: [
+            $description: "
+                This method implements the inherited `$accept` message from the
+                `/bali/abstractions/Component/v1` class.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                visitor.visitProcedure(target)
+            }
+            $instructions: "
+                1.EvaluateStatement:
+                LOAD VARIABLE $visitor
+                NOTE --Place a list of the message arguments on the stack.
+                CALL $list
+                PUSH ARGUMENT $target
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Send the message with its arguments to the recipient.
+                SEND $visitProcedure TO COMPONENT WITH ARGUMENTS
+                SAVE VARIABLE $result-1
+                LOAD VARIABLE $result-1
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.EvaluateStatement": 1
+            ]
+            $bytecode: '6002C0543801D001E801800160015000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [
+                $result-1
+                $visitor
+            ]($type: /bali/collections/Set/v1)
+            $messages: [
+                $visitProcedure
+            ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+        $boolean: [
+            $description: "
+                This method implements the inherited `$boolean` message from the
+                `/bali/abstractions/Component/v1` class.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return target.code().boolean()
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                SEND $code TO COMPONENT
+                SEND $boolean TO COMPONENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '3801E002E0015000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [ ]($type: /bali/collections/Set/v1)
+            $messages: [
+                $boolean
+                $code
+            ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+        $attribute: [
+            $description: "
+                This method implements the inherited `$attribute` message from the
+                `/bali/abstractions/Composite/v1` class.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                if key = $code then {
+                    return target.code()
+                } else {
+                    return none
+                }
+            }
+            $instructions: "
+                1.IfStatement:
+                JUMP TO NEXT INSTRUCTION
+                
+                1.1.ConditionClause:
+                LOAD VARIABLE $key
+                PUSH LITERAL `$code`
+                CALL $areEqual WITH 2 ARGUMENTS
+                JUMP TO 1.2.ElseClause ON FALSE
+                
+                1.1.1.ReturnStatement:
+                PUSH ARGUMENT $target
+                SEND $code TO COMPONENT
+                PULL RESULT
+                
+                1.1.ConditionClauseDone:
+                JUMP TO 1.IfStatementDone
+                
+                1.2.ElseClause:
+                JUMP TO NEXT INSTRUCTION
+                
+                1.2.1.ReturnStatement:
+                PUSH LITERAL `none`
+                PULL RESULT
+                
+                1.2.ElseClauseDone:
+                JUMP TO NEXT INSTRUCTION
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.IfStatement": 1
+                "1.1.ConditionClause": 2
+                "1.1.1.ReturnStatement": 6
+                "1.1.ConditionClauseDone": 9
+                "1.2.ElseClause": 10
+                "1.2.1.ReturnStatement": 11
+                "1.2.ElseClauseDone": 13
+            ]
+            $bytecode: '000060012803D008180A3801E001500000000000280250000000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [
+                $key
+            ]($type: /bali/collections/Set/v1)
+            $messages: [
+                $code
+            ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+        $setAttribute: [
+            $description: "
+                This method implements the inherited `$setAttribute` message from the
+                `/bali/abstractions/Composite/v1` class.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                throw [
+                    $module: /bali/composites/Procedure
+                    $method: $setAttribute
+                    $exception: $readOnly
+                    $text: "The code in a procedure cannot be updated."
+                ]
+            }
+            $instructions: "
+                1.ThrowStatement:
+                CALL $catalog
+                NOTE --Add an item to the catalog.
+                PUSH LITERAL `$module`
+                PUSH LITERAL `/bali/composites/Procedure`
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Add another item to the catalog.
+                PUSH LITERAL `$method`
+                PUSH LITERAL `$setAttribute`
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Add another item to the catalog.
+                PUSH LITERAL `$exception`
+                PUSH LITERAL `$readOnly`
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Add another item to the catalog.
+                PUSH LITERAL `$text`
+                PUSH LITERAL `"The code in a procedure cannot be updated."`
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                PULL EXCEPTION
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ThrowStatement": 1
+            ]
+            $bytecode: '
+                C01528062801D00AD00128052808D00AD00128042807D00AD0012809280A
+                D00AD0015800
+            '(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [ ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+        $code: [
+            $description: "
+                This method implements the `$code` message.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return code(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $code WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '3801C8185000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [ ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Method/v1))
+    $literals: [
+        /bali/composites/Procedure
+        none
+        $code
+        $exception
+        $method
+        $module
+        $readOnly
+        $setAttribute
+        $text
+        "The code in a procedure cannot be updated."
+    ]($type: /bali/collections/Set/v1)
+](
+    $type: /bali/types/Interface/v1
+    $tag: #7X57D0YYP8LVCF4137YVRH6A0SAD48GP
+    $version: v1
+    $permissions: /bali/permissions/public/v1
+    $previous: none
+)
