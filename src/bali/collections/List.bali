@@ -674,7 +674,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C8895000'(
+            $bytecode: '3801C88A5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -702,7 +702,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C8865000'(
+            $bytecode: '3801C8875000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -729,7 +729,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C8885000'(
+            $bytecode: '3801C8895000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )

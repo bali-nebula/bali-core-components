@@ -1,30 +1,306 @@
 [
+    $parent: /bali/abstractions/Composite/v1
     $description: "
-        This concrete primitive type defines the methods for the messages that all associations
-        support.
+        This primitive type defines the messages that a association component can respond to. It
+        also provides a compiled method implementation for each message.
     "($mediaType: "application/bsmd")
     $parameters: [
         $keyType: [
             $description: "
-                This parameter specifies the name of the type for the key attribute of this
-                association.
+                This parameter specifies the name of the type of the key that is associated with
+                the value.
             "($mediaType: "application/bsmd")
             $type: /bali/elements/Name/v1
-        ]
+            $default: /bali/elements/Symbol/v1
+        ]($type: /bali/aspects/Parameter/v1)
         $valueType: [
             $description: "
-                This parameter specifies the name of the type for the value attribute of this
-                association.
+                This parameter specifies the name of the type of the value that is associated
+                with the key.
             "($mediaType: "application/bsmd")
             $type: /bali/elements/Name/v1
-        ]
-    ]
-    $methods: [
+            $default: /bali/abstractions/Component/v1
+        ]($type: /bali/aspects/Parameter/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+    $messages: [
         $key: [
             $description: "
-                This method retrieves the key attribute from this association.
+                This message returns the key element of the association component.
             "($mediaType: "application/bsmd")
             $type: $keyType
+        ]($type: /bali/aspects/Message/v1)
+        $value: [
+            $description: "
+                This message returns the value component of the association component.
+            "($mediaType: "application/bsmd")
+            $type: $valueType
+        ]($type: /bali/aspects/Message/v1)
+        $setValue: [
+            $description: "
+                This message sets the value of the association component to the specified
+                component value. This message response with the previous value.
+            "($mediaType: "application/bsmd")
+            $type: $valueType
+            $parameters: [
+                $value: [
+                    $description: "
+                        This parameter specifies the new value for the association.
+                    "($mediaType: "application/bsmd")
+                    $type: $valueType
+                ]($type: /bali/aspects/Parameter/v1)
+            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+        ]($type: /bali/aspects/Message/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1))
+    $methods: [
+        $accept: [
+            $description: "
+                This method implements the inherited `$accept` message from the
+                `/bali/abstractions/Component/v1` class.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                visitor.visitAssociation(target)
+            }
+            $instructions: "
+                1.EvaluateStatement:
+                LOAD VARIABLE $visitor
+                NOTE --Place a list of the message arguments on the stack.
+                CALL $list
+                PUSH ARGUMENT $target
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Send the message with its arguments to the recipient.
+                SEND $visitAssociation TO COMPONENT WITH ARGUMENTS
+                SAVE VARIABLE $result-1
+                LOAD VARIABLE $result-1
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.EvaluateStatement": 1
+            ]
+            $bytecode: '6002C0543801D001E801800160015000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [
+                $result-1
+                $visitor
+            ]($type: /bali/collections/Set/v1)
+            $messages: [
+                $visitAssociation
+            ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+        $boolean: [
+            $description: "
+                This method implements the inherited `$boolean` message from the
+                `/bali/abstractions/Component/v1` class.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return NOT target.value() = none
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                SEND $value TO COMPONENT
+                PUSH LITERAL `none`
+                CALL $areEqual WITH 2 ARGUMENTS
+                CALL $not WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '3801E0012802D008C8605000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [ ]($type: /bali/collections/Set/v1)
+            $messages: [
+                $value
+            ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+        $attribute: [
+            $description: "
+                This method implements the inherited `$attribute` message from the
+                `/bali/abstractions/Composite/v1` class.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                if key = $key then {
+                    return key(target)
+                }
+                if key = $value then {
+                    return value(target)
+                }
+                return none
+            }
+            $instructions: "
+                1.IfStatement:
+                JUMP TO NEXT INSTRUCTION
+                
+                1.1.ConditionClause:
+                LOAD VARIABLE $key
+                PUSH LITERAL `$key`
+                CALL $areEqual WITH 2 ARGUMENTS
+                JUMP TO 1.IfStatementDone ON FALSE
+                
+                1.1.1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $key WITH 1 ARGUMENT
+                PULL RESULT
+                
+                1.IfStatementDone:
+                JUMP TO NEXT INSTRUCTION
+                
+                2.IfStatement:
+                JUMP TO NEXT INSTRUCTION
+                
+                2.1.ConditionClause:
+                LOAD VARIABLE $key
+                PUSH LITERAL `$value`
+                CALL $areEqual WITH 2 ARGUMENTS
+                JUMP TO 2.IfStatementDone ON FALSE
+                
+                2.1.1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $value WITH 1 ARGUMENT
+                PULL RESULT
+                
+                2.IfStatementDone:
+                JUMP TO NEXT INSTRUCTION
+                
+                3.ReturnStatement:
+                PUSH LITERAL `none`
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.IfStatement": 1
+                "1.1.ConditionClause": 2
+                "1.1.1.ReturnStatement": 6
+                "1.IfStatementDone": 9
+                "2.IfStatement": 10
+                "2.1.ConditionClause": 11
+                "2.1.1.ReturnStatement": 15
+                "2.IfStatementDone": 18
+                "3.ReturnStatement": 19
+            ]
+            $bytecode: '
+                000060012806D00818093801C84F5000000000006001280CD00818123801
+                C8965000000028025000
+            '(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [
+                $key
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+        $setAttribute: [
+            $description: "
+                This method implements the inherited `$setAttribute` message from the
+                `/bali/abstractions/Composite/v1` class.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                if key = $value then {
+                    return setValue(target, value)
+                }
+                throw [
+                    $module: /bali/composites/Procedure
+                    $method: $setAttribute
+                    $exception: $invalidKey
+                    $expected: $value
+                    $received: key
+                    $text: "The attribute key must be $value."
+                ]
+            }
+            $instructions: "
+                1.IfStatement:
+                JUMP TO NEXT INSTRUCTION
+                
+                1.1.ConditionClause:
+                LOAD VARIABLE $key
+                PUSH LITERAL `$value`
+                CALL $areEqual WITH 2 ARGUMENTS
+                JUMP TO 1.IfStatementDone ON FALSE
+                
+                1.1.1.ReturnStatement:
+                PUSH ARGUMENT $target
+                LOAD VARIABLE $value
+                CALL $setValue WITH 2 ARGUMENTS
+                PULL RESULT
+                
+                1.IfStatementDone:
+                JUMP TO NEXT INSTRUCTION
+                
+                2.ThrowStatement:
+                CALL $catalog
+                NOTE --Add an item to the catalog.
+                PUSH LITERAL `$module`
+                PUSH LITERAL `/bali/composites/Procedure`
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Add another item to the catalog.
+                PUSH LITERAL `$method`
+                PUSH LITERAL `$setAttribute`
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Add another item to the catalog.
+                PUSH LITERAL `$exception`
+                PUSH LITERAL `$invalidKey`
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Add another item to the catalog.
+                PUSH LITERAL `$expected`
+                PUSH LITERAL `$value`
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Add another item to the catalog.
+                PUSH LITERAL `$received`
+                LOAD VARIABLE $key
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Add another item to the catalog.
+                PUSH LITERAL `$text`
+                PUSH LITERAL `"The attribute key must be $value."`
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                PULL EXCEPTION
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.IfStatement": 1
+                "1.1.ConditionClause": 2
+                "1.1.1.ReturnStatement": 6
+                "1.IfStatementDone": 10
+                "2.ThrowStatement": 11
+            ]
+            $bytecode: '
+                00006001280CD008180A38016002D08650000000C01528082801D00AD001
+                2807280AD00AD00128032805D00AD0012804280CD00AD00128096001D00A
+                D001280B280DD00AD0015800
+            '(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [
+                $key
+                $value
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+        $key: [
+            $description: "
+                This method implements the `$key` message.
+            "($mediaType: "application/bsmd")
             $procedure: {
                 return key(target)
             }
@@ -46,12 +322,11 @@
             ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
-        ]
+        ]($type: /bali/aspects/Method/v1)
         $value: [
             $description: "
-                This method retrieves the value attribute from this association.
+                This method implements the `$value` message.
             "($mediaType: "application/bsmd")
-            $type: $valueType
             $procedure: {
                 return value(target)
             }
@@ -64,7 +339,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C8955000'(
+            $bytecode: '3801C8965000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -73,13 +348,55 @@
             ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
-        ]
-    ]
-    $literals: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+        $setValue: [
+            $description: "
+                This method implements the `$setValue` message.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return setValue(target, value)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                LOAD VARIABLE $value
+                CALL $setValue WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '38016001D0865000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [
+                $value
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Method/v1))
+    $literals: [
+        /bali/composites/Procedure
+        none
+        $exception
+        $expected
+        $invalidKey
+        $key
+        $method
+        $module
+        $received
+        $setAttribute
+        $text
+        $value
+        "The attribute key must be $value."
+    ]($type: /bali/collections/Set/v1)
 ](
-    $name: /bali/collections/Association/v1
-    $type: /bali/types/Primitive/v1
-    $tag: #PSZR8JSXNX8V45APT9JTZAZA4PQGANHF
+    $type: /bali/types/Interface/v1
+    $tag: #08A58FPWMKZ3PBG7Z1CWD21FXBKATRY8
     $version: v1
     $permissions: /bali/permissions/public/v1
     $previous: none

@@ -207,7 +207,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C8985000'(
+            $bytecode: '3801C8995000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
