@@ -13,7 +13,7 @@
         ]
     ]
     $interfaces: [
-        /bali/abstractions/Sequential/v1($itemType: $itemType)
+        /bali/abstractions/Sequential/v1($itemType: itemType)
     ]
     $methods: [
         $index: [
@@ -225,7 +225,7 @@
                 This method returns from this string the subset of items in the specified
                 range.
             "($mediaType: "application/bsmd")
-            $type: /bali/abstractions/String/v1($itemType: $itemType)
+            $type: /bali/abstractions/String/v1($itemType: itemType)
             $parameters: [
                 $range: [
                     $description: "
@@ -290,7 +290,7 @@
                 This method returns an iterator that can be used to visit, in order, each item
                 in this string.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Iterator/v1($itemType: $itemType)
+            $type: /bali/collections/Iterator/v1($itemType: itemType)
             $procedure: {
                 throw [
                     $module: /bali/abstractions/String/v1

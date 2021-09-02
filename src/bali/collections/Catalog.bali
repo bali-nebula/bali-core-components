@@ -3,7 +3,7 @@
         This concrete primitive type defines the methods for the messages that all catalogs
         support.
     "($mediaType: "application/bsmd")
-    $parent: /bali/abstractions/Collection/v1($itemType: /bali/collections/Association($keyType: $keyType, $valueType: $valueType))
+    $parent: /bali/abstractions/Collection/v1($itemType: /bali/collections/Association($keyType: keyType, $valueType: valueType))
     $parameters: [
         $keyType: [
             $description: "
@@ -29,8 +29,8 @@
                 updated catalog is returned.
             "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
-                $keyType: $keyType
-                $valueType: $valueType
+                $keyType: keyType
+                $valueType: valueType
             )
             $parameters: [
                 $item: [
@@ -38,8 +38,8 @@
                         This parameter specifies the association to be added to this catalog.
                     "($mediaType: "application/bsmd")
                     $type: /bali/collections/Association/v1(
-                        $keyType: $keyType
-                        $valueType: $valueType
+                        $keyType: keyType
+                        $valueType: valueType
                     )
                 ]
             ]
@@ -73,8 +73,8 @@
                 updated catalog is returned.
             "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
-                $keyType: $keyType
-                $valueType: $valueType
+                $keyType: keyType
+                $valueType: valueType
             )
             $parameters: [
                 $items: [
@@ -82,8 +82,8 @@
                         This parameter specifies the associations to be added to this catalog.
                     "($mediaType: "application/bsmd")
                     $type: /bali/collections/Catalog/v1(
-                        $keyType: $keyType
-                        $valueType: $valueType
+                        $keyType: keyType
+                        $valueType: valueType
                     )
                 ]
             ]
@@ -123,8 +123,8 @@
                         This parameter specifies the associations to be searched for in this catalog.
                     "($mediaType: "application/bsmd")
                     $type: /bali/collections/Catalog/v1(
-                        $keyType: $keyType
-                        $valueType: $valueType
+                        $keyType: keyType
+                        $valueType: valueType
                     )
                 ]
             ]
@@ -164,8 +164,8 @@
                         This parameter specifies the associations to be searched for in this catalog.
                     "($mediaType: "application/bsmd")
                     $type: /bali/collections/Catalog/v1(
-                        $keyType: $keyType
-                        $valueType: $valueType
+                        $keyType: keyType
+                        $valueType: valueType
                     )
                 ]
             ]
@@ -205,8 +205,8 @@
                         This parameter specifies the association to be searched for in this catalog.
                     "($mediaType: "application/bsmd")
                     $type: /bali/collections/Association/v1(
-                        $keyType: $keyType
-                        $valueType: $valueType
+                        $keyType: keyType
+                        $valueType: valueType
                     )
                 ]
             ]
@@ -247,8 +247,8 @@
                         index should be retrieved.
                     "($mediaType: "application/bsmd")
                     $type: /bali/collections/Association/v1(
-                        $keyType: $keyType
-                        $valueType: $valueType
+                        $keyType: keyType
+                        $valueType: valueType
                     )
                 ]
             ]
@@ -442,8 +442,8 @@
                 This method removes all associations from this catalog.
             "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
-                $keyType: $keyType
-                $valueType: $valueType
+                $keyType: keyType
+                $valueType: valueType
             )
             $procedure: {
                 return removeAll(target)
@@ -473,8 +473,8 @@
                 key.  The updated catalog is returned.
             "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
-                $keyType: $keyType
-                $valueType: $valueType
+                $keyType: keyType
+                $valueType: valueType
             )
             $parameters: [
                 $key: [
@@ -515,8 +515,8 @@
                 keys.  The updated catalog is returned.
             "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
-                $keyType: $keyType
-                $valueType: $valueType
+                $keyType: keyType
+                $valueType: valueType
             )
             $parameters: [
                 $keys: [
@@ -556,8 +556,8 @@
                 This method reverses the order of the associations contained in this catalog.
             "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
-                $keyType: $keyType
-                $valueType: $valueType
+                $keyType: keyType
+                $valueType: valueType
             )
             $procedure: {
                 return reverseItems(target)
@@ -587,8 +587,8 @@
                 value.
             "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
-                $keyType: $keyType
-                $valueType: $valueType
+                $keyType: keyType
+                $valueType: valueType
             )
             $parameters: [
                 $key: [
@@ -666,8 +666,8 @@
                 natural order by key.
             "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
-                $keyType: $keyType
-                $valueType: $valueType
+                $keyType: keyType
+                $valueType: valueType
             )
             $procedure: {
                 return sortItems(target)

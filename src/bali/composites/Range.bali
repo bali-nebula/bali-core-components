@@ -1,106 +1,94 @@
 [
+    $parent: /bali/abstractions/Composite/v1($valueType: itemType)
     $description: "
-        This class defines the methods for the messages that all ranges support.
+        This primitive type defines the messages that a range component can respond to. It
+        also provides a compiled method implementation for each message.
     "($mediaType: "application/bsmd")
-    $parent: /bali/abstractions/String/v1($itemType: /bali/elements/Number/v1)
-    $methods: [
-        $item: [
+    $parameters: [
+        $itemType: [
             $description: "
-                This method returns from this range the number corresponding to the specified
-                index.
-            "($mediaType: "application/bsmd")
-            $type: /bali/elements/Number/v1
-            $parameters: [
-                $index: [
-                    $description: "
-                        This parameter specifies the index of the number to be returned from this
-                        range.
-                    "($mediaType: "application/bsmd")
-                    $type: /bali/elements/Number/v1
-                ]
-            ]
-            $procedure: {
-                return item(target, index)
-            }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                PUSH ARGUMENT $index
-                CALL $item WITH 2 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '38013802D04C5000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-                $index
-            ]
-            $variables: [ ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
-        ]
-        $items: [
-            $description: "
-                This method returns from this range the subset of numbers in the specified
+                This parameter specifies the name of the type of the first and last items in the
                 range.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Binary/v1
-            $parameters: [
-                $range: [
-                    $description: "
-                        This parameter specifies the range of indices for the subset of this
-                        range to be returned.
-                    "($mediaType: "application/bsmd")
-                    $type: /bali/elements/Range/v1
-                ]
-            ]
-            $procedure: {
-                return items(target, range)
-            }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                PUSH ARGUMENT $range
-                CALL $items WITH 2 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '38013802D04D5000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-                $range
-            ]
-            $variables: [ ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
-        ]
-        $iterator: [
+            $type: /bali/elements/Name/v1
+            $default: /bali/interfaces/Discrete/v1
+        ]($type: /bali/aspects/Parameter/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+    $interfaces: [
+        /bali/interfaces/Sequential/v1($itemType: itemType)
+    ]($type: /bali/collections/Set/v1($itemType: /bali/elements/Name/v1))
+    $messages: [
+        $first: [
             $description: "
-                This method returns an iterator that can be used to visit, in order, each number
-                in this range.
+                This message returns the first element of the range component.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Iterator/v1($itemType: /bali/elements/Number/v1)
+            $type: itemType
+        ]($type: /bali/aspects/Message/v1)
+        $last: [
+            $description: "
+                This message returns the last element of the range component.
+            "($mediaType: "application/bsmd")
+            $type: itemType
+        ]($type: /bali/aspects/Message/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1))
+    $methods: [
+        $accept: [
+            $description: "
+                This method implements the inherited `$accept` message from the
+                `/bali/abstractions/Component/v1` class.
+            "($mediaType: "application/bsmd")
             $procedure: {
-                return iterator(target)
+                visitor.visitRange(target)
+            }
+            $instructions: "
+                1.EvaluateStatement:
+                LOAD VARIABLE $visitor
+                NOTE --Place a list of the message arguments on the stack.
+                CALL $list
+                PUSH ARGUMENT $target
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Send the message with its arguments to the recipient.
+                SEND $visitRange TO COMPONENT WITH ARGUMENTS
+                SAVE VARIABLE $result-1
+                LOAD VARIABLE $result-1
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.EvaluateStatement": 1
+            ]
+            $bytecode: '6002C0543801D001E801800160015000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [
+                $result-1
+                $visitor
+            ]($type: /bali/collections/Set/v1)
+            $messages: [
+                $visitRange
+            ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+        $boolean: [
+            $description: "
+                This method implements the inherited `$boolean` message from the
+                `/bali/abstractions/Component/v1` class.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return boolean(target)
             }
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
-                CALL $iterator WITH 1 ARGUMENT
+                CALL $boolean WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C84E5000'(
+            $bytecode: '3801C8135000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -109,12 +97,131 @@
             ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
-        ]
+        ]($type: /bali/aspects/Method/v1)
+        $attribute: [
+            $description: "
+                This method implements the inherited `$attribute` message from the
+                `/bali/abstractions/Composite/v1` class.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return attribute(target, key)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                LOAD VARIABLE $key
+                CALL $attribute WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '38016001D00B5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [
+                $key
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+        $setAttribute: [
+            $description: "
+                This method implements the inherited `$setAttribute` message from the
+                `/bali/abstractions/Composite/v1` class.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return setAttribute(target, key, value)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                LOAD VARIABLE $key
+                LOAD VARIABLE $value
+                CALL $setAttribute WITH 3 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '380160016002D8835000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [
+                $key
+                $value
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+        $isEmpty: [
+            $description: "
+                This method implements the `$isEmpty` message from the
+                `/bali/interfaces/Sequential/v1` interface.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return isEmpty(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $isEmpty WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '3801C8435000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [ ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+        $containsItem: [
+            $description: "
+                This method implements the `$containsItem` message from the
+                `/bali/interfaces/Sequential/v1` interface.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return containsItem(target, item)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                LOAD VARIABLE $item
+                CALL $containsItem WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '38016001D0225000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [
+                $item
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
         $size: [
             $description: "
-                This method returns the number of numbers contained in this range.
+                This method implements the `$size` message from the
+                `/bali/interfaces/Sequential/v1` interface.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Number/v1($range: 0..)
             $procedure: {
                 return size(target)
             }
@@ -136,13 +243,181 @@
             ]
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
-        ]
-    ]
+        ]($type: /bali/aspects/Method/v1)
+        $index: [
+            $description: "
+                This method implements the `$index` message from the
+                `/bali/interfaces/Sequential/v1` interface.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return index(target, item)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                LOAD VARIABLE $item
+                CALL $index WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '38016001D03C5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [
+                $item
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+        $item: [
+            $description: "
+                This method implements the `$item` message from the
+                `/bali/interfaces/Sequential/v1` interface.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return item(target, index)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                LOAD VARIABLE $index
+                CALL $item WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '38016001D04C5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [
+                $index
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+        $items: [
+            $description: "
+                This method implements the `$items` message from the
+                `/bali/interfaces/Sequential/v1` interface.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return items(target, range)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                LOAD VARIABLE $range
+                CALL $items WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '38016001D04D5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [
+                $range
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+        $iterator: [
+            $description: "
+                This method implements the `$iterator` message from the
+                `/bali/interfaces/Sequential/v1` interface.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return iterator(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $iterator WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '3801C84E5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [ ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+        $first: [
+            $description: "
+                This method implements the `$first` message.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return first(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $first WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '3801C8315000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [ ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+        $last: [
+            $description: "
+                This method implements the `$last` message.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return last(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $last WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '3801C8515000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [ ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Method/v1))
     $literals: [ ]($type: /bali/collections/Set/v1)
 ](
-    $name: /bali/elements/Range/v1
-    $type: /bali/types/Primitive/v1
-    $tag: #ADM9BMR9YQWH7PX1FZLTDDD0T69N6C6K
+    $type: /bali/types/Interface/v1
+    $tag: #8VFPVSY46RNCR04RQ590LQXNGAAGDMZS
     $version: v1
     $permissions: /bali/permissions/public/v1
     $previous: none

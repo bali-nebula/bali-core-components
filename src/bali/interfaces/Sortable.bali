@@ -21,14 +21,14 @@
                 component to compare the items. If no comparator component is specified a _natural_
                 comparator implementing numeric and alphabetical ordering is used.
             "($mediaType: "application/bsmd")
-            $type: /bali/interfaces/Sortable/v1($itemType: $itemType)
+            $type: /bali/interfaces/Sortable/v1($itemType: itemType)
             $parameters: [
                 $comparator: [
                     $description: "
                         This parameter specifies the comparator component to be used for comparing
                         items in this collection.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/abstractions/Comparator/v1($itemType: $itemType)
+                    $type: /bali/abstractions/Comparator/v1($itemType: itemType)
                 ]($type: /bali/aspects/Parameter/v1)
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
         ]($type: /bali/aspects/Message/v1)
@@ -45,14 +45,14 @@
                         This event attribute contains a copy of the original collection before sorting.
                     "($mediaType: "application/bsmd")
                     $access: $readOnly
-                    $type: /bali/interfaces/Sortable/v1($itemType: $itemType)
+                    $type: /bali/interfaces/Sortable/v1($itemType: itemType)
                 ]($type: /bali/aspects/Attribute/v1($visibility: $public))
                 $sortedCollection: [
                     $description: "
                         This event attribute contains a copy of the sorted collection after sorting.
                     "($mediaType: "application/bsmd")
                     $access: $readOnly
-                    $type: /bali/interfaces/Sortable/v1($itemType: $itemType)
+                    $type: /bali/interfaces/Sortable/v1($itemType: itemType)
                 ]($type: /bali/aspects/Attribute/v1($visibility: $public))
             ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1($visibility: $public)))
         ]($type: /bali/aspects/Event/v1)

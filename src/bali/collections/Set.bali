@@ -2,7 +2,7 @@
     $description: "
         This class defines the methods for the messages that all sets support.
     "($mediaType: "application/bsmd")
-    $parent: /bali/abstractions/Collection/v1($itemType: $itemType)
+    $parent: /bali/abstractions/Collection/v1($itemType: itemType)
     $parameters: [
         $itemType: [
             $description: "
@@ -18,7 +18,7 @@
                 This method attempts to add the specified item to this set.  The
                 updated set is returned.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Set/v1($itemType: $itemType)
+            $type: /bali/collections/Set/v1($itemType: itemType)
             $parameters: [
                 $item: [
                     $description: "
@@ -56,13 +56,13 @@
                 This method attempts to add the specified sequence of items to this
                 set.  The updated set is returned.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Set/v1($itemType: $itemType)
+            $type: /bali/collections/Set/v1($itemType: itemType)
             $parameters: [
                 $items: [
                     $description: "
                         This parameter specifies the items to be added to this set.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/abstractions/Collection/v1($itemType: $itemType)
+                    $type: /bali/abstractions/Collection/v1($itemType: itemType)
                 ]
             ]
             $procedure: {
@@ -100,7 +100,7 @@
                     $description: "
                         This parameter specifies the items to be searched for in this set.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/abstractions/Collection/v1($itemType: $itemType)
+                    $type: /bali/abstractions/Collection/v1($itemType: itemType)
                 ]
             ]
             $procedure: {
@@ -138,7 +138,7 @@
                     $description: "
                         This parameter specifies the items to be searched for in this set.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/abstractions/Collection/v1($itemType: $itemType)
+                    $type: /bali/abstractions/Collection/v1($itemType: itemType)
                 ]
             ]
             $procedure: {
@@ -312,7 +312,7 @@
                 This method returns from this set the subset of items in the
                 specified range.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Set/v1($itemType: $itemType)
+            $type: /bali/collections/Set/v1($itemType: itemType)
             $parameters: [
                 $range: [
                     $description: "
@@ -351,7 +351,7 @@
                 This method returns an iterator that can be used to visit, in order, each
                 item in this set.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Iterator/v1($itemType: $itemType)
+            $type: /bali/collections/Iterator/v1($itemType: itemType)
             $procedure: {
                 return iterator(target)
             }
@@ -378,7 +378,7 @@
             $description: "
                 This method removes all items from this set.  The updated set is returned.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Set/v1($itemType: $itemType)
+            $type: /bali/collections/Set/v1($itemType: itemType)
             $procedure: {
                 return removeAll(target)
             }
@@ -406,7 +406,7 @@
                 This method removes from this set the specified item.  The updated set is
                 returned.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Set/v1($itemType: $itemType)
+            $type: /bali/collections/Set/v1($itemType: itemType)
             $parameters: [
                 $item: [
                     $description: "
@@ -444,13 +444,13 @@
                 This method removes from this set the specified items.  The updated set is
                 returned.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Set/v1($itemType: $itemType)
+            $type: /bali/collections/Set/v1($itemType: itemType)
             $parameters: [
                 $items: [
                     $description: "
                         This parameter specifies the items to be removed from this set.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/abstractions/Collection/v1($itemType: $itemType)
+                    $type: /bali/abstractions/Collection/v1($itemType: itemType)
                 ]
             ]
             $procedure: {

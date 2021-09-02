@@ -129,7 +129,7 @@
                 This method moves this iterator to the slot following the last item in the
                 sequence that this iterator refers to.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Iterator/v1($itemType: $itemType)
+            $type: /bali/collections/Iterator/v1($itemType: itemType)
             $procedure: {
                 return toEnd(target)
             }
@@ -157,7 +157,7 @@
                 This method moves this iterator to the specified slot in the sequence that
                 this iterator refers to.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Iterator/v1($itemType: $itemType)
+            $type: /bali/collections/Iterator/v1($itemType: itemType)
             $parameters: [
                 $slot: [
                     $description: "
@@ -196,7 +196,7 @@
                 This method moves this iterator to the slot preceding the first item in the
                 sequence that this iterator refers to.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Iterator/v1($itemType: $itemType)
+            $type: /bali/collections/Iterator/v1($itemType: itemType)
             $procedure: {
                 return toStart(target)
             }

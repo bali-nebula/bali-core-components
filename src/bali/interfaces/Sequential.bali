@@ -79,7 +79,7 @@
                 This message returns a new sequential component containing the items in the specified
                 range from this sequential component.
             "($mediaType: "application/bsmd")
-            $type: /bali/interfaces/Sequential($itemType: $itemType)
+            $type: /bali/interfaces/Sequential($itemType: itemType)
             $parameters: [
                 $range: [
                     $description: "
@@ -93,7 +93,7 @@
             $description: "
                 This message returns an iterator for this sequential component.
             "($mediaType: "application/bsmd")
-            $type: /bali/abstractions/Iterator/v1($itemType: $itemType)
+            $type: /bali/abstractions/Iterator/v1($itemType: itemType)
         ]($type: /bali/aspects/Message/v1)
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1))
 ](

@@ -13,7 +13,7 @@
         ]
     ]
     $interfaces: [
-        /bali/abstractions/Sequential/v1($itemType: $itemType)
+        /bali/abstractions/Sequential/v1($itemType: itemType)
     ]
     $methods: [
         $addItem: [
@@ -21,7 +21,7 @@
                 This method attempts to add the specified item to this collection.  The updated
                 collection is returned.
             "($mediaType: "application/bsmd")
-            $type: /bali/abstractions/Collection/v1($itemType: $itemType)
+            $type: /bali/abstractions/Collection/v1($itemType: itemType)
             $parameters: [
                 $item: [
                     $description: "
@@ -85,13 +85,13 @@
                 This method attempts to add the specified sequence of items to this collection.
                 The updated collection is returned.
             "($mediaType: "application/bsmd")
-            $type: /bali/abstractions/Collection/v1($itemType: $itemType)
+            $type: /bali/abstractions/Collection/v1($itemType: itemType)
             $parameters: [
                 $items: [
                     $description: "
                         This parameter specifies the collection of items to be added to this collection.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/abstractions/Collection/v1($itemType: $itemType)
+                    $type: /bali/abstractions/Collection/v1($itemType: itemType)
                 ]
             ]
             $procedure: {
@@ -177,7 +177,7 @@
                         This parameter specifies the collection of items to be searched for in this
                         collection.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/abstractions/Collection/v1($itemType: $itemType)
+                    $type: /bali/abstractions/Collection/v1($itemType: itemType)
                 ]
             ]
             $procedure: {
@@ -278,7 +278,7 @@
                         This parameter specifies the collection of items to be searched for in this
                         collection.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/abstractions/Collection/v1($itemType: $itemType)
+                    $type: /bali/abstractions/Collection/v1($itemType: itemType)
                 ]
             ]
             $procedure: {
@@ -621,7 +621,7 @@
                 This method returns from this collection the subset of items in the specified
                 range.
             "($mediaType: "application/bsmd")
-            $type: /bali/abstractions/Collection/v1($itemType: $itemType)
+            $type: /bali/abstractions/Collection/v1($itemType: itemType)
             $parameters: [
                 $range: [
                     $description: "
@@ -686,7 +686,7 @@
                 This method returns an iterator that can be used to visit, in order, each item
                 in this collection.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Iterator/v1($itemType: $itemType)
+            $type: /bali/collections/Iterator/v1($itemType: itemType)
             $procedure: {
                 throw [
                     $module: /bali/abstractions/Collection/v1
@@ -740,7 +740,7 @@
             $description: "
                 This method removes all the items from this collection.
             "($mediaType: "application/bsmd")
-            $type: /bali/abstractions/Collection/v1($itemType: $itemType)
+            $type: /bali/abstractions/Collection/v1($itemType: itemType)
             $procedure: {
                 throw [
                     $module: /bali/abstractions/Collection/v1

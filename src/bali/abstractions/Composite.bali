@@ -55,7 +55,7 @@
                 This method returns from this sequential component the subset of items in the
                 specified range.
             "($mediaType: "application/bsmd")
-            $type: /bali/abstractions/Sequential/v1($itemType: $itemType)
+            $type: /bali/abstractions/Sequential/v1($itemType: itemType)
             $parameters: [
                 $range: [
                     $description: "
@@ -71,7 +71,7 @@
                 This method returns an iterator that can be used to visit, in order, each item
                 in this sequential component.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Iterator/v1($itemType: $itemType)
+            $type: /bali/collections/Iterator/v1($itemType: itemType)
         ]
         $size: [
             $description: "
