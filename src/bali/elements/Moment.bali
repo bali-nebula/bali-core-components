@@ -35,6 +35,24 @@
             $procedure: {
                 return day(target)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $day WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '3801C81E5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [ ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $hour: [
             $description: "
@@ -44,6 +62,24 @@
             $procedure: {
                 return hour(target)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $hour WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '3801C8315000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [ ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $millisecond: [
             $description: "
@@ -53,6 +89,24 @@
             $procedure: {
                 return millisecond(target)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $millisecond WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '3801C8445000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [ ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $minute: [
             $description: "
@@ -62,6 +116,24 @@
             $procedure: {
                 return minute(target)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $minute WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '3801C8465000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [ ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $month: [
             $description: "
@@ -71,6 +143,24 @@
             $procedure: {
                 return month(target)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $month WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '3801C8485000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [ ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $second: [
             $description: "
@@ -81,6 +171,24 @@
             $procedure: {
                 return second(target)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $second WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '3801C8695000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [ ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $year: [
             $description: "
@@ -90,8 +198,27 @@
             $procedure: {
                 return year(target)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $year WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '3801C8825000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [ ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
     ]
+    $literals: [ ]($type: /bali/collections/Set/v1)
 ](
     $type: /bali/types/Primitive/v1
     $tag: #ZZMWL6HBN3KVLVKPAWRQL705B45ZG011
