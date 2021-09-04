@@ -18,7 +18,6 @@
         ]
     ]
 ](
-    $name: /bali/abstractions/Aspect/v1
     $type: /bali/types/Composite/v1($existence: $abstract)
     $tag: #YG5KZD4KFHYVKPQQFQF2LQKF161LMF1J
     $version: v1

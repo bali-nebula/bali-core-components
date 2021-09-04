@@ -2,46 +2,26 @@
     $description: "
         This class defines the methods for the messages that all version strings support.
     "($mediaType: "application/bsmd")
-    $parent: /bali/abstractions/String/v1($itemType: /bali/elements/Number/v1($range: 1..))
+    $parent: /bali/abstractions/String/v1($itemType: /bali/interfaces/Discrete/v1($range: [1..<]))
     $methods: [
         $item: [
             $description: "
                 This method returns from this version string the version number corresponding to the specified
                 index.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Number/v1($range: 1..)
+            $type: /bali/interfaces/Discrete/v1($range: [1..<])
             $parameters: [
                 $index: [
                     $description: "
                         This parameter specifies the index of the version number to be returned from this
                         version string.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/elements/Number/v1
+                    $type: /bali/interfaces/Discrete/v1
                 ]
             ]
             $procedure: {
                 return item(target, index)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                PUSH ARGUMENT $index
-                CALL $item WITH 2 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '38013802D04C5000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-                $index
-            ]
-            $variables: [ ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $items: [
             $description: "
@@ -59,88 +39,30 @@
                 ]
             ]
             $procedure: {
-                return items(target, range)
+                return target.items(range)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                PUSH ARGUMENT $range
-                CALL $items WITH 2 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '38013802D04D5000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-                $range
-            ]
-            $variables: [ ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $iterator: [
             $description: "
                 This method returns an iterator that can be used to visit, in order, each version number
                 in this version string.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Iterator/v1($itemType: /bali/elements/Number/v1($range: 1..))
+            $type: /bali/abstractions/Iterator/v1($itemType: /bali/interfaces/Discrete/v1($range: [1..<]))
             $procedure: {
                 return iterator(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $iterator WITH 1 ARGUMENT
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '3801C84E5000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [ ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $size: [
             $description: "
                 This method returns the number of version numbers contained in this version string.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Number/v1($range: 0..)
+            $type: /bali/interfaces/Discrete/v1($range: [1..<])
             $procedure: {
                 return size(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $size WITH 1 ARGUMENT
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '3801C8895000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [ ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
     ]
-    $literals: [ ]($type: /bali/collections/Set/v1)
 ](
-    $name: /bali/elements/Version/v1
     $type: /bali/types/Primitive/v1
     $tag: #ASQ9MXPHZZ5K204GLHDWBZH6YQQXXNCX
     $version: v1

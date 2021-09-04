@@ -17,7 +17,7 @@
                 This method returns the index of the specified item from this sequential
                 component, or 0 if it is not found.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Number/v1($range: 0..)
+            $type: /bali/interfaces/Discrete/v1($range: [0..<])
             $parameters: [
                 $item: [
                     $description: "
@@ -71,18 +71,17 @@
                 This method returns an iterator that can be used to visit, in order, each item
                 in this sequential component.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Iterator/v1($itemType: itemType)
+            $type: /bali/abstractions/Iterator/v1($itemType: itemType)
         ]
         $size: [
             $description: "
                 This message causes the target component to return the number of items that
                 are in the sequential component.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Number/v1($range: 0..)
+            $type: /bali/interfaces/Discrete/v1($range: [0..<])
         ]
     ]
 ](
-    $name: /bali/interfaces/Sequential/v1
     $type: /bali/types/Interface/v1
     $tag: #7ZG69N9QGDQSS66RVWYN7P8TYVV3FAM3
     $version: v1

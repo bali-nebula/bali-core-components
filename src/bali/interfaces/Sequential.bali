@@ -42,14 +42,14 @@
                 This message returns the number of items that are contained in this sequential
                 component.
             "($mediaType: "application/bsmd")
-            $type: /bali/interfaces/Discrete/v1($range: 0..<)
+            $type: /bali/interfaces/Discrete/v1($range: [0..<])
         ]($type: /bali/aspects/Message/v1)
         $index: [
             $description: "
                 This message returns the index of the specified item in this sequential component,
                 or `0` if the sequential component does not contain the specified item.
             "($mediaType: "application/bsmd")
-            $type: /bali/interfaces/Discrete/v1($range: 0..<)
+            $type: /bali/interfaces/Discrete/v1($range: [0..<])
             $parameters: [
                 $item: [
                     $description: "

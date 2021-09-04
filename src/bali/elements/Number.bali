@@ -4,7 +4,6 @@
     "($mediaType: "application/bsmd")
     $parent: /bali/abstractions/Element/v1
 ](
-    $name: /bali/elements/Number/v1
     $type: /bali/types/Primitive/v1
     $tag: #13R8AGZ5G44BLVVDWZP19RAR6KJGX46Y
     $version: v1

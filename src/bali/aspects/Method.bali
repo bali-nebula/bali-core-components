@@ -35,7 +35,7 @@
             "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1(
                 $keyType: /bali/elements/Text/v1
-                $valueType: /bali/interfaces/Discrete/v1($range: 1..2047)  -- 11 bit addresses
+                $valueType: /bali/interfaces/Discrete/v1($range: [1..2047])  -- 11 bit addresses
             )
         ]($type: /bali/aspects/Attribute/v1($visibility: $public))
         $arguments: [

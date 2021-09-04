@@ -8,163 +8,55 @@
             $description: "
                 This method returns from this duration the number of days.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Number/v1($range: 1..31)
+            $type: /bali/elements/Number/v1($range: [1..31])
             $procedure: {
                 return days(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $days WITH 1 ARGUMENT
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '3801C8255000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [ ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $hours: [
             $description: "
                 This method returns from this duration the number of hours.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Number/v1($range: 0..23)
+            $type: /bali/elements/Number/v1($range: [0..23])
             $procedure: {
                 return hours(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $hours WITH 1 ARGUMENT
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '3801C8395000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [ ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $milliseconds: [
             $description: "
                 This method returns from this duration the number of milliseconds.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Number/v1($range: 0..999)
+            $type: /bali/elements/Number/v1($range: [0..999])
             $procedure: {
                 return milliseconds(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $milliseconds WITH 1 ARGUMENT
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '3801C8585000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [ ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $minutes: [
             $description: "
                 This method returns from this duration the number of minutes.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Number/v1($range: 0..59)
+            $type: /bali/elements/Number/v1($range: [0..59])
             $procedure: {
                 return minutes(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $minutes WITH 1 ARGUMENT
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '3801C85A5000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [ ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $months: [
             $description: "
                 This method returns from this duration the number of months.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Number/v1($range: 1..12)
+            $type: /bali/elements/Number/v1($range: [1..12])
             $procedure: {
                 return months(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $months WITH 1 ARGUMENT
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '3801C85C5000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [ ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $seconds: [
             $description: "
                 This method returns from this duration the number of seconds.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Number/v1($range: 0..60)
+            $type: /bali/elements/Number/v1($range: [0..60])
             $procedure: {
                 return seconds(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $seconds WITH 1 ARGUMENT
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '3801C8815000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [ ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $weeks: [
             $description: "
@@ -174,24 +66,6 @@
             $procedure: {
                 return weeks(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $weeks WITH 1 ARGUMENT
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '3801C8975000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [ ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
         $years: [
             $description: "
@@ -201,29 +75,9 @@
             $procedure: {
                 return years(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $years WITH 1 ARGUMENT
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '3801C89A5000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [ ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
         ]
     ]
-    $literals: [ ]($type: /bali/collections/Set/v1)
 ](
-    $name: /bali/elements/Duration/v1
     $type: /bali/types/Primitive/v1
     $tag: #55FLTGR083KCLTPZX99F924YG65K52BB
     $version: v1

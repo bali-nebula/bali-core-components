@@ -10,7 +10,7 @@
                 this continuous component.
             "($mediaType: "application/bsmd")
             $type: /bali/composites/Range/v1($itemType: /bali/elements/Number/v1)
-            $default: ..
+            $default: [..]
         ]($type: /bali/aspects/Parameter/v1)
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
     $messages: [
