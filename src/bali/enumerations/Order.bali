@@ -4,8 +4,8 @@
         agent.
     "($mediaType: "application/bsmd")
     $values: [
-        $lessThan
         $equalTo
+        $lessThan
         $moreThan
     ]($type: /bali/collections/Set/v1($itemType: /bali/strings/Symbol/v1))
 ](

@@ -3,7 +3,7 @@
         This enumeration type defines the possible encodings for a binary string.
     "($mediaType: "application/bsmd")
     $values: [
-        $base2
+        $base02
         $base16
         $base32
         $base64
