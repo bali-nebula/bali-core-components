@@ -1,0 +1,17 @@
+[
+    $description: "
+        This enumeration type defines the relative order of two components. It is used by the comparator
+        agent.
+    "($mediaType: "application/bsmd")
+    $values: [
+        $lessThan
+        $equalTo
+        $moreThan
+    ]($type: /bali/collections/Set/v1($itemType: /bali/strings/Symbol/v1))
+](
+    $type: /bali/types/Enumeration/v1
+    $tag: #W5YWV1MF9LA2F1F9W6HBR3BWYMG41YRP
+    $version: v1
+    $permissions: /bali/permissions/public/v1
+    $previous: none
+)
