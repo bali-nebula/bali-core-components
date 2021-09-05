@@ -8,7 +8,7 @@
             $description: "
                 This parameter specifies the type of items that an iterator of this type supports.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Name/v1
+            $type: /bali/strings/Name/v1
         ]
     ]
     $methods: [

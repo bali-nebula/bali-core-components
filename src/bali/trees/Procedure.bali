@@ -1,5 +1,4 @@
 [
-    $parent: /bali/abstractions/Composite/v1
     $description: "
         This primitive type defines the messages that a procedure component can respond to. It
         also provides a compiled method implementation for each message.
@@ -9,7 +8,7 @@
             $description: "
                 This message returns the node component defining the code for the procedure.
             "($mediaType: "application/bsmd")
-            $type: /bali/composites/Node/v1
+            $type: /bali/trees/Node/v1
         ]($type: /bali/aspects/Message/v1)
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1))
     $methods: [
@@ -82,7 +81,7 @@
         $attribute: [
             $description: "
                 This method implements the inherited `$attribute` message from the
-                `/bali/abstractions/Composite/v1` class.
+                `/bali/interfaces/Composite/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return attribute(target, key)
@@ -112,7 +111,7 @@
         $setAttribute: [
             $description: "
                 This method implements the inherited `$setAttribute` message from the
-                `/bali/abstractions/Composite/v1` class.
+                `/bali/interfaces/Composite/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return setAttribute(target, key, value)

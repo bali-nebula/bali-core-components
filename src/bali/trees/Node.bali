@@ -1,12 +1,11 @@
 [
-    $parent: /bali/abstractions/Composite/v1
     $description: "
         This primitive type defines the messages that a node component can respond to. It
         also provides a compiled method implementation for each message.
     "($mediaType: "application/bsmd")
     $interfaces: [
         /bali/interfaces/Sequential/v1($itemType: itemType)
-    ]($type: /bali/collections/Set/v1($itemType: /bali/elements/Name/v1))
+    ]($type: /bali/collections/Set/v1($itemType: /bali/strings/Name/v1))
     $messages: [
         $addItem: [
             $description: "
@@ -85,7 +84,7 @@
         $attribute: [
             $description: "
                 This method implements the inherited `$attribute` message from the
-                `/bali/abstractions/Composite/v1` class.
+                `/bali/interfaces/Composite/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return attribute(target, key)
@@ -115,7 +114,7 @@
         $setAttribute: [
             $description: "
                 This method implements the inherited `$setAttribute` message from the
-                `/bali/abstractions/Composite/v1` class.
+                `/bali/interfaces/Composite/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return setAttribute(target, key, value)

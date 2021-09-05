@@ -40,16 +40,16 @@
                 This attribute defines the set of function libraries that are implemented by the
                 class type.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Set/v1($itemType: /bali/elements/Name/v1)
-            $default: [ ]($type: /bali/collections/Set/v1($itemType: /bali/elements/Name/v1))
+            $type: /bali/collections/Set/v1($itemType: /bali/strings/Name/v1)
+            $default: [ ]($type: /bali/collections/Set/v1($itemType: /bali/strings/Name/v1))
         ]($type: /bali/aspects/Attribute/v1($visibility: $public))
         $interfaces: [
             $description: "
                 This attribute defines the set of message interfaces that are implemented by the
                 class type.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Set/v1($itemType: /bali/elements/Name/v1)
-            $default: [ ]($type: /bali/collections/Set/v1($itemType: /bali/elements/Name/v1))
+            $type: /bali/collections/Set/v1($itemType: /bali/strings/Name/v1)
+            $default: [ ]($type: /bali/collections/Set/v1($itemType: /bali/strings/Name/v1))
         ]($type: /bali/aspects/Attribute/v1($visibility: $public))
         $constants: [
             $description: "

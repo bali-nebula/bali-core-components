@@ -10,15 +10,15 @@
                 This parameter specifies the name of the type of the keys that are associated with
                 the attribute values that are make up the structural component.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Name/v1
-            $default: /bali/elements/Symbol/v1
+            $type: /bali/strings/Name/v1
+            $default: /bali/strings/Symbol/v1
         ]($type: /bali/aspects/Parameter/v1)
         $valueType: [
             $description: "
                 This parameter specifies the name of the type of the attribute values that are
                 associated with the keys that are make up the structural component.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Name/v1
+            $type: /bali/strings/Name/v1
             $default: /bali/abstractions/Component/v1
         ]($type: /bali/aspects/Parameter/v1)
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
@@ -75,7 +75,7 @@
                         This event attribute provides the key for the attribute that was updated.
                     "($mediaType: "application/bsmd")
                     $access: $readOnly
-                    $type: /bali/elements/Symbol/v1
+                    $type: /bali/strings/Symbol/v1
                 ]($type: /bali/aspects/Attribute/v1($visibility: $public))
                 $oldValue: [
                     $description: "

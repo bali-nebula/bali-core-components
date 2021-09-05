@@ -8,7 +8,7 @@
             $description: "
                 This attribute defines the name of the type of the response to the function.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Name/v1
+            $type: /bali/strings/Name/v1
         ]($type: /bali/aspects/Attribute/v1($visibility: $public))
         $parameters: [
             $description: "

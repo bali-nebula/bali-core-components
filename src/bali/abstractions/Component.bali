@@ -9,7 +9,7 @@
                 This method returns a list of the type names of the ancestors for this type of
                 component.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/List/v1($itemType: /bali/elements/Name/v1)
+            $type: /bali/collections/List/v1($itemType: /bali/strings/Name/v1)
             $procedure: {
                 return ancestry(target)
             }
@@ -44,7 +44,7 @@
                         This parameter specifies the name of the type to be searched for in this
                         component's ancestry.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/elements/Name/v1
+                    $type: /bali/strings/Name/v1
                 ]
             ]
             $procedure: {
@@ -120,7 +120,7 @@
                     $description: "
                         This parameter specifies the key for the parameter value to be returned.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/elements/Symbol/v1
+                    $type: /bali/strings/Symbol/v1
                 ]
             ]
             $procedure: {
@@ -186,7 +186,7 @@
             $description: "
                 This method returns the name of the type of this component.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Name/v1
+            $type: /bali/strings/Name/v1
             $procedure: {
                 return ancestry(target).getItem(1)
             }

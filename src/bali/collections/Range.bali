@@ -10,13 +10,13 @@
                 This parameter specifies the name of the type of the first and last items in the
                 range.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Name/v1
+            $type: /bali/strings/Name/v1
             $default: /bali/interfaces/Discrete/v1
         ]($type: /bali/aspects/Parameter/v1)
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
     $interfaces: [
         /bali/interfaces/Sequential/v1($itemType: itemType)
-    ]($type: /bali/collections/Set/v1($itemType: /bali/elements/Name/v1))
+    ]($type: /bali/collections/Set/v1($itemType: /bali/strings/Name/v1))
     $messages: [
         $first: [
             $description: "

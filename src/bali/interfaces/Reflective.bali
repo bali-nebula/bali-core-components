@@ -23,14 +23,14 @@
             $description: "
                 This message returns the name of the type of this component.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Name/v1
+            $type: /bali/strings/Name/v1
         ]($type: /bali/aspects/Message/v1)
         $ancestry: [
             $description: "
                 This message returns a sequence containing the names of the types in the ancestry
                 for this component.
             "($mediaType: "application/bsmd")
-            $type: /bali/interfaces/Sequential/v1($itemType: /bali/elements/Name/v1)
+            $type: /bali/interfaces/Sequential/v1($itemType: /bali/strings/Name/v1)
         ]($type: /bali/aspects/Message/v1)
         $isParameterized: [
             $description: "
@@ -58,7 +58,7 @@
                 This message returns a structure containing the key-value pairs for each parameter
                 associated with this component.
             "($mediaType: "application/bsmd")
-            $type: /bali/interfaces/Structural/v1
+            $type: /bali/interfaces/Composite/v1
         ]($type: /bali/aspects/Message/v1)
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1))
 ](

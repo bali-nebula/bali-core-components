@@ -7,7 +7,7 @@
             $description: "
                 This attribute describes the purpose of the aspect type.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Text/v1($mediaType: "application/bsmd")
+            $type: /bali/strings/Text/v1($mediaType: "application/bsmd")
         ]
         $parameters: [
             $description: "
@@ -18,7 +18,7 @@
         ]
     ]
 ](
-    $type: /bali/types/Composite/v1($existence: $abstract)
+    $type: /bali/types/Class/v1($existence: $abstract)
     $tag: #YG5KZD4KFHYVKPQQFQF2LQKF161LMF1J
     $version: v1
     $permissions: /bali/permissions/public/v1

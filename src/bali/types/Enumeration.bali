@@ -9,7 +9,7 @@
                 This attribute defines the set of symbols for the values representing all possible
                 instances of the enumeration type.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Set/v1($itemType: /bali/elements/Symbol/v1)
+            $type: /bali/collections/Set/v1($itemType: /bali/strings/Symbol/v1)
         ]($type: /bali/aspects/Attribute/v1($visibility: $public))
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1($visibility: $public)))
 ](

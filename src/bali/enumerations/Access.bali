@@ -7,7 +7,7 @@
         $readOnly
         $readWrite
         $writeOnly
-    ]($type: /bali/collections/Set/v1($itemType: /bali/elements/Symbol/v1))
+    ]($type: /bali/collections/Set/v1($itemType: /bali/strings/Symbol/v1))
 ](
     $type: /bali/types/Enumeration/v1
     $tag: #AHA3284510YLG63T688GKZMDL8FBJ123

@@ -10,7 +10,7 @@
                 This parameter specifies the name of the type of item that is maintained by
                 the sortable collection.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Name/v1
+            $type: /bali/strings/Name/v1
             $default: /bali/abstractions/Component/v1
         ]($type: /bali/aspects/Parameter/v1)
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))

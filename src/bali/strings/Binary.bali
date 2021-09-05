@@ -66,14 +66,14 @@
                 This method returns from this binary string the subset of bytes in the specified
                 range.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Binary/v1
+            $type: /bali/strings/Binary/v1
             $parameters: [
                 $range: [
                     $description: "
                         This parameter specifies the range of indices for the subset of this
                         binary string to be returned.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/elements/Range/v1
+                    $type: /bali/collections/Range/v1
                 ]
             ]
             $procedure: {
