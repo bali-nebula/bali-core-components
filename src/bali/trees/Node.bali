@@ -54,209 +54,6 @@
                 $visitNode
             ]($type: /bali/collections/Set/v1)
         ]($type: /bali/aspects/Method/v1)
-        $boolean: [
-            $description: "
-                This method implements the inherited `$boolean` message from the
-                `/bali/abstractions/Component/v1` class.
-            "($mediaType: "application/bsmd")
-            $procedure: {
-                return boolean(target)
-            }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $boolean WITH 1 ARGUMENT
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '3801C8115000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [ ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
-        ]($type: /bali/aspects/Method/v1)
-        $attribute: [
-            $description: "
-                This method implements the inherited `$attribute` message from the
-                `/bali/interfaces/Composite/v1` interface.
-            "($mediaType: "application/bsmd")
-            $procedure: {
-                return attribute(target, key)
-            }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                LOAD VARIABLE $key
-                CALL $attribute WITH 2 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '38016001D00A5000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [
-                $key
-            ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
-        ]($type: /bali/aspects/Method/v1)
-        $setAttribute: [
-            $description: "
-                This method implements the inherited `$setAttribute` message from the
-                `/bali/interfaces/Composite/v1` interface.
-            "($mediaType: "application/bsmd")
-            $procedure: {
-                return setAttribute(target, key, value)
-            }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                LOAD VARIABLE $key
-                LOAD VARIABLE $value
-                CALL $setAttribute WITH 3 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '380160016002D86C5000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [
-                $key
-                $value
-            ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
-        ]($type: /bali/aspects/Method/v1)
-        $isEmpty: [
-            $description: "
-                This method implements the `$isEmpty` message from the
-                `/bali/interfaces/Sequential/v1` interface.
-            "($mediaType: "application/bsmd")
-            $procedure: {
-                return size(target) = 0
-            }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $size WITH 1 ARGUMENT
-                PUSH LITERAL `0`
-                CALL $areEqual WITH 2 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '3801C8742803D0075000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [ ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
-        ]($type: /bali/aspects/Method/v1)
-        $containsItem: [
-            $description: "
-                This method implements the `$containsItem` message from the
-                `/bali/interfaces/Sequential/v1` interface.
-            "($mediaType: "application/bsmd")
-            $procedure: {
-                with each $candidate in target do {
-                    if candidate = item then {
-                        return true
-                    }
-                }
-                return false
-            }
-            $instructions: "
-                1.WithStatement:
-                PUSH ARGUMENT $target
-                SEND $iterator TO COMPONENT
-                SAVE VARIABLE $iterator-2
-                
-                1.1.ConditionClause:
-                LOAD VARIABLE $iterator-2
-                SEND $hasNext TO COMPONENT
-                JUMP TO 1.WithStatementDone ON FALSE
-                LOAD VARIABLE $iterator-2
-                SEND $next TO COMPONENT
-                SAVE VARIABLE $candidate
-                
-                1.1.1.IfStatement:
-                JUMP TO NEXT INSTRUCTION
-                
-                1.1.1.1.ConditionClause:
-                LOAD VARIABLE $candidate
-                LOAD VARIABLE $item
-                CALL $areEqual WITH 2 ARGUMENTS
-                JUMP TO 1.1.1.IfStatementDone ON FALSE
-                
-                1.1.1.1.1.ReturnStatement:
-                PUSH LITERAL `true`
-                PULL RESULT
-                
-                1.1.1.IfStatementDone:
-                JUMP TO NEXT INSTRUCTION
-                
-                1.ConditionRepeat:
-                JUMP TO 1.1.ConditionClause
-                
-                1.WithStatementDone:
-                JUMP TO NEXT INSTRUCTION
-                
-                2.ReturnStatement:
-                PUSH LITERAL `false`
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.WithStatement": 1
-                "1.1.ConditionClause": 4
-                "1.1.1.IfStatement": 10
-                "1.1.1.1.ConditionClause": 11
-                "1.1.1.1.1.ReturnStatement": 15
-                "1.1.1.IfStatementDone": 17
-                "1.ConditionRepeat": 18
-                "1.WithStatementDone": 19
-                "2.ReturnStatement": 20
-            ]
-            $bytecode: '
-                3801E00280036003E00118136003E0038001000060016002D00718112802
-                500000000004000028015000
-            '(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [
-                $candidate
-                $item
-                $iterator-2
-            ]($type: /bali/collections/Set/v1)
-            $messages: [
-                $hasNext
-                $iterator
-                $next
-            ]($type: /bali/collections/Set/v1)
-        ]($type: /bali/aspects/Method/v1)
         $size: [
             $description: "
                 This method implements the `$size` message from the
@@ -284,108 +81,34 @@
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]($type: /bali/aspects/Method/v1)
-        $index: [
+        $isEmpty: [
             $description: "
-                This method implements the `$index` message from the
+                This method implements the `$isEmpty` message from the
                 `/bali/interfaces/Sequential/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
-                $counter = 0
-                with each $candidate in target do {
-                    $counter += 1
-                    if candidate = item then {
-                        return counter
-                    }
-                }
-                return 0
+                return size(target) = 0
             }
             $instructions: "
-                1.EvaluateStatement:
-                PUSH LITERAL `$counter`
-                PUSH LITERAL `0`
-                CALL $areEqual WITH 2 ARGUMENTS
-                SAVE VARIABLE $result-1
-                
-                2.WithStatement:
+                1.ReturnStatement:
                 PUSH ARGUMENT $target
-                SEND $iterator TO COMPONENT
-                SAVE VARIABLE $iterator-2
-                
-                2.1.ConditionClause:
-                LOAD VARIABLE $iterator-2
-                SEND $hasNext TO COMPONENT
-                JUMP TO 2.WithStatementDone ON FALSE
-                LOAD VARIABLE $iterator-2
-                SEND $next TO COMPONENT
-                SAVE VARIABLE $candidate
-                
-                2.1.1.EvaluateStatement:
-                LOAD VARIABLE $counter
-                PUSH LITERAL `1`
-                CALL $sum WITH 2 ARGUMENTS
-                SAVE VARIABLE $counter
-                
-                2.1.2.IfStatement:
-                JUMP TO NEXT INSTRUCTION
-                
-                2.1.2.1.ConditionClause:
-                LOAD VARIABLE $candidate
-                LOAD VARIABLE $item
-                CALL $areEqual WITH 2 ARGUMENTS
-                JUMP TO 2.1.2.IfStatementDone ON FALSE
-                
-                2.1.2.1.1.ReturnStatement:
-                LOAD VARIABLE $counter
-                PULL RESULT
-                
-                2.1.2.IfStatementDone:
-                JUMP TO NEXT INSTRUCTION
-                
-                2.ConditionRepeat:
-                JUMP TO 2.1.ConditionClause
-                
-                2.WithStatementDone:
-                JUMP TO NEXT INSTRUCTION
-                
-                3.ReturnStatement:
+                CALL $size WITH 1 ARGUMENT
                 PUSH LITERAL `0`
+                CALL $areEqual WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
-                "1.EvaluateStatement": 1
-                "2.WithStatement": 5
-                "2.1.ConditionClause": 8
-                "2.1.1.EvaluateStatement": 14
-                "2.1.2.IfStatement": 18
-                "2.1.2.1.ConditionClause": 19
-                "2.1.2.1.1.ReturnStatement": 23
-                "2.1.2.IfStatementDone": 25
-                "2.ConditionRepeat": 26
-                "2.WithStatementDone": 27
-                "3.ReturnStatement": 28
+                "1.ReturnStatement": 1
             ]
-            $bytecode: '
-                28052803D00780053801E00280046004E001181B6004E003800160022804
-                D0778002000060016003D00718196002500000000008000028035000
-            '(
+            $bytecode: '3801C8742801D0075000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
             ]
-            $variables: [
-                $candidate
-                $counter
-                $item
-                $iterator-2
-                $result-1
-            ]($type: /bali/collections/Set/v1)
-            $messages: [
-                $hasNext
-                $iterator
-                $next
-            ]($type: /bali/collections/Set/v1)
+            $variables: [ ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
         ]($type: /bali/aspects/Method/v1)
         $item: [
             $description: "
@@ -493,7 +216,7 @@
                 "4.ReturnStatement": 30
             ]
             $bytecode: '
-                3801E006C84C800428052803D00780056003E00480026002E002181D6002
+                3801E006C84C800428022801D00780056003E00480026002E002181D6002
                 E00580016004C0413801C0416001D001E803D001E8018005000C00006004
                 5000
             '(
@@ -546,6 +269,68 @@
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]($type: /bali/aspects/Method/v1)
+        $attribute: [
+            $description: "
+                This method implements the inherited `$attribute` message from the
+                `/bali/interfaces/Composite/v1` interface.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return attribute(target, key)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                LOAD VARIABLE $key
+                CALL $attribute WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '38016001D00A5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [
+                $key
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+        $setAttribute: [
+            $description: "
+                This method implements the inherited `$setAttribute` message from the
+                `/bali/interfaces/Composite/v1` interface.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return setAttribute(target, key, value)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                LOAD VARIABLE $key
+                LOAD VARIABLE $value
+                CALL $setAttribute WITH 3 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '380160016002D86C5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [
+                $key
+                $value
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
         $addItem: [
             $description: "
                 This method implements the `$addItem` message.
@@ -577,14 +362,11 @@
         ]($type: /bali/aspects/Method/v1)
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Method/v1))
     $literals: [
-        false
-        true
         0
-        1
         $counter
     ]($type: /bali/collections/Set/v1)
 ](
-    $type: /bali/types/Interface/v1
+    $type: /bali/types/Primitive/v1
     $tag: #GJYCWSFFRS648Y5S2L7F1CHRMB4S8NMW
     $version: v1
     $permissions: /bali/permissions/public/v1
