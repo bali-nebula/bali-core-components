@@ -1,6 +1,7 @@
 [
     $description: "
-        This abstract composite defines the attributes that all aspect types support.
+        This abstract class defines the attributes and messages that all aspects support. It
+        also provides a compiled method implementation for each message.
     "($mediaType: "application/bsmd")
     $attributes: [
         $description: [
@@ -8,15 +9,50 @@
                 This attribute describes the purpose of the aspect type.
             "($mediaType: "application/bsmd")
             $type: /bali/strings/Text/v1($mediaType: "application/bsmd")
-        ]
-        $parameters: [
+        ]($type: /bali/aspects/Attribute/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1))
+    $methods: [
+        $accept: [
             $description: "
-                A catalog of the parameters that are used to parameterize instances of this type.
+                This method implements the `$accept` message inherited from the
+                `/bali/abstractions/Component/v1` class.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1)
-            $default: [:]
-        ]
-    ]
+            $procedure: {
+                visitor.visitAspect(target)
+            }
+            $instructions: "
+                1.EvaluateStatement:
+                LOAD VARIABLE $visitor
+                NOTE --Place a list of the message arguments on the stack.
+                CALL $list
+                PUSH ARGUMENT $target
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Send the message with its arguments to the recipient.
+                SEND $visitAspect TO COMPONENT WITH ARGUMENTS
+                SAVE VARIABLE $result-1
+                LOAD VARIABLE $result-1
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.EvaluateStatement": 1
+            ]
+            $bytecode: '6002C0413801D001E801800160015000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [
+                $result-1
+                $visitor
+            ]($type: /bali/collections/Set/v1)
+            $messages: [
+                $visitAspect
+            ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Method/v1))
+    $literals: [ ]($type: /bali/collections/Set/v1)
 ](
     $type: /bali/types/Class/v1($existence: $abstract)
     $tag: #YG5KZD4KFHYVKPQQFQF2LQKF161LMF1J

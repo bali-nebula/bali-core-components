@@ -34,7 +34,7 @@
     $methods: [
         $accept: [
             $description: "
-                This method implements the inherited `$accept` message from the
+                This method implements the `$accept` message inherited from the
                 `/bali/abstractions/Component/v1` class.
             "($mediaType: "application/bsmd")
             $procedure: {

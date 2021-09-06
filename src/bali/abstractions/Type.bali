@@ -1,49 +1,74 @@
 [
     $description: "
-        This abstract composite defines the attributes that all type components support.
+        This abstract class defines the attributes and messages that all types support. It
+        also provides a compiled method implementation for each message.
     "($mediaType: "application/bsmd")
-    $parameters: [
-        $existence: [
-            $description: "
-                This parameter specifies whether or not this type is abstract. An abstract type
-                cannot be instantiated whereas a concrete type can be.
-            "($mediaType: "application/bsmd")
-            $type: /bali/enumerations/Existence/v1
-            $default: $concrete
-        ]
-    ]
     $attributes: [
-        $description: [
-            $description: "
-                This attribute describes the purpose of the component type.
-            "($mediaType: "application/bsmd")
-            $type: /bali/strings/Text/v1($mediaType: "application/bsmd")
-        ]
         $parent: [
             $description: "
-                The name of the parent type from which this type inherits its behavior.
+                This attribute references the parent type for the type.
             "($mediaType: "application/bsmd")
             $type: /bali/strings/Name/v1
             $default: /bali/abstractions/Component/v1
-        ]
+        ]($type: /bali/aspects/Attribute/v1)
+        $description: [
+            $description: "
+                This attribute describes the purpose of the type.
+            "($mediaType: "application/bsmd")
+            $type: /bali/strings/Text/v1($mediaType: "application/bsmd")
+        ]($type: /bali/aspects/Attribute/v1)
         $parameters: [
             $description: "
-                A catalog of the parameters that are used to parameterize instances of this type.
+                This attribute defines any parameters that may be used to constrain the type.
             "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1)
-            $default: [:]
-        ]
-        $constants: [
+        ]($type: /bali/aspects/Attribute/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1))
+    $methods: [
+        $accept: [
             $description: "
-                A catalog of the constants that are used within the type definition.
+                This method implements the `$accept` message inherited from the
+                `/bali/abstractions/Component/v1` class.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Catalog/v1($valueType: /bali/abstractions/Element/v1)
-            $default: [:]
-        ]
-    ]
+            $procedure: {
+                visitor.visitType(target)
+            }
+            $instructions: "
+                1.EvaluateStatement:
+                LOAD VARIABLE $visitor
+                NOTE --Place a list of the message arguments on the stack.
+                CALL $list
+                PUSH ARGUMENT $target
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Send the message with its arguments to the recipient.
+                SEND $visitType TO COMPONENT WITH ARGUMENTS
+                SAVE VARIABLE $result-1
+                LOAD VARIABLE $result-1
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.EvaluateStatement": 1
+            ]
+            $bytecode: '6002C0413801D001E801800160015000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [
+                $result-1
+                $visitor
+            ]($type: /bali/collections/Set/v1)
+            $messages: [
+                $visitType
+            ]($type: /bali/collections/Set/v1)
+        ]($type: /bali/aspects/Method/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Method/v1))
+    $literals: [ ]($type: /bali/collections/Set/v1)
 ](
     $type: /bali/types/Class/v1($existence: $abstract)
-    $tag: #Z2RZ1550HK9HSW6QVVP6WTAA55P31ZQX
+    $tag: #WL8AY5SBKM3F25GRD1W9JD472V1G8P4D
     $version: v1
     $permissions: /bali/permissions/public/v1
     $previous: none
