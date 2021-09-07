@@ -1,5 +1,4 @@
 [
-    $parent: /bali/abstractions/Type/v1
     $description: "
         This concrete structure defines the attributes that all class types support. The class
         type combines the primitive type with the structure type and is the most flexiby type.
@@ -14,6 +13,7 @@
             $default: $concrete
         ]($type: /bali/aspects/Parameter/v1)
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+    $parent: /bali/abstractions/Type/v1
     $attributes: [
         $attributes: [
             $description: "

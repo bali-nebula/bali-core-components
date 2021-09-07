@@ -1,9 +1,9 @@
 [
-    $parent: /bali/libraries/Scalable/v1
     $description: "
         This library defines the functions that operate on /numerical/ components. The functions support
         the standard arithmetic operations.
     "($mediaType: "application/bsmd")
+    $parent: /bali/libraries/Scalable/v1
     $functions: [
         $Reciprocal: [
             $description: "

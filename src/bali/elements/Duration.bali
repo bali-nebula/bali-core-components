@@ -75,7 +75,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C8455000'(
+            $bytecode: '3801C8465000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -102,7 +102,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C8475000'(
+            $bytecode: '3801C8485000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -129,7 +129,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C8495000'(
+            $bytecode: '3801C84A5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -156,7 +156,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C86A5000'(
+            $bytecode: '3801C86B5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -183,7 +183,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C8805000'(
+            $bytecode: '3801C8815000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -210,7 +210,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C8835000'(
+            $bytecode: '3801C8845000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )

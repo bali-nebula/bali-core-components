@@ -2,7 +2,6 @@
     $description: "
         This class defines the methods for the messages that all moments support.
     "($mediaType: "application/bsmd")
-    $parent: /bali/abstractions/Element/v1
     $parameters: [
         $city: [
             $description: "
@@ -26,6 +25,7 @@
             $default: $UnitedKingdom
         ]
     ]
+    $parent: /bali/abstractions/Element/v1
     $methods: [
         $day: [
             $description: "
@@ -98,7 +98,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C8445000'(
+            $bytecode: '3801C8455000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -125,7 +125,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C8465000'(
+            $bytecode: '3801C8475000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -152,7 +152,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C8485000'(
+            $bytecode: '3801C8495000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -180,7 +180,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C8695000'(
+            $bytecode: '3801C86A5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -207,7 +207,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C8825000'(
+            $bytecode: '3801C8835000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )

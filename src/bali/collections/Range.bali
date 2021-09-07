@@ -1,5 +1,4 @@
 [
-    $parent: /bali/abstractions/Collection/v1($itemType: itemType)
     $description: "
         This primitive type defines the messages that a range component can respond to. It
         also provides a compiled method implementation for each message.
@@ -14,6 +13,7 @@
             $default: /bali/interfaces/Discrete/v1
         ]($type: /bali/aspects/Parameter/v1)
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+    $parent: /bali/abstractions/Collection/v1($itemType: itemType)
     $interfaces: [
         /bali/interfaces/Sequential/v1($itemType: itemType)
     ]($type: /bali/collections/Set/v1($itemType: /bali/strings/Name/v1))
@@ -56,7 +56,7 @@
             $addresses: [
                 "1.EvaluateStatement": 1
             ]
-            $bytecode: '6002C0413801D001E801800160015000'(
+            $bytecode: '6002C0423801D001E801800160015000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -88,7 +88,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C8745000'(
+            $bytecode: '3801C8755000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -167,7 +167,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C83E5000'(
+            $bytecode: '3801C83F5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -180,7 +180,7 @@
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Method/v1))
     $literals: [ ]($type: /bali/collections/Set/v1)
 ](
-    $type: /bali/types/Interface/v1
+    $type: /bali/types/Primitive/v1
     $tag: #8VFPVSY46RNCR04RQ590LQXNGAAGDMZS
     $version: v1
     $permissions: /bali/permissions/public/v1

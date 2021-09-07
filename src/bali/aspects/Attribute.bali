@@ -1,5 +1,4 @@
 [
-    $parent: /bali/abstractions/Aspect/v1
     $description: "
         This concrete structure defines the attributes that all attribute aspects support.
     "($mediaType: "application/bsmd")
@@ -13,6 +12,7 @@
             $default: $private
         ]($type: /bali/aspects/Parameter/v1)
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+    $parent: /bali/abstractions/Aspect/v1
     $attributes: [
         $type: [
             $description: "

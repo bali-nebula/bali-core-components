@@ -2,7 +2,6 @@
     $description: "
         This class defines the methods for the messages that all binary strings support.
     "($mediaType: "application/bsmd")
-    $parent: /bali/abstractions/String/v1($itemType: /bali/elements/Number/v1($range: [0..255]))
     $parameters: [
         $encoding: [
             $description: "
@@ -21,6 +20,7 @@
             $default: $base32
         ]
     ]
+    $parent: /bali/abstractions/String/v1($itemType: /bali/elements/Number/v1($range: [0..255]))
     $methods: [
         $item: [
             $description: "
@@ -93,7 +93,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C0413802D001E8015000'(
+            $bytecode: '3801C0423802D001E8015000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -151,7 +151,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C8745000'(
+            $bytecode: '3801C8755000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )

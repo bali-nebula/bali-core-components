@@ -4,13 +4,6 @@
         also provides a compiled method implementation for each message.
     "($mediaType: "application/bsmd")
     $attributes: [
-        $parent: [
-            $description: "
-                This attribute references the parent type for the type.
-            "($mediaType: "application/bsmd")
-            $type: /bali/strings/Name/v1
-            $default: /bali/abstractions/Component/v1
-        ]($type: /bali/aspects/Attribute/v1)
         $description: [
             $description: "
                 This attribute describes the purpose of the type.
@@ -22,6 +15,13 @@
                 This attribute defines any parameters that may be used to constrain the type.
             "($mediaType: "application/bsmd")
             $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1)
+        ]($type: /bali/aspects/Attribute/v1)
+        $parent: [
+            $description: "
+                This attribute references the parent type for the type.
+            "($mediaType: "application/bsmd")
+            $type: /bali/strings/Name/v1
+            $default: /bali/abstractions/Component/v1
         ]($type: /bali/aspects/Attribute/v1)
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1))
     $methods: [
@@ -49,7 +49,7 @@
             $addresses: [
                 "1.EvaluateStatement": 1
             ]
-            $bytecode: '6002C0413801D001E801800160015000'(
+            $bytecode: '6002C0423801D001E801800160015000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )

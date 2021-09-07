@@ -75,7 +75,7 @@
             $addresses: [
                 "1.EvaluateStatement": 1
             ]
-            $bytecode: '6002C0413801D001E801800160015000'(
+            $bytecode: '6002C0423801D001E801800160015000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -132,7 +132,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C87F5000'(
+            $bytecode: '3801C8805000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -159,7 +159,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38016001D0715000'(
+            $bytecode: '38016001D0725000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )

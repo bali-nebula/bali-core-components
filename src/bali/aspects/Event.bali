@@ -1,8 +1,8 @@
 [
-    $parent: /bali/abstractions/Aspect/v1
     $description: "
         This concrete structure defines the attributes that all event aspects support.
     "($mediaType: "application/bsmd")
+    $parent: /bali/abstractions/Aspect/v1
     $attributes: [
         $tag: [
             $description: "
