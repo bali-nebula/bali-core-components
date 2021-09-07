@@ -1,1 +1,66 @@
-[:]
+[
+    $description: "
+        This primitive type defines the messages that a queue component can respond to. It
+        also provides a compiled method implementation for each message.
+    "($mediaType: "application/bsmd")
+    $parameters: [
+        $itemType: [
+            $description: "
+                This parameter specifies the name of the type of the values in the queue.
+            "($mediaType: "application/bsmd")
+            $type: /bali/strings/Name/v1
+            $default: /bali/abstractions/Component/v1
+        ]($type: /bali/aspects/Parameter/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+    $parent: /bali/abstractions/Collection/v1($itemType: itemType)
+    $libraries: [
+        /bali/libraries/Logical/v1
+    ]($type: /bali/collections/Set/v1($itemType: /bali/strings/Name/v1))
+    $messages: [
+        $head: [
+            $description: "
+                This message returns the item that is currently at the head of the queue.
+            "($mediaType: "application/bsmd")
+            $type: itemType
+        ]($type: /bali/aspects/Message/v1)
+        $removeHead: [
+            $description: "
+                This message removes the item that is currently at the head of the queue and returns it.
+            "($mediaType: "application/bsmd")
+            $type: itemType
+        ]($type: /bali/aspects/Message/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1))
+    $methods: [
+        $accept: [
+            $description: "
+                This method implements the `$accept` message inherited from the
+                `/bali/abstractions/Component/v1` class.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                visitor.visitStack(target)
+            }
+        ]($type: /bali/aspects/Method/v1)
+        $head: [
+            $description: "
+                This method implements the `$head` message for this class.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return head(target)
+            }
+        ]($type: /bali/aspects/Method/v1)
+        $removeHead: [
+            $description: "
+                This method implements the `$removeHead` message for this class.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return removeHead(target)
+            }
+        ]($type: /bali/aspects/Method/v1)
+    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Method/v1))
+](
+    $type: /bali/types/Primitive/v1
+    $tag: #64CSDQQWT293QN22YVDJHMXVBYZHB9TZ
+    $version: v1
+    $permissions: /bali/permissions/public/v1
+    $previous: none
+)
