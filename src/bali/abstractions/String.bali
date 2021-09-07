@@ -24,36 +24,6 @@
             $procedure: {
                 visitor.visitString(target)
             }
-            $instructions: "
-                1.EvaluateStatement:
-                LOAD VARIABLE $visitor
-                NOTE --Place a list of the message arguments on the stack.
-                CALL $list
-                PUSH ARGUMENT $target
-                CALL $addItem WITH 2 ARGUMENTS
-                NOTE --Send the message with its arguments to the recipient.
-                SEND $visitString TO COMPONENT WITH ARGUMENTS
-                SAVE VARIABLE $result-1
-                LOAD VARIABLE $result-1
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.EvaluateStatement": 1
-            ]
-            $bytecode: '6002C0423801D001E801800160015000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [
-                $result-1
-                $visitor
-            ]($type: /bali/collections/Set/v1)
-            $messages: [
-                $visitString
-            ]($type: /bali/collections/Set/v1)
         ]($type: /bali/aspects/Method/v1)
         $size: [
             $description: "
@@ -63,24 +33,6 @@
             $procedure: {
                 return size(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $size WITH 1 ARGUMENT
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '3801C8755000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [ ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
         ]($type: /bali/aspects/Method/v1)
         $isEmpty: [
             $description: "
@@ -90,26 +42,6 @@
             $procedure: {
                 return size(target) = 0
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $size WITH 1 ARGUMENT
-                PUSH LITERAL `0`
-                CALL $areEqual WITH 2 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '3801C8752802D0075000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [ ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
         ]($type: /bali/aspects/Method/v1)
         $item: [
             $description: "
@@ -119,27 +51,6 @@
             $procedure: {
                 return item(target, index)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                LOAD VARIABLE $index
-                CALL $item WITH 2 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '38016001D03B5000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [
-                $index
-            ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
         ]($type: /bali/aspects/Method/v1)
         $items: [
             $description: "
@@ -154,81 +65,6 @@
                 }
                 return result
             }
-            $instructions: "
-                1.EvaluateStatement:
-                PUSH ARGUMENT $target
-                PUSH LITERAL `false`
-                CALL $duplicate WITH 2 ARGUMENTS
-                SAVE VARIABLE $result
-                
-                2.WithStatement:
-                LOAD VARIABLE $range
-                SEND $iterator TO COMPONENT
-                SAVE VARIABLE $iterator-2
-                
-                2.1.ConditionClause:
-                LOAD VARIABLE $iterator-2
-                SEND $hasNext TO COMPONENT
-                JUMP TO 2.WithStatementDone ON FALSE
-                LOAD VARIABLE $iterator-2
-                SEND $next TO COMPONENT
-                SAVE VARIABLE $index
-                
-                2.1.1.EvaluateStatement:
-                PUSH ARGUMENT $target
-                LOAD VARIABLE $index
-                CALL $item WITH 2 ARGUMENTS
-                SAVE VARIABLE $item
-                
-                2.1.2.EvaluateStatement:
-                LOAD VARIABLE $result
-                LOAD VARIABLE $item
-                CALL $addItem WITH 2 ARGUMENTS
-                SAVE VARIABLE $result-1
-                
-                2.ConditionRepeat:
-                JUMP TO 2.1.ConditionClause
-                
-                2.WithStatementDone:
-                JUMP TO NEXT INSTRUCTION
-                
-                3.ReturnStatement:
-                LOAD VARIABLE $result
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.EvaluateStatement": 1
-                "2.WithStatement": 5
-                "2.1.ConditionClause": 8
-                "2.1.1.EvaluateStatement": 14
-                "2.1.2.EvaluateStatement": 18
-                "2.ConditionRepeat": 22
-                "2.WithStatementDone": 23
-                "3.ReturnStatement": 24
-            ]
-            $bytecode: '
-                38012801D02580056004E00280036003E00118176003E003800138016001
-                D03B800260056002D00180060008000060055000
-            '(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [
-                $index
-                $item
-                $iterator-2
-                $range
-                $result
-                $result-1
-            ]($type: /bali/collections/Set/v1)
-            $messages: [
-                $hasNext
-                $iterator
-                $next
-            ]($type: /bali/collections/Set/v1)
         ]($type: /bali/aspects/Method/v1)
         $iterator: [
             $description: "
@@ -238,24 +74,6 @@
             $procedure: {
                 return iterator(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $iterator WITH 1 ARGUMENT
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '3801C83C5000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [ ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
         ]($type: /bali/aspects/Method/v1)
         $Chain: [
             $description: "
@@ -265,34 +83,8 @@
             $procedure: {
                 return chain(first, second)
             }
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $first
-                LOAD VARIABLE $second
-                CALL $chain WITH 2 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '60016002D0145000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [
-                $first
-                $second
-            ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
         ]($type: /bali/aspects/Method/v1)
     ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Method/v1))
-    $literals: [
-        false
-        0
-    ]($type: /bali/collections/Set/v1)
 ](
     $type: /bali/types/Primitive/v1($existence: $abstract)
     $tag: #JXJG0XD44X9MD73KB3WGRH8SA5JVZZG5
