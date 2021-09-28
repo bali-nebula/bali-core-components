@@ -8,81 +8,81 @@
             $description: "
                 This function returns the arithmetic inverse of the specified scalable component.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Scalable/v1
+            $type: /nebula/libraries/Scalable/v1
             $parameters: [
                 $scalable: [
                     $description: "
                         This parameter specifies the scalable component to be inverted.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Scalable/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
+                    $type: /nebula/libraries/Scalable/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
         $Sum: [
             $description: "
                 This function returns the arithmetic sum of the specified scalable components.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Scalable/v1
+            $type: /nebula/libraries/Scalable/v1
             $parameters: [
                 $first: [
                     $description: "
                         This parameter specifies the scalable component to be added to.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Scalable/v1
-                ]($type: /bali/aspects/Parameter/v1)
+                    $type: /nebula/libraries/Scalable/v1
+                ]($type: /nebula/aspects/Parameter/v1)
                 $second: [
                     $description: "
                         This parameter specifies the scalable component to be added to the first component.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Scalable/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
+                    $type: /nebula/libraries/Scalable/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
         $Difference: [
             $description: "
                 This function returns the arithmetic difference of the specified scalable components.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Scalable/v1
+            $type: /nebula/libraries/Scalable/v1
             $parameters: [
                 $first: [
                     $description: "
                         This parameter specifies the scalable component to be subtracted from.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Scalable/v1
-                ]($type: /bali/aspects/Parameter/v1)
+                    $type: /nebula/libraries/Scalable/v1
+                ]($type: /nebula/aspects/Parameter/v1)
                 $second: [
                     $description: "
                         This parameter specifies the scalable component to be subtracted from the first component.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Scalable/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
+                    $type: /nebula/libraries/Scalable/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
         $Scaled: [
             $description: "
                 This function returns the specified scalable component scaled by the specified factor.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Scalable/v1
+            $type: /nebula/libraries/Scalable/v1
             $parameters: [
                 $scalable: [
                     $description: "
                         This parameter specifies the scalable component to be scaled.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Scalable/v1
-                ]($type: /bali/aspects/Parameter/v1)
+                    $type: /nebula/libraries/Scalable/v1
+                ]($type: /nebula/aspects/Parameter/v1)
                 $factor: [
                     $description: "
                         This parameter specifies the numeric factor by which the component is scaled.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/interfaces/Continuous/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Function/v1))
+                    $type: /nebula/interfaces/Continuous/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Function/v1))
 ](
-    $type: /bali/types/Library/v1
+    $type: /nebula/types/Library/v1
     $tag: #0XPGVDYKBJRP5H0H42KNRMH6N73C0D80
     $version: v1
-    $permissions: /bali/permissions/public/v1
+    $permissions: /nebula/permissions/public/v1
     $previous: none
 )

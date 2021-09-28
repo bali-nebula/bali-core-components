@@ -4,57 +4,57 @@
         also provides a compiled method implementation for each message.
     "($mediaType: "application/bsmd")
     $interfaces: [
-        /bali/interfaces/Sequential/v1($itemType: itemType)
-    ]($type: /bali/collections/Set/v1($itemType: /bali/strings/Name/v1))
+        /nebula/interfaces/Sequential/v1($itemType: itemType)
+    ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Name/v1))
     $messages: [
         $addItem: [
             $description: "
                 This message adds the specified item after the last child item in the node.
             "($mediaType: "application/bsmd")
-            $type: /bali/abstractions/Component/v1
-        ]($type: /bali/aspects/Message/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1))
+            $type: /nebula/abstractions/Component/v1
+        ]($type: /nebula/aspects/Message/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1))
     $methods: [
         $accept: [
             $description: "
                 This method implements the `$accept` message inherited from the
-                `/bali/abstractions/Component/v1` class.
+                `/nebula/abstractions/Component/v1` class.
             "($mediaType: "application/bsmd")
             $procedure: {
                 visitor.visitNode(target)
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $size: [
             $description: "
                 This method implements the `$size` message from the
-                `/bali/interfaces/Sequential/v1` interface.
+                `/nebula/interfaces/Sequential/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return size(target)
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $isEmpty: [
             $description: "
                 This method implements the `$isEmpty` message from the
-                `/bali/interfaces/Sequential/v1` interface.
+                `/nebula/interfaces/Sequential/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return size(target) = 0
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $item: [
             $description: "
                 This method implements the `$item` message from the
-                `/bali/interfaces/Sequential/v1` interface.
+                `/nebula/interfaces/Sequential/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return item(target, index)
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $items: [
             $description: "
                 This method implements the `$items` message from the
-                `/bali/interfaces/Sequential/v1` interface.
+                `/nebula/interfaces/Sequential/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 $result := node(target.type())
@@ -64,34 +64,34 @@
                 }
                 return result
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $iterator: [
             $description: "
                 This method implements the `$iterator` message from the
-                `/bali/interfaces/Sequential/v1` interface.
+                `/nebula/interfaces/Sequential/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return iterator(target)
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $setAttribute: [
             $description: "
                 This method implements the `$setAttribute` message inherited from the
-                `/bali/interfaces/Composite/v1` interface.
+                `/nebula/interfaces/Composite/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return setAttribute(target, key, value)
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $attribute: [
             $description: "
                 This method implements the `$attribute` message inherited from the
-                `/bali/interfaces/Composite/v1` interface.
+                `/nebula/interfaces/Composite/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return attribute(target, key)
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $addItem: [
             $description: "
                 This method implements the `$addItem` message for this class.
@@ -99,12 +99,34 @@
             $procedure: {
                 return addItem(target, item)
             }
-        ]($type: /bali/aspects/Method/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Method/v1))
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                LOAD VARIABLE $item
+                CALL $addItem WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '38016001D0015000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [
+                $item
+            ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /nebula/aspects/Method/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
+    $literals: [ ]($type: /nebula/collections/Set/v1)
 ](
-    $type: /bali/types/Primitive/v1
+    $type: /nebula/types/Primitive/v1
     $tag: #GJYCWSFFRS648Y5S2L7F1CHRMB4S8NMW
     $version: v1
-    $permissions: /bali/permissions/public/v1
+    $permissions: /nebula/permissions/public/v1
     $previous: none
 )

@@ -7,11 +7,11 @@
         $base16
         $base32
         $base64
-    ]($type: /bali/collections/Set/v1($itemType: /bali/strings/Symbol/v1))
+    ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
 ](
-    $type: /bali/types/Enumeration/v1
+    $type: /nebula/types/Enumeration/v1
     $tag: #QYQH45NYP932CSW83YGJQBXZ8ZA2P4N0
     $version: v1
-    $permissions: /bali/permissions/public/v1
+    $permissions: /nebula/permissions/public/v1
     $previous: none
 )

@@ -3,149 +3,149 @@
         This library defines the functions that operate on /radial/ components. The functions support
         the standard trigonometric operations.
     "($mediaType: "application/bsmd")
-    $parent: /bali/libraries/Scalable/v1
+    $parent: /nebula/libraries/Scalable/v1
     $functions: [
         $Conjugate: [
             $description: "
                 This function returns the /conjugate/ of the specified radial component.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Radial/v1
+            $type: /nebula/libraries/Radial/v1
             $parameters: [
                 $radial: [
                     $description: "
                         This parameter specifies the radial component to be conjugated.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Radial/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
+                    $type: /nebula/libraries/Radial/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
         $Complement: [
             $description: "
                 This function returns the /complement/ of the specified radial component.
                 The specified radial component and its complement add up to π/2.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Radial/v1
+            $type: /nebula/libraries/Radial/v1
             $parameters: [
                 $radial: [
                     $description: "
                         This parameter specifies the radial component to be complemented.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Radial/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
+                    $type: /nebula/libraries/Radial/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
         $Supplement: [
             $description: "
                 This function returns the /supplement/ of the specified radial component.
                 The specified radial component and its supplement add up to π.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Radial/v1
+            $type: /nebula/libraries/Radial/v1
             $parameters: [
                 $radial: [
                     $description: "
                         This parameter specifies the radial component to be supplemented.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Radial/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
+                    $type: /nebula/libraries/Radial/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
         $Sine: [
             $description: "
                 This function returns the numerical /sine/ of the specified radial component.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Numerical/v1
+            $type: /nebula/libraries/Numerical/v1
             $parameters: [
                 $radial: [
                     $description: "
                         This parameter specifies the radial component.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Radial/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
+                    $type: /nebula/libraries/Radial/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
         $Arcsine: [
             $description: "
                 This function returns the radial /inverse sine/ of the specified numerical ratio.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Radial/v1
+            $type: /nebula/libraries/Radial/v1
             $parameters: [
                 $ratio: [
                     $description: "
                         This parameter specifies the numerical ratio of the opposite side to the
                         hypotenuse.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
+                    $type: /nebula/libraries/Numerical/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
         $Cosine: [
             $description: "
                 This function returns the numerical /cosine/ of the specified radial component.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Numerical/v1
+            $type: /nebula/libraries/Numerical/v1
             $parameters: [
                 $radial: [
                     $description: "
                         This parameter specifies the radial component.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Radial/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
+                    $type: /nebula/libraries/Radial/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
         $Arccosine: [
             $description: "
                 This function returns the radial /inverse cosine/ of the specified numerical ratio.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Radial/v1
+            $type: /nebula/libraries/Radial/v1
             $parameters: [
                 $ratio: [
                     $description: "
                         This parameter specifies the numerical ratio of the adjacent side to the
                         hypotenuse.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
+                    $type: /nebula/libraries/Numerical/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
         $Tangent: [
             $description: "
                 This function returns the numerical /tangent/ of the specified radial component.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Numerical/v1
+            $type: /nebula/libraries/Numerical/v1
             $parameters: [
                 $radial: [
                     $description: "
                         This parameter specifies the radial component.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Radial/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
+                    $type: /nebula/libraries/Radial/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
         $Arctangent: [
             $description: "
                 This function returns the radial /inverse tangent/ of the specified numerical components.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Radial/v1
+            $type: /nebula/libraries/Radial/v1
             $parameters: [
                 $opposite: [
                     $description: "
                         This parameter specifies the numerical side opposite the radial component.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/aspects/Parameter/v1)
+                    $type: /nebula/libraries/Numerical/v1
+                ]($type: /nebula/aspects/Parameter/v1)
                 $adjacent: [
                     $description: "
                         This parameter specifies the numerical side adjacent to the radial component.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Function/v1))
+                    $type: /nebula/libraries/Numerical/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Function/v1))
 ](
-    $type: /bali/types/Library/v1
+    $type: /nebula/types/Library/v1
     $tag: #5MM6AXNXR6WCN410NR8197N6KP2DH60M
     $version: v1
-    $permissions: /bali/permissions/public/v1
+    $permissions: /nebula/permissions/public/v1
     $previous: none
 )

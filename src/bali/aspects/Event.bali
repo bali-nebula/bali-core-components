@@ -2,25 +2,25 @@
     $description: "
         This concrete structure defines the attributes that all event aspects support.
     "($mediaType: "application/bsmd")
-    $parent: /bali/abstractions/Aspect/v1
+    $parent: /nebula/abstractions/Aspect/v1
     $attributes: [
         $tag: [
             $description: "
                 This attribute defines the unique tag for this type of event.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Tag/v1
-        ]($type: /bali/aspects/Attribute/v1($visibility: $public))
+            $type: /nebula/elements/Tag/v1
+        ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
         $attributes: [
             $description: "
                 This attribute defines the attributes that are defined by this type of event.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1($visibility: $public))
-        ]($type: /bali/aspects/Attribute/v1($visibility: $public))
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1($visibility: $public)))
+            $type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Attribute/v1($visibility: $public))
+        ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Attribute/v1($visibility: $public)))
 ](
-    $type: /bali/types/Structure/v1
+    $type: /nebula/types/Structure/v1
     $tag: #Y42TAVXBCXK23HSYNCAN5XSDHSFRCS0G
     $version: v1
-    $permissions: /bali/permissions/public/v1
+    $permissions: /nebula/permissions/public/v1
     $previous: none
 )

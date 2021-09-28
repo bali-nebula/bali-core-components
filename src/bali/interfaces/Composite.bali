@@ -10,18 +10,18 @@
                 This parameter specifies the name of the type of the keys that are associated with
                 the attribute values that are make up the structural component.
             "($mediaType: "application/bsmd")
-            $type: /bali/strings/Name/v1
-            $default: /bali/strings/Symbol/v1
-        ]($type: /bali/aspects/Parameter/v1)
+            $type: /nebula/strings/Name/v1
+            $default: /nebula/strings/Symbol/v1
+        ]($type: /nebula/aspects/Parameter/v1)
         $valueType: [
             $description: "
                 This parameter specifies the name of the type of the attribute values that are
                 associated with the keys that are make up the structural component.
             "($mediaType: "application/bsmd")
-            $type: /bali/strings/Name/v1
-            $default: /bali/abstractions/Component/v1
-        ]($type: /bali/aspects/Parameter/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            $type: /nebula/strings/Name/v1
+            $default: /nebula/abstractions/Component/v1
+        ]($type: /nebula/aspects/Parameter/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
     $messages: [
         $attribute: [
             $description: "
@@ -35,9 +35,9 @@
                         This parameter specifies the key for the desired attribute value.
                     "($mediaType: "application/bsmd")
                     $type: $keyType
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Message/v1)
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Message/v1)
         $setAttribute: [
             $description: "
                 This message sets the attribute associated with the specified key to the
@@ -51,17 +51,17 @@
                         This parameter specifies the key for the attribute to be set.
                     "($mediaType: "application/bsmd")
                     $type: $keyType
-                ]($type: /bali/aspects/Parameter/v1)
+                ]($type: /nebula/aspects/Parameter/v1)
                 $value: [
                     $description: "
                         This parameter specifies the new value for the attribute associated
                         with the specified key.
                     "($mediaType: "application/bsmd")
                     $type: $valueType
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Message/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1))
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Message/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1))
     $events: [
         $AttributeUpdated: [
             $description: "
@@ -75,29 +75,29 @@
                         This event attribute provides the key for the attribute that was updated.
                     "($mediaType: "application/bsmd")
                     $access: $readOnly
-                    $type: /bali/strings/Symbol/v1
-                ]($type: /bali/aspects/Attribute/v1($visibility: $public))
+                    $type: /nebula/strings/Symbol/v1
+                ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
                 $oldValue: [
                     $description: "
                         This event attribute provides the old value of the attribute that was updated.
                     "($mediaType: "application/bsmd")
                     $access: $readOnly
-                    $type: /bali/abstractions/Component/v1
-                ]($type: /bali/aspects/Attribute/v1($visibility: $public))
+                    $type: /nebula/abstractions/Component/v1
+                ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
                 $newValue: [
                     $description: "
                         This event attribute provides the new value of the attribute that was updated.
                     "($mediaType: "application/bsmd")
                     $access: $readOnly
-                    $type: /bali/abstractions/Component/v1
-                ]($type: /bali/aspects/Attribute/v1($visibility: $public))
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1($visibility: $public)))
-        ]($type: /bali/aspects/Event/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Event/v1))
+                    $type: /nebula/abstractions/Component/v1
+                ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Attribute/v1($visibility: $public)))
+        ]($type: /nebula/aspects/Event/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Event/v1))
 ](
-    $type: /bali/types/Interface/v1
+    $type: /nebula/types/Interface/v1
     $tag: #6LM2XZ0B4WXDNS5084Q7VK369Q5H844Y
     $version: v1
-    $permissions: /bali/permissions/public/v1
+    $permissions: /nebula/permissions/public/v1
     $previous: none
 )

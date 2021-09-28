@@ -8,54 +8,54 @@
             $description: "
                 This parameter specifies the name of the type of the items in the string.
             "($mediaType: "application/bsmd")
-            $type: /bali/strings/Name/v1
-            $default: /bali/strings/Text/v1
-        ]($type: /bali/aspects/Parameter/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            $type: /nebula/strings/Name/v1
+            $default: /nebula/strings/Text/v1
+        ]($type: /nebula/aspects/Parameter/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
     $interfaces: [
-        /bali/interfaces/Sequential/v1($itemType: itemType)
-    ]($type: /bali/collections/Set/v1($itemType: /bali/strings/Name/v1))
+        /nebula/interfaces/Sequential/v1($itemType: itemType)
+    ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Name/v1))
     $methods: [
         $accept: [
             $description: "
                 This method implements the `$accept` message inherited from the
-                `/bali/abstractions/Component/v1` class.
+                `/nebula/abstractions/Component/v1` class.
             "($mediaType: "application/bsmd")
             $procedure: {
                 visitor.visitString(target)
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $size: [
             $description: "
                 This method implements the `$size` message specified in the
-                `/bali/interfaces/Sequential/v1` interface.
+                `/nebula/interfaces/Sequential/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return size(target)
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $isEmpty: [
             $description: "
                 This method implements the `$isEmpty` message specified in the
-                `/bali/interfaces/Sequential/v1` interface.
+                `/nebula/interfaces/Sequential/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return size(target) = 0
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $item: [
             $description: "
                 This method implements the `$item` message specified in the
-                `/bali/interfaces/Sequential/v1` interface.
+                `/nebula/interfaces/Sequential/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return item(target, index)
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $items: [
             $description: "
                 This method implements the `$items` message specified in the
-                `/bali/interfaces/Sequential/v1` interface.
+                `/nebula/interfaces/Sequential/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 $result := duplicate(target, false)
@@ -65,30 +65,30 @@
                 }
                 return result
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $iterator: [
             $description: "
                 This method implements the `$iterator` message from the
-                `/bali/interfaces/Sequential/v1` interface.
+                `/nebula/interfaces/Sequential/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return iterator(target)
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $Chain: [
             $description: "
                 This method implements the `$Chain` function specified in the
-                `/bali/libraries/Chainable/v1` library.
+                `/nebula/libraries/Chainable/v1` library.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return chain(first, second)
             }
-        ]($type: /bali/aspects/Method/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Method/v1))
+        ]($type: /nebula/aspects/Method/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
 ](
-    $type: /bali/types/Primitive/v1($existence: $abstract)
+    $type: /nebula/types/Primitive/v1($existence: $abstract)
     $tag: #JXJG0XD44X9MD73KB3WGRH8SA5JVZZG5
     $version: v1
-    $permissions: /bali/permissions/public/v1
+    $permissions: /nebula/permissions/public/v1
     $previous: none
 )

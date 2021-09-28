@@ -1,1 +1,73 @@
-[:]
+[
+    $description: "
+        This abstract primitive type defines the messages that a comparator agent can respond to.
+    "($mediaType: "application/bsmd")
+    $messages: [
+        $areEqual: [
+            $description: "
+                This message determines whether or not the specified components are equal to each other.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/elements/Boolean/v1
+            $parameters: [
+                $first: [
+                    $description: "
+                        This parameter specifies the first component to be compared.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/abstractions/Component/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+                $second: [
+                    $description: "
+                        This parameter specifies the second component to be compared.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/abstractions/Component/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Message/v1)
+        $doesMatch: [
+            $description: "
+                This message determines whether or not the specified component matches the specified pattern.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/elements/Boolean/v1
+            $parameters: [
+                $component: [
+                    $description: "
+                        This parameter specifies the component to be tested.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/abstractions/Component/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+                $pattern: [
+                    $description: "
+                        This parameter specifies the pattern to be used to test the component.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/abstractions/Component/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Message/v1)
+        $ranking: [
+            $description: "
+                This message determines the relative ranking of the specified components.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/enumeration/Ranking/v1
+            $parameters: [
+                $first: [
+                    $description: "
+                        This parameter specifies the first component to be ranked.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/abstractions/Component/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+                $second: [
+                    $description: "
+                        This parameter specifies the second component to be ranked.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/abstractions/Component/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Message/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1))
+](
+    $type: /nebula/types/Primitive/v1($existence: $abstract)
+    $tag: #P3TZ00LKP1HY3LX6JK53JRYP28J6QHTZ
+    $version: v1
+    $permissions: /nebula/permissions/public/v1
+    $previous: none
+)

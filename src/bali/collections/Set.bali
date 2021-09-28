@@ -8,54 +8,54 @@
             $description: "
                 This parameter specifies the name of the type of the values in the set.
             "($mediaType: "application/bsmd")
-            $type: /bali/strings/Name/v1
-            $default: /bali/abstractions/Component/v1
-        ]($type: /bali/aspects/Parameter/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-    $parent: /bali/abstractions/Collection/v1($itemType: itemType)
+            $type: /nebula/strings/Name/v1
+            $default: /nebula/abstractions/Component/v1
+        ]($type: /nebula/aspects/Parameter/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+    $parent: /nebula/abstractions/Collection/v1($itemType: itemType)
     $libraries: [
-        /bali/libraries/Logical/v1
-    ]($type: /bali/collections/Set/v1($itemType: /bali/strings/Name/v1))
+        /nebula/libraries/Logical/v1
+    ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Name/v1))
     $messages: [
         $removeItem: [
             $description: "
                 This message removes the specified item from the set.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Set/v1($itemType: itemType)
+            $type: /nebula/collections/Set/v1($itemType: itemType)
             $parameters: [
                 $item: [
                     $description: "
                         This parameter specifies the item to be removed from the set.
                     "($mediaType: "application/bsmd")
                     $type: itemType
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Message/v1)
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Message/v1)
         $removeItems: [
             $description: "
                 This message removes the specified items from the set.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Set/v1($itemType: itemType)
+            $type: /nebula/collections/Set/v1($itemType: itemType)
             $parameters: [
                 $items: [
                     $description: "
                         This parameter specifies the items to be removed from the set.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/collections/Set/v1($itemType: itemType)
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Message/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1))
+                    $type: /nebula/collections/Set/v1($itemType: itemType)
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Message/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1))
     $methods: [
         $accept: [
             $description: "
                 This method implements the `$accept` message inherited from the
-                `/bali/abstractions/Component/v1` class.
+                `/nebula/abstractions/Component/v1` class.
             "($mediaType: "application/bsmd")
             $procedure: {
                 visitor.visitSet(target)
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $removeItem: [
             $description: "
                 This method implements the `$removeItem` message for this class.
@@ -63,7 +63,27 @@
             $procedure: {
                 return removeItem(target, item)
             }
-        ]($type: /bali/aspects/Method/v1)
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                PUSH ARGUMENT $item
+                CALL $removeItem WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '38013802D0685000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+                $item
+            ]
+            $variables: [ ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $removeItems: [
             $description: "
                 This method implements the `$removeItems` message for this class.
@@ -74,57 +94,117 @@
                 }
                 return target
             }
-        ]($type: /bali/aspects/Method/v1)
+            $instructions: "
+                1.WithStatement:
+                PUSH ARGUMENT $items
+                SEND $iterator TO COMPONENT
+                SAVE VARIABLE $iterator-2
+                
+                1.1.ConditionClause:
+                LOAD VARIABLE $iterator-2
+                SEND $hasNext TO COMPONENT
+                JUMP TO 1.WithStatementDone ON FALSE
+                LOAD VARIABLE $iterator-2
+                SEND $next TO COMPONENT
+                SAVE VARIABLE $item
+                
+                1.1.1.EvaluateStatement:
+                PUSH ARGUMENT $target
+                LOAD VARIABLE $item
+                CALL $removeItem WITH 2 ARGUMENTS
+                SAVE VARIABLE $result-1
+                
+                1.ConditionRepeat:
+                JUMP TO 1.1.ConditionClause
+                
+                1.WithStatementDone:
+                JUMP TO NEXT INSTRUCTION
+                
+                2.ReturnStatement:
+                PUSH ARGUMENT $target
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.WithStatement": 1
+                "1.1.ConditionClause": 4
+                "1.1.1.EvaluateStatement": 10
+                "1.ConditionRepeat": 14
+                "1.WithStatementDone": 15
+                "2.ReturnStatement": 16
+            ]
+            $bytecode: '
+                3802E00280026002E001180F6002E003800138016001D068800300040000
+                38015000
+            '(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+                $items
+            ]
+            $variables: [
+                $item
+                $iterator-2
+                $result-1
+            ]($type: /bali/collections/Set/v1)
+            $messages: [
+                $hasNext
+                $iterator
+                $next
+            ]($type: /bali/collections/Set/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $Not: [
             $description: "
                 This method implements the `$Not` function specified in the
-                `/bali/libraries/Logical/v1` library.
+                `/nebula/libraries/Logical/v1` library.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return not(set)
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $And: [
             $description: "
                 This method implements the `$And` function specified in the
-                `/bali/libraries/Logical/v1` library.
+                `/nebula/libraries/Logical/v1` library.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return and(first, second)
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $Sans: [
             $description: "
                 This method implements the `$Sans` function specified in the
-                `/bali/libraries/Logical/v1` library.
+                `/nebula/libraries/Logical/v1` library.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return sans(first, second)
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $Or: [
             $description: "
                 This method implements the `$Or` function specified in the
-                `/bali/libraries/Logical/v1` library.
+                `/nebula/libraries/Logical/v1` library.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return or(first, second)
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $Xor: [
             $description: "
                 This method implements the `$Xor` function specified in the
-                `/bali/libraries/Logical/v1` library.
+                `/nebula/libraries/Logical/v1` library.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return xor(first, second)
             }
-        ]($type: /bali/aspects/Method/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Method/v1))
+        ]($type: /nebula/aspects/Method/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
+    $literals: [ ]($type: /nebula/collections/Set/v1)
 ](
-    $type: /bali/types/Primitive/v1
+    $type: /nebula/types/Primitive/v1
     $tag: #XX1KVKF8QTYYR33MTXC465NM3YY4LDLY
     $version: v1
-    $permissions: /bali/permissions/public/v1
+    $permissions: /nebula/permissions/public/v1
     $previous: none
 )

@@ -39,8 +39,8 @@ describe('Bali Nebula™ Type Compilation', function() {
                     compiler.compileType(type);
 
                     // check for differences
-                    source = type.toDocument();
-                    fs.writeFileSync(filename, source, 'utf8');
+                    source = bali.document(type);
+                    //fs.writeFileSync(filename, source, 'utf8');
                     var expected = fs.readFileSync(filename, 'utf8');
                     expect(expected).to.exist;
                     expect(source).to.equal(expected);

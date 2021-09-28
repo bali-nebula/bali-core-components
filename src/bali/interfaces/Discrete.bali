@@ -9,22 +9,22 @@
                 This parameter specifies the range of integer values that are possible for
                 this discrete component.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Range/v1($itemType: /bali/elements/Number/v1)
+            $type: /nebula/collections/Range/v1($itemType: /nebula/elements/Number/v1)
             $default: [<..<]
-        ]($type: /bali/aspects/Parameter/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Parameter/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
     $messages: [
         $integer: [
             $description: "
                 This message returns an integer value for this discrete component.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Number/v1
-        ]($type: /bali/aspects/Message/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1))
+            $type: /nebula/elements/Number/v1
+        ]($type: /nebula/aspects/Message/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1))
 ](
-    $type: /bali/types/Interface/v1
+    $type: /nebula/types/Interface/v1
     $tag: #LFWKYQSTJZV1911B3RNG5K072N61FK0V
     $version: v1
-    $permissions: /bali/permissions/public/v1
+    $permissions: /nebula/permissions/public/v1
     $previous: none
 )

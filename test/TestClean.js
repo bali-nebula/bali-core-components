@@ -39,7 +39,7 @@ describe('Bali Nebula™ Type Compilation', function() {
                     compiler.cleanType(type);
 
                     // update the source file
-                    source = type.toDocument();
+                    source = bali.document(type);
                     fs.writeFileSync(filename, source, 'utf8');
                 });
             }

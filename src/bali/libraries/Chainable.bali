@@ -8,37 +8,37 @@
                 This parameter specifies the name of the type of item that makes up the chainable
                 component.
             "($mediaType: "application/bsmd")
-            $type: /bali/strings/Name/v1
-            $default: /bali/abstractions/Component/v1
-        ]($type: /bali/aspects/Parameter/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            $type: /nebula/strings/Name/v1
+            $default: /nebula/abstractions/Component/v1
+        ]($type: /nebula/aspects/Parameter/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
     $functions: [
         $Chain: [
             $description: "
                 This function returns the concatenation of the two specified chainable components.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Chainable/v1
+            $type: /nebula/libraries/Chainable/v1
             $parameters: [
                 $first: [
                     $description: "
                         This parameter specifies the chainable component to be concatenated with.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Chainable/v1
-                ]($type: /bali/aspects/Parameter/v1)
+                    $type: /nebula/libraries/Chainable/v1
+                ]($type: /nebula/aspects/Parameter/v1)
                 $second: [
                     $description: "
                         This parameter specifies the chainable component to be concatenated with the
                         first component.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Chainable/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Function/v1))
+                    $type: /nebula/libraries/Chainable/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Function/v1))
 ](
-    $type: /bali/types/Library/v1
+    $type: /nebula/types/Library/v1
     $tag: #5PXW70VDZN814XSMNBZSKBKXDHX331NG
     $version: v1
-    $permissions: /bali/permissions/public/v1
+    $permissions: /nebula/permissions/public/v1
     $previous: none
 )

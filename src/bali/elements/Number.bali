@@ -2,11 +2,11 @@
     $description: "
         This class defines the methods for the messages that all numbers support.
     "($mediaType: "application/bsmd")
-    $parent: /bali/abstractions/Element/v1
+    $parent: /nebula/abstractions/Element/v1
 ](
-    $type: /bali/types/Primitive/v1
+    $type: /nebula/types/Primitive/v1
     $tag: #13R8AGZ5G44BLVVDWZP19RAR6KJGX46Y
     $version: v1
-    $permissions: /bali/permissions/public/v1
+    $permissions: /nebula/permissions/public/v1
     $previous: none
 )

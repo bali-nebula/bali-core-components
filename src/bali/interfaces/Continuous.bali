@@ -9,22 +9,22 @@
                 This parameter specifies the range of real values that are possible for
                 this continuous component.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Range/v1($itemType: /bali/elements/Number/v1)
+            $type: /nebula/collections/Range/v1($itemType: /nebula/elements/Number/v1)
             $default: [..]
-        ]($type: /bali/aspects/Parameter/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Parameter/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
     $messages: [
         $real: [
             $description: "
                 This message returns an real value for this continuous component.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Number/v1
-        ]($type: /bali/aspects/Message/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1))
+            $type: /nebula/elements/Number/v1
+        ]($type: /nebula/aspects/Message/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1))
 ](
-    $type: /bali/types/Interface/v1
+    $type: /nebula/types/Interface/v1
     $tag: #HZQAQ2AS5JNMJYVPV9QXM7K3XMW7C278
     $version: v1
-    $permissions: /bali/permissions/public/v1
+    $permissions: /nebula/permissions/public/v1
     $previous: none
 )

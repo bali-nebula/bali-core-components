@@ -3,156 +3,156 @@
         This library defines the functions that operate on /numerical/ components. The functions support
         the standard arithmetic operations.
     "($mediaType: "application/bsmd")
-    $parent: /bali/libraries/Scalable/v1
+    $parent: /nebula/libraries/Scalable/v1
     $functions: [
         $Reciprocal: [
             $description: "
                 This function returns the /reciprocal/ of the specified numerical component.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Numerical/v1
+            $type: /nebula/libraries/Numerical/v1
             $parameters: [
                 $numerical: [
                     $description: "
                         This parameter specifies the numerical component to be inverted.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
+                    $type: /nebula/libraries/Numerical/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
         $Conjugate: [
             $description: "
                 This function returns the complex /conjugate/ of the specified numerical component.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Numerical/v1
+            $type: /nebula/libraries/Numerical/v1
             $parameters: [
                 $numerical: [
                     $description: "
                         This parameter specifies the numerical component to be conjugated.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
+                    $type: /nebula/libraries/Numerical/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
         $Factorial: [
             $description: "
                 This function returns the /factorial/ of the specified numerical component.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Numerical/v1
+            $type: /nebula/libraries/Numerical/v1
             $parameters: [
                 $numerical: [
                     $description: "
                         This parameter specifies the numerical component to be factoralized.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
+                    $type: /nebula/libraries/Numerical/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
         $Product: [
             $description: "
                 This function returns the /product/ of the two specified numerical components.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Numerical/v1
+            $type: /nebula/libraries/Numerical/v1
             $parameters: [
                 $first: [
                     $description: "
                         This parameter specifies the first numerical component to be multiplied.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/aspects/Parameter/v1)
+                    $type: /nebula/libraries/Numerical/v1
+                ]($type: /nebula/aspects/Parameter/v1)
                 $second: [
                     $description: "
                         This parameter specifies the second numerical component to be multiplied.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
+                    $type: /nebula/libraries/Numerical/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
         $Quotient: [
             $description: "
                 This function returns the /quotient/ of the two specified numerical components.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Numerical/v1
+            $type: /nebula/libraries/Numerical/v1
             $parameters: [
                 $dividend: [
                     $description: "
                         This parameter specifies the numerical component to be divided.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/aspects/Parameter/v1)
+                    $type: /nebula/libraries/Numerical/v1
+                ]($type: /nebula/aspects/Parameter/v1)
                 $divisor: [
                     $description: "
                         This parameter specifies the numerical component to be divided by.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
+                    $type: /nebula/libraries/Numerical/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
         $Remainder: [
             $description: "
                 This function returns the /remainder/ of the quotient of the two specified
                 numerical components.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Numerical/v1
+            $type: /nebula/libraries/Numerical/v1
             $parameters: [
                 $dividend: [
                     $description: "
                         This parameter specifies the numerical component to be divided.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/aspects/Parameter/v1)
+                    $type: /nebula/libraries/Numerical/v1
+                ]($type: /nebula/aspects/Parameter/v1)
                 $divisor: [
                     $description: "
                         This parameter specifies the numerical component to be divided by.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
+                    $type: /nebula/libraries/Numerical/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
         $Exponential: [
             $description: "
                 This function returns the /exponential/ of the two specified numerical components.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Numerical/v1
+            $type: /nebula/libraries/Numerical/v1
             $parameters: [
                 $base: [
                     $description: "
                         This parameter specifies the base component to be raised to an exponential.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/aspects/Parameter/v1)
+                    $type: /nebula/libraries/Numerical/v1
+                ]($type: /nebula/aspects/Parameter/v1)
                 $exponent: [
                     $description: "
                         This parameter specifies the exponent to raise the base component to.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
+                    $type: /nebula/libraries/Numerical/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
         $Logarithm: [
             $description: "
                 This function returns the /logarithm/ of the two specified numerical components.
             "($mediaType: "application/bsmd")
-            $type: /bali/libraries/Numerical/v1
+            $type: /nebula/libraries/Numerical/v1
             $parameters: [
                 $base: [
                     $description: "
                         This parameter specifies the base component for the logarithm.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/aspects/Parameter/v1)
+                    $type: /nebula/libraries/Numerical/v1
+                ]($type: /nebula/aspects/Parameter/v1)
                 $value: [
                     $description: "
                         This parameter specifies the value of the base raised to the exponent.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/libraries/Numerical/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Function/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Function/v1))
+                    $type: /nebula/libraries/Numerical/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Function/v1))
 ](
-    $type: /bali/types/Library/v1
+    $type: /nebula/types/Library/v1
     $tag: #1BSJB245AXLV50RZW646NVS01HF6K13H
     $version: v1
-    $permissions: /bali/permissions/public/v1
+    $permissions: /nebula/permissions/public/v1
     $previous: none
 )

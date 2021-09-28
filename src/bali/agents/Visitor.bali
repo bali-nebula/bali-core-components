@@ -1,1 +1,33 @@
-[:]
+[
+    $description: "
+        This abstract primitive type defines the messages that a visitor agent can respond to.
+    "($mediaType: "application/bsmd")
+    $messages: [
+        $visit: [
+            $description: "
+                This message visits the specified component with the specified type and performs
+                type specific actions based on the state of the component.
+            "($mediaType: "application/bsmd")
+            $parameters: [
+                $type: [
+                    $description: "
+                        This parameter specifies the name of the type of the component to be visited.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/strings/Name/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+                $component: [
+                    $description: "
+                        This parameter specifies the component to be visited.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/abstractions/Component/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Message/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1))
+](
+    $type: /nebula/types/Primitive/v1($existence: $abstract)
+    $tag: #6NZ98H9L9GA936DKDN02808PXNNHB4HW
+    $version: v1
+    $permissions: /nebula/permissions/public/v1
+    $previous: none
+)

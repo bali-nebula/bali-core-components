@@ -2,20 +2,20 @@
     $description: "
         This concrete structure defines the attributes that all enumeration types support.
     "($mediaType: "application/bsmd")
-    $parent: /bali/abstractions/Type/v1
+    $parent: /nebula/abstractions/Type/v1
     $attributes: [
         $values: [
             $description: "
                 This attribute defines the set of symbols for the values representing all possible
                 instances of the enumeration type.
             "($mediaType: "application/bsmd")
-            $type: /bali/collections/Set/v1($itemType: /bali/strings/Symbol/v1)
-        ]($type: /bali/aspects/Attribute/v1($visibility: $public))
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1($visibility: $public)))
+            $type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1)
+        ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Attribute/v1($visibility: $public)))
 ](
-    $type: /bali/types/Structure/v1
+    $type: /nebula/types/Structure/v1
     $tag: #KZ1DH56LXYQ286HK0WPP7SVCJYJL7SM7
     $version: v1
-    $permissions: /bali/permissions/public/v1
+    $permissions: /nebula/permissions/public/v1
     $previous: none
 )

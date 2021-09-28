@@ -4,16 +4,16 @@
         also provides a compiled method implementation for some of the messages.
     "($mediaType: "application/bsmd")
     $interfaces: [
-        /bali/interfaces/Reflective/v1
-    ]($type: /bali/collections/Set/v1($itemType: /bali/strings/Name/v1))
+        /nebula/interfaces/Reflective/v1
+    ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Name/v1))
     $messages: [
         $boolean: [
             $description: "
                 This message returns whether of not this component has a meaningful state that is
                 worth operating on.
             "($mediaType: "application/bsmd")
-            $type: /bali/elements/Boolean
-        ]($type: /bali/aspects/Message/v1)
+            $type: /nebula/elements/Boolean
+        ]($type: /nebula/aspects/Message/v1)
         $accept: [
             $description: "
                 This message accepts a visitor agent and allows that agent to operate on this component.
@@ -24,16 +24,16 @@
                     $description: "
                         This parameter specifies the visitor agent.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/agents/Visitor/v1
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Message/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1))
+                    $type: /nebula/agents/Visitor/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Message/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1))
     $methods: [
         $isType: [
             $description: "
                 This method implements the `$isType` message specified in the
-                `/bali/interfaces/Reflective/v1` interface.
+                `/nebula/interfaces/Reflective/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 with each $candidate in ancestry(target) do {
@@ -43,38 +43,38 @@
                 }
                 return false
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $type: [
             $description: "
                 This method implements the `$type` message specified in the
-                `/bali/interfaces/Reflective/v1` interface.
+                `/nebula/interfaces/Reflective/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return ancestry(target)[1]
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $ancestry: [
             $description: "
                 This method implements the `$ancestry` message specified in the
-                `/bali/interfaces/Reflective/v1` interface.
+                `/nebula/interfaces/Reflective/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return ancestry(target)
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $isParameterized: [
             $description: "
                 This method implements the `$isParameterized` message specified in the
-                `/bali/interfaces/Reflective/v1` interface.
+                `/nebula/interfaces/Reflective/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return NOT parameters(target) = none
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $parameter: [
             $description: "
                 This method implements the `$parameter` message specified in the
-                `/bali/interfaces/Reflective/v1` interface.
+                `/nebula/interfaces/Reflective/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 $result := parameters(target)
@@ -83,16 +83,16 @@
                 }
                 return none
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $parameters: [
             $description: "
                 This method implements the `$parameters` message specified in the
-                `/bali/interfaces/Reflective/v1` interface.
+                `/nebula/interfaces/Reflective/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return parameters(target)
             }
-        ]($type: /bali/aspects/Method/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $boolean: [
             $description: "
                 This method implements the `$boolean` message from this class.
@@ -100,7 +100,25 @@
             $procedure: {
                 return boolean(target)
             }
-        ]($type: /bali/aspects/Method/v1)
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $boolean WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '3801C8115000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [ ]($type: /bali/collections/Set/v1)
+            $messages: [ ]($type: /bali/collections/Set/v1)
+        ]($type: /nebula/aspects/Method/v1)
         $accept: [
             $description: "
                 This method implements the `$accept` message from this class.
@@ -108,12 +126,43 @@
             $procedure: {
                 visitor.visitComponent(target)
             }
-        ]($type: /bali/aspects/Method/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Method/v1))
+            $instructions: "
+                1.EvaluateStatement:
+                PUSH ARGUMENT $visitor
+                NOTE --Place a list of the message arguments on the stack.
+                CALL $list
+                PUSH ARGUMENT $target
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Send the message with its arguments to the recipient.
+                SEND $visitComponent TO COMPONENT WITH ARGUMENTS
+                SAVE VARIABLE $result-1
+                LOAD VARIABLE $result-1
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.EvaluateStatement": 1
+            ]
+            $bytecode: '3802C0453801D001E801800160015000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+                $visitor
+            ]
+            $variables: [
+                $result-1
+            ]($type: /bali/collections/Set/v1)
+            $messages: [
+                $visitComponent
+            ]($type: /bali/collections/Set/v1)
+        ]($type: /nebula/aspects/Method/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
+    $literals: [ ]($type: /nebula/collections/Set/v1)
 ](
-    $type: /bali/types/Primitive/v1($existence: $abstract)
+    $type: /nebula/types/Primitive/v1($existence: $abstract)
     $tag: #7Q5M85VYL5TVT37FHH0W5N5XJ9PCR7R8
     $version: v1
-    $permissions: /bali/permissions/public/v1
+    $permissions: /nebula/permissions/public/v1
     $previous: none
 )

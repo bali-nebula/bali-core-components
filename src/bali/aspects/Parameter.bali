@@ -2,26 +2,26 @@
     $description: "
         This concrete structure defines the attributes that all parameter aspects support.
     "($mediaType: "application/bsmd")
-    $parent: /bali/abstractions/Aspect/v1
+    $parent: /nebula/abstractions/Aspect/v1
     $attributes: [
         $type: [
             $description: "
                 This attribute defines the name of the type of the parameter.
             "($mediaType: "application/bsmd")
-            $type: /bali/strings/Name/v1
-        ]($type: /bali/aspects/Attribute/v1($visibility: $public))
+            $type: /nebula/strings/Name/v1
+        ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
         $default: [
             $description: "
                 This attribute defines the default value for a parameter of this type.
             "($mediaType: "application/bsmd")
-            $type: /bali/abstractions/Component/v1
+            $type: /nebula/abstractions/Component/v1
             $default: none
-        ]($type: /bali/aspects/Attribute/v1($visibility: $public))
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1($visibility: $public)))
+        ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Attribute/v1($visibility: $public)))
 ](
-    $type: /bali/types/Structure/v1
+    $type: /nebula/types/Structure/v1
     $tag: #SX6DQ19X6QAK6PBZF836PYWKSZWH8VTH
     $version: v1
-    $permissions: /bali/permissions/public/v1
+    $permissions: /nebula/permissions/public/v1
     $previous: none
 )

@@ -6,11 +6,11 @@
     $values: [
         $private
         $public
-    ]($type: /bali/collections/Set/v1($itemType: /bali/strings/Symbol/v1))
+    ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
 ](
-    $type: /bali/types/Enumeration/v1
+    $type: /nebula/types/Enumeration/v1
     $tag: #SGZM553DHTX878NFXPH0JA7JW6L4FRCL
     $version: v1
-    $permissions: /bali/permissions/public/v1
+    $permissions: /nebula/permissions/public/v1
     $previous: none
 )

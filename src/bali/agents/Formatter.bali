@@ -1,1 +1,28 @@
-[:]
+[
+    $description: "
+        This abstract primitive type defines the messages that a formatter agent can respond to.
+    "($mediaType: "application/bsmd")
+    $messages: [
+        $format: [
+            $description: "
+                This message returns a text string containing a formatted version of the specified
+                component.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/strings/Text/v1
+            $parameters: [
+                $component: [
+                    $description: "
+                        This parameter specifies the component to be formatted.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/abstractions/Component/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Message/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1))
+](
+    $type: /nebula/types/Primitive/v1($existence: $abstract)
+    $tag: #ZDNFVHV88FJRQ1B8D7SZD3A6QTNF4MZY
+    $version: v1
+    $permissions: /nebula/permissions/public/v1
+    $previous: none
+)

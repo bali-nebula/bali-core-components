@@ -1,8 +1,8 @@
 [
     $description: "
-        This abstract primitive type defines the messages that an elemental component can respond to. It
-        also provides a compiled method implementation for some of the messages.
+        This primitive type implements an intrinsic sorter which uses a merge sort algorithm.
     "($mediaType: "application/bsmd")
+    $parent: /nebula/agents/Sorter/v1
     $methods: [
         $accept: [
             $description: "
@@ -10,13 +10,22 @@
                 `/nebula/abstractions/Component/v1` class.
             "($mediaType: "application/bsmd")
             $procedure: {
-                visitor.visitElement(target)
+                visitor.visitSorter(target)
+            }
+        ]($type: /nebula/aspects/Method/v1)
+        $sort: [
+            $description: "
+                This method implements the `$sort` message inherited from the
+                `/nebula/agents/Sorter/v1` class.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return sortItems(sortable, target)
             }
         ]($type: /nebula/aspects/Method/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
 ](
     $type: /nebula/types/Primitive/v1($existence: $abstract)
-    $tag: #ZKVM02KBTHNLWW7V7MMWCSZS09C3LAXD
+    $tag: #LC75A6YXDAHLDVN3ZZ8G14264ADWL99S
     $version: v1
     $permissions: /nebula/permissions/public/v1
     $previous: none

@@ -10,29 +10,29 @@
                 This parameter specifies the name of the type of item that is maintained by
                 the sortable collection.
             "($mediaType: "application/bsmd")
-            $type: /bali/strings/Name/v1
-            $default: /bali/abstractions/Component/v1
-        ]($type: /bali/aspects/Parameter/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
+            $type: /nebula/strings/Name/v1
+            $default: /nebula/abstractions/Component/v1
+        ]($type: /nebula/aspects/Parameter/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
     $messages: [
         $sortItems: [
             $description: "
-                This message sorts the items in this collection using the specified comparator
-                component to compare the items. If no comparator component is specified a _natural_
-                comparator implementing numeric and alphabetical ordering is used.
+                This message sorts the items in this collection using the specified sorter
+                agent to compare the items. If no sorter agent is specified the default
+                merge sorter with a _natural_ comparator agent is used.
             "($mediaType: "application/bsmd")
-            $type: /bali/interfaces/Sortable/v1($itemType: itemType)
+            $type: /nebula/interfaces/Sortable/v1($itemType: itemType)
             $parameters: [
-                $comparator: [
+                $sorter: [
                     $description: "
-                        This parameter specifies the comparator component to be used for comparing
+                        This parameter specifies the sorter agent to be used for sorting the
                         items in this collection.
                     "($mediaType: "application/bsmd")
-                    $type: /bali/abstractions/Comparator/v1($itemType: itemType)
-                ]($type: /bali/aspects/Parameter/v1)
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Parameter/v1))
-        ]($type: /bali/aspects/Message/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Message/v1))
+                    $type: /nebula/agents/Sorter/v1($itemType: itemType)
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Message/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1))
     $events: [
         $CollectionSorted: [
             $description: "
@@ -45,22 +45,22 @@
                         This event attribute contains a copy of the original collection before sorting.
                     "($mediaType: "application/bsmd")
                     $access: $readOnly
-                    $type: /bali/interfaces/Sortable/v1($itemType: itemType)
-                ]($type: /bali/aspects/Attribute/v1($visibility: $public))
+                    $type: /nebula/interfaces/Sortable/v1($itemType: itemType)
+                ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
                 $sortedCollection: [
                     $description: "
                         This event attribute contains a copy of the sorted collection after sorting.
                     "($mediaType: "application/bsmd")
                     $access: $readOnly
-                    $type: /bali/interfaces/Sortable/v1($itemType: itemType)
-                ]($type: /bali/aspects/Attribute/v1($visibility: $public))
-            ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Attribute/v1($visibility: $public)))
-        ]($type: /bali/aspects/Event/v1)
-    ]($type: /bali/collections/Catalog/v1($valueType: /bali/aspects/Event/v1))
+                    $type: /nebula/interfaces/Sortable/v1($itemType: itemType)
+                ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Attribute/v1($visibility: $public)))
+        ]($type: /nebula/aspects/Event/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Event/v1))
 ](
-    $type: /bali/types/Interface/v1
+    $type: /nebula/types/Interface/v1
     $tag: #QQ8XY34WMSKABKLSHD4LR1XCZJSTGP35
     $version: v1
-    $permissions: /bali/permissions/public/v1
+    $permissions: /nebula/permissions/public/v1
     $previous: none
 )
