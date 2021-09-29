@@ -1,12 +1,12 @@
 [
     $description: "
-        This primitive type defines the messages that a stack component can respond to. It
+        This primitive type defines the messages that a queue component can respond to. It
         also provides a compiled method implementation for each message.
     "($mediaType: "application/bsmd")
     $parameters: [
         $itemType: [
             $description: "
-                This parameter specifies the name of the type of the values on the stack.
+                This parameter specifies the name of the type of the values in the queue.
             "($mediaType: "application/bsmd")
             $type: /nebula/strings/Name/v1
             $default: /nebula/abstractions/Component/v1
@@ -17,15 +17,15 @@
         /nebula/libraries/Logical/v1
     ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Name/v1))
     $messages: [
-        $top: [
+        $head: [
             $description: "
-                This message returns the item that is currently on top of the stack.
+                This message returns the item that is currently at the head of the queue.
             "($mediaType: "application/bsmd")
             $type: itemType
         ]($type: /nebula/aspects/Message/v1)
-        $removeTop: [
+        $removeHead: [
             $description: "
-                This message removes the item that is currently on top of the stack and returns it.
+                This message removes the item that is currently at the head of the queue and returns it.
             "($mediaType: "application/bsmd")
             $type: itemType
         ]($type: /nebula/aspects/Message/v1)
@@ -40,23 +40,23 @@
                 visitor.visitStack(target)
             }
         ]($type: /nebula/aspects/Method/v1)
-        $top: [
+        $head: [
             $description: "
-                This method implements the `$top` message for this class.
+                This method implements the `$head` message for this class.
             "($mediaType: "application/bsmd")
             $procedure: {
-                return top(target)
+                return head(target)
             }
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
-                CALL $top WITH 1 ARGUMENT
+                CALL $head WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C8835000'(
+            $bytecode: '3801C8325000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -66,23 +66,23 @@
             $variables: [ ]($type: /bali/collections/Set/v1)
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
-        $removeTop: [
+        $removeHead: [
             $description: "
-                This method implements the `$removeTop` message for this class.
+                This method implements the `$removeHead` message for this class.
             "($mediaType: "application/bsmd")
             $procedure: {
-                return removeTop(target)
+                return removeHead(target)
             }
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
-                CALL $removeTop WITH 1 ARGUMENT
+                CALL $removeHead WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C8695000'(
+            $bytecode: '3801C8665000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -93,10 +93,10 @@
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
-    $literals: [ ]($type: /nebula/collections/Set/v1)
+    $literals: [ ]($type: /bali/collections/Set/v1)
 ](
     $type: /nebula/types/Primitive/v1
-    $tag: #H5TFK16BYGRTNB28588KNV26814RTYSQ
+    $tag: #64CSDQQWT293QN22YVDJHMXVBYZHB9TZ
     $version: v1
     $permissions: /nebula/permissions/public/v1
     $previous: none

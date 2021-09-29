@@ -158,7 +158,7 @@
             ]($type: /bali/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
-    $literals: [ ]($type: /nebula/collections/Set/v1)
+    $literals: [ ]($type: /bali/collections/Set/v1)
 ](
     $type: /nebula/types/Primitive/v1($existence: $abstract)
     $tag: #7Q5M85VYL5TVT37FHH0W5N5XJ9PCR7R8

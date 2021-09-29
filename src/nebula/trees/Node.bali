@@ -122,7 +122,7 @@
             $messages: [ ]($type: /bali/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
-    $literals: [ ]($type: /nebula/collections/Set/v1)
+    $literals: [ ]($type: /bali/collections/Set/v1)
 ](
     $type: /nebula/types/Primitive/v1
     $tag: #GJYCWSFFRS648Y5S2L7F1CHRMB4S8NMW

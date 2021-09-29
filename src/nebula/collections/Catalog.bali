@@ -381,7 +381,7 @@
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
     $literals: [
         false
-    ]($type: /nebula/collections/Set/v1)
+    ]($type: /bali/collections/Set/v1)
 ](
     $type: /nebula/types/Primitive/v1
     $tag: #455135X1XN4R3QN43F1ZV4GJ02XBSRP0

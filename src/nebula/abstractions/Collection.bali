@@ -239,8 +239,8 @@
                 "3.ReturnStatement": 26
             ]
             $bytecode: '
-                280380023801E00280036003E00118196003E003800160022804D07E8002
-                000060013802D00718176002500000000006000028035000
+                280180023801E00280036003E00118196003E003800160022802D07E8002
+                000060013802D00718176002500000000006000028015000
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -644,7 +644,7 @@
         true
         0
         1
-    ]($type: /nebula/collections/Set/v1)
+    ]($type: /bali/collections/Set/v1)
 ](
     $type: /nebula/types/Primitive/v1($existence: $abstract)
     $tag: #24620A7W8TFYHN03A7Y2AQYZ7GMLATWZ

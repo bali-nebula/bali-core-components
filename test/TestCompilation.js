@@ -9,15 +9,16 @@
  ************************************************************************/
 
 const debug = 1;
-const fs = require('fs');
 const mocha = require('mocha');
 const expect = require('chai').expect;
+const fs = require('fs');
+const pfs = fs.promises;
 const bali = require('bali-component-framework').api(1);
 const compiler = require('bali-type-compiler').api(debug);
 
 
 describe('Bali Nebula™ Type Compilation', function() {
-    const folder = './src/bali/';
+    const folder = './src/nebula/';
     const directories = fs.readdirSync(folder);
     for (var i = 0; i < directories.length; i++) {
         const name = directories[i];
@@ -27,11 +28,10 @@ describe('Bali Nebula™ Type Compilation', function() {
             for (var j = 0; j < files.length; j++) {
                 const file = files[j];
                 const prefix = file.split('.').slice(0, 1);
-                it('should compile the ' + prefix + ' type.', function() {
-
+                it('should compile the ' + prefix + ' type.', async function() {
                     // read in the source code
                     var filename = directory + prefix + '.bali';
-                    var source = fs.readFileSync(filename, 'utf8');
+                    var source = await pfs.readFile(filename, 'utf8');
                     var type = bali.component(source);
                     expect(type).to.exist;
 
@@ -40,8 +40,8 @@ describe('Bali Nebula™ Type Compilation', function() {
 
                     // check for differences
                     source = bali.document(type);
-                    //fs.writeFileSync(filename, source, 'utf8');
-                    var expected = fs.readFileSync(filename, 'utf8');
+                    await pfs.writeFile(filename, source, 'utf8');
+                    var expected = await pfs.readFile(filename, 'utf8');
                     expect(expected).to.exist;
                     expect(source).to.equal(expected);
                 });
