@@ -169,25 +169,24 @@
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
-                LOAD VARIABLE $index
-                LOAD VARIABLE $item
+                PUSH ARGUMENT $index
+                PUSH ARGUMENT $item
                 CALL $setItem WITH 3 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '380160016002D8735000'(
+            $bytecode: '380138023803D8735000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
-            ]
-            $variables: [
                 $index
                 $item
-            ]($type: /nebula/collections/Set/v1)
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
             $messages: [ ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
         $insertItem: [
@@ -200,25 +199,24 @@
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
-                LOAD VARIABLE $slot
-                LOAD VARIABLE $item
+                PUSH ARGUMENT $slot
+                PUSH ARGUMENT $item
                 CALL $insertItem WITH 3 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '380160026001D8375000'(
+            $bytecode: '380138023803D8375000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
-            ]
-            $variables: [
-                $item
                 $slot
-            ]($type: /nebula/collections/Set/v1)
+                $item
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
             $messages: [ ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
         $insertItems: [
@@ -233,7 +231,7 @@
             }
             $instructions: "
                 1.WithStatement:
-                LOAD VARIABLE $items
+                PUSH ARGUMENT $items
                 CALL $reverseItems WITH 1 ARGUMENT
                 SEND $iterator TO COMPONENT
                 SAVE VARIABLE $iterator-2
@@ -248,7 +246,7 @@
                 
                 1.1.1.EvaluateStatement:
                 PUSH ARGUMENT $target
-                LOAD VARIABLE $slot
+                PUSH ARGUMENT $slot
                 LOAD VARIABLE $item
                 CALL $insertItem WITH 3 ARGUMENTS
                 SAVE VARIABLE $result-1
@@ -272,7 +270,7 @@
                 "2.ReturnStatement": 18
             ]
             $bytecode: '
-                6002C86AE00280036003E00118116003E0038001380160056001D8378004
+                3803C86AE00280026002E00118116002E0038001380138026001D8378003
                 0005000038015000
             '(
                 $encoding: $base16
@@ -280,13 +278,13 @@
             )
             $arguments: [
                 $target
+                $slot
+                $items
             ]
             $variables: [
                 $item
-                $items
                 $iterator-2
                 $result-1
-                $slot
             ]($type: /nebula/collections/Set/v1)
             $messages: [
                 $hasNext
@@ -304,23 +302,22 @@
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
-                LOAD VARIABLE $index
+                PUSH ARGUMENT $index
                 CALL $removeIndex WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38016001D0675000'(
+            $bytecode: '38013802D0675000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
-            ]
-            $variables: [
                 $index
-            ]($type: /nebula/collections/Set/v1)
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
             $messages: [ ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
         $removeItems: [
@@ -335,7 +332,7 @@
             }
             $instructions: "
                 1.WithStatement:
-                LOAD VARIABLE $range
+                PUSH ARGUMENT $range
                 SEND $iterator TO COMPONENT
                 SAVE VARIABLE $iterator-2
                 
@@ -372,7 +369,7 @@
                 "2.ReturnStatement": 16
             ]
             $bytecode: '
-                6003E00280026002E001180F6002E003800138016001D067800400040000
+                3802E00280026002E001180F6002E003800138016001D067800300040000
                 38015000
             '(
                 $encoding: $base16
@@ -380,11 +377,11 @@
             )
             $arguments: [
                 $target
+                $range
             ]
             $variables: [
                 $index
                 $iterator-2
-                $range
                 $result-1
             ]($type: /nebula/collections/Set/v1)
             $messages: [

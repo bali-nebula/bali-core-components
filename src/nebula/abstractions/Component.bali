@@ -329,7 +329,7 @@
             }
             $instructions: "
                 1.EvaluateStatement:
-                LOAD VARIABLE $visitor
+                PUSH ARGUMENT $visitor
                 NOTE --Place a list of the message arguments on the stack.
                 CALL $list
                 PUSH ARGUMENT $target
@@ -343,16 +343,16 @@
             $addresses: [
                 "1.EvaluateStatement": 1
             ]
-            $bytecode: '6002C0453801D001E801800160015000'(
+            $bytecode: '3802C0453801D001E801800160015000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
+                $visitor
             ]
             $variables: [
                 $result-1
-                $visitor
             ]($type: /nebula/collections/Set/v1)
             $messages: [
                 $visitComponent

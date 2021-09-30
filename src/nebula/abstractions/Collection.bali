@@ -386,7 +386,7 @@
                 
                 2.1.2.1.ConditionClause:
                 LOAD VARIABLE $candidate
-                LOAD VARIABLE $item
+                PUSH ARGUMENT $item
                 CALL $areEqual WITH 2 ARGUMENTS
                 JUMP TO 2.1.2.IfStatementDone ON FALSE
                 
@@ -421,19 +421,19 @@
                 "3.ReturnStatement": 26
             ]
             $bytecode: '
-                280380023801E00280046004E00118196004E003800160022804D07E8002
-                000060016003D00718176002500000000006000028035000
+                280380023801E00280036003E00118196003E003800160022804D07E8002
+                000060013802D00718176002500000000006000028035000
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
+                $item
             ]
             $variables: [
                 $candidate
                 $index
-                $item
                 $iterator-2
             ]($type: /nebula/collections/Set/v1)
             $messages: [
@@ -452,23 +452,22 @@
             $instructions: "
                 1.ReturnStatement:
                 PUSH ARGUMENT $target
-                LOAD VARIABLE $item
+                PUSH ARGUMENT $item
                 CALL $addItem WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38016001D0015000'(
+            $bytecode: '38013802D0015000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
-            ]
-            $variables: [
                 $item
-            ]($type: /nebula/collections/Set/v1)
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
             $messages: [ ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
         $addItems: [
@@ -483,7 +482,7 @@
             }
             $instructions: "
                 1.WithStatement:
-                LOAD VARIABLE $items
+                PUSH ARGUMENT $items
                 SEND $iterator TO COMPONENT
                 SAVE VARIABLE $iterator-2
                 
@@ -520,7 +519,7 @@
                 "2.ReturnStatement": 16
             ]
             $bytecode: '
-                6002E00280036003E001180F6003E003800138016001D001800400040000
+                3802E00280026002E001180F6002E003800138016001D001800300040000
                 38015000
             '(
                 $encoding: $base16
@@ -528,10 +527,10 @@
             )
             $arguments: [
                 $target
+                $items
             ]
             $variables: [
                 $item
-                $items
                 $iterator-2
                 $result-1
             ]($type: /nebula/collections/Set/v1)
@@ -572,7 +571,7 @@
                 
                 1.1.1.1.ConditionClause:
                 LOAD VARIABLE $candidate
-                LOAD VARIABLE $item
+                PUSH ARGUMENT $item
                 CALL $areEqual WITH 2 ARGUMENTS
                 JUMP TO 1.1.1.IfStatementDone ON FALSE
                 
@@ -605,7 +604,7 @@
                 "2.ReturnStatement": 20
             ]
             $bytecode: '
-                3801E00280036003E00118136003E0038001000060016002D00718112802
+                3801E00280026002E00118136002E0038001000060013802D00718112802
                 500000000004000028015000
             '(
                 $encoding: $base16
@@ -613,10 +612,10 @@
             )
             $arguments: [
                 $target
+                $item
             ]
             $variables: [
                 $candidate
-                $item
                 $iterator-2
             ]($type: /nebula/collections/Set/v1)
             $messages: [
@@ -639,7 +638,7 @@
             }
             $instructions: "
                 1.WithStatement:
-                LOAD VARIABLE $items
+                PUSH ARGUMENT $items
                 SEND $iterator TO COMPONENT
                 SAVE VARIABLE $iterator-2
                 
@@ -693,7 +692,7 @@
                 "2.ReturnStatement": 22
             ]
             $bytecode: '
-                6002E00380036003E00218156003E004800100003801C0456001D001E801
+                3802E00380026002E00218156002E004800100003801C0456001D001E801
                 18132802500000000004000028015000
             '(
                 $encoding: $base16
@@ -701,10 +700,10 @@
             )
             $arguments: [
                 $target
+                $items
             ]
             $variables: [
                 $item
-                $items
                 $iterator-2
             ]($type: /nebula/collections/Set/v1)
             $messages: [
@@ -728,7 +727,7 @@
             }
             $instructions: "
                 1.WithStatement:
-                LOAD VARIABLE $items
+                PUSH ARGUMENT $items
                 SEND $iterator TO COMPONENT
                 SAVE VARIABLE $iterator-2
                 
@@ -783,7 +782,7 @@
                 "2.ReturnStatement": 23
             ]
             $bytecode: '
-                6002E00380036003E00218166003E004800100003801C0456001D001E801
+                3802E00380026002E00218166002E004800100003801C0456001D001E801
                 C85118142801500000000004000028025000
             '(
                 $encoding: $base16
@@ -791,10 +790,10 @@
             )
             $arguments: [
                 $target
+                $items
             ]
             $variables: [
                 $item
-                $items
                 $iterator-2
             ]($type: /nebula/collections/Set/v1)
             $messages: [
