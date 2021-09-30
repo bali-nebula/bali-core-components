@@ -43,6 +43,78 @@
                 }
                 return false
             }
+            $instructions: "
+                1.WithStatement:
+                PUSH ARGUMENT $target
+                CALL $ancestry WITH 1 ARGUMENT
+                SEND $iterator TO COMPONENT
+                SAVE VARIABLE $iterator-2
+                
+                1.1.ConditionClause:
+                LOAD VARIABLE $iterator-2
+                SEND $hasNext TO COMPONENT
+                JUMP TO 1.WithStatementDone ON FALSE
+                LOAD VARIABLE $iterator-2
+                SEND $next TO COMPONENT
+                SAVE VARIABLE $candidate
+                
+                1.1.1.IfStatement:
+                JUMP TO NEXT INSTRUCTION
+                
+                1.1.1.1.ConditionClause:
+                LOAD VARIABLE $candidate
+                LOAD VARIABLE $type
+                CALL $areEqual WITH 2 ARGUMENTS
+                JUMP TO 1.1.1.IfStatementDone ON FALSE
+                
+                1.1.1.1.1.ReturnStatement:
+                PUSH LITERAL `true`
+                PULL RESULT
+                
+                1.1.1.IfStatementDone:
+                JUMP TO NEXT INSTRUCTION
+                
+                1.ConditionRepeat:
+                JUMP TO 1.1.ConditionClause
+                
+                1.WithStatementDone:
+                JUMP TO NEXT INSTRUCTION
+                
+                2.ReturnStatement:
+                PUSH LITERAL `false`
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.WithStatement": 1
+                "1.1.ConditionClause": 5
+                "1.1.1.IfStatement": 11
+                "1.1.1.1.ConditionClause": 12
+                "1.1.1.1.1.ReturnStatement": 16
+                "1.1.1.IfStatementDone": 18
+                "1.ConditionRepeat": 19
+                "1.WithStatementDone": 20
+                "2.ReturnStatement": 21
+            ]
+            $bytecode: '
+                3801C802E00280026002E00118146002E0038001000060016003D0071812
+                2802500000000005000028015000
+            '(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [
+                $candidate
+                $iterator-2
+                $type
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [
+                $hasNext
+                $iterator
+                $next
+            ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
         $type: [
             $description: "
@@ -52,6 +124,26 @@
             $procedure: {
                 return ancestry(target)[1]
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $ancestry WITH 1 ARGUMENT
+                PUSH LITERAL `1`
+                CALL $attribute WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '3801C8022803D00A5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
         $ancestry: [
             $description: "
@@ -61,6 +153,24 @@
             $procedure: {
                 return ancestry(target)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $ancestry WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '3801C8025000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
         $isParameterized: [
             $description: "
@@ -70,6 +180,27 @@
             $procedure: {
                 return NOT parameters(target) = none
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $parameters WITH 1 ARGUMENT
+                PUSH LITERAL `none`
+                CALL $areEqual WITH 2 ARGUMENTS
+                CALL $not WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '3801C8542804D007C8515000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
         $parameter: [
             $description: "
@@ -83,6 +214,58 @@
                 }
                 return none
             }
+            $instructions: "
+                1.EvaluateStatement:
+                PUSH ARGUMENT $target
+                CALL $parameters WITH 1 ARGUMENT
+                SAVE VARIABLE $result
+                
+                2.IfStatement:
+                JUMP TO NEXT INSTRUCTION
+                
+                2.1.ConditionClause:
+                LOAD VARIABLE $result
+                JUMP TO 2.IfStatementDone ON FALSE
+                
+                2.1.1.ReturnStatement:
+                LOAD VARIABLE $result
+                NOTE --Place a list of the message arguments on the stack.
+                CALL $list
+                LOAD VARIABLE $key
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Send the message with its arguments to the recipient.
+                SEND $getAttribute TO COMPONENT WITH ARGUMENTS
+                PULL RESULT
+                
+                2.IfStatementDone:
+                JUMP TO NEXT INSTRUCTION
+                
+                3.ReturnStatement:
+                PUSH LITERAL `none`
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.EvaluateStatement": 1
+                "2.IfStatement": 4
+                "2.1.ConditionClause": 5
+                "2.1.1.ReturnStatement": 7
+                "2.IfStatementDone": 13
+                "3.ReturnStatement": 14
+            ]
+            $bytecode: '3801C854800200006002180D6002C0456001D001E8015000000028045000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [
+                $key
+                $result
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [
+                $getAttribute
+            ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
         $parameters: [
             $description: "
@@ -92,6 +275,24 @@
             $procedure: {
                 return parameters(target)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $parameters WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+            $bytecode: '3801C8545000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
         $boolean: [
             $description: "
@@ -116,8 +317,8 @@
             $arguments: [
                 $target
             ]
-            $variables: [ ]($type: /bali/collections/Set/v1)
-            $messages: [ ]($type: /bali/collections/Set/v1)
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
         $accept: [
             $description: "
@@ -128,7 +329,7 @@
             }
             $instructions: "
                 1.EvaluateStatement:
-                PUSH ARGUMENT $visitor
+                LOAD VARIABLE $visitor
                 NOTE --Place a list of the message arguments on the stack.
                 CALL $list
                 PUSH ARGUMENT $target
@@ -142,23 +343,28 @@
             $addresses: [
                 "1.EvaluateStatement": 1
             ]
-            $bytecode: '3802C0453801D001E801800160015000'(
+            $bytecode: '6002C0453801D001E801800160015000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
             $arguments: [
                 $target
-                $visitor
             ]
             $variables: [
                 $result-1
-            ]($type: /bali/collections/Set/v1)
+                $visitor
+            ]($type: /nebula/collections/Set/v1)
             $messages: [
                 $visitComponent
-            ]($type: /bali/collections/Set/v1)
+            ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
-    $literals: [ ]($type: /bali/collections/Set/v1)
+    $literals: [
+        false
+        true
+        1
+        none
+    ]($type: /nebula/collections/Set/v1)
 ](
     $type: /nebula/types/Primitive/v1($existence: $abstract)
     $tag: #7Q5M85VYL5TVT37FHH0W5N5XJ9PCR7R8
