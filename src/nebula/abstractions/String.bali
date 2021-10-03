@@ -40,7 +40,7 @@
             $addresses: [
                 "1.EvaluateStatement": 1
             ]
-            $bytecode: '6002C0453801D001E801800160015000'(
+            $bytecode: '6002C0463801D001E801800160015000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -129,7 +129,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '38016001D03E5000'(
+            $bytecode: '38016001D03F5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -208,7 +208,7 @@
             ]
             $bytecode: '
                 38012801D02680056004E00280036003E00118176003E003800138016001
-                D03E800260056002D00180060008000060055000
+                D03F800260056002D00180060008000060055000
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -247,7 +247,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C83F5000'(
+            $bytecode: '3801C8405000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
