@@ -15,28 +15,6 @@
         ]($type: /nebula/aspects/Parameter/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
     $messages: [
-        $isEmpty: [
-            $description: "
-                This message determines whether or not this sequential component contains any
-                items.
-            "($mediaType: "application/bsmd")
-            $type: /nebula/elements/Boolean/v1
-        ]($type: /nebula/aspects/Message/v1)
-        $containsItem: [
-            $description: "
-                This message determines whether or not this sequential component contains the
-                specified item.
-            "($mediaType: "application/bsmd")
-            $type: /nebula/elements/Boolean/v1
-            $parameters: [
-                $item: [
-                    $description: "
-                        This parameter specifies the candidate item.
-                    "($mediaType: "application/bsmd")
-                    $type: $itemType
-                ]($type: /nebula/aspects/Parameter/v1)
-            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-        ]($type: /nebula/aspects/Message/v1)
         $size: [
             $description: "
                 This message returns the number of items that are contained in this sequential
@@ -44,20 +22,11 @@
             "($mediaType: "application/bsmd")
             $type: /nebula/interfaces/Discrete/v1($range: [0..<])
         ]($type: /nebula/aspects/Message/v1)
-        $index: [
+        $isEmpty: [
             $description: "
-                This message returns the index of the specified item in this sequential component,
-                or `0` if the sequential component does not contain the specified item.
+                This message determines whether or not this sequential component contains any items.
             "($mediaType: "application/bsmd")
-            $type: /nebula/interfaces/Discrete/v1($range: [0..<])
-            $parameters: [
-                $item: [
-                    $description: "
-                        This parameter specifies the candidate item.
-                    "($mediaType: "application/bsmd")
-                    $type: $itemType
-                ]($type: /nebula/aspects/Parameter/v1)
-            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+            $type: /nebula/elements/Boolean/v1
         ]($type: /nebula/aspects/Message/v1)
         $item: [
             $description: "
@@ -76,16 +45,16 @@
         ]($type: /nebula/aspects/Message/v1)
         $items: [
             $description: "
-                This message returns a new sequential component containing the items in the specified
-                range from this sequential component.
+                This message returns a new sequential component containing the items from this sequential
+                component that are associated with the specified sequence of indices.
             "($mediaType: "application/bsmd")
             $type: /nebula/interfaces/Sequential($itemType: itemType)
             $parameters: [
-                $range: [
+                $indices: [
                     $description: "
-                        This parameter specifies the range of indices of the desired items.
+                        This parameter specifies the sequence of indices for the desired items.
                     "($mediaType: "application/bsmd")
-                    $type: /nebula/collections/Range/v1($itemType: /nebula/interfaces/Discrete/v1)
+                    $type: /nebula/interfaces/Sequential/v1($itemType: /nebula/interfaces/Discrete/v1)
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
         ]($type: /nebula/aspects/Message/v1)
