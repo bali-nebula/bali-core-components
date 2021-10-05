@@ -16,45 +16,6 @@
         /nebula/interfaces/Sequential/v1($itemType: itemType)
     ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Name/v1))
     $methods: [
-        $accept: [
-            $description: "
-                This method implements the `$accept` message inherited from the
-                `/nebula/abstractions/Component/v1` class.
-            "($mediaType: "application/bsmd")
-            $procedure: {
-                visitor.visitString(target)
-            }
-            $instructions: "
-                1.EvaluateStatement:
-                LOAD VARIABLE $visitor
-                NOTE --Place a list of the message arguments on the stack.
-                CALL $list
-                PUSH ARGUMENT $target
-                CALL $addItem WITH 2 ARGUMENTS
-                NOTE --Send the message with its arguments to the recipient.
-                SEND $visitString TO COMPONENT WITH ARGUMENTS
-                SAVE VARIABLE $result-1
-                LOAD VARIABLE $result-1
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.EvaluateStatement": 1
-            ]
-            $bytecode: '6002C0463801D001E801800160015000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [
-                $result-1
-                $visitor
-            ]($type: /nebula/collections/Set/v1)
-            $messages: [
-                $visitString
-            ]($type: /nebula/collections/Set/v1)
-        ]($type: /nebula/aspects/Method/v1)
         $size: [
             $description: "
                 This method implements the `$size` message specified in the
@@ -101,7 +62,7 @@
             $addresses: [
                 "1.ReturnStatement": 1
             ]
-            $bytecode: '3801C8792802D0075000'(
+            $bytecode: '3801C8792801D0075000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -147,8 +108,8 @@
                 `/nebula/interfaces/Sequential/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
-                $result := duplicate(target, false)
-                with each $index in range do {
+                $result := duplicate(target)
+                with each $index in indices do {
                     $item := item(target, index)
                     addItem(result, item)
                 }
@@ -157,12 +118,11 @@
             $instructions: "
                 1.EvaluateStatement:
                 PUSH ARGUMENT $target
-                PUSH LITERAL `false`
-                CALL $duplicate WITH 2 ARGUMENTS
+                CALL $duplicate WITH 1 ARGUMENT
                 SAVE VARIABLE $result
                 
                 2.WithStatement:
-                LOAD VARIABLE $range
+                LOAD VARIABLE $indices
                 SEND $iterator TO COMPONENT
                 SAVE VARIABLE $iterator-2
                 
@@ -198,17 +158,17 @@
             "($mediaType: "application/basm")
             $addresses: [
                 "1.EvaluateStatement": 1
-                "2.WithStatement": 5
-                "2.1.ConditionClause": 8
-                "2.1.1.EvaluateStatement": 14
-                "2.1.2.EvaluateStatement": 18
-                "2.ConditionRepeat": 22
-                "2.WithStatementDone": 23
-                "3.ReturnStatement": 24
+                "2.WithStatement": 4
+                "2.1.ConditionClause": 7
+                "2.1.1.EvaluateStatement": 13
+                "2.1.2.EvaluateStatement": 17
+                "2.ConditionRepeat": 21
+                "2.WithStatementDone": 22
+                "3.ReturnStatement": 23
             ]
             $bytecode: '
-                38012801D02680056004E00280036003E00118176003E003800138016001
-                D03F800260056002D00180060008000060055000
+                3801C82680056002E00280046004E00118166004E003800138016001D03F
+                800360056003D00180060007000060055000
             '(
                 $encoding: $base16
                 $mediaType: "application/bcod"
@@ -218,9 +178,9 @@
             ]
             $variables: [
                 $index
+                $indices
                 $item
                 $iterator-2
-                $range
                 $result
                 $result-1
             ]($type: /nebula/collections/Set/v1)
@@ -290,7 +250,6 @@
         ]($type: /nebula/aspects/Method/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
     $literals: [
-        false
         0
     ]($type: /nebula/collections/Set/v1)
 ](
