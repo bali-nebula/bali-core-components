@@ -796,37 +796,6 @@
             $variables: [ ]($type: /nebula/collections/Set/v1)
             $messages: [ ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
-        $Chain: [
-            $description: "
-                This method implements the `$Chain` function specified in the
-                `/nebula/libraries/Chainable/v1` library.
-            "($mediaType: "application/bsmd")
-            $procedure: {
-                return chain(first, second)
-            }
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $first
-                LOAD VARIABLE $second
-                CALL $chain WITH 2 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '60016002D0145000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [
-                $first
-                $second
-            ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
-        ]($type: /nebula/aspects/Method/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
     $literals: [
         false
