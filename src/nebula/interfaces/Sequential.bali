@@ -20,7 +20,7 @@
                 This message returns the number of items that are contained in this sequential
                 component.
             "($mediaType: "application/bsmd")
-            $type: /nebula/interfaces/Discrete/v1($range: [0..<])
+            $type: /nebula/interfaces/Discrete/v1($range: [0..<∞])
         ]($type: /nebula/aspects/Message/v1)
         $isEmpty: [
             $description: "

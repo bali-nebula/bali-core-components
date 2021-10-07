@@ -20,7 +20,7 @@
             $description: "
                 This message returns the index of the specified item in this collection.
             "($mediaType: "application/bsmd")
-            $type: /nebula/interfaces/Discrete/v1($range: [0..<])
+            $type: /nebula/interfaces/Discrete/v1($range: [0..<∞])
             $parameters: [
                 $item: [
                     $description: "

@@ -10,7 +10,7 @@
                 this discrete component.
             "($mediaType: "application/bsmd")
             $type: /nebula/collections/Range/v1($itemType: /nebula/elements/Number/v1)
-            $default: [<..<]
+            $default: [-∞<..<∞]
         ]($type: /nebula/aspects/Parameter/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
     $messages: [
