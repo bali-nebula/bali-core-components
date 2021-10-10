@@ -1,7 +1,8 @@
 [
+    $parent: /nebula/abstractions/Collection/v1($itemType: itemType)
     $description: "
-        This primitive type defines the messages that a stack component can respond to. It
-        also provides a compiled method implementation for each message.
+        This primitive type defines the operations that a stack component can respond to. It
+        also provides a compiled method implementation for each operation.
     "($mediaType: "application/bsmd")
     $parameters: [
         $itemType: [
@@ -12,79 +13,41 @@
             $default: /nebula/abstractions/Component/v1
         ]($type: /nebula/aspects/Parameter/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-    $parent: /nebula/abstractions/Collection/v1($itemType: itemType)
     $libraries: [
         /nebula/libraries/Logical/v1
     ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Name/v1))
-    $messages: [
+    $operations: [
         $top: [
             $description: "
-                This message returns the item that is currently on top of the stack.
+                This operation returns the item that is currently on top of the stack.
             "($mediaType: "application/bsmd")
             $type: itemType
-        ]($type: /nebula/aspects/Message/v1)
+        ]($type: /nebula/aspects/Operation/v1)
         $removeTop: [
             $description: "
-                This message removes the item that is currently on top of the stack and returns it.
+                This operation removes the item that is currently on top of the stack and returns it.
             "($mediaType: "application/bsmd")
             $type: itemType
-        ]($type: /nebula/aspects/Message/v1)
-    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1))
+        ]($type: /nebula/aspects/Operation/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
     $methods: [
         $top: [
             $description: "
-                This method implements the `$top` message for this class.
+                This method implements the `$top` operation for this class.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return top(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $top WITH 1 ARGUMENT
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '3801C8835000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
         $removeTop: [
             $description: "
-                This method implements the `$removeTop` message for this class.
+                This method implements the `$removeTop` operation for this class.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return removeTop(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $removeTop WITH 1 ARGUMENT
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '3801C8695000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
-    $literals: [ ]($type: /nebula/collections/Set/v1)
 ](
     $type: /nebula/types/Primitive/v1
     $tag: #H5TFK16BYGRTNB28588KNV26814RTYSQ

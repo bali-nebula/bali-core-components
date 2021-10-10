@@ -1,6 +1,7 @@
 [
+    $parent: /nebula/abstractions/Component/v1
     $description: "
-        This abstract primitive type defines the messages that an iterator agent can respond to.
+        This abstract primitive type defines the operations that an iterator agent can respond to.
     "($mediaType: "application/bsmd")
     $parameters: [
         $itemType: [
@@ -11,40 +12,40 @@
             $default: /nebula/abstractions/Component/v1
         ]($type: /nebula/aspects/Parameter/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-    $messages: [
+    $operations: [
         $hasNext: [
             $description: "
-                This message determines whether or not there is an item after the current slot.
+                This operation determines whether or not there is an item after the current slot.
             "($mediaType: "application/bsmd")
             $type: /nebula/elements/Boolean/v1
-        ]($type: /nebula/aspects/Message/v1)
+        ]($type: /nebula/aspects/Operation/v1)
         $next: [
             $description: "
-                This message returns the item after the current slot and moves the iterator
+                This operation returns the item after the current slot and moves the iterator
                 to the next slot.
             "($mediaType: "application/bsmd")
             $type: itemType
-        ]($type: /nebula/aspects/Message/v1)
+        ]($type: /nebula/aspects/Operation/v1)
         $hasPrevious: [
             $description: "
-                This message determines whether or not there is an item before the current slot.
+                This operation determines whether or not there is an item before the current slot.
             "($mediaType: "application/bsmd")
             $type: /nebula/elements/Boolean/v1
-        ]($type: /nebula/aspects/Message/v1)
+        ]($type: /nebula/aspects/Operation/v1)
         $previous: [
             $description: "
-                This message returns the item before the current slot and moves the iterator
+                This operation returns the item before the current slot and moves the iterator
                 to the previous slot.
             "($mediaType: "application/bsmd")
             $type: itemType
-        ]($type: /nebula/aspects/Message/v1)
+        ]($type: /nebula/aspects/Operation/v1)
         $toStart: [
             $description: "
-                This message moves the iterator to the slot before the first item.
+                This operation moves the iterator to the slot before the first item.
             "($mediaType: "application/bsmd")
             $type: itemType
         ]($type: /nebula/agents/Iterator/v1($itemType: itemType))
-    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1))
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
 ](
     $type: /nebula/types/Primitive/v1($existence: $abstract)
     $tag: #7K6JYLW6HLWLBQXDR3LH8W0HMTYRJS0Y

@@ -1,7 +1,8 @@
 [
+    $parent: /nebula/abstractions/Component/v1
     $description: "
-        This abstract primitive type defines the messages that an elemental component can respond to. It
-        also provides a compiled method implementation for some of the messages.
+        This abstract primitive type defines the operations that an elemental component can
+        respond to. It also provides a compiled method implementation for some of the operations.
     "($mediaType: "application/bsmd")
 ](
     $type: /nebula/types/Primitive/v1($existence: $abstract)

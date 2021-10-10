@@ -1,1 +1,12 @@
-[:]
+[
+    $parent: /nebula/abstractions/Element/v1
+    $description: "
+        This class defines the methods for the operations that all version strings support.
+    "($mediaType: "application/bsmd")
+](
+    $type: /nebula/types/Primitive/v1
+    $tag: #G17X2HNF7FTKQV43NKTWCSNA46SQR45P
+    $version: v1
+    $permissions: /nebula/permissions/public/v1
+    $previous: none
+)

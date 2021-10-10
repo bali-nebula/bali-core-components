@@ -1,11 +1,12 @@
 [
+    $parent: /nebula/abstractions/Component/v1
     $description: "
-        This abstract primitive type defines the messages that a comparator agent can respond to.
+        This abstract primitive type defines the operations that a comparator agent can respond to.
     "($mediaType: "application/bsmd")
-    $messages: [
+    $operations: [
         $areEqual: [
             $description: "
-                This message determines whether or not the specified components are equal to each other.
+                This operation determines whether or not the specified components are equal to each other.
             "($mediaType: "application/bsmd")
             $type: /nebula/elements/Boolean/v1
             $parameters: [
@@ -22,10 +23,10 @@
                     $type: /nebula/abstractions/Component/v1
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-        ]($type: /nebula/aspects/Message/v1)
+        ]($type: /nebula/aspects/Operation/v1)
         $doesMatch: [
             $description: "
-                This message determines whether or not the specified component matches the specified pattern.
+                This operation determines whether or not the specified component matches the specified pattern.
             "($mediaType: "application/bsmd")
             $type: /nebula/elements/Boolean/v1
             $parameters: [
@@ -42,10 +43,10 @@
                     $type: /nebula/abstractions/Component/v1
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-        ]($type: /nebula/aspects/Message/v1)
+        ]($type: /nebula/aspects/Operation/v1)
         $ranking: [
             $description: "
-                This message determines the relative ranking of the specified components.
+                This operation determines the relative ranking of the specified components.
             "($mediaType: "application/bsmd")
             $type: /nebula/enumeration/Ranking/v1
             $parameters: [
@@ -62,8 +63,8 @@
                     $type: /nebula/abstractions/Component/v1
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-        ]($type: /nebula/aspects/Message/v1)
-    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1))
+        ]($type: /nebula/aspects/Operation/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
 ](
     $type: /nebula/types/Primitive/v1($existence: $abstract)
     $tag: #P3TZ00LKP1HY3LX6JK53JRYP28J6QHTZ

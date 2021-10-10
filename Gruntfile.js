@@ -21,9 +21,19 @@ module.exports = function(grunt) {
       ]
     },
 
+    // grunt-contrib-clean plugin configuration (clean up files)
+    clean: {
+      build: [
+        'test/config/'
+      ],
+      options: {
+        force: true
+      }
+    },
+
     // grunt-mocha-test plugin configuration (unit testing)
     mochaTest: {
-      clean: {
+      strip: {
         options: {
           reporter: 'spec',
           timeout: 20000
@@ -45,11 +55,11 @@ module.exports = function(grunt) {
 
   });
 
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-eslint');
   grunt.loadNpmTasks('grunt-mocha-test');
 
-  grunt.registerTask('clean', 'Clean the sources.', ['eslint', 'mochaTest:clean']);
-  grunt.registerTask('build', 'Build the module.', ['eslint', 'mochaTest:test']);
+  grunt.registerTask('strip', 'Strip the sources.', ['clean:build', 'eslint', 'mochaTest:strip']);
+  grunt.registerTask('build', 'Build the module.', ['clean:build', 'eslint', 'mochaTest:test']);
   grunt.registerTask('default', 'Default targets.', ['build']);
-
 };

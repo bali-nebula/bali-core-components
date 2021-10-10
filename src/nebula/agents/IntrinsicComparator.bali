@@ -1,9 +1,9 @@
 [
+    $parent: /nebula/agents/Comparator/v1
     $description: "
         This primitive type implements an intrinsic comparator which orders components in their _natural_
         order.
     "($mediaType: "application/bsmd")
-    $parent: /nebula/agents/Comparator/v1
     $methods: [
         $areEqual: [
             $description: "
@@ -13,28 +13,6 @@
             $procedure: {
                 return areEqual(first, second)
             }
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $first
-                LOAD VARIABLE $second
-                CALL $areEqual WITH 2 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '60016002D0075000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [
-                $first
-                $second
-            ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
         $doesMatch: [
             $description: "
@@ -44,28 +22,6 @@
             $procedure: {
                 return doesMatch(component, pattern)
             }
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $component
-                LOAD VARIABLE $pattern
-                CALL $doesMatch WITH 2 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '60016002D0255000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [
-                $component
-                $pattern
-            ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
         $ranking: [
             $description: "
@@ -75,31 +31,8 @@
             $procedure: {
                 return ranking(first, second)
             }
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $first
-                LOAD VARIABLE $second
-                CALL $ranking WITH 2 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '60016002D0615000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [
-                $first
-                $second
-            ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
-    $literals: [ ]($type: /nebula/collections/Set/v1)
 ](
     $type: /nebula/types/Primitive/v1($existence: $abstract)
     $tag: #GQYQJJN6SKVGBPG0ZS3H98VNFYL3ZMX4

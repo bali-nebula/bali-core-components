@@ -1,8 +1,9 @@
 [
+    $parent: /nebula/abstractions/Component/v1
     $description: "
-        This interface defines the messages that can be processed by components that are sequential
+        This interface defines the operations that can be processed by components that are sequential
         in nature. It also defines the types of events that may be published during the processing
-        of the messages.
+        of the operations.
     "($mediaType: "application/bsmd")
     $parameters: [
         $itemType: [
@@ -14,23 +15,23 @@
             $default: /nebula/abstractions/Component/v1
         ]($type: /nebula/aspects/Parameter/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-    $messages: [
+    $operations: [
         $size: [
             $description: "
-                This message returns the number of items that are contained in this sequential
+                This operation returns the number of items that are contained in this sequential
                 component.
             "($mediaType: "application/bsmd")
             $type: /nebula/interfaces/Discrete/v1($range: [0..<∞])
-        ]($type: /nebula/aspects/Message/v1)
+        ]($type: /nebula/aspects/Operation/v1)
         $isEmpty: [
             $description: "
-                This message determines whether or not this sequential component contains any items.
+                This operation determines whether or not this sequential component contains any items.
             "($mediaType: "application/bsmd")
             $type: /nebula/elements/Boolean/v1
-        ]($type: /nebula/aspects/Message/v1)
+        ]($type: /nebula/aspects/Operation/v1)
         $item: [
             $description: "
-                This message returns the item corresponding to the specified index in this sequential
+                This operation returns the item corresponding to the specified index in this sequential
                 component, or `none` if the specified index does exist within the sequential component.
             "($mediaType: "application/bsmd")
             $type: $itemType
@@ -42,10 +43,10 @@
                     $type: /nebula/interfaces/Discrete/v1
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-        ]($type: /nebula/aspects/Message/v1)
+        ]($type: /nebula/aspects/Operation/v1)
         $items: [
             $description: "
-                This message returns a new sequential component containing the items from this sequential
+                This operation returns a new sequential component containing the items from this sequential
                 component that are associated with the specified sequence of indices.
             "($mediaType: "application/bsmd")
             $type: /nebula/interfaces/Sequential($itemType: itemType)
@@ -57,14 +58,14 @@
                     $type: /nebula/interfaces/Sequential/v1($itemType: /nebula/interfaces/Discrete/v1)
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-        ]($type: /nebula/aspects/Message/v1)
+        ]($type: /nebula/aspects/Operation/v1)
         $iterator: [
             $description: "
-                This message returns an iterator for this sequential component.
+                This operation returns an iterator for this sequential component.
             "($mediaType: "application/bsmd")
             $type: /nebula/abstractions/Iterator/v1($itemType: itemType)
-        ]($type: /nebula/aspects/Message/v1)
-    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1))
+        ]($type: /nebula/aspects/Operation/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
 ](
     $type: /nebula/types/Interface/v1
     $tag: #42Y8CHK27WV6D6RG4KRXM716RNJ2ZVF4

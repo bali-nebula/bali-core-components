@@ -1,8 +1,8 @@
 [
+    $parent: /nebula/abstractions/Type/v1
     $description: "
         This concrete structure defines the attributes that all function library types support.
     "($mediaType: "application/bsmd")
-    $parent: /nebula/abstractions/Type/v1
     $attributes: [
         $functions: [
             $description: "

@@ -1,1 +1,12 @@
-[:]
+[
+    $parent: /nebula/abstractions/Element/v1
+    $description: "
+        This class defines the methods for the operations that all text strings support.
+    "($mediaType: "application/bsmd")
+](
+    $type: /nebula/types/Primitive/v1
+    $tag: #QCBA71AK1DQCHW1ZZDBANJ70YCJHJGHX
+    $version: v1
+    $permissions: /nebula/permissions/public/v1
+    $previous: none
+)

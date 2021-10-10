@@ -1,9 +1,9 @@
 [
+    $parent: /nebula/libraries/Scalable/v1
     $description: "
         This library defines the functions that operate on /radial/ components. The functions support
         the standard trigonometric operations.
     "($mediaType: "application/bsmd")
-    $parent: /nebula/libraries/Scalable/v1
     $functions: [
         $Conjugate: [
             $description: "

@@ -1,11 +1,12 @@
 [
+    $parent: /nebula/abstractions/Component/v1
     $description: "
-        This abstract primitive type defines the messages that a sorter agent can respond to.
+        This abstract primitive type defines the operations that a sorter agent can respond to.
     "($mediaType: "application/bsmd")
-    $messages: [
+    $operations: [
         $sort: [
             $description: "
-                This message sorts the items in the specified sortable component.
+                This operation sorts the items in the specified sortable component.
             "($mediaType: "application/bsmd")
             $type: /nebula/elements/Boolean/v1
             $parameters: [
@@ -16,8 +17,8 @@
                     $type: /nebula/abstractions/Component/v1
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-        ]($type: /nebula/aspects/Message/v1)
-    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1))
+        ]($type: /nebula/aspects/Operation/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
 ](
     $type: /nebula/types/Primitive/v1($existence: $abstract)
     $tag: #MGY5Z01FFHPH1XWX366RWPV2A22K8BHY

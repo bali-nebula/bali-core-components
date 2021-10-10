@@ -1,4 +1,5 @@
 [
+    $parent: /nebula/abstractions/Aspect/v1
     $description: "
         This concrete structure defines the attributes that all attribute aspects support.
     "($mediaType: "application/bsmd")
@@ -12,7 +13,6 @@
             $default: $private
         ]($type: /nebula/aspects/Parameter/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-    $parent: /nebula/abstractions/Aspect/v1
     $attributes: [
         $type: [
             $description: "

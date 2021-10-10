@@ -1,4 +1,5 @@
 [
+    $parent: /nebula/abstractions/Type/v1
     $description: "
         This concrete structure defines the attributes that all structure types support. This is
         a *very* cool type since it the only type that is an instance of itself!
@@ -13,7 +14,6 @@
             $default: $concrete
         ]($type: /nebula/aspects/Parameter/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-    $parent: /nebula/abstractions/Type/v1
     $attributes: [
         $attributes: [
             $description: "

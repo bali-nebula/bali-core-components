@@ -1,8 +1,9 @@
 [
+    $parent: /nebula/abstractions/Component/v1
     $description: "
-        This interface defines the messages that can be processed by collections that are sortable.
+        This interface defines the operations that can be processed by collections that are sortable.
         It also defines the types of events that may be published during the processing of the
-        messages.
+        operations.
     "($mediaType: "application/bsmd")
     $parameters: [
         $itemType: [
@@ -14,10 +15,10 @@
             $default: /nebula/abstractions/Component/v1
         ]($type: /nebula/aspects/Parameter/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-    $messages: [
+    $operations: [
         $sortItems: [
             $description: "
-                This message sorts the items in this collection using the specified sorter
+                This operation sorts the items in this collection using the specified sorter
                 agent to compare the items. If no sorter agent is specified the default
                 merge sorter with a _natural_ comparator agent is used.
             "($mediaType: "application/bsmd")
@@ -31,8 +32,8 @@
                     $type: /nebula/agents/Sorter/v1($itemType: itemType)
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-        ]($type: /nebula/aspects/Message/v1)
-    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1))
+        ]($type: /nebula/aspects/Operation/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
     $events: [
         $CollectionSorted: [
             $description: "

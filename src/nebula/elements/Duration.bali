@@ -1,1 +1,12 @@
-[:]
+[
+    $parent: /nebula/abstractions/Element/v1
+    $description: "
+        This class defines the methods for the operations that all durations support.
+    "($mediaType: "application/bsmd")
+](
+    $type: /nebula/types/Primitive/v1
+    $tag: #0T0SGV7VV7VPZ15F33HGM54J2APQ97SQ
+    $version: v1
+    $permissions: /nebula/permissions/public/v1
+    $previous: none
+)

@@ -1,4 +1,5 @@
 [
+    $parent: /nebula/abstractions/Component/v1
     $description: "
         This enumeration type defines whether or not an instance of a type can be created. If
         it is a _concrete_ type then instances can be created, if it is an _abstract_ type then

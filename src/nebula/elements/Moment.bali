@@ -1,1 +1,12 @@
-[:]
+[
+    $parent: /nebula/abstractions/Element/v1
+    $description: "
+        This class defines the methods for the operations that all moments support.
+    "($mediaType: "application/bsmd")
+](
+    $type: /nebula/types/Primitive/v1
+    $tag: #JTB9GK1V6FY3KAHJKR52X07MP58R1FFB
+    $version: v1
+    $permissions: /nebula/permissions/public/v1
+    $previous: none
+)

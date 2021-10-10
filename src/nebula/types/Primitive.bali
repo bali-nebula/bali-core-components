@@ -1,4 +1,5 @@
 [
+    $parent: /nebula/abstractions/Type/v1
     $description: "
         This concrete structure defines the attributes that all primitive types support. Primitive
         types by definition have no attributes.
@@ -13,7 +14,6 @@
             $default: $concrete
         ]($type: /nebula/aspects/Parameter/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-    $parent: /nebula/abstractions/Type/v1
     $attributes: [
         $libraries: [
             $description: "
@@ -25,7 +25,7 @@
         ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
         $interfaces: [
             $description: "
-                This attribute defines the set of message interfaces that are implemented by the
+                This attribute defines the set of operation interfaces that are implemented by the
                 primitive type.
             "($mediaType: "application/bsmd")
             $type: /nebula/collections/Set/v1($itemType: /nebula/strings/Name/v1)
@@ -47,19 +47,19 @@
             $type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Function/v1)
             $default: [:]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Function/v1))
         ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
-        $messages: [
+        $operations: [
             $description: "
-                This attribute defines the catalog of messages defined by the primitive type. This
-                catalog of messages does not include any messages defined in interfaces that are
+                This attribute defines the catalog of operations defined by the primitive type. This
+                catalog of operations does not include any operations defined in interfaces that are
                 implemented by the primitive type.
             "($mediaType: "application/bsmd")
-            $type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1)
-            $default: [:]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1))
+            $type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1)
+            $default: [:]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
         ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
         $methods: [
             $description: "
                 This attribute defines the catalog of all methods implemented by the primitive type.
-                The methods provide the implementations of all functions and messages defined by the
+                The methods provide the implementations of all functions and operations defined by the
                 primitive type and any libraries and interfaces it supports.
             "($mediaType: "application/bsmd")
             $type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1)

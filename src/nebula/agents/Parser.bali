@@ -1,11 +1,12 @@
 [
+    $parent: /nebula/abstractions/Component/v1
     $description: "
-        This abstract primitive type defines the messages that a parser agent can respond to.
+        This abstract primitive type defines the operations that a parser agent can respond to.
     "($mediaType: "application/bsmd")
-    $messages: [
+    $operations: [
         $parse: [
             $description: "
-                This message returns the component corresponding to the specified source code text string.
+                This operation returns the component corresponding to the specified source code text string.
             "($mediaType: "application/bsmd")
             $type: /nebula/abstractions/Component/v1
             $parameters: [
@@ -16,8 +17,8 @@
                     $type: /nebula/strings/Text/v1
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-        ]($type: /nebula/aspects/Message/v1)
-    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1))
+        ]($type: /nebula/aspects/Operation/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
 ](
     $type: /nebula/types/Primitive/v1($existence: $abstract)
     $tag: #09PM4YCPFK20YSSZLQ3S0KH0JLSB6R87

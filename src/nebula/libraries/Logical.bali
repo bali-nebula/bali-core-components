@@ -1,4 +1,5 @@
 [
+    $parent: /nebula/abstractions/Component/v1
     $description: "
         This library defines the functions that operate on /logical/ components. The functions support
         the standard boolean operations.

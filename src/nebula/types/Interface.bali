@@ -1,14 +1,14 @@
 [
+    $parent: /nebula/abstractions/Type/v1
     $description: "
         This concrete structure defines the attributes that all message interface types support.
     "($mediaType: "application/bsmd")
-    $parent: /nebula/abstractions/Type/v1
     $attributes: [
-        $messages: [
+        $operations: [
             $description: "
-                This attribute defines the catalog of messages defined by the interface.
+                This attribute defines the catalog of operations defined by the interface.
             "($mediaType: "application/bsmd")
-            $type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1)
+            $type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1)
         ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
         $events: [
             $description: "

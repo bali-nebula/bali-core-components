@@ -1,7 +1,8 @@
 [
+    $parent: /nebula/abstractions/Component/v1
     $description: "
-        This primitive type defines the messages that an association component can respond to. It
-        also provides a compiled method implementation for each message.
+        This primitive type defines the operations that an association component can respond to. It
+        also provides a compiled method implementation for each operation.
     "($mediaType: "application/bsmd")
     $parameters: [
         $keyType: [
@@ -21,23 +22,23 @@
             $default: /nebula/abstractions/Component/v1
         ]($type: /nebula/aspects/Parameter/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-    $messages: [
+    $operations: [
         $key: [
             $description: "
-                This message returns the key element of the association component.
+                This operation returns the key element of the association component.
             "($mediaType: "application/bsmd")
             $type: $keyType
-        ]($type: /nebula/aspects/Message/v1)
+        ]($type: /nebula/aspects/Operation/v1)
         $value: [
             $description: "
-                This message returns the value component of the association component.
+                This operation returns the value component of the association component.
             "($mediaType: "application/bsmd")
             $type: $valueType
-        ]($type: /nebula/aspects/Message/v1)
+        ]($type: /nebula/aspects/Operation/v1)
         $setValue: [
             $description: "
-                This message sets the value of the association component to the specified
-                component value. This message response with the previous value.
+                This operation sets the value of the association component to the specified
+                component value. This operation response with the previous value.
             "($mediaType: "application/bsmd")
             $type: $valueType
             $parameters: [
@@ -48,91 +49,34 @@
                     $type: $valueType
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-        ]($type: /nebula/aspects/Message/v1)
-    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1))
+        ]($type: /nebula/aspects/Operation/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
     $methods: [
         $key: [
             $description: "
-                This method implements the `$key` message.
+                This method implements the `$key` operation.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return key(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $key WITH 1 ARGUMENT
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '3801C8415000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
         $value: [
             $description: "
-                This method implements the `$value` message.
+                This method implements the `$value` operation.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return value(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $value WITH 1 ARGUMENT
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '3801C8875000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
         $setValue: [
             $description: "
-                This method implements the `$setValue` message.
+                This method implements the `$setValue` operation.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return setValue(target, value)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                PUSH ARGUMENT $value
-                CALL $setValue WITH 2 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '38013802D0765000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-                $value
-            ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
-    $literals: [ ]($type: /nebula/collections/Set/v1)
 ](
     $type: /nebula/types/Primivite/v1
     $tag: #08A58FPWMKZ3PBG7Z1CWD21FXBKATRY8

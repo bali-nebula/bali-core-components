@@ -1,8 +1,8 @@
 [
+    $parent: /nebula/abstractions/Aspect/v1
     $description: "
         This concrete structure defines the attributes that all method aspects support.
     "($mediaType: "application/bsmd")
-    $parent: /nebula/abstractions/Aspect/v1
     $attributes: [
         $procedure: [
             $description: "
@@ -42,7 +42,7 @@
             $description: "
                 This attribute defines the list of symbols for the arguments to this method starting
                 with the implicit `$target` argument. The `$target` argument is either the type defining
-                the function implemented by the method, or the instance of the type receiving the message
+                the function implemented by the method, or an instance of the type defining the operation
                 implemented by the method.
             "($mediaType: "application/bsmd")
             $type: /nebula/collections/List/v1($itemType: /nebula/strings/Symbol/v1)

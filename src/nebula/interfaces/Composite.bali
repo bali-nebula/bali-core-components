@@ -1,8 +1,9 @@
 [
+    $parent: /nebula/abstractions/Component/v1
     $description: "
-        This interface defines the messages that can be processed by components that are structural
+        This interface defines the operations that can be processed by components that are structural
         in nature. It also defines the types of events that may be published during the processing
-        of the messages.
+        of the operations.
     "($mediaType: "application/bsmd")
     $parameters: [
         $keyType: [
@@ -22,10 +23,10 @@
             $default: /nebula/abstractions/Component/v1
         ]($type: /nebula/aspects/Parameter/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-    $messages: [
+    $operations: [
         $attribute: [
             $description: "
-                This message returns the attribute value associated with the specified key, or `none`
+                This operation returns the attribute value associated with the specified key, or `none`
                 if the specified key is not part of this structural component.
             "($mediaType: "application/bsmd")
             $type: $valueType
@@ -37,10 +38,10 @@
                     $type: $keyType
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-        ]($type: /nebula/aspects/Message/v1)
+        ]($type: /nebula/aspects/Operation/v1)
         $setAttribute: [
             $description: "
-                This message sets the attribute associated with the specified key to the
+                This operation sets the attribute associated with the specified key to the
                 specified value. The previous value of that attribute is returned, or `none`
                 if no previous value existed.
             "($mediaType: "application/bsmd")
@@ -60,8 +61,8 @@
                     $type: $valueType
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-        ]($type: /nebula/aspects/Message/v1)
-    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Message/v1))
+        ]($type: /nebula/aspects/Operation/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
     $events: [
         $AttributeUpdated: [
             $description: "

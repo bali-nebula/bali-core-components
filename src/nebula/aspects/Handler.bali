@@ -1,8 +1,8 @@
 [
+    $parent: /nebula/abstractions/Aspect/v1
     $description: "
         This concrete structure defines the attributes that all event handler aspects support.
     "($mediaType: "application/bsmd")
-    $parent: /nebula/abstractions/Aspect/v1
     $attributes: [
         $tag: [
             $description: "

@@ -1,8 +1,8 @@
 [
+    $parent: /nebula/agents/Sorter/v1
     $description: "
         This primitive type implements an intrinsic sorter which uses a merge sort algorithm.
     "($mediaType: "application/bsmd")
-    $parent: /nebula/agents/Sorter/v1
     $methods: [
         $sort: [
             $description: "
@@ -12,30 +12,8 @@
             $procedure: {
                 return sortItems(sortable, target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                LOAD VARIABLE $sortable
-                PUSH ARGUMENT $target
-                CALL $sortItems WITH 2 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
-            $bytecode: '60013801D07B5000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target
-            ]
-            $variables: [
-                $sortable
-            ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
         ]($type: /nebula/aspects/Method/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
-    $literals: [ ]($type: /nebula/collections/Set/v1)
 ](
     $type: /nebula/types/Primitive/v1($existence: $abstract)
     $tag: #LC75A6YXDAHLDVN3ZZ8G14264ADWL99S

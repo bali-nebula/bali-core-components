@@ -1,8 +1,8 @@
 [
-    $description: "
-        This class defines the methods for the messages that all patterns support.
-    "($mediaType: "application/bsmd")
     $parent: /nebula/abstractions/Element/v1
+    $description: "
+        This class defines the methods for the operations that all patterns support.
+    "($mediaType: "application/bsmd")
 ](
     $type: /nebula/types/Primitive/v1
     $tag: #L4S2DRQ6LTY5G1J6GADFVNM7TWQ23TBB

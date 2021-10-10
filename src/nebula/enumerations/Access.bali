@@ -1,4 +1,5 @@
 [
+    $parent: /nebula/abstractions/Component/v1
     $description: "
         This enumeration type defines the kind of access that another procedure has to a
         specific aspect of a type definition.
