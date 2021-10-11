@@ -13,7 +13,7 @@ const mocha = require('mocha');
 const expect = require('chai').expect;
 const fs = require('fs');
 const pfs = fs.promises;
-const bali = require('bali-component-framework').api(1);
+const bali = require('bali-component-framework').api();
 const compiler = require('bali-type-compiler').api(debug);
 
 

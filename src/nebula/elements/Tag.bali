@@ -1,7 +1,7 @@
 [
     $parent: /nebula/abstractions/Element/v1
     $description: "
-        This class defines the methods for the operations that all tags support.
+        This class defines the methods for the functions and operations that all tags support.
     "($mediaType: "application/bsmd")
 ](
     $type: /nebula/types/Primitive/v1

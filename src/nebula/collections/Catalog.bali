@@ -112,24 +112,6 @@
             $procedure: {
                 return keys(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $keys WITH 1 ARGUMENT
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $bytecode: '3801C8425000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target: none
-            ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
         ]($type: /nebula/aspects/Method/v1)
         $removeAttribute: [
             $description: "
@@ -138,26 +120,6 @@
             $procedure: {
                 return removeAttribute(target, key)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                PUSH ARGUMENT $key
-                CALL $removeAttribute WITH 2 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $bytecode: '38013802D0655000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target: none
-                $key: none
-            ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
         ]($type: /nebula/aspects/Method/v1)
         $removeAttributes: [
             $description: "
@@ -169,65 +131,6 @@
                 }
                 return target
             }
-            $instructions: "
-                1.WithStatement:
-                PUSH ARGUMENT $keys
-                SEND $iterator TO COMPONENT
-                SAVE VARIABLE $iterator-2
-                
-                1.1.ConditionClause:
-                LOAD VARIABLE $iterator-2
-                SEND $hasNext TO COMPONENT
-                JUMP TO 1.WithStatementDone ON FALSE
-                LOAD VARIABLE $iterator-2
-                SEND $next TO COMPONENT
-                SAVE VARIABLE $key
-                
-                1.1.1.EvaluateStatement:
-                PUSH ARGUMENT $target
-                LOAD VARIABLE $key
-                CALL $removeAttribute WITH 2 ARGUMENTS
-                SAVE VARIABLE $result-1
-                
-                1.ConditionRepeat:
-                JUMP TO 1.1.ConditionClause
-                
-                1.WithStatementDone:
-                JUMP TO NEXT INSTRUCTION
-                
-                2.ReturnStatement:
-                PUSH ARGUMENT $target
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $bytecode: '
-                3802E00280016001E001180F6001E003800238016002D065800300040000
-                38015000
-            '(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target: none
-                $keys: none
-            ]
-            $variables: [
-                $iterator-2
-                $key
-                $result-1
-            ]($type: /nebula/collections/Set/v1)
-            $messages: [
-                $hasNext
-                $iterator
-                $next
-            ]($type: /nebula/collections/Set/v1)
-            $addresses: [
-                "1.WithStatement": 1
-                "1.1.ConditionClause": 4
-                "1.1.1.EvaluateStatement": 10
-                "1.ConditionRepeat": 14
-                "1.WithStatementDone": 15
-                "2.ReturnStatement": 16
-            ]
         ]($type: /nebula/aspects/Method/v1)
         $sortItems: [
             $description: "
@@ -237,27 +140,6 @@
             $procedure: {
                 return sortItems(target, sorter)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                PUSH ARGUMENT $sorter
-                CALL $sortItems WITH 2 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $bytecode: '38013802D07B5000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target: none
-                $sorter: none
-                $comparator: none
-            ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
         ]($type: /nebula/aspects/Method/v1)
         $reverseItems: [
             $description: "
@@ -267,24 +149,6 @@
             $procedure: {
                 return reverseItems(target)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                CALL $reverseItems WITH 1 ARGUMENT
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $bytecode: '3801C86B5000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target: none
-            ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
         ]($type: /nebula/aspects/Method/v1)
         $setAttribute: [
             $description: "
@@ -294,28 +158,6 @@
             $procedure: {
                 return setAttribute(target, key, value)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                PUSH ARGUMENT $key
-                PUSH ARGUMENT $value
-                CALL $setAttribute WITH 3 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $bytecode: '380138023803D8725000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target: none
-                $key: none
-                $value: none
-            ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
         ]($type: /nebula/aspects/Method/v1)
         $attribute: [
             $description: "
@@ -325,26 +167,6 @@
             $procedure: {
                 return attribute(target, key)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $target
-                PUSH ARGUMENT $key
-                CALL $attribute WITH 2 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $bytecode: '38013802D00A5000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target: none
-                $key: none
-            ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
         ]($type: /nebula/aspects/Method/v1)
         $attributes: [
             $description: "
@@ -357,74 +179,6 @@
                 }
                 return result
             }
-            $instructions: "
-                1.EvaluateStatement:
-                NOTE --Place an empty list on the stack.
-                CALL $list
-                SAVE VARIABLE $result
-                
-                2.WithStatement:
-                PUSH ARGUMENT $keys
-                SEND $iterator TO COMPONENT
-                SAVE VARIABLE $iterator-2
-                
-                2.1.ConditionClause:
-                LOAD VARIABLE $iterator-2
-                SEND $hasNext TO COMPONENT
-                JUMP TO 2.WithStatementDone ON FALSE
-                LOAD VARIABLE $iterator-2
-                SEND $next TO COMPONENT
-                SAVE VARIABLE $key
-                
-                2.1.1.EvaluateStatement:
-                LOAD VARIABLE $result
-                PUSH ARGUMENT $target
-                LOAD VARIABLE $key
-                CALL $attribute WITH 2 ARGUMENTS
-                CALL $addItem WITH 2 ARGUMENTS
-                SAVE VARIABLE $result-1
-                
-                2.ConditionRepeat:
-                JUMP TO 2.1.ConditionClause
-                
-                2.WithStatementDone:
-                JUMP TO NEXT INSTRUCTION
-                
-                3.ReturnStatement:
-                LOAD VARIABLE $result
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $bytecode: '
-                C04680033802E00280016001E00118136001E0038002600338016002D00A
-                D00180040006000060035000
-            '(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target: none
-                $keys: none
-            ]
-            $variables: [
-                $iterator-2
-                $key
-                $result
-                $result-1
-            ]($type: /nebula/collections/Set/v1)
-            $messages: [
-                $hasNext
-                $iterator
-                $next
-            ]($type: /nebula/collections/Set/v1)
-            $addresses: [
-                "1.EvaluateStatement": 1
-                "2.WithStatement": 3
-                "2.1.ConditionClause": 6
-                "2.1.1.EvaluateStatement": 12
-                "2.ConditionRepeat": 18
-                "2.WithStatementDone": 19
-                "3.ReturnStatement": 20
-            ]
         ]($type: /nebula/aspects/Method/v1)
         $Extraction: [
             $description: "
@@ -437,77 +191,6 @@
                 }
                 return result
             }
-            $instructions: "
-                1.EvaluateStatement:
-                PUSH ARGUMENT $catalog
-                PUSH LITERAL `true`
-                CALL $duplicate WITH 2 ARGUMENTS
-                SAVE VARIABLE $result
-                
-                2.WithStatement:
-                PUSH ARGUMENT $keys
-                SEND $iterator TO COMPONENT
-                SAVE VARIABLE $iterator-2
-                
-                2.1.ConditionClause:
-                LOAD VARIABLE $iterator-2
-                SEND $hasNext TO COMPONENT
-                JUMP TO 2.WithStatementDone ON FALSE
-                LOAD VARIABLE $iterator-2
-                SEND $next TO COMPONENT
-                SAVE VARIABLE $key
-                
-                2.1.1.EvaluateStatement:
-                LOAD VARIABLE $result
-                LOAD VARIABLE $key
-                PUSH ARGUMENT $catalog
-                LOAD VARIABLE $key
-                CALL $attribute WITH 2 ARGUMENTS
-                CALL $setAttribute WITH 3 ARGUMENTS
-                SAVE VARIABLE $result-1
-                
-                2.ConditionRepeat:
-                JUMP TO 2.1.ConditionClause
-                
-                2.WithStatementDone:
-                JUMP TO NEXT INSTRUCTION
-                
-                3.ReturnStatement:
-                LOAD VARIABLE $result
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $bytecode: '
-                38022801D02580033803E00280016001E00118166001E003800260036002
-                38026002D00AD87280040008000060035000
-            '(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target: none
-                $catalog: none
-                $keys: none
-            ]
-            $variables: [
-                $iterator-2
-                $key
-                $result
-                $result-1
-            ]($type: /nebula/collections/Set/v1)
-            $messages: [
-                $hasNext
-                $iterator
-                $next
-            ]($type: /nebula/collections/Set/v1)
-            $addresses: [
-                "1.EvaluateStatement": 1
-                "2.WithStatement": 5
-                "2.1.ConditionClause": 8
-                "2.1.1.EvaluateStatement": 14
-                "2.ConditionRepeat": 21
-                "2.WithStatementDone": 22
-                "3.ReturnStatement": 23
-            ]
         ]($type: /nebula/aspects/Method/v1)
         $Chain: [
             $description: "
@@ -517,32 +200,8 @@
             $procedure: {
                 return chain(first, second)
             }
-            $instructions: "
-                1.ReturnStatement:
-                PUSH ARGUMENT $first
-                PUSH ARGUMENT $second
-                CALL $chain WITH 2 ARGUMENTS
-                PULL RESULT
-            "($mediaType: "application/basm")
-            $bytecode: '38023803D0145000'(
-                $encoding: $base16
-                $mediaType: "application/bcod"
-            )
-            $arguments: [
-                $target: none
-                $first: none
-                $second: none
-            ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
-            $addresses: [
-                "1.ReturnStatement": 1
-            ]
         ]($type: /nebula/aspects/Method/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
-    $literals: [
-        true
-    ]($type: /nebula/collections/Set/v1)
 ](
     $type: /nebula/types/Primitive/v1
     $tag: #455135X1XN4R3QN43F1ZV4GJ02XBSRP0

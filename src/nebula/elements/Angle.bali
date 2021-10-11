@@ -1,8 +1,173 @@
 [
     $parent: /nebula/abstractions/Element/v1
     $description: "
-        This class defines the methods for the operations that all angles support.
+        This class defines the methods for the functions and operations that all angles support.
     "($mediaType: "application/bsmd")
+    $libraries: [
+        /nebula/libraries/Radial/v1
+        /nebula/libraries/Scalable/v1
+    ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Name/v1))
+    $interfaces: [
+        /nebula/interfaces/Continuous/v1
+    ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Name/v1))
+    $operations: [
+        $degrees: [
+            $description: "
+                This operation returns this angle as the number of degrees in the range [-180<..<180].
+            "($mediaType: "application/bsmd")
+            $type: /nebula/interfaces/Continuous/v1($range: [-180<..180])
+        ]($type: /nebula/aspects/Operation/v1)
+        $radians: [
+            $description: "
+                This operation returns this angle as the number of radians in the range [-π<..<π].
+            "($mediaType: "application/bsmd")
+            $type: /nebula/interfaces/Continuous/v1($range: [-π<..π])
+        ]($type: /nebula/aspects/Operation/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
+    $methods: [
+        $real: [
+            $description: "
+                This method implements the `$real` operation defined in the
+                `/nebula/interfaces/Continuous/v1` interface.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return real(target)
+            }
+        ]($type: /nebula/aspects/Method/v1)
+        $degrees: [
+            $description: "
+                This method implements the `$degrees` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return degrees(target)
+            }
+        ]($type: /nebula/aspects/Method/v1)
+        $radians: [
+            $description: "
+                This method implements the `$radians` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return radians(target)
+            }
+        ]($type: /nebula/aspects/Method/v1)
+        $Inverse: [
+            $description: "
+                This method implements the `$Inverse` function defined in the
+                `/nebula/libraries/Scalable/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return inverse(angle)
+            }
+        ]($type: /nebula/aspects/Method/v1)
+        $Sum: [
+            $description: "
+                This method implements the `$Sum` function defined in the
+                `/nebula/libraries/Scalable/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return sum(first, second)
+            }
+        ]($type: /nebula/aspects/Method/v1)
+        $Difference: [
+            $description: "
+                This method implements the `$Difference` function defined in the
+                `/nebula/libraries/Scalable/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return difference(first, second)
+            }
+        ]($type: /nebula/aspects/Method/v1)
+        $Scaled: [
+            $description: "
+                This method implements the `$Scaled` function defined in the
+                `/nebula/libraries/Scalable/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return scaled(angle, factor)
+            }
+        ]($type: /nebula/aspects/Method/v1)
+        $Conjugate: [
+            $description: "
+                This method implements the `$Conjugate` function defined in the
+                `/nebula/libraries/Radial/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return conjugate(angle)
+            }
+        ]($type: /nebula/aspects/Method/v1)
+        $Complement: [
+            $description: "
+                This method implements the `$Complement` function defined in the
+                `/nebula/libraries/Radial/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return complement(angle)
+            }
+        ]($type: /nebula/aspects/Method/v1)
+        $Supplement: [
+            $description: "
+                This method implements the `$Supplement` function defined in the
+                `/nebula/libraries/Radial/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return supplement(angle)
+            }
+        ]($type: /nebula/aspects/Method/v1)
+        $Sine: [
+            $description: "
+                This method implements the `$Sine` function defined in the
+                `/nebula/libraries/Radial/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return sine(angle)
+            }
+        ]($type: /nebula/aspects/Method/v1)
+        $Arcsine: [
+            $description: "
+                This method implements the `$Arcsine` function defined in the
+                `/nebula/libraries/Radial/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return arcsine(ratio)
+            }
+        ]($type: /nebula/aspects/Method/v1)
+        $Cosine: [
+            $description: "
+                This method implements the `$Cosine` function defined in the
+                `/nebula/libraries/Radial/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return cosine(angle)
+            }
+        ]($type: /nebula/aspects/Method/v1)
+        $Arccosine: [
+            $description: "
+                This method implements the `$Arccosine` function defined in the
+                `/nebula/libraries/Radial/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return arccosine(ratio)
+            }
+        ]($type: /nebula/aspects/Method/v1)
+        $Tangent: [
+            $description: "
+                This method implements the `$Tangent` function defined in the
+                `/nebula/libraries/Radial/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return tangent(angle)
+            }
+        ]($type: /nebula/aspects/Method/v1)
+        $Arctangent: [
+            $description: "
+                This method implements the `$Arctangent` function defined in the
+                `/nebula/libraries/Radial/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return arctangent(opposite, adjacent)
+            }
+        ]($type: /nebula/aspects/Method/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
 ](
     $type: /nebula/types/Primitive/v1
     $tag: #XTJ7438CYZX69LFCS5AX73PVH40MY8KQ
