@@ -135,7 +135,7 @@
                 CALL $setItem WITH 3 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '380138023803D8725000'(
+            $bytecode: '380138023803D8745000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -185,47 +185,17 @@
                 This method implements the `$insertItems` operation for this class.
             "($mediaType: "application/bsmd")
             $procedure: {
-                with each $item in reverseItems(items) do {
-                    insertItem(target, slot, item)
-                }
-                return target
+                return insertItems(target, slot, items)
             }
             $instructions: "
-                1.WithStatement:
-                PUSH ARGUMENT $items
-                CALL $reverseItems WITH 1 ARGUMENT
-                SEND $iterator TO COMPONENT
-                SAVE VARIABLE $iterator-2
-                
-                1.1.ConditionClause:
-                LOAD VARIABLE $iterator-2
-                SEND $hasNext TO COMPONENT
-                JUMP TO 1.WithStatementDone ON FALSE
-                LOAD VARIABLE $iterator-2
-                SEND $next TO COMPONENT
-                SAVE VARIABLE $item
-                
-                1.1.1.EvaluateStatement:
+                1.ReturnStatement:
                 PUSH ARGUMENT $target
                 PUSH ARGUMENT $slot
-                LOAD VARIABLE $item
-                CALL $insertItem WITH 3 ARGUMENTS
-                SAVE VARIABLE $result-1
-                
-                1.ConditionRepeat:
-                JUMP TO 1.1.ConditionClause
-                
-                1.WithStatementDone:
-                JUMP TO NEXT INSTRUCTION
-                
-                2.ReturnStatement:
-                PUSH ARGUMENT $target
+                PUSH ARGUMENT $items
+                CALL $insertItems WITH 3 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '
-                3803C869E00280026002E00118116002E0038001380138026001D8378003
-                0005000038015000
-            '(
+            $bytecode: '380138023803D8385000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -234,23 +204,10 @@
                 $slot: none
                 $items: none
             ]
-            $variables: [
-                $item
-                $iterator-2
-                $result-1
-            ]($type: /nebula/collections/Set/v1)
-            $messages: [
-                $hasNext
-                $iterator
-                $next
-            ]($type: /nebula/collections/Set/v1)
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
             $addresses: [
-                "1.WithStatement": 1
-                "1.1.ConditionClause": 5
-                "1.1.1.EvaluateStatement": 11
-                "1.ConditionRepeat": 16
-                "1.WithStatementDone": 17
-                "2.ReturnStatement": 18
+                "1.ReturnStatement": 1
             ]
         ]($type: /nebula/aspects/Method/v1)
         $removeItem: [
@@ -267,7 +224,7 @@
                 CALL $removeIndex WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '38013802D0665000'(
+            $bytecode: '38013802D0675000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -286,45 +243,16 @@
                 This method implements the `$removeItems` operation for this class.
             "($mediaType: "application/bsmd")
             $procedure: {
-                with each $index in range do {
-                    removeIndex(target, index)
-                }
-                return target
+                return removeIndices(target, indices)
             }
             $instructions: "
-                1.WithStatement:
-                PUSH ARGUMENT $range
-                SEND $iterator TO COMPONENT
-                SAVE VARIABLE $iterator-2
-                
-                1.1.ConditionClause:
-                LOAD VARIABLE $iterator-2
-                SEND $hasNext TO COMPONENT
-                JUMP TO 1.WithStatementDone ON FALSE
-                LOAD VARIABLE $iterator-2
-                SEND $next TO COMPONENT
-                SAVE VARIABLE $index
-                
-                1.1.1.EvaluateStatement:
+                1.ReturnStatement:
                 PUSH ARGUMENT $target
-                LOAD VARIABLE $index
-                CALL $removeIndex WITH 2 ARGUMENTS
-                SAVE VARIABLE $result-1
-                
-                1.ConditionRepeat:
-                JUMP TO 1.1.ConditionClause
-                
-                1.WithStatementDone:
-                JUMP TO NEXT INSTRUCTION
-                
-                2.ReturnStatement:
-                PUSH ARGUMENT $target
+                LOAD VARIABLE $indices
+                CALL $removeIndices WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '
-                3802E00280026002E001180F6002E003800138016001D066800300040000
-                38015000
-            '(
+            $bytecode: '38016001D0685000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -333,22 +261,11 @@
                 $range: none
             ]
             $variables: [
-                $index
-                $iterator-2
-                $result-1
+                $indices
             ]($type: /nebula/collections/Set/v1)
-            $messages: [
-                $hasNext
-                $iterator
-                $next
-            ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
             $addresses: [
-                "1.WithStatement": 1
-                "1.1.ConditionClause": 4
-                "1.1.1.EvaluateStatement": 10
-                "1.ConditionRepeat": 14
-                "1.WithStatementDone": 15
-                "2.ReturnStatement": 16
+                "1.ReturnStatement": 1
             ]
         ]($type: /nebula/aspects/Method/v1)
         $shuffleItems: [
@@ -365,7 +282,7 @@
                 CALL $shuffleItems WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3801C8765000'(
+            $bytecode: '3801C8785000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -393,7 +310,7 @@
                 CALL $sortItems WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '38013802D0795000'(
+            $bytecode: '38013802D07B5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -422,7 +339,7 @@
                 CALL $reverseItems WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3801C8695000'(
+            $bytecode: '3801C86B5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -451,7 +368,7 @@
                 CALL $setAttribute WITH 3 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '380138023803D8705000'(
+            $bytecode: '380138023803D8725000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )

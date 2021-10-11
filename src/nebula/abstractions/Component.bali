@@ -238,7 +238,7 @@
                 CALL $not WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3801C8542804D007C8515000'(
+            $bytecode: '3801C8552804D007C8525000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -292,7 +292,7 @@
                 PUSH LITERAL `none`
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3801C854800100006001180D6001C0453802D001E8015000000028045000'(
+            $bytecode: '3801C855800100006001180D6001C0463802D001E8015000000028045000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -328,7 +328,7 @@
                 CALL $parameters WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3801C8545000'(
+            $bytecode: '3801C8555000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -387,7 +387,7 @@
                 LOAD VARIABLE $result-1
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3802C0453801D001E801800160015000'(
+            $bytecode: '3802C0463801D001E801800160015000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
