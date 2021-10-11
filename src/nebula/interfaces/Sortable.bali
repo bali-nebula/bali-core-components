@@ -16,11 +16,18 @@
         ]($type: /nebula/aspects/Parameter/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
     $operations: [
+        $reverseItems: [
+            $description: "
+                This operation reverses the order of the items in this collection.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/interfaces/Sortable/v1($itemType: itemType)
+        ]($type: /nebula/aspects/Operation/v1)
         $sortItems: [
             $description: "
-                This operation sorts the items in this collection using the specified sorter
-                agent to compare the items. If no sorter agent is specified the default
-                merge sorter with a _natural_ comparator agent is used.
+                This operation sorts the items in this collection using the specified sorter and
+                comparator agents. If no sorter agent is specified the default _merge_ sorter is
+                used. If no comparator is specified a _canonical_ comparator agent is used to put
+                the items in their natural order.
             "($mediaType: "application/bsmd")
             $type: /nebula/interfaces/Sortable/v1($itemType: itemType)
             $parameters: [
@@ -29,7 +36,14 @@
                         This parameter specifies the sorter agent to be used for sorting the
                         items in this collection.
                     "($mediaType: "application/bsmd")
-                    $type: /nebula/agents/Sorter/v1($itemType: itemType)
+                    $type: /nebula/agents/Sorter/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+                $comparator: [
+                    $description: "
+                        This parameter specifies the comparator agent to be used for comparing
+                        items in this collection.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/agents/Comparator/v1
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
         ]($type: /nebula/aspects/Operation/v1)

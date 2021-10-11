@@ -39,6 +39,20 @@
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
         ]($type: /nebula/aspects/Operation/v1)
+        $attributes: [
+            $description: "
+                This operation returns the attribute values associated with the specified sequence of keys.
+            "($mediaType: "application/bsmd")
+            $type: $valueType
+            $parameters: [
+                $keys: [
+                    $description: "
+                        This parameter specifies the sequence of keys for the desired attribute values.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/interfaces/Sequential/v1($keyType: $keyType)
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Operation/v1)
         $setAttribute: [
             $description: "
                 This operation sets the attribute associated with the specified key to the
