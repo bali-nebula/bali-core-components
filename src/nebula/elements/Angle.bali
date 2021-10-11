@@ -33,6 +33,24 @@
             $procedure: {
                 return real(target)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $real WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C8625000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $degrees: [
             $description: "
@@ -41,6 +59,24 @@
             $procedure: {
                 return degrees(target)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $degrees WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C8215000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $radians: [
             $description: "
@@ -49,6 +85,24 @@
             $procedure: {
                 return radians(target)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $radians WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C85E5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $Inverse: [
             $description: "
@@ -58,6 +112,27 @@
             $procedure: {
                 return inverse(angle)
             }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $angle
+                CALL $inverse WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '6001C83B5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $scalable: none
+            ]
+            $variables: [
+                $angle
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $Sum: [
             $description: "
@@ -67,6 +142,27 @@
             $procedure: {
                 return sum(first, second)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $first
+                PUSH ARGUMENT $second
+                CALL $sum WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D07F5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $first: none
+                $second: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $Difference: [
             $description: "
@@ -76,6 +172,27 @@
             $procedure: {
                 return difference(first, second)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $first
+                PUSH ARGUMENT $second
+                CALL $difference WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D0225000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $first: none
+                $second: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $Scaled: [
             $description: "
@@ -85,6 +202,29 @@
             $procedure: {
                 return scaled(angle, factor)
             }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $angle
+                PUSH ARGUMENT $factor
+                CALL $scaled WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '60013803D06D5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $scalable: none
+                $factor: none
+            ]
+            $variables: [
+                $angle
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $Conjugate: [
             $description: "
@@ -94,6 +234,27 @@
             $procedure: {
                 return conjugate(angle)
             }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $angle
+                CALL $conjugate WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '6001C81B5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $radial: none
+            ]
+            $variables: [
+                $angle
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $Complement: [
             $description: "
@@ -103,6 +264,27 @@
             $procedure: {
                 return complement(angle)
             }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $angle
+                CALL $complement WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '6001C8195000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $radial: none
+            ]
+            $variables: [
+                $angle
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $Supplement: [
             $description: "
@@ -112,6 +294,27 @@
             $procedure: {
                 return supplement(angle)
             }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $angle
+                CALL $supplement WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '6001C8805000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $radial: none
+            ]
+            $variables: [
+                $angle
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $Sine: [
             $description: "
@@ -121,6 +324,27 @@
             $procedure: {
                 return sine(angle)
             }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $angle
+                CALL $sine WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '6001C8795000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $radial: none
+            ]
+            $variables: [
+                $angle
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $Arcsine: [
             $description: "
@@ -130,6 +354,25 @@
             $procedure: {
                 return arcsine(ratio)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $ratio
+                CALL $arcsine WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3802C8055000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $ratio: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $Cosine: [
             $description: "
@@ -139,6 +382,27 @@
             $procedure: {
                 return cosine(angle)
             }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $angle
+                CALL $cosine WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '6001C81D5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $radial: none
+            ]
+            $variables: [
+                $angle
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $Arccosine: [
             $description: "
@@ -148,6 +412,25 @@
             $procedure: {
                 return arccosine(ratio)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $ratio
+                CALL $arccosine WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3802C8045000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $ratio: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $Tangent: [
             $description: "
@@ -157,6 +440,27 @@
             $procedure: {
                 return tangent(angle)
             }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $angle
+                CALL $tangent WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '6001C8825000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $radial: none
+            ]
+            $variables: [
+                $angle
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $Arctangent: [
             $description: "
@@ -166,8 +470,30 @@
             $procedure: {
                 return arctangent(opposite, adjacent)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $opposite
+                PUSH ARGUMENT $adjacent
+                CALL $arctangent WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D0065000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $opposite: none
+                $adjacent: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
+    $literals: [ ]($type: /nebula/collections/Set/v1)
 ](
     $type: /nebula/types/Primitive/v1
     $tag: #XTJ7438CYZX69LFCS5AX73PVH40MY8KQ

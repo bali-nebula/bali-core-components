@@ -85,7 +85,7 @@
     $methods: [
         $isType: [
             $description: "
-                This method implements the `$isType` operation from this class.
+                This method implements the `$isType` operation defined in this type.
             "($mediaType: "application/bsmd")
             $procedure: {
                 with each $candidate in ancestry(target) do {
@@ -95,34 +95,165 @@
                 }
                 return false
             }
+            $instructions: "
+                1.WithStatement:
+                PUSH ARGUMENT $target
+                CALL $ancestry WITH 1 ARGUMENT
+                SEND $iterator TO COMPONENT
+                SAVE VARIABLE $iterator-2
+                
+                1.1.ConditionClause:
+                LOAD VARIABLE $iterator-2
+                SEND $hasNext TO COMPONENT
+                JUMP TO 1.WithStatementDone ON FALSE
+                LOAD VARIABLE $iterator-2
+                SEND $next TO COMPONENT
+                SAVE VARIABLE $candidate
+                
+                1.1.1.IfStatement:
+                JUMP TO NEXT INSTRUCTION
+                
+                1.1.1.1.ConditionClause:
+                LOAD VARIABLE $candidate
+                PUSH ARGUMENT $type
+                CALL $areEqual WITH 2 ARGUMENTS
+                JUMP TO 1.1.1.IfStatementDone ON FALSE
+                
+                1.1.1.1.1.ReturnStatement:
+                PUSH LITERAL `true`
+                PULL RESULT
+                
+                1.1.1.IfStatementDone:
+                JUMP TO NEXT INSTRUCTION
+                
+                1.ConditionRepeat:
+                JUMP TO 1.1.ConditionClause
+                
+                1.WithStatementDone:
+                JUMP TO NEXT INSTRUCTION
+                
+                2.ReturnStatement:
+                PUSH LITERAL `false`
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '
+                3801C802E00280026002E00118146002E0038001000060013802D0071812
+                2802500000000005000028015000
+            '(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $type: none
+            ]
+            $variables: [
+                $candidate
+                $iterator-2
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [
+                $hasNext
+                $iterator
+                $next
+            ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.WithStatement": 1
+                "1.1.ConditionClause": 5
+                "1.1.1.IfStatement": 11
+                "1.1.1.1.ConditionClause": 12
+                "1.1.1.1.1.ReturnStatement": 16
+                "1.1.1.IfStatementDone": 18
+                "1.ConditionRepeat": 19
+                "1.WithStatementDone": 20
+                "2.ReturnStatement": 21
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $type: [
             $description: "
-                This method implements the `$type` operation from this class.
+                This method implements the `$type` operation defined in this type.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return ancestry(target)[1]
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $ancestry WITH 1 ARGUMENT
+                PUSH LITERAL `1`
+                CALL $attribute WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C8022803D00A5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $ancestry: [
             $description: "
-                This method implements the `$ancestry` operation from this class.
+                This method implements the `$ancestry` operation defined in this type.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return ancestry(target)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $ancestry WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C8025000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $isParameterized: [
             $description: "
-                This method implements the `$isParameterized` operation from this class.
+                This method implements the `$isParameterized` operation defined in this type.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return NOT parameters(target) = none
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $parameters WITH 1 ARGUMENT
+                PUSH LITERAL `none`
+                CALL $areEqual WITH 2 ARGUMENTS
+                CALL $not WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C8552804D007C8525000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $parameter: [
             $description: "
-                This method implements the `$parameter` operation from this class.
+                This method implements the `$parameter` operation defined in this type.
             "($mediaType: "application/bsmd")
             $procedure: {
                 $result := parameters(target)
@@ -131,32 +262,156 @@
                 }
                 return none
             }
+            $instructions: "
+                1.EvaluateStatement:
+                PUSH ARGUMENT $target
+                CALL $parameters WITH 1 ARGUMENT
+                SAVE VARIABLE $result
+                
+                2.IfStatement:
+                JUMP TO NEXT INSTRUCTION
+                
+                2.1.ConditionClause:
+                LOAD VARIABLE $result
+                JUMP TO 2.IfStatementDone ON FALSE
+                
+                2.1.1.ReturnStatement:
+                LOAD VARIABLE $result
+                NOTE --Place a list of the message arguments on the stack.
+                CALL $list
+                PUSH ARGUMENT $key
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Send the message with its arguments to the recipient.
+                SEND $getAttribute TO COMPONENT WITH ARGUMENTS
+                PULL RESULT
+                
+                2.IfStatementDone:
+                JUMP TO NEXT INSTRUCTION
+                
+                3.ReturnStatement:
+                PUSH LITERAL `none`
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C855800100006001180D6001C0463802D001E8015000000028045000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $key: none
+            ]
+            $variables: [
+                $result
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [
+                $getAttribute
+            ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.EvaluateStatement": 1
+                "2.IfStatement": 4
+                "2.1.ConditionClause": 5
+                "2.1.1.ReturnStatement": 7
+                "2.IfStatementDone": 13
+                "3.ReturnStatement": 14
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $parameters: [
             $description: "
-                This method implements the `$parameters` operation from this class.
+                This method implements the `$parameters` operation defined in this type.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return parameters(target)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $parameters WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C8555000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $boolean: [
             $description: "
-                This method implements the `$boolean` operation from this class.
+                This method implements the `$boolean` operation defined in this type.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return boolean(target)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $boolean WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C8115000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $accept: [
             $description: "
-                This method implements the `$accept` operation from this class.
+                This method implements the `$accept` operation defined in this type.
             "($mediaType: "application/bsmd")
             $procedure: {
                 visitor.visitComponent(target)
             }
+            $instructions: "
+                1.EvaluateStatement:
+                PUSH ARGUMENT $visitor
+                NOTE --Place a list of the message arguments on the stack.
+                CALL $list
+                PUSH ARGUMENT $target
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Send the message with its arguments to the recipient.
+                SEND $visitComponent TO COMPONENT WITH ARGUMENTS
+                SAVE VARIABLE $result-1
+                LOAD VARIABLE $result-1
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3802C0463801D001E801800160015000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $visitor: none
+            ]
+            $variables: [
+                $result-1
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [
+                $visitComponent
+            ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.EvaluateStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
+    $literals: [
+        false
+        true
+        1
+        none
+    ]($type: /nebula/collections/Set/v1)
 ](
     $type: /nebula/types/Primitive/v1($existence: $abstract)
     $tag: #7Q5M85VYL5TVT37FHH0W5N5XJ9PCR7R8

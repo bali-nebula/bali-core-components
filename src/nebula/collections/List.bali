@@ -122,99 +122,328 @@
     $methods: [
         $setItem: [
             $description: "
-                This method implements the `$setItem` operation for this class.
+                This method implements the `$setItem` operation defined in this type.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return setItem(target, index, item)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                PUSH ARGUMENT $index
+                PUSH ARGUMENT $item
+                CALL $setItem WITH 3 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '380138023803D8745000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $index: none
+                $item: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $insertItem: [
             $description: "
-                This method implements the `$insertItem` operation for this class.
+                This method implements the `$insertItem` operation defined in this type.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return insertItem(target, slot, item)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                PUSH ARGUMENT $slot
+                PUSH ARGUMENT $item
+                CALL $insertItem WITH 3 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '380138023803D8375000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $slot: none
+                $item: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $insertItems: [
             $description: "
-                This method implements the `$insertItems` operation for this class.
+                This method implements the `$insertItems` operation defined in this type.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return insertItems(target, slot, items)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                PUSH ARGUMENT $slot
+                PUSH ARGUMENT $items
+                CALL $insertItems WITH 3 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '380138023803D8385000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $slot: none
+                $items: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $removeItem: [
             $description: "
-                This method implements the `$removeItem` operation for this class.
+                This method implements the `$removeItem` operation defined in this type.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return removeIndex(target, index)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                PUSH ARGUMENT $index
+                CALL $removeIndex WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38013802D0675000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $index: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $removeItems: [
             $description: "
-                This method implements the `$removeItems` operation for this class.
+                This method implements the `$removeItems` operation defined in this type.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return removeIndices(target, indices)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                LOAD VARIABLE $indices
+                CALL $removeIndices WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38016001D0685000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $range: none
+            ]
+            $variables: [
+                $indices
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $shuffleItems: [
             $description: "
-                This method implements the `$shuffleItems` operation from the
+                This method implements the `$shuffleItems` operation defined in the
                 `/nebula/interfaces/Sortable/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return shuffleItems(target)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $shuffleItems WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C8785000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $sortItems: [
             $description: "
-                This method implements the `$sortItems` operation from the
+                This method implements the `$sortItems` operation defined in the
                 `/nebula/interfaces/Sortable/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return sortItems(target, sorter)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                PUSH ARGUMENT $sorter
+                CALL $sortItems WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38013802D07B5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $sorter: none
+                $comparator: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $reverseItems: [
             $description: "
-                This method implements the `$reverseItems` operation from the
+                This method implements the `$reverseItems` operation defined in the
                 `/nebula/interfaces/Sortable/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return reverseItems(target)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $reverseItems WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C86B5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $setAttribute: [
             $description: "
-                This method implements the `$setAttribute` operation from the
+                This method implements the `$setAttribute` operation defined in the
                 `/nebula/interfaces/Composite/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return setAttribute(target, key, value)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                PUSH ARGUMENT $key
+                PUSH ARGUMENT $value
+                CALL $setAttribute WITH 3 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '380138023803D8725000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $key: none
+                $value: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $attribute: [
             $description: "
-                This method implements the `$attribute` operation from the
+                This method implements the `$attribute` operation defined in the
                 `/nebula/interfaces/Composite/v1` interface.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return attribute(target, key)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                PUSH ARGUMENT $key
+                CALL $attribute WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38013802D00A5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $key: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
         $Chain: [
             $description: "
-                This method implements the `$Chain` function specified in the
+                This method implements the `$Chain` function defined in the
                 `/nebula/libraries/Chainable/v1` library.
             "($mediaType: "application/bsmd")
             $procedure: {
                 return chain(first, second)
             }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $first
+                PUSH ARGUMENT $second
+                CALL $chain WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D0145000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $first: none
+                $second: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
         ]($type: /nebula/aspects/Method/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
+    $literals: [ ]($type: /nebula/collections/Set/v1)
 ](
     $type: /nebula/types/Primitive/v1
     $tag: #QTGVXYK9W1BAML2DV4A0N6FCH7G4XHCV
