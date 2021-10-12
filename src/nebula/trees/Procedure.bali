@@ -26,7 +26,7 @@
                 CALL $code WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3801C8165000'(
+            $bytecode: '3801C8155000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )

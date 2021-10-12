@@ -61,7 +61,7 @@
                 CALL $removeItem WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '38013802D0695000'(
+            $bytecode: '38013802D06A5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -116,7 +116,7 @@
                 PULL RESULT
             "($mediaType: "application/basm")
             $bytecode: '
-                3802E00280026002E001180F6002E003800138016001D069800300040000
+                3802E00280026002E001180F6002E003800138016001D06A800300040000
                 38015000
             '(
                 $encoding: $base16
@@ -159,7 +159,7 @@
                 CALL $not WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '6001C8525000'(
+            $bytecode: '6001C8535000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -220,7 +220,7 @@
                 CALL $sans WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '38023803D06C5000'(
+            $bytecode: '38023803D06D5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -250,7 +250,7 @@
                 CALL $or WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '38023803D0545000'(
+            $bytecode: '38023803D0555000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -280,7 +280,7 @@
                 CALL $xor WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '38023803D08A5000'(
+            $bytecode: '38023803D08B5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )

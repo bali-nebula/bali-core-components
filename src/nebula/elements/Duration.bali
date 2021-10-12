@@ -3,6 +3,422 @@
     $description: "
         This class defines the methods for the functions and operations that all durations support.
     "($mediaType: "application/bsmd")
+    $libraries: [
+        /nebula/libraries/Scalable/v1
+    ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Name/v1))
+    $interfaces: [
+        /nebula/interfaces/Polarized/v1
+    ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Name/v1))
+    $operations: [
+        $milliseconds: [
+            $description: "
+                This operation returns the milliseconds part of this duration in the range [0..999].
+            "($mediaType: "application/bsmd")
+            $type: /nebula/interfaces/Discrete/v1($range: [0..999])
+        ]($type: /nebula/aspects/Operation/v1)
+        $seconds: [
+            $description: "
+                This operation returns the seconds part of this duration in the range [0..59].
+            "($mediaType: "application/bsmd")
+            $type: /nebula/interfaces/Discrete/v1($range: [0..59])
+        ]($type: /nebula/aspects/Operation/v1)
+        $minutes: [
+            $description: "
+                This operation returns the minutes part of this duration in the range [0..59].
+            "($mediaType: "application/bsmd")
+            $type: /nebula/interfaces/Discrete/v1($range: [0..59])
+        ]($type: /nebula/aspects/Operation/v1)
+        $hours: [
+            $description: "
+                This operation returns the hours part of this duration in the range [0..23].
+            "($mediaType: "application/bsmd")
+            $type: /nebula/interfaces/Discrete/v1($range: [0..23])
+        ]($type: /nebula/aspects/Operation/v1)
+        $days: [
+            $description: "
+                This operation returns the days part of this duration in the range [0..30].
+            "($mediaType: "application/bsmd")
+            $type: /nebula/interfaces/Discrete/v1($range: [0..30])
+        ]($type: /nebula/aspects/Operation/v1)
+        $weeks: [
+            $description: "
+                This operation returns the weeks part of this duration in the range [0..4].
+            "($mediaType: "application/bsmd")
+            $type: /nebula/interfaces/Discrete/v1($range: [0..4])
+        ]($type: /nebula/aspects/Operation/v1)
+        $months: [
+            $description: "
+                This operation returns the months part of this duration in the range [0..11].
+            "($mediaType: "application/bsmd")
+            $type: /nebula/interfaces/Discrete/v1($range: [0..11])
+        ]($type: /nebula/aspects/Operation/v1)
+        $years: [
+            $description: "
+                This operation returns the years part of this duration in the range [0..<∞].
+            "($mediaType: "application/bsmd")
+            $type: /nebula/interfaces/Discrete/v1($range: [0..<∞])
+        ]($type: /nebula/aspects/Operation/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
+    $methods: [
+        $isNegative: [
+            $description: "
+                This method implements the `$isNegative` operation defined in the
+                `/nebula/interfaces/Polarized/v1` interface.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return isNegative(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $isNegative WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C83E5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $milliseconds: [
+            $description: "
+                This method implements the `$milliseconds` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return milliseconds(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $milliseconds WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C84B5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $seconds: [
+            $description: "
+                This method implements the `$seconds` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return seconds(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $seconds WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C8715000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $minutes: [
+            $description: "
+                This method implements the `$minutes` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return minutes(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $minutes WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C84D5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $hours: [
+            $description: "
+                This method implements the `$hours` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return hours(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $hours WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C8335000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $days: [
+            $description: "
+                This method implements the `$days` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return days(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $days WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C81E5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $weeks: [
+            $description: "
+                This method implements the `$weeks` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return weeks(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $weeks WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C88A5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $months: [
+            $description: "
+                This method implements the `$months` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return months(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $months WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C84F5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $years: [
+            $description: "
+                This method implements the `$years` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return years(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $years WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C88D5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Inverse: [
+            $description: "
+                This method implements the `$Inverse` function defined in the
+                `/nebula/libraries/Scalable/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return inverse(duration)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $duration
+                CALL $inverse WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '6001C83A5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $scalable: none
+            ]
+            $variables: [
+                $duration
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Sum: [
+            $description: "
+                This method implements the `$Sum` function defined in the
+                `/nebula/libraries/Scalable/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return sum(first, second)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $first
+                PUSH ARGUMENT $second
+                CALL $sum WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D0805000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $first: none
+                $second: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Difference: [
+            $description: "
+                This method implements the `$Difference` function defined in the
+                `/nebula/libraries/Scalable/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return difference(first, second)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $first
+                PUSH ARGUMENT $second
+                CALL $difference WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D0215000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $first: none
+                $second: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Scaled: [
+            $description: "
+                This method implements the `$Scaled` function defined in the
+                `/nebula/libraries/Scalable/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return scaled(duration, factor)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $duration
+                PUSH ARGUMENT $factor
+                CALL $scaled WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '60013803D06E5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $scalable: none
+                $factor: none
+            ]
+            $variables: [
+                $duration
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
+    $literals: [ ]($type: /nebula/collections/Set/v1)
 ](
     $type: /nebula/types/Primitive/v1
     $tag: #0T0SGV7VV7VPZ15F33HGM54J2APQ97SQ

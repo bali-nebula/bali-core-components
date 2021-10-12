@@ -1,0 +1,20 @@
+[
+    $parent: /nebula/abstractions/Component/v1
+    $description: "
+        This interface defines the operations that can be processed by components have polarity.
+    "($mediaType: "application/bsmd")
+    $operations: [
+        $isNegative: [
+            $description: "
+                This operation determines whether or not this component has a negative value.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/elements/Boolean/v1
+        ]($type: /nebula/aspects/Operation/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
+](
+    $type: /nebula/types/Interface/v1
+    $tag: #CN90BC8CC91QQS84DFCS89XZBB9RXNAH
+    $version: v1
+    $permissions: /nebula/permissions/public/v1
+    $previous: none
+)

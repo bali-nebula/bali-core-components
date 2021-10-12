@@ -3,6 +3,384 @@
     $description: "
         This class defines the methods for the functions and operations that all moments support.
     "($mediaType: "application/bsmd")
+    $operations: [
+        $millisecond: [
+            $description: "
+                This operation returns the milliseconds part of this duration in the range [0..999].
+            "($mediaType: "application/bsmd")
+            $type: /nebula/interfaces/Discrete/v1($range: [0..999])
+        ]($type: /nebula/aspects/Operation/v1)
+        $second: [
+            $description: "
+                This operation returns the seconds part of this duration in the range [0..59].
+            "($mediaType: "application/bsmd")
+            $type: /nebula/interfaces/Discrete/v1($range: [0..59])
+        ]($type: /nebula/aspects/Operation/v1)
+        $minute: [
+            $description: "
+                This operation returns the minutes part of this duration in the range [0..59].
+            "($mediaType: "application/bsmd")
+            $type: /nebula/interfaces/Discrete/v1($range: [0..59])
+        ]($type: /nebula/aspects/Operation/v1)
+        $hour: [
+            $description: "
+                This operation returns the hours part of this duration in the range [0..23].
+            "($mediaType: "application/bsmd")
+            $type: /nebula/interfaces/Discrete/v1($range: [0..23])
+        ]($type: /nebula/aspects/Operation/v1)
+        $day: [
+            $description: "
+                This operation returns the days part of this duration in the range [0..30].
+            "($mediaType: "application/bsmd")
+            $type: /nebula/interfaces/Discrete/v1($range: [0..30])
+        ]($type: /nebula/aspects/Operation/v1)
+        $month: [
+            $description: "
+                This operation returns the months part of this duration in the range [0..11].
+            "($mediaType: "application/bsmd")
+            $type: /nebula/interfaces/Discrete/v1($range: [0..11])
+        ]($type: /nebula/aspects/Operation/v1)
+        $year: [
+            $description: "
+                This operation returns the years part of this duration in the range [0..<∞].
+            "($mediaType: "application/bsmd")
+            $type: /nebula/interfaces/Discrete/v1($range: [0..<∞])
+        ]($type: /nebula/aspects/Operation/v1)
+        $Duration: [
+            $description: "
+                This function calculates the duration between the two specified moments in time.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/elements/Duration/v1
+            $parameters: [
+                $first: [
+                    $description: "
+                        This parameter specifies the first moment in time.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/elements/Moment/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+                $second: [
+                    $description: "
+                        This parameter specifies the second moment in time.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/elements/Moment/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Operation/v1)
+        $Earlier: [
+            $description: "
+                This function calculates the moment in time that is earlier than the specified
+                moment by the specified duration.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/elements/Moment/v1
+            $parameters: [
+                $moment: [
+                    $description: "
+                        This parameter specifies the moment in time.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/elements/Moment/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+                $duration: [
+                    $description: "
+                        This parameter specifies the duration of time to be subtracted from the moment.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/elements/Duration/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Operation/v1)
+        $Later: [
+            $description: "
+                This function calculates the moment in time that is later than the specified
+                moment by the specified duration.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/elements/Moment/v1
+            $parameters: [
+                $moment: [
+                    $description: "
+                        This parameter specifies the moment in time.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/elements/Moment/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+                $duration: [
+                    $description: "
+                        This parameter specifies the duration of time to be added to the moment.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/elements/Duration/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Operation/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
+    $methods: [
+        $millisecond: [
+            $description: "
+                This method implements the `$millisecond` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return millisecond(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $millisecond WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C84A5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $second: [
+            $description: "
+                This method implements the `$second` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return second(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $second WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C8705000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $minute: [
+            $description: "
+                This method implements the `$minute` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return minute(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $minute WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C84C5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $hour: [
+            $description: "
+                This method implements the `$hour` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return hour(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $hour WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C8325000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $day: [
+            $description: "
+                This method implements the `$day` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return day(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $day WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C81D5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $month: [
+            $description: "
+                This method implements the `$month` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return month(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $month WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C84E5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $year: [
+            $description: "
+                This method implements the `$year` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return year(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $year WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C88C5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Duration: [
+            $description: "
+                This method implements the `$Duration` function defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return duration(first, second)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $first
+                PUSH ARGUMENT $second
+                CALL $duration WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D0255000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $first: none
+                $second: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Earlier: [
+            $description: "
+                This method implements the `$Earlier` function defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return earlier(moment, duration)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $moment
+                PUSH ARGUMENT $duration
+                CALL $earlier WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D0265000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $moment: none
+                $duration: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Later: [
+            $description: "
+                This method implements the `$Later` function defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return later(moment, duration)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $moment
+                PUSH ARGUMENT $duration
+                CALL $later WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D0455000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $moment: none
+                $duration: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
+    $literals: [ ]($type: /nebula/collections/Set/v1)
 ](
     $type: /nebula/types/Primitive/v1
     $tag: #JTB9GK1V6FY3KAHJKR52X07MP58R1FFB

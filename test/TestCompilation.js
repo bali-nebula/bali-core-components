@@ -32,6 +32,7 @@ const types = [
     '/nebula/interfaces/Composite',
     '/nebula/interfaces/Continuous',
     '/nebula/interfaces/Discrete',
+    '/nebula/interfaces/Polarized',
     '/nebula/interfaces/Sequential',
     '/nebula/interfaces/Sortable',
 

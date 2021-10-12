@@ -39,7 +39,7 @@
                 CALL $real WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3801C8625000'(
+            $bytecode: '3801C8635000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -65,7 +65,7 @@
                 CALL $degrees WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3801C8215000'(
+            $bytecode: '3801C8205000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -91,7 +91,7 @@
                 CALL $radians WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3801C85E5000'(
+            $bytecode: '3801C85F5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -118,7 +118,7 @@
                 CALL $inverse WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '6001C83B5000'(
+            $bytecode: '6001C83A5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -149,7 +149,7 @@
                 CALL $sum WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '38023803D07F5000'(
+            $bytecode: '38023803D0805000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -179,7 +179,7 @@
                 CALL $difference WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '38023803D0225000'(
+            $bytecode: '38023803D0215000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -209,7 +209,7 @@
                 CALL $scaled WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '60013803D06D5000'(
+            $bytecode: '60013803D06E5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -240,7 +240,7 @@
                 CALL $conjugate WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '6001C81B5000'(
+            $bytecode: '6001C81A5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -270,7 +270,7 @@
                 CALL $complement WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '6001C8195000'(
+            $bytecode: '6001C8185000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -300,7 +300,7 @@
                 CALL $supplement WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '6001C8805000'(
+            $bytecode: '6001C8815000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -330,7 +330,7 @@
                 CALL $sine WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '6001C8795000'(
+            $bytecode: '6001C87A5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -388,7 +388,7 @@
                 CALL $cosine WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '6001C81D5000'(
+            $bytecode: '6001C81C5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -446,7 +446,7 @@
                 CALL $tangent WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '6001C8825000'(
+            $bytecode: '6001C8835000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
