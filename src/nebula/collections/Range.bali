@@ -65,7 +65,7 @@
             $description: "
                 This operation determines whether or not the range can be iterated over.
             "($mediaType: "application/bsmd")
-            $type: /nebula/elements/Boolean
+            $type: /nebula/elements/Boolean/v1
         ]($type: /nebula/aspects/Operation/v1)
         $effective: [
             $description: "

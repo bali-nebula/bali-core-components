@@ -18,7 +18,7 @@
     ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Name/v1))
     $interfaces: [
         /nebula/interfaces/Composite/v1(
-            $keyType: /nebula/interfaces/Discrete
+            $keyType: /nebula/interfaces/Discrete/v1
             $valueType: itemType
         )
         /nebula/interfaces/Sortable/v1($itemType: itemType)
@@ -34,7 +34,7 @@
                     $description: "
                         This parameter specifies the index of the item in the list to be set.
                     "($mediaType: "application/bsmd")
-                    $type: /nebula/interfaces/Discrete
+                    $type: /nebula/interfaces/Discrete/v1
                 ]($type: /nebula/aspects/Parameter/v1)
                 $item: [
                     $description: "
@@ -54,7 +54,7 @@
                     $description: "
                         This parameter specifies the slot before the item in the list to insert the new item.
                     "($mediaType: "application/bsmd")
-                    $type: /nebula/interfaces/Discrete
+                    $type: /nebula/interfaces/Discrete/v1
                 ]($type: /nebula/aspects/Parameter/v1)
                 $item: [
                     $description: "
@@ -74,7 +74,7 @@
                     $description: "
                         This parameter specifies the slot before the item in the list to insert the new items.
                     "($mediaType: "application/bsmd")
-                    $type: /nebula/interfaces/Discrete
+                    $type: /nebula/interfaces/Discrete/v1
                 ]($type: /nebula/aspects/Parameter/v1)
                 $items: [
                     $description: "
@@ -94,7 +94,7 @@
                     $description: "
                         This parameter specifies the index of the item in the list to be removed.
                     "($mediaType: "application/bsmd")
-                    $type: /nebula/interfaces/Discrete
+                    $type: /nebula/interfaces/Discrete/v1
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
         ]($type: /nebula/aspects/Operation/v1)
@@ -108,7 +108,7 @@
                     $description: "
                         This parameter specifies the range of items in the list to be removed.
                     "($mediaType: "application/bsmd")
-                    $type: /nebula/collections/Range/v1($type: /nebula/interfaces/Discrete)
+                    $type: /nebula/collections/Range/v1($type: /nebula/interfaces/Discrete/v1)
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
         ]($type: /nebula/aspects/Operation/v1)

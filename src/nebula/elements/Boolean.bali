@@ -73,15 +73,16 @@
                 `/nebula/libraries/Logical/v1` library.
             "($mediaType: "application/bsmd")
             $procedure: {
-                return and(boolean)
+                return and(first, second)
             }
             $instructions: "
                 1.ReturnStatement:
-                LOAD VARIABLE $boolean
-                CALL $and WITH 1 ARGUMENT
+                PUSH ARGUMENT $first
+                PUSH ARGUMENT $second
+                CALL $and WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '6001C8035000'(
+            $bytecode: '38023803D0035000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -90,9 +91,7 @@
                 $first: none
                 $second: none
             ]
-            $variables: [
-                $boolean
-            ]($type: /nebula/collections/Set/v1)
+            $variables: [ ]($type: /nebula/collections/Set/v1)
             $messages: [ ]($type: /nebula/collections/Set/v1)
             $addresses: [
                 "1.ReturnStatement": 1
@@ -104,15 +103,16 @@
                 `/nebula/libraries/Logical/v1` library.
             "($mediaType: "application/bsmd")
             $procedure: {
-                return sans(boolean)
+                return sans(first, second)
             }
             $instructions: "
                 1.ReturnStatement:
-                LOAD VARIABLE $boolean
-                CALL $sans WITH 1 ARGUMENT
+                PUSH ARGUMENT $first
+                PUSH ARGUMENT $second
+                CALL $sans WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '6001C86D5000'(
+            $bytecode: '38023803D06D5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -121,9 +121,7 @@
                 $first: none
                 $second: none
             ]
-            $variables: [
-                $boolean
-            ]($type: /nebula/collections/Set/v1)
+            $variables: [ ]($type: /nebula/collections/Set/v1)
             $messages: [ ]($type: /nebula/collections/Set/v1)
             $addresses: [
                 "1.ReturnStatement": 1
@@ -135,15 +133,16 @@
                 `/nebula/libraries/Logical/v1` library.
             "($mediaType: "application/bsmd")
             $procedure: {
-                return or(boolean)
+                return or(first, second)
             }
             $instructions: "
                 1.ReturnStatement:
-                LOAD VARIABLE $boolean
-                CALL $or WITH 1 ARGUMENT
+                PUSH ARGUMENT $first
+                PUSH ARGUMENT $second
+                CALL $or WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '6001C8555000'(
+            $bytecode: '38023803D0555000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -152,9 +151,7 @@
                 $first: none
                 $second: none
             ]
-            $variables: [
-                $boolean
-            ]($type: /nebula/collections/Set/v1)
+            $variables: [ ]($type: /nebula/collections/Set/v1)
             $messages: [ ]($type: /nebula/collections/Set/v1)
             $addresses: [
                 "1.ReturnStatement": 1
@@ -166,15 +163,16 @@
                 `/nebula/libraries/Logical/v1` library.
             "($mediaType: "application/bsmd")
             $procedure: {
-                return xor(boolean)
+                return xor(first, second)
             }
             $instructions: "
                 1.ReturnStatement:
-                LOAD VARIABLE $boolean
-                CALL $xor WITH 1 ARGUMENT
+                PUSH ARGUMENT $first
+                PUSH ARGUMENT $second
+                CALL $xor WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '6001C88B5000'(
+            $bytecode: '38023803D08B5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -183,9 +181,7 @@
                 $first: none
                 $second: none
             ]
-            $variables: [
-                $boolean
-            ]($type: /nebula/collections/Set/v1)
+            $variables: [ ]($type: /nebula/collections/Set/v1)
             $messages: [ ]($type: /nebula/collections/Set/v1)
             $addresses: [
                 "1.ReturnStatement": 1

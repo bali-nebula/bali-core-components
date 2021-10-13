@@ -33,7 +33,7 @@
     $functions: [
         $Extraction: [
             $description: "
-                This operation returns the the subset of attributes from the specified catalog based on
+                This operation returns the subset of attributes from the specified catalog based on
                 the specified keys.
             "($mediaType: "application/bsmd")
             $type: /nebula/collections/Catalog/v1(
