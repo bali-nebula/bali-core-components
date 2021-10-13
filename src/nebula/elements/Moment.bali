@@ -46,6 +46,8 @@
             "($mediaType: "application/bsmd")
             $type: /nebula/interfaces/Discrete/v1($range: [0..<∞])
         ]($type: /nebula/aspects/Operation/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
+    $functions: [
         $Duration: [
             $description: "
                 This function calculates the duration between the two specified moments in time.
@@ -65,7 +67,7 @@
                     $type: /nebula/elements/Moment/v1
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-        ]($type: /nebula/aspects/Operation/v1)
+        ]($type: /nebula/aspects/Function/v1)
         $Earlier: [
             $description: "
                 This function calculates the moment in time that is earlier than the specified
@@ -86,7 +88,7 @@
                     $type: /nebula/elements/Duration/v1
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-        ]($type: /nebula/aspects/Operation/v1)
+        ]($type: /nebula/aspects/Function/v1)
         $Later: [
             $description: "
                 This function calculates the moment in time that is later than the specified
@@ -107,8 +109,8 @@
                     $type: /nebula/elements/Duration/v1
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
-        ]($type: /nebula/aspects/Operation/v1)
-    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
+        ]($type: /nebula/aspects/Function/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Function/v1))
     $methods: [
         $millisecond: [
             $description: "
