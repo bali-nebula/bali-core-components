@@ -135,7 +135,7 @@
                 CALL $setItem WITH 3 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '380138023803D8755000'(
+            $bytecode: '380138023803D8765000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -224,7 +224,7 @@
                 CALL $removeIndex WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '38013802D0685000'(
+            $bytecode: '38013802D0695000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -252,7 +252,7 @@
                 CALL $removeIndices WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '38016001D0695000'(
+            $bytecode: '38016001D06A5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -282,7 +282,7 @@
                 CALL $shuffleItems WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3801C8795000'(
+            $bytecode: '3801C87A5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -310,7 +310,7 @@
                 CALL $sortItems WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '38013802D07C5000'(
+            $bytecode: '38013802D07D5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -339,7 +339,7 @@
                 CALL $reverseItems WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3801C86C5000'(
+            $bytecode: '3801C86D5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -368,7 +368,7 @@
                 CALL $setAttribute WITH 3 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '380138023803D8735000'(
+            $bytecode: '380138023803D8745000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )

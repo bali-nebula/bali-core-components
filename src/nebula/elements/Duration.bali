@@ -100,7 +100,7 @@
                 CALL $milliseconds WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3801C84B5000'(
+            $bytecode: '3801C84C5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -126,7 +126,7 @@
                 CALL $seconds WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3801C8715000'(
+            $bytecode: '3801C8725000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -152,7 +152,7 @@
                 CALL $minutes WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3801C84D5000'(
+            $bytecode: '3801C84E5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -230,7 +230,7 @@
                 CALL $weeks WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3801C88A5000'(
+            $bytecode: '3801C88B5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -256,7 +256,7 @@
                 CALL $months WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3801C84F5000'(
+            $bytecode: '3801C8505000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -282,7 +282,7 @@
                 CALL $years WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3801C88D5000'(
+            $bytecode: '3801C88E5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -340,7 +340,7 @@
                 CALL $sum WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '38023803D0805000'(
+            $bytecode: '38023803D0815000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -400,7 +400,7 @@
                 CALL $scaled WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '60013803D06E5000'(
+            $bytecode: '60013803D06F5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )

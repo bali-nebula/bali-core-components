@@ -34,7 +34,7 @@
                 CALL $size WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3801C87B5000'(
+            $bytecode: '3801C87C5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -63,7 +63,7 @@
                 CALL $areEqual WITH 2 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3801C87B2801D0075000'(
+            $bytecode: '3801C87C2801D0075000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
@@ -171,7 +171,7 @@
                 PULL RESULT
             "($mediaType: "application/basm")
             $bytecode: '
-                3801E006C852800428022801D00780056003E00480026002E002181D6002
+                3801E006C853800428022801D00780056003E00480026002E002181D6002
                 E00580016004C0473801C0476001D001E803D001E8018005000C00006004
                 5000
             '(
@@ -251,7 +251,7 @@
                 CALL $setAttribute WITH 3 ARGUMENTS
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '380138023803D8735000'(
+            $bytecode: '380138023803D8745000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
