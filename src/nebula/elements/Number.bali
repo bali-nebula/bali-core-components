@@ -3,6 +3,560 @@
     $description: "
         This class defines the methods for the functions and operations that all numbers support.
     "($mediaType: "application/bsmd")
+    $libraries: [
+        /nebula/libraries/Numerical/v1
+        /nebula/libraries/Scalable/v1
+    ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Name/v1))
+    $interfaces: [
+        /nebula/interfaces/Continuous/v1
+        /nebula/interfaces/Discrete/v1
+        /nebula/interfaces/Polarized/v1
+    ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Name/v1))
+    $operations: [
+        $imaginary: [
+            $description: "
+                This operation returns the imaginary part of this complex number.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/elements/Number/v1
+        ]($type: /nebula/aspects/Operation/v1)
+        $magnitude: [
+            $description: "
+                This operation returns the magnitude of this complex number.  The magnitude is a
+                real number in the range [0..].
+            "($mediaType: "application/bsmd")
+            $type: /nebula/elements/Number/v1
+        ]($type: /nebula/aspects/Operation/v1)
+        $phase: [
+            $description: "
+                This operation returns the phase of this complex number.  The phase is an angle.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/elements/Angle/v1
+        ]($type: /nebula/aspects/Operation/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
+    $methods: [
+        $isNegative: [
+            $description: "
+                This method implements the `$isNegative` operation defined in the
+                `/nebula/interfaces/Polarized/v1` interface.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return isNegative(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $isNegative WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C83E5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $integer: [
+            $description: "
+                This method implements the `$integer` operation defined in the
+                `/nebula/interfaces/Polarized/v1` interface.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return integer(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $integer WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C8385000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $real: [
+            $description: "
+                This method implements the `$real` operation defined in the
+                `/nebula/interfaces/Polarized/v1` interface.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return real(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $real WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C8635000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $imaginary: [
+            $description: "
+                This method implements the `$imaginary` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return imaginary(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $imaginary WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C8355000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $magnitude: [
+            $description: "
+                This method implements the `$magnitude` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return magnitude(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $magnitude WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C8495000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $phase: [
+            $description: "
+                This method implements the `$phase` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return phase(target)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                CALL $phase WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '3801C8585000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Inverse: [
+            $description: "
+                This method implements the `$Inverse` function defined in the
+                `/nebula/libraries/Scalable/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return inverse(number)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $number
+                CALL $inverse WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '6001C83A5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $scalable: none
+            ]
+            $variables: [
+                $number
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Sum: [
+            $description: "
+                This method implements the `$Sum` function defined in the
+                `/nebula/libraries/Scalable/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return sum(first, second)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $first
+                PUSH ARGUMENT $second
+                CALL $sum WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D0805000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $first: none
+                $second: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Difference: [
+            $description: "
+                This method implements the `$Difference` function defined in the
+                `/nebula/libraries/Scalable/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return difference(first, second)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $first
+                PUSH ARGUMENT $second
+                CALL $difference WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D0215000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $first: none
+                $second: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Scaled: [
+            $description: "
+                This method implements the `$Scaled` function defined in the
+                `/nebula/libraries/Scalable/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return scaled(number, factor)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $number
+                PUSH ARGUMENT $factor
+                CALL $scaled WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '60013803D06E5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $scalable: none
+                $factor: none
+            ]
+            $variables: [
+                $number
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Product: [
+            $description: "
+                This method implements the `$Product` function defined in the
+                `/nebula/libraries/Numerical/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return product(first, second)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $first
+                PUSH ARGUMENT $second
+                CALL $product WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D05B5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $first: none
+                $second: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Quotient: [
+            $description: "
+                This method implements the `$Quotient` function defined in the
+                `/nebula/libraries/Numerical/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return quotient(dividend, divisor)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $dividend
+                PUSH ARGUMENT $divisor
+                CALL $quotient WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D05E5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $dividend: none
+                $divisor: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Remainder: [
+            $description: "
+                This method implements the `$Remainder` function defined in the
+                `/nebula/libraries/Numerical/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return remainder(dividend, divisor)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $dividend
+                PUSH ARGUMENT $divisor
+                CALL $remainder WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D0655000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $dividend: none
+                $divisor: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Reciprocal: [
+            $description: "
+                This method implements the `$Reciprocal` function defined in the
+                `/nebula/libraries/Numerical/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return reciprocal(number)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $number
+                CALL $reciprocal WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '6001C8645000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $numerical: none
+            ]
+            $variables: [
+                $number
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Conjugate: [
+            $description: "
+                This method implements the `$Conjugate` function defined in the
+                `/nebula/libraries/Numerical/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return conjugate(number)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $number
+                CALL $conjugate WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '6001C81A5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $numerical: none
+            ]
+            $variables: [
+                $number
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Factorial: [
+            $description: "
+                This method implements the `$Factorial` function defined in the
+                `/nebula/libraries/Numerical/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return factorial(number)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $number
+                CALL $factorial WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '6001C82A5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $numerical: none
+            ]
+            $variables: [
+                $number
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Exponential: [
+            $description: "
+                This method implements the `$Exponential` function defined in the
+                `/nebula/libraries/Numerical/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return exponential(base, exponent)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $base
+                PUSH ARGUMENT $exponent
+                CALL $exponential WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D0295000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $base: none
+                $exponent: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Logarithm: [
+            $description: "
+                This method implements the `$Logarithm` function defined in the
+                `/nebula/libraries/Numerical/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return logarithm(base, value)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $base
+                PUSH ARGUMENT $value
+                CALL $logarithm WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D0485000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $base: none
+                $value: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
+    $literals: [ ]($type: /nebula/collections/Set/v1)
 ](
     $type: /nebula/types/Primitive/v1
     $tag: #13R8AGZ5G44BLVVDWZP19RAR6KJGX46Y

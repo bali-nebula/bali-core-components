@@ -3,6 +3,53 @@
     $description: "
         This class defines the methods for the functions and operations that all patterns support.
     "($mediaType: "application/bsmd")
+    $operations: [
+        $matchesText: [
+            $description: "
+                This operation determines whether or not this pattern matches the specified text string.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/elements/Boolean/v1
+            $parameters: [
+                $text: [
+                    $description: "
+                        This parameter specifies the text string to be matched against.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/strings/Text/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Operation/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
+    $methods: [
+        $matchesText: [
+            $description: "
+                This method implements the `$matchesText` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return matchesText(target, text)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $target
+                PUSH ARGUMENT $text
+                CALL $matchesText WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38013802FFFF5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $text: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
+    $literals: [ ]($type: /nebula/collections/Set/v1)
 ](
     $type: /nebula/types/Primitive/v1
     $tag: #L4S2DRQ6LTY5G1J6GADFVNM7TWQ23TBB
