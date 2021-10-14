@@ -1,8 +1,115 @@
 [
-    $parent: /nebula/abstractions/Element/v1
+    $parent: /nebula/abstractions/String/v1
     $description: "
         This class defines the methods for the functions and operations that all version strings support.
     "($mediaType: "application/bsmd")
+    $functions: [
+        $NextVersion: [
+            $description: "
+                This operation returns the next version of the specified version incremented at the
+                specified level.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/strings/Version/v1
+            $parameters: [
+                $version: [
+                    $description: "
+                        This parameter specifies the current version.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/strings/Version/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+                $level: [
+                    $description: "
+                        This optional parameter specifies the level to be incremented. If not specified,
+                        the right most level is incremented.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/interfaces/Discrete/v1($range: [0..<∞])
+                    $default: 0
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
+        $ValidNext: [
+            $description: "
+                This operation determines whether or not the specified next version is a valid next
+                version for the specified current version.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/elements/Boolean/v1
+            $parameters: [
+                $current: [
+                    $description: "
+                        This parameter specifies the current version.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/strings/Version/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+                $next: [
+                    $description: "
+                        This parameter specifies the proposed next version.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/strings/Version/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ]($type: /nebula/aspects/Function/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Function/v1))
+    $methods: [
+        $NextVersion: [
+            $description: "
+                This method implements the `$NextVersion` function defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return nextVersion(version, level)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $version
+                PUSH ARGUMENT $level
+                CALL $nextVersion WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D0525000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $version: none
+                $level: 0
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $ValidNext: [
+            $description: "
+                This method implements the `$ValidNext` function defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return validNext(current, next)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $current
+                PUSH ARGUMENT $next
+                CALL $validNext WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803FFFF5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $current: none
+                $next: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
+    $literals: [ ]($type: /nebula/collections/Set/v1)
 ](
     $type: /nebula/types/Primitive/v1
     $tag: #G17X2HNF7FTKQV43NKTWCSNA46SQR45P

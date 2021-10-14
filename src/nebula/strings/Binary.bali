@@ -1,8 +1,164 @@
 [
-    $parent: /nebula/abstractions/Element/v1
+    $parent: /nebula/abstractions/String/v1
     $description: "
         This class defines the methods for the functions and operations that all binary strings support.
     "($mediaType: "application/bsmd")
+    $libraries: [
+        /nebula/libraries/Logical/v1
+    ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Name/v1))
+    $methods: [
+        $Not: [
+            $description: "
+                This method implements the `$Not` function defined in the
+                `/nebula/libraries/Logical/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return not(binary)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                LOAD VARIABLE $binary
+                CALL $not WITH 1 ARGUMENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '6001C8545000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $logical: none
+            ]
+            $variables: [
+                $binary
+            ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $And: [
+            $description: "
+                This method implements the `$And` function defined in the
+                `/nebula/libraries/Logical/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return and(first, second)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $first
+                PUSH ARGUMENT $second
+                CALL $and WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D0035000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $first: none
+                $second: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Sans: [
+            $description: "
+                This method implements the `$Sans` function defined in the
+                `/nebula/libraries/Logical/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return sans(first, second)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $first
+                PUSH ARGUMENT $second
+                CALL $sans WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D06E5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $first: none
+                $second: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Or: [
+            $description: "
+                This method implements the `$Or` function defined in the
+                `/nebula/libraries/Logical/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return or(first, second)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $first
+                PUSH ARGUMENT $second
+                CALL $or WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D0565000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $first: none
+                $second: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+        $Xor: [
+            $description: "
+                This method implements the `$Xor` function defined in the
+                `/nebula/libraries/Logical/v1` library.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                return xor(first, second)
+            }
+            $instructions: "
+                1.ReturnStatement:
+                PUSH ARGUMENT $first
+                PUSH ARGUMENT $second
+                CALL $xor WITH 2 ARGUMENTS
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '38023803D08B5000'(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $first: none
+                $second: none
+            ]
+            $variables: [ ]($type: /nebula/collections/Set/v1)
+            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $addresses: [
+                "1.ReturnStatement": 1
+            ]
+        ]($type: /nebula/aspects/Method/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
+    $literals: [ ]($type: /nebula/collections/Set/v1)
 ](
     $type: /nebula/types/Primitive/v1
     $tag: #QA9PDMVCN20WVYMDV1BF9ZA5P6Y9CSMY

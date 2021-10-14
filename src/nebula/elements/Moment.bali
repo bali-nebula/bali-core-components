@@ -281,7 +281,7 @@
                 CALL $year WITH 1 ARGUMENT
                 PULL RESULT
             "($mediaType: "application/basm")
-            $bytecode: '3801C88D5000'(
+            $bytecode: '3801C88C5000'(
                 $encoding: $base16
                 $mediaType: "application/bcod"
             )
