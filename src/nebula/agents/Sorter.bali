@@ -16,6 +16,15 @@
                     "($mediaType: "application/bsmd")
                     $type: /nebula/abstractions/Component/v1
                 ]($type: /nebula/aspects/Parameter/v1)
+                $comparator: [
+                    $description: "
+                        This optional parameter specifies the comparator agent to be used for comparing
+                        the items during sorting. If no comparator is specified, a canonical comparator
+                        is used which orders items in their natural order.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/agents/Comparator/v1
+                    $default: none
+                ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
         ]($type: /nebula/aspects/Operation/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))

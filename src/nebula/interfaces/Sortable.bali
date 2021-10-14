@@ -33,17 +33,20 @@
             $parameters: [
                 $sorter: [
                     $description: "
-                        This parameter specifies the sorter agent to be used for sorting the
-                        items in this collection.
+                        This optional parameter specifies the sorter agent to be used for sorting the
+                        items in this collection. If no sorter is specified, a merge sorter is used.
                     "($mediaType: "application/bsmd")
                     $type: /nebula/agents/Sorter/v1
+                    $default: none
                 ]($type: /nebula/aspects/Parameter/v1)
                 $comparator: [
                     $description: "
-                        This parameter specifies the comparator agent to be used for comparing
-                        items in this collection.
+                        This optional parameter specifies the comparator agent to be used for comparing
+                        the items during sorting. If no comparator is specified, a canonical comparator
+                        is used which orders items in their natural order.
                     "($mediaType: "application/bsmd")
                     $type: /nebula/agents/Comparator/v1
+                    $default: none
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
         ]($type: /nebula/aspects/Operation/v1)
