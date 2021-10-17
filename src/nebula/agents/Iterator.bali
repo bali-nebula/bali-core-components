@@ -44,7 +44,7 @@
                 This operation moves the iterator to the slot before the first item.
             "($mediaType: "application/bsmd")
             $type: itemType
-        ]($type: /nebula/agents/Iterator/v1($itemType: itemType))
+        ]($type: /nebula/aspects/Operation/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
 ](
     $type: /nebula/types/Abstraction/v1
