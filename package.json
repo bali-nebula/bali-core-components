@@ -26,6 +26,6 @@
     "bali-component-framework": "^2.83.0",
     "bali-digital-notary": "^2.53.0",
     "bali-document-repository": "^2.60.0",
-    "bali-type-compiler": "^2.62.0"
+    "bali-type-compiler": "file:../js-bali-type-compiler"
   }
 }

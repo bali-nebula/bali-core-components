@@ -143,4 +143,23 @@ describe('Bali Nebula™ Type Compilation', function() {
 
     });
 
+    describe('Analyze the types', function() {
+
+        types.forEach(function(name) {
+
+            it(name, async function() {
+                // parse the type
+                const filename = 'src' + name + '.bali';
+                var source = await pfs.readFile(filename, 'utf8');
+                const type = bali.component(source);
+                expect(type).to.exist;
+
+                // compile the source code
+                await compiler.analyzeDocument(repository, type);
+            });
+
+        });
+
+    });
+
 });

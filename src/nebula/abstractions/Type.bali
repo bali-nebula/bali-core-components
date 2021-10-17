@@ -16,13 +16,13 @@
                 This attribute defines any parameters that may be used to constrain the type.
             "($mediaType: "application/bsmd")
             $type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1)
+            $default: none
         ]($type: /nebula/aspects/Attribute/v1)
         $parent: [
             $description: "
                 This attribute references the parent type for the type.
             "($mediaType: "application/bsmd")
             $type: /nebula/strings/Name/v1
-            $default: /nebula/abstractions/Component/v1
         ]($type: /nebula/aspects/Attribute/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Attribute/v1))
 ](
