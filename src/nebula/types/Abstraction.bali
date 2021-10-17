@@ -1,8 +1,18 @@
 [
-    $parent: /nebula/abstractions/Type/v1($existence: $abstract)
+    $parent: /nebula/abstractions/Type/v1
     $description: "
         This concrete structure defines the attributes that all abstract types support.
     "($mediaType: "application/bsmd")
+    $parameters: [
+        $existence: [
+            $description: "
+                This parameter specifies whether or not an instance of this type may be created.
+                A _concrete_ type may be instantiated but an _abstract_ type cannot.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/enumerations/Existence/v1
+            $default: $concrete
+        ]($type: /nebula/aspects/Parameter/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
     $attributes: [
         $interfaces: [
             $description: "

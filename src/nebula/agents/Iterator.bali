@@ -47,7 +47,7 @@
         ]($type: /nebula/aspects/Operation/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
 ](
-    $type: /nebula/types/Abstraction/v1
+    $type: /nebula/types/Primitive/v1($existence: $abstract)
     $tag: #7K6JYLW6HLWLBQXDR3LH8W0HMTYRJS0Y
     $version: v1
     $permissions: /nebula/permissions/public/v1
