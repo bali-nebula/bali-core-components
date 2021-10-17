@@ -1,5 +1,5 @@
 [
-    $parent: /nebula/abstractions/Type/v1
+    $parent: /nebula/abstractions/Type/v1($existence: $concrete)
     $description: "
         This concrete structure defines the attributes that all message interface types support.
     "($mediaType: "application/bsmd")

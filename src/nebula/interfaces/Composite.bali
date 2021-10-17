@@ -29,13 +29,13 @@
                 This operation returns the attribute value associated with the specified key, or `none`
                 if the specified key is not part of this structural component.
             "($mediaType: "application/bsmd")
-            $type: $valueType
+            $type: valueType
             $parameters: [
                 $key: [
                     $description: "
                         This parameter specifies the key for the desired attribute value.
                     "($mediaType: "application/bsmd")
-                    $type: $keyType
+                    $type: keyType
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
         ]($type: /nebula/aspects/Operation/v1)
@@ -43,7 +43,7 @@
             $description: "
                 This operation returns the attribute values associated with the specified sequence of keys.
             "($mediaType: "application/bsmd")
-            $type: $valueType
+            $type: valueType
             $parameters: [
                 $keys: [
                     $description: "
@@ -59,20 +59,20 @@
                 specified value. The previous value of that attribute is returned, or `none`
                 if no previous value existed.
             "($mediaType: "application/bsmd")
-            $type: $valueType
+            $type: valueType
             $parameters: [
                 $key: [
                     $description: "
                         This parameter specifies the key for the attribute to be set.
                     "($mediaType: "application/bsmd")
-                    $type: $keyType
+                    $type: keyType
                 ]($type: /nebula/aspects/Parameter/v1)
                 $value: [
                     $description: "
                         This parameter specifies the new value for the attribute associated
                         with the specified key.
                     "($mediaType: "application/bsmd")
-                    $type: $valueType
+                    $type: valueType
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
         ]($type: /nebula/aspects/Operation/v1)

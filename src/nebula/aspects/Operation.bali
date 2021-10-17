@@ -1,20 +1,30 @@
 [
     $parent: /nebula/abstractions/Aspect/v1
     $description: "
-        This concrete structure defines the attributes that all event handler aspects support.
+        This concrete structure defines the attributes that all operation aspects support.
     "($mediaType: "application/bsmd")
-    $attributes: [
-        $name: [
+    $parameters: [
+        $visibility: [
             $description: "
-                This attribute defines the name for the type of event that this handler
-                is interested in.
+                This parameter specifies the visibility of the operation outside of the type
+                definition in which it is defined.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/enumerations/Visibility/v1
+            $default: $public
+        ]($type: /nebula/aspects/Parameter/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+    $attributes: [
+        $type: [
+            $description: "
+                This attribute defines the name of the type of the response to the operation.
             "($mediaType: "application/bsmd")
             $type: /nebula/strings/Name/v1
+            $default: none
         ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
         $parameters: [
             $description: "
-                This attribute defines the parameters that are expected to be passed into
-                the event handler. They map to the attributes defined in the event type.
+                This attribute defines the parameters that are expected to be passed with
+                the operation.
             "($mediaType: "application/bsmd")
             $type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1)
             $default: [:]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
@@ -22,7 +32,7 @@
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Attribute/v1($visibility: $public)))
 ](
     $type: /nebula/types/Structure/v1
-    $tag: #NRR838WCDW6AXQJDQFNSRVHA4DWXTHVH
+    $tag: #T7H6SHXK5X3L383D3LT0MVS6GK5XZ540
     $version: v1
     $permissions: /nebula/permissions/public/v1
     $previous: none

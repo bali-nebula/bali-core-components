@@ -26,7 +26,7 @@
         ]($type: /nebula/aspects/Attribute/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Attribute/v1))
 ](
-    $type: /nebula/types/Class/v1($existence: $abstract)
+    $type: /nebula/types/Structure/v1($existence: $abstract)
     $tag: #WL8AY5SBKM3F25GRD1W9JD472V1G8P4D
     $version: v1
     $permissions: /nebula/permissions/public/v1

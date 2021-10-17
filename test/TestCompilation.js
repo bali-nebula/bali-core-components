@@ -55,6 +55,7 @@ const types = [
     '/nebula/aspects/Handler',
     '/nebula/aspects/Message',
     '/nebula/aspects/Method',
+    '/nebula/aspects/Operation',
     '/nebula/aspects/Parameter',
 
     '/nebula/collections/Association',
@@ -91,6 +92,7 @@ const types = [
     '/nebula/trees/Node',
     '/nebula/trees/Procedure',
 
+    '/nebula/types/Abstraction',
     '/nebula/types/Class',
     '/nebula/types/Enumeration',
     '/nebula/types/Interface',

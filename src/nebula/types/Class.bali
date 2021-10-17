@@ -1,5 +1,5 @@
 [
-    $parent: /nebula/abstractions/Type/v1
+    $parent: /nebula/Types/Abstraction/v1
     $description: "
         This concrete structure defines the attributes that all class types support. The class
         type combines the primitive type with the structure type and is the most flexiby type.
@@ -15,6 +15,13 @@
         ]($type: /nebula/aspects/Parameter/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
     $attributes: [
+        $constants: [
+            $description: "
+                This attribute defines the catalog of constants defined by the class type.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/collections/Catalog/v1
+            $default: [:]
+        ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
         $attributes: [
             $description: "
                 This attribute defines the attributes that are defined by the class type.
@@ -35,47 +42,6 @@
             $type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Handler/v1)
             $default: [:]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Handler/v1))
         ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
-        $libraries: [
-            $description: "
-                This attribute defines the set of function libraries that are implemented by the
-                class type.
-            "($mediaType: "application/bsmd")
-            $type: /nebula/collections/Set/v1($itemType: /nebula/strings/Name/v1)
-            $default: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Name/v1))
-        ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
-        $interfaces: [
-            $description: "
-                This attribute defines the set of operation interfaces that are implemented by the
-                class type.
-            "($mediaType: "application/bsmd")
-            $type: /nebula/collections/Set/v1($itemType: /nebula/strings/Name/v1)
-            $default: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Name/v1))
-        ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
-        $constants: [
-            $description: "
-                This attribute defines the catalog of constants defined by the class type.
-            "($mediaType: "application/bsmd")
-            $type: /nebula/collections/Catalog/v1
-            $default: [:]
-        ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
-        $functions: [
-            $description: "
-                This attribute defines the catalog of functions defined by the class type. This
-                catalog of functions does not include any functions defined in libraries that are
-                implemented by the class type.
-            "($mediaType: "application/bsmd")
-            $type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Function/v1)
-            $default: [:]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Function/v1))
-        ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
-        $operations: [
-            $description: "
-                This attribute defines the catalog of operations defined by the class type. This
-                catalog of operations does not include any operations defined in interfaces that are
-                implemented by the class type.
-            "($mediaType: "application/bsmd")
-            $type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1)
-            $default: [:]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
-        ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
         $methods: [
             $description: "
                 This attribute defines the catalog of all methods implemented by the class type.
@@ -83,6 +49,13 @@
                 class type and any libraries and interfaces it supports.
             "($mediaType: "application/bsmd")
             $type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1)
+        ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
+        $literals: [
+            $description: "
+                This attribute defines the set of all literals used in the methods for this type.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/collections/Set/v1
+            $default: [ ]
         ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Attribute/v1($visibility: $public)))
 ](

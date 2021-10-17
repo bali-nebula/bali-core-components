@@ -34,7 +34,7 @@
                 This operation returns the item corresponding to the specified index in this sequential
                 component, or `none` if the specified index does exist within the sequential component.
             "($mediaType: "application/bsmd")
-            $type: $itemType
+            $type: itemType
             $parameters: [
                 $index: [
                     $description: "

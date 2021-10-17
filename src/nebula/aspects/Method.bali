@@ -45,7 +45,7 @@
                 the function implemented by the method, or an instance of the type defining the operation
                 implemented by the method.
             "($mediaType: "application/bsmd")
-            $type: /nebula/collections/List/v1($itemType: /nebula/strings/Symbol/v1)
+            $type: /nebula/collections/Catalog/v1
             $default: [
                 $target
             ]($type: /nebula/collections/List/v1($itemType: /nebula/strings/Symbol/v1))

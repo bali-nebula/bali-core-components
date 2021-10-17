@@ -27,26 +27,26 @@
             $description: "
                 This operation returns the key element of the association component.
             "($mediaType: "application/bsmd")
-            $type: $keyType
+            $type: keyType
         ]($type: /nebula/aspects/Operation/v1)
         $value: [
             $description: "
                 This operation returns the value component of the association component.
             "($mediaType: "application/bsmd")
-            $type: $valueType
+            $type: valueType
         ]($type: /nebula/aspects/Operation/v1)
         $setValue: [
             $description: "
                 This operation sets the value of the association component to the specified
                 component value. This operation response with the previous value.
             "($mediaType: "application/bsmd")
-            $type: $valueType
+            $type: valueType
             $parameters: [
                 $value: [
                     $description: "
                         This parameter specifies the new value for the association.
                     "($mediaType: "application/bsmd")
-                    $type: $valueType
+                    $type: valueType
                 ]($type: /nebula/aspects/Parameter/v1)
             ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
         ]($type: /nebula/aspects/Operation/v1)
