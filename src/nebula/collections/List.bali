@@ -144,11 +144,14 @@
                 $index: none
                 $item: none
             ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $variables: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
+            $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ]
+            ](
+                $keyType: /nebula/strings/Text/v1
+                $valueType: /nebula/interfaces/Discrete/v1
+            )
         ]($type: /nebula/aspects/Method/v1)
         $insertItem: [
             $description: "
@@ -174,11 +177,14 @@
                 $slot: none
                 $item: none
             ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $variables: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
+            $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ]
+            ](
+                $keyType: /nebula/strings/Text/v1
+                $valueType: /nebula/interfaces/Discrete/v1
+            )
         ]($type: /nebula/aspects/Method/v1)
         $insertItems: [
             $description: "
@@ -204,11 +210,14 @@
                 $slot: none
                 $items: none
             ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $variables: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
+            $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ]
+            ](
+                $keyType: /nebula/strings/Text/v1
+                $valueType: /nebula/interfaces/Discrete/v1
+            )
         ]($type: /nebula/aspects/Method/v1)
         $removeItem: [
             $description: "
@@ -232,11 +241,14 @@
                 $target: none
                 $index: none
             ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $variables: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
+            $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ]
+            ](
+                $keyType: /nebula/strings/Text/v1
+                $valueType: /nebula/interfaces/Discrete/v1
+            )
         ]($type: /nebula/aspects/Method/v1)
         $removeItems: [
             $description: "
@@ -262,11 +274,14 @@
             ]
             $variables: [
                 $indices
-            ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
+            ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
+            $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ]
+            ](
+                $keyType: /nebula/strings/Text/v1
+                $valueType: /nebula/interfaces/Discrete/v1
+            )
         ]($type: /nebula/aspects/Method/v1)
         $shuffleItems: [
             $description: "
@@ -289,11 +304,14 @@
             $arguments: [
                 $target: none
             ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $variables: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
+            $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ]
+            ](
+                $keyType: /nebula/strings/Text/v1
+                $valueType: /nebula/interfaces/Discrete/v1
+            )
         ]($type: /nebula/aspects/Method/v1)
         $sortItems: [
             $description: "
@@ -319,11 +337,14 @@
                 $sorter: none
                 $comparator: none
             ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $variables: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
+            $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ]
+            ](
+                $keyType: /nebula/strings/Text/v1
+                $valueType: /nebula/interfaces/Discrete/v1
+            )
         ]($type: /nebula/aspects/Method/v1)
         $reverseItems: [
             $description: "
@@ -346,11 +367,14 @@
             $arguments: [
                 $target: none
             ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $variables: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
+            $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ]
+            ](
+                $keyType: /nebula/strings/Text/v1
+                $valueType: /nebula/interfaces/Discrete/v1
+            )
         ]($type: /nebula/aspects/Method/v1)
         $setAttribute: [
             $description: "
@@ -377,11 +401,14 @@
                 $key: none
                 $value: none
             ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $variables: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
+            $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ]
+            ](
+                $keyType: /nebula/strings/Text/v1
+                $valueType: /nebula/interfaces/Discrete/v1
+            )
         ]($type: /nebula/aspects/Method/v1)
         $attribute: [
             $description: "
@@ -406,11 +433,14 @@
                 $target: none
                 $key: none
             ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $variables: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
+            $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ]
+            ](
+                $keyType: /nebula/strings/Text/v1
+                $valueType: /nebula/interfaces/Discrete/v1
+            )
         ]($type: /nebula/aspects/Method/v1)
         $Chain: [
             $description: "
@@ -436,11 +466,14 @@
                 $first: none
                 $second: none
             ]
-            $variables: [ ]($type: /nebula/collections/Set/v1)
-            $messages: [ ]($type: /nebula/collections/Set/v1)
+            $variables: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
+            $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ]
+            ](
+                $keyType: /nebula/strings/Text/v1
+                $valueType: /nebula/interfaces/Discrete/v1
+            )
         ]($type: /nebula/aspects/Method/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
     $literals: [ ]($type: /nebula/collections/Set/v1)
