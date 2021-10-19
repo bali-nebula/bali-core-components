@@ -136,10 +136,7 @@
             $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ](
-                $keyType: /nebula/strings/Text/v1
-                $valueType: /nebula/interfaces/Discrete/v1
-            )
+            ]($type: /nebula/collections/Catalog/v1($keyType: /nebula/strings/Text/v1, $valueType: /nebula/interfaces/Discrete/v1))
         ]($type: /nebula/aspects/Method/v1)
         $second: [
             $description: "
@@ -165,10 +162,7 @@
             $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ](
-                $keyType: /nebula/strings/Text/v1
-                $valueType: /nebula/interfaces/Discrete/v1
-            )
+            ]($type: /nebula/collections/Catalog/v1($keyType: /nebula/strings/Text/v1, $valueType: /nebula/interfaces/Discrete/v1))
         ]($type: /nebula/aspects/Method/v1)
         $minute: [
             $description: "
@@ -194,10 +188,7 @@
             $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ](
-                $keyType: /nebula/strings/Text/v1
-                $valueType: /nebula/interfaces/Discrete/v1
-            )
+            ]($type: /nebula/collections/Catalog/v1($keyType: /nebula/strings/Text/v1, $valueType: /nebula/interfaces/Discrete/v1))
         ]($type: /nebula/aspects/Method/v1)
         $hour: [
             $description: "
@@ -223,10 +214,7 @@
             $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ](
-                $keyType: /nebula/strings/Text/v1
-                $valueType: /nebula/interfaces/Discrete/v1
-            )
+            ]($type: /nebula/collections/Catalog/v1($keyType: /nebula/strings/Text/v1, $valueType: /nebula/interfaces/Discrete/v1))
         ]($type: /nebula/aspects/Method/v1)
         $day: [
             $description: "
@@ -252,10 +240,7 @@
             $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ](
-                $keyType: /nebula/strings/Text/v1
-                $valueType: /nebula/interfaces/Discrete/v1
-            )
+            ]($type: /nebula/collections/Catalog/v1($keyType: /nebula/strings/Text/v1, $valueType: /nebula/interfaces/Discrete/v1))
         ]($type: /nebula/aspects/Method/v1)
         $month: [
             $description: "
@@ -281,10 +266,7 @@
             $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ](
-                $keyType: /nebula/strings/Text/v1
-                $valueType: /nebula/interfaces/Discrete/v1
-            )
+            ]($type: /nebula/collections/Catalog/v1($keyType: /nebula/strings/Text/v1, $valueType: /nebula/interfaces/Discrete/v1))
         ]($type: /nebula/aspects/Method/v1)
         $year: [
             $description: "
@@ -310,10 +292,7 @@
             $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ](
-                $keyType: /nebula/strings/Text/v1
-                $valueType: /nebula/interfaces/Discrete/v1
-            )
+            ]($type: /nebula/collections/Catalog/v1($keyType: /nebula/strings/Text/v1, $valueType: /nebula/interfaces/Discrete/v1))
         ]($type: /nebula/aspects/Method/v1)
         $Duration: [
             $description: "
@@ -342,10 +321,7 @@
             $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ](
-                $keyType: /nebula/strings/Text/v1
-                $valueType: /nebula/interfaces/Discrete/v1
-            )
+            ]($type: /nebula/collections/Catalog/v1($keyType: /nebula/strings/Text/v1, $valueType: /nebula/interfaces/Discrete/v1))
         ]($type: /nebula/aspects/Method/v1)
         $Earlier: [
             $description: "
@@ -374,10 +350,7 @@
             $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ](
-                $keyType: /nebula/strings/Text/v1
-                $valueType: /nebula/interfaces/Discrete/v1
-            )
+            ]($type: /nebula/collections/Catalog/v1($keyType: /nebula/strings/Text/v1, $valueType: /nebula/interfaces/Discrete/v1))
         ]($type: /nebula/aspects/Method/v1)
         $Later: [
             $description: "
@@ -406,10 +379,7 @@
             $messages: [ ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
             $addresses: [
                 "1.ReturnStatement": 1
-            ](
-                $keyType: /nebula/strings/Text/v1
-                $valueType: /nebula/interfaces/Discrete/v1
-            )
+            ]($type: /nebula/collections/Catalog/v1($keyType: /nebula/strings/Text/v1, $valueType: /nebula/interfaces/Discrete/v1))
         ]($type: /nebula/aspects/Method/v1)
     ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
     $literals: [ ]($type: /nebula/collections/Set/v1)

@@ -47,8 +47,8 @@
             "($mediaType: "application/bsmd")
             $type: /nebula/collections/Catalog/v1
             $default: [
-                $target
-            ]($type: /nebula/collections/List/v1($itemType: /nebula/strings/Symbol/v1))
+                $target: none
+            ]($type: /nebula/collections/Catalog/v1)
         ]($type: /nebula/aspects/Attribute/v1($visibility: $public))
         $variables: [
             $description: "
