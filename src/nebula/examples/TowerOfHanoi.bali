@@ -1,0 +1,539 @@
+[
+    $parent: /nebula/abstractions/Component/v1
+    $description: "
+        This class encapsulates a /Tower of Hanoi/ game with three pegs (A, B, and C) and a
+        parameterized number of disks. To play the game do the following:
+        
+         # Initialize a game with 3 disks.
+        `$game := [:]($type: /nebula/examples/TowerOfHanoi/v1)`
+        
+         # Play the game.
+        `game.play()`
+        
+        The output should be:
+        `
+         1. Move top disk on peg A to peg C
+         2. Move top disk on peg A to peg B
+         3. Move top disk on peg C to peg B
+         4. Move top disk on peg A to peg C
+         5. Move top disk on peg B to peg A
+         6. Move top disk on peg B to peg C
+         7. Move top disk on peg A to peg C
+        `
+    "($mediaType: "application/bsmd")
+    $attributes: [
+        $pegs: [
+            $description: "
+                The three pegs (A, B and C) that are used to hold the disks.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/collections/Catalog/v1(
+                $keyType: /nebula/strings/Symbol/v1
+                $valueType: /nebula/collections/Stack/v1($itemType: /nebula/elements/Number/v1($range: [1..]))
+            )
+        ]($type: /nebula/aspects/Attribute/v1)
+        $steps: [
+            $description: "
+                The steps needed to move the disks.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/collections/List/v1($itemType: /nebula/strings/Text/v1)
+        ]($type: /nebula/aspects/Attribute/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Attribute/v1))
+    $operations: [
+        $play: [
+            $description: "
+                This procedure causes the game to (re)initialize itself and play the game.
+            "($mediaType: "application/bsmd")
+            $parameters: [
+                $numberOfDisks: [
+                    $description: "
+                        The number of disks.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/elements/Number/v1($range: [1..])
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+            $type: /nebula/collections/Catalog/v1(
+                $keyType: /nebula/elements/Number/v1($range: [1..])
+                $valueType: /nebula/strings/Text/v1
+            )
+        ]($type: /nebula/aspects/Operation/v1)
+        $moveTower: [
+            $description: "
+                This procedure causes the game to move a tower of disks of a certain height
+                from one peg to another peg using a third peg as a buffer.
+            "($mediaType: "application/bsmd")
+            $parameters: [
+                $height: [
+                    $description: "
+                        The height of the tower to be moved.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/elements/Number/v1($range: [1..])
+                ]($type: /nebula/aspects/Parameter/v1)
+                $fromPeg: [
+                    $description: "
+                        The peg from which the disks originate.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/strings/Text/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+                $toPeg: [
+                    $description: "
+                        The peg to which the disks should be moved.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/strings/Text/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+                $withPeg: [
+                    $description: "
+                        The peg to use to buffer the disks during the move.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/strings/Text/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ](
+            $type: /nebula/aspects/Operation/v1
+            $access: $private
+        )
+        $moveDisk: [
+            $description: "
+                This procedure causes the game to move the top disk from one peg to another.
+            "($mediaType: "application/bsmd")
+            $parameters: [
+                $fromPeg: [
+                    $description: "
+                        The peg from which the disk originates.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/strings/Text/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+                $toPeg: [
+                    $description: "
+                        The peg to which the disk should be moved.
+                    "($mediaType: "application/bsmd")
+                    $type: /nebula/strings/Text/v1
+                ]($type: /nebula/aspects/Parameter/v1)
+            ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Parameter/v1))
+        ](
+            $type: /nebula/aspects/Operation/v1
+            $access: $private
+        )
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
+    $methods: [
+        $play: [
+            $description: "
+                This method implements the `$play` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                target[$pegs] := [
+                    "peg A": [ ]($type: /nebula/collections/Stack/v1($itemType: /nebula/elements/Number/v1($range: [1..])))
+                    "peg B": [ ]($type: /nebula/collections/Stack/v1($itemType: /nebula/elements/Number/v1($range: [1..])))
+                    "peg C": [ ]($type: /nebula/collections/Stack/v1($itemType: /nebula/elements/Number/v1($range: [1..])))
+                ]
+                target[$steps] := [ ]
+                $disks := range(numberOfDisks, 1)
+                with each $n in disks do {
+                    target[$pegs, "peg A"].addItem(n)
+                }
+                target.moveTower(numberOfDisks, "peg A", "peg C", "peg B")
+                return target[$steps].asCatalog()
+            }
+            $instructions: "
+                1.EvaluateStatement:
+                NOTE --Place the recipient and the index of its attribute on the stack.
+                PUSH ARGUMENT $target
+                PUSH LITERAL `$pegs`
+                NOTE --Place an empty catalog on the stack.
+                CALL $catalog
+                NOTE --Add an item to the catalog.
+                PUSH LITERAL `"peg A"`
+                NOTE --Place an empty stack on the stack.
+                NOTE --Place a catalog of the parameters on the stack.
+                CALL $catalog
+                PUSH LITERAL `$type`
+                PUSH LITERAL `/nebula/collections/Stack/v1`
+                NOTE --Place a catalog of the parameters on the stack.
+                CALL $catalog
+                PUSH LITERAL `$itemType`
+                PUSH LITERAL `/nebula/elements/Number/v1`
+                NOTE --Place a catalog of the parameters on the stack.
+                CALL $catalog
+                PUSH LITERAL `$range`
+                NOTE --Place a range on the stack.
+                PUSH LITERAL `".."`
+                CALL $range WITH 1 ARGUMENT
+                NOTE --Set the first item in the range.
+                PUSH LITERAL `1`
+                CALL $setFirst WITH 2 ARGUMENTS
+                CALL $setAttribute WITH 3 ARGUMENTS
+                CALL $setAttribute WITH 3 ARGUMENTS
+                CALL $setAttribute WITH 3 ARGUMENTS
+                CALL $stack WITH 1 ARGUMENT
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Add another item to the catalog.
+                PUSH LITERAL `"peg B"`
+                NOTE --Place an empty stack on the stack.
+                NOTE --Place a catalog of the parameters on the stack.
+                CALL $catalog
+                PUSH LITERAL `$type`
+                PUSH LITERAL `/nebula/collections/Stack/v1`
+                NOTE --Place a catalog of the parameters on the stack.
+                CALL $catalog
+                PUSH LITERAL `$itemType`
+                PUSH LITERAL `/nebula/elements/Number/v1`
+                NOTE --Place a catalog of the parameters on the stack.
+                CALL $catalog
+                PUSH LITERAL `$range`
+                NOTE --Place a range on the stack.
+                PUSH LITERAL `".."`
+                CALL $range WITH 1 ARGUMENT
+                NOTE --Set the first item in the range.
+                PUSH LITERAL `1`
+                CALL $setFirst WITH 2 ARGUMENTS
+                CALL $setAttribute WITH 3 ARGUMENTS
+                CALL $setAttribute WITH 3 ARGUMENTS
+                CALL $setAttribute WITH 3 ARGUMENTS
+                CALL $stack WITH 1 ARGUMENT
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Add another item to the catalog.
+                PUSH LITERAL `"peg C"`
+                NOTE --Place an empty stack on the stack.
+                NOTE --Place a catalog of the parameters on the stack.
+                CALL $catalog
+                PUSH LITERAL `$type`
+                PUSH LITERAL `/nebula/collections/Stack/v1`
+                NOTE --Place a catalog of the parameters on the stack.
+                CALL $catalog
+                PUSH LITERAL `$itemType`
+                PUSH LITERAL `/nebula/elements/Number/v1`
+                NOTE --Place a catalog of the parameters on the stack.
+                CALL $catalog
+                PUSH LITERAL `$range`
+                NOTE --Place a range on the stack.
+                PUSH LITERAL `".."`
+                CALL $range WITH 1 ARGUMENT
+                NOTE --Set the first item in the range.
+                PUSH LITERAL `1`
+                CALL $setFirst WITH 2 ARGUMENTS
+                CALL $setAttribute WITH 3 ARGUMENTS
+                CALL $setAttribute WITH 3 ARGUMENTS
+                CALL $setAttribute WITH 3 ARGUMENTS
+                CALL $stack WITH 1 ARGUMENT
+                CALL $association WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Assign the result as the value of the attribute.
+                CALL $setAttribute WITH 3 ARGUMENTS
+                PULL COMPONENT
+                
+                2.EvaluateStatement:
+                NOTE --Place the recipient and the index of its attribute on the stack.
+                PUSH ARGUMENT $target
+                PUSH LITERAL `$steps`
+                NOTE --Place an empty list on the stack.
+                CALL $list
+                NOTE --Assign the result as the value of the attribute.
+                CALL $setAttribute WITH 3 ARGUMENTS
+                PULL COMPONENT
+                
+                3.EvaluateStatement:
+                PUSH ARGUMENT $numberOfDisks
+                PUSH LITERAL `1`
+                CALL $range WITH 2 ARGUMENTS
+                SAVE VARIABLE $disks
+                
+                4.WithStatement:
+                LOAD VARIABLE $disks
+                SEND $iterator TO COMPONENT
+                SAVE VARIABLE $iterator-2
+                
+                4.1.ConditionClause:
+                LOAD VARIABLE $iterator-2
+                SEND $hasNext TO COMPONENT
+                JUMP TO 4.WithStatementDone ON FALSE
+                LOAD VARIABLE $iterator-2
+                SEND $next TO COMPONENT
+                SAVE VARIABLE $n
+                
+                4.1.1.EvaluateStatement:
+                PUSH ARGUMENT $target
+                PUSH LITERAL `$pegs`
+                CALL $attribute WITH 2 ARGUMENTS
+                PUSH LITERAL `"peg A"`
+                CALL $attribute WITH 2 ARGUMENTS
+                NOTE --Place a list of the message arguments on the stack.
+                CALL $list
+                LOAD VARIABLE $n
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Send the message with its arguments to the recipient.
+                SEND $addItem TO COMPONENT WITH ARGUMENTS
+                SAVE VARIABLE $result-1
+                
+                4.ConditionRepeat:
+                JUMP TO 4.1.ConditionClause
+                
+                4.WithStatementDone:
+                JUMP TO NEXT INSTRUCTION
+                
+                5.EvaluateStatement:
+                PUSH ARGUMENT $target
+                NOTE --Place a list of the message arguments on the stack.
+                CALL $list
+                PUSH ARGUMENT $numberOfDisks
+                CALL $addItem WITH 2 ARGUMENTS
+                PUSH LITERAL `"peg A"`
+                CALL $addItem WITH 2 ARGUMENTS
+                PUSH LITERAL `"peg C"`
+                CALL $addItem WITH 2 ARGUMENTS
+                PUSH LITERAL `"peg B"`
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Send the message with its arguments to the recipient.
+                SEND $moveTower TO COMPONENT WITH ARGUMENTS
+                SAVE VARIABLE $result-1
+                
+                6.ReturnStatement:
+                PUSH ARGUMENT $target
+                PUSH LITERAL `$steps`
+                CALL $attribute WITH 2 ARGUMENTS
+                SEND $asCatalog TO COMPONENT
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '
+                38012805C012280BC01228082802C01228042803C01228062809C8622801
+                D075D874D874D874C880D009D001280CC01228082802C01228042803C012
+                28062809C8622801D075D874D874D874C880D009D001280DC01228082802
+                C01228042803C01228062809C8622801D075D874D874D874C880D009D001
+                D874480038012807C047D874480038022801D06280016001E00480026002
+                E003185C6002E006800338012805D00A280BD00AC0476003D001E8018004
+                004B00003801C0473802D001280BD001280DD001280CD001E80580043801
+                2807D00AE0025000
+            '(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $numberOfDisks: none
+            ]
+            $variables: [
+                $disks
+                $iterator-2
+                $n
+                $result-1
+            ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
+            $messages: [
+                $addItem
+                $asCatalog
+                $hasNext
+                $iterator
+                $moveTower
+                $next
+            ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
+            $addresses: [
+                "1.EvaluateStatement": 1
+                "2.EvaluateStatement": 63
+                "3.EvaluateStatement": 68
+                "4.WithStatement": 72
+                "4.1.ConditionClause": 75
+                "4.1.1.EvaluateStatement": 81
+                "4.ConditionRepeat": 91
+                "4.WithStatementDone": 92
+                "5.EvaluateStatement": 93
+                "6.ReturnStatement": 105
+            ]($type: /nebula/collections/Catalog/v1($keyType: /nebula/strings/Text/v1, $valueType: /nebula/interfaces/Discrete/v1))
+        ]($type: /nebula/aspects/Method/v1)
+        $moveTower: [
+            $description: "
+                This method implements the `$moveTower` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                if height then {
+                    target.moveTower(height - 1, fromPeg, withPeg, toPeg)
+                    target.moveDisk(fromPeg, toPeg)
+                    target.moveTower(height - 1, withPeg, toPeg, fromPeg)
+                }
+            }
+            $instructions: "
+                1.IfStatement:
+                JUMP TO NEXT INSTRUCTION
+                
+                1.1.ConditionClause:
+                PUSH ARGUMENT $height
+                JUMP TO 1.IfStatementDone ON FALSE
+                
+                1.1.1.EvaluateStatement:
+                PUSH ARGUMENT $target
+                NOTE --Place a list of the message arguments on the stack.
+                CALL $list
+                PUSH ARGUMENT $height
+                PUSH LITERAL `1`
+                CALL $difference WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                PUSH ARGUMENT $fromPeg
+                CALL $addItem WITH 2 ARGUMENTS
+                PUSH ARGUMENT $withPeg
+                CALL $addItem WITH 2 ARGUMENTS
+                PUSH ARGUMENT $toPeg
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Send the message with its arguments to the recipient.
+                SEND $moveTower TO COMPONENT WITH ARGUMENTS
+                SAVE VARIABLE $result-1
+                
+                1.1.2.EvaluateStatement:
+                PUSH ARGUMENT $target
+                NOTE --Place a list of the message arguments on the stack.
+                CALL $list
+                PUSH ARGUMENT $fromPeg
+                CALL $addItem WITH 2 ARGUMENTS
+                PUSH ARGUMENT $toPeg
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Send the message with its arguments to the recipient.
+                SEND $moveDisk TO COMPONENT WITH ARGUMENTS
+                SAVE VARIABLE $result-1
+                
+                1.1.3.EvaluateStatement:
+                PUSH ARGUMENT $target
+                NOTE --Place a list of the message arguments on the stack.
+                CALL $list
+                PUSH ARGUMENT $height
+                PUSH LITERAL `1`
+                CALL $difference WITH 2 ARGUMENTS
+                CALL $addItem WITH 2 ARGUMENTS
+                PUSH ARGUMENT $withPeg
+                CALL $addItem WITH 2 ARGUMENTS
+                PUSH ARGUMENT $toPeg
+                CALL $addItem WITH 2 ARGUMENTS
+                PUSH ARGUMENT $fromPeg
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Send the message with its arguments to the recipient.
+                SEND $moveTower TO COMPONENT WITH ARGUMENTS
+                SAVE VARIABLE $result-1
+                
+                1.IfStatementDone:
+                LOAD VARIABLE $result-1
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '
+                0000380218283801C04738022801D021D0013803D0013805D0013804D001
+                E80280013801C0473803D0013804D001E80180013801C04738022801D021
+                D0013805D0013804D0013803D001E802800160015000
+            '(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $height: none
+                $fromPeg: none
+                $toPeg: none
+                $withPeg: none
+            ]
+            $variables: [
+                $result-1
+            ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
+            $messages: [
+                $moveDisk
+                $moveTower
+            ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
+            $addresses: [
+                "1.IfStatement": 1
+                "1.1.ConditionClause": 2
+                "1.1.1.EvaluateStatement": 4
+                "1.1.2.EvaluateStatement": 18
+                "1.1.3.EvaluateStatement": 26
+                "1.IfStatementDone": 40
+            ]($type: /nebula/collections/Catalog/v1($keyType: /nebula/strings/Text/v1, $valueType: /nebula/interfaces/Discrete/v1))
+        ]($type: /nebula/aspects/Method/v1)
+        $moveDisk: [
+            $description: "
+                This method implements the `$moveDisk` operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                $disk := target[$pegs, fromPeg].removeItem()
+                target[$pegs, toPeg].addItem(disk)
+                target[$steps].append("Move disk {disk} from {fromPeg} to {toPeg}.")
+            }
+            $instructions: "
+                1.EvaluateStatement:
+                PUSH ARGUMENT $target
+                PUSH LITERAL `$pegs`
+                CALL $attribute WITH 2 ARGUMENTS
+                PUSH ARGUMENT $fromPeg
+                CALL $attribute WITH 2 ARGUMENTS
+                SEND $removeItem TO COMPONENT
+                SAVE VARIABLE $disk
+                
+                2.EvaluateStatement:
+                PUSH ARGUMENT $target
+                PUSH LITERAL `$pegs`
+                CALL $attribute WITH 2 ARGUMENTS
+                PUSH ARGUMENT $toPeg
+                CALL $attribute WITH 2 ARGUMENTS
+                NOTE --Place a list of the message arguments on the stack.
+                CALL $list
+                LOAD VARIABLE $disk
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Send the message with its arguments to the recipient.
+                SEND $addItem TO COMPONENT WITH ARGUMENTS
+                SAVE VARIABLE $result-1
+                
+                3.EvaluateStatement:
+                PUSH ARGUMENT $target
+                PUSH LITERAL `$steps`
+                CALL $attribute WITH 2 ARGUMENTS
+                NOTE --Place a list of the message arguments on the stack.
+                CALL $list
+                PUSH LITERAL `"Move disk {disk} from {fromPeg} to {toPeg}."`
+                CALL $addItem WITH 2 ARGUMENTS
+                NOTE --Send the message with its arguments to the recipient.
+                SEND $append TO COMPONENT WITH ARGUMENTS
+                SAVE VARIABLE $result-1
+                LOAD VARIABLE $result-1
+                PULL RESULT
+            "($mediaType: "application/basm")
+            $bytecode: '
+                38012805D00A3802D00AE003800138012805D00A3803D00AC0476001D001
+                E801800238012807D00AC047280AD001E802800260025000
+            '(
+                $encoding: $base16
+                $mediaType: "application/bcod"
+            )
+            $arguments: [
+                $target: none
+                $fromPeg: none
+                $toPeg: none
+            ]
+            $variables: [
+                $disk
+                $result-1
+            ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
+            $messages: [
+                $addItem
+                $append
+                $removeItem
+            ]($type: /nebula/collections/Set/v1($itemType: /nebula/strings/Symbol/v1))
+            $addresses: [
+                "1.EvaluateStatement": 1
+                "2.EvaluateStatement": 8
+                "3.EvaluateStatement": 18
+            ]($type: /nebula/collections/Catalog/v1($keyType: /nebula/strings/Text/v1, $valueType: /nebula/interfaces/Discrete/v1))
+        ]($type: /nebula/aspects/Method/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
+    $literals: [
+        1
+        /nebula/collections/Stack/v1
+        /nebula/elements/Number/v1
+        $itemType
+        $pegs
+        $range
+        $steps
+        $type
+        ".."
+        "Move disk {disk} from {fromPeg} to {toPeg}."
+        "peg A"
+        "peg B"
+        "peg C"
+    ]($type: /nebula/collections/Set/v1)
+](
+    $type: /nebula/types/Class/v1
+    $tag: #1M9WB8VXAWP8A0T1K3MHWD4ZFBM3MG7T
+    $version: v1
+    $permissions: /nebula/permissions/public/v1
+    $previous: none
+)

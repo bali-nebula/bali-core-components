@@ -98,7 +98,9 @@ const types = [
     '/nebula/types/Interface',
     '/nebula/types/Library',
     '/nebula/types/Primitive',
-    '/nebula/types/Structure'
+    '/nebula/types/Structure',
+
+    '/nebula/examples/TowerOfHanoi'
 ];
 
 

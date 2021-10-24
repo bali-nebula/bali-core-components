@@ -1,0 +1,67 @@
+[
+    $parent: /nebula/abstractions/Component/v1
+    $description: "
+        This primitive type demonstrates /quining/.
+    "($mediaType: "application/bsmd")
+    $operations: [
+        $quine: [
+            $description: "
+                This operation returns a copy of the source code for this type.
+            "($mediaType: "application/bsmd")
+            $type: /nebula/strings/Text/v1
+        ]($type: /nebula/aspects/Operation/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
+    $methods: [
+        $quine: [
+            $description: "
+                This method implements the quine operation defined in this type.
+            "($mediaType: "application/bsmd")
+            $procedure: {
+                $beginning := "\"\n"
+                $end := "\n                \""
+                $text := "
+                    [
+                        $parent: /nebula/abstractions/Component/v1
+                        $description: "
+                            This primitive type demonstrates /quining/.
+                        "($mediaType: "application/bsmd")
+                        $operations: [
+                            $quine: [
+                                $description: "
+                                    This operation returns a copy of the source code for this type.
+                                "($mediaType: "application/bsmd")
+                                $type: /nebula/strings/Text/v1
+                            ]($type: /nebula/aspects/Operation/v1)
+                        ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Operation/v1))
+                        $methods: [
+                            $quine: [
+                                $description: "
+                                    This method implements the quine operation defined in this type.
+                                "($mediaType: "application/bsmd")
+                                $procedure: {
+                                    $beginning := "\"\n"
+                                    $end := "\n                \""
+                                    $text := {text}
+                                    return beginning & text & end
+                                }
+                            ]($type: /nebula/aspects/Method/v1)
+                        ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
+                    ](
+                        $type: /nebula/types/Primitive/v1
+                        $tag: #ABXX2AWSBXMV1NZC883YTCXZQCGV55D6
+                        $version: v1
+                        $permissions: /nebula/permissions/public/v1
+                        $previous: none
+                    )
+                "
+                return beginning & text & end
+            }
+        ]($type: /nebula/aspects/Method/v1)
+    ]($type: /nebula/collections/Catalog/v1($valueType: /nebula/aspects/Method/v1))
+](
+    $type: /nebula/types/Primitive/v1
+    $tag: #ABXX2AWSBXMV1NZC883YTCXZQCGV55D6
+    $version: v1
+    $permissions: /nebula/permissions/public/v1
+    $previous: none
+)
